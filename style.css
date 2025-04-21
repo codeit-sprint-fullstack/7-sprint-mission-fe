@@ -1,0 +1,43 @@
+*{
+box-sizing: border-box;
+font-size: 16px;
+white-space: nowrap;
+}
+
+header{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0; 
+  background: white;
+  z-index: 1;
+}
+
+.logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8.59px;
+  font-size: 25.633px;
+  font-weight: 1000;
+  color: #3692FF;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.inlinestyle{
+  display: flex;
+  justify-content: space-between;
+  margin: 9px 400px;
+}
+
+.header_login_btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 23px;
+  background-color: #3692FF;
+  border-radius: 8px;
+  color: white;
+  min-width: 128px;
+  min-height: 48px;
+}
