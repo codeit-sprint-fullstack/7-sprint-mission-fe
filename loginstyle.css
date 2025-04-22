@@ -1,0 +1,54 @@
+*{
+  box-sizing: border-box;
+}
+.loginbox{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 231px 640px 284px 640px;
+}
+
+.logobox{
+  min-width: 396px;
+  min-height: 132px;
+}
+
+.emailbox{
+
+}
+
+.passwordbox{
+
+}
+
+.emailbox , .passwordbox{
+  display: flex;
+  flex-direction: column;
+}
+
+.login_logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 396px;
+  height: 132px;
+  gap: 22.24px;
+}
+
+.login_logo > img{
+  width: 103.529px;
+  height: 103.88px;
+}
+.login_logo > p{
+  color: var(--brand-blue, #3692FF);
+font-family: "ROKAF Sans";
+font-size: 66.344px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+
+.logobox_botgap{
+  margin-bottom: 40px;
+}
