@@ -116,3 +116,29 @@ margin: 24px 0px;
   display: flex;
   gap: 16px;
 }
+
+.signup_text{
+  color: var(--Secondary-800, #1F2937);
+
+/* pretendard/md-14px-medium */
+font-family: Pretendard;
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: 24px; /* 171.429% */
+}
+
+.signup{
+  color: var(--Primary-100, #3692FF);
+font-family: Pretendard;
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+text-decoration-line: underline;
+text-decoration-style: solid;
+text-decoration-skip-ink: none;
+text-decoration-thickness: auto;
+text-underline-offset: auto;
+text-underline-position: from-font;
+}
