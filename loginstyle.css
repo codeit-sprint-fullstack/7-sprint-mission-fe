@@ -99,3 +99,20 @@ font-style: normal;
 font-weight: 600;
 line-height: 32px; /* 160% */
 }
+
+.conv_login{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 640px;
+height: 74px;
+border-radius: 8px;
+background: #E6F2FF;
+padding: 16px 23px;
+margin: 24px 0px;
+}
+
+.conv_login_gap{
+  display: flex;
+  gap: 16px;
+}
