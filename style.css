@@ -41,3 +41,65 @@ header{
   min-width: 128px;
   min-height: 48px;
 }
+
+.tophome{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 1920px;
+  height: 540px;
+  background: #CFE5FF;
+  position: relative;
+  overflow: hidden;
+}
+/* 최소 1920이상일경우 */
+@media(min-width:1920){
+  .tophome{
+    min-width: 1fr;
+  }
+}
+
+/* 최소1920미만일경우 */
+@media(max-width:1919){
+  .tophome{
+    min-width: 1920px;
+  }
+}
+
+.topinline{
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
+  gap: 7px;
+}
+
+.tophome_text{
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 140%;
+  font-style: normal;
+}
+.tophome > .topinline > div > p {
+  margin-bottom: 32px;
+}
+.tophome > .topinline > div > .tophome_text > span {
+  display: block;
+}
+.tophome > .topinline > div > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 124px;
+  background-color: #3692FF;
+  border-radius: 40px;
+  color: white;
+  min-width: 128px;
+  min-height: 48px;
+}
+
+.topblock{
+  display: block;
+  gap: 32px;
+}
