@@ -254,3 +254,13 @@ footer{
   display: flex;
   gap: 30px;
 }
+
+.atag_deco{
+  text-decoration: none;
+  color: var(--Cool-Gray-100, #F3F4F6)
+}
+
+a:visited{
+  text-decoration: none;
+  color: var(--Cool-Gray-100, #F3F4F6)
+}
