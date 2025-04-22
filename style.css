@@ -104,11 +104,14 @@ header{
   gap: 32px;
 }
 
+.section_f{
+  margin-top: 16px;
+}
+
 section {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 16px;
 }
 .sectionblock{
   width: 944px;;
@@ -124,6 +127,10 @@ section {
 
 .section_text{
 
+}
+
+.section_text_right{
+  text-align: right;
 }
 
 .section_text > .top{
