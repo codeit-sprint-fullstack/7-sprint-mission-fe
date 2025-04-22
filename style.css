@@ -164,3 +164,39 @@ line-height: 32px; /* 133.333% */
 section > .sectioninline > div > .section_text > p >span{
   display: block;
 }
+
+.bottombox{
+position: relative;
+height: 540px;
+display: flex;
+align-items: center;
+justify-content: center;
+background: #CFE5FF;
+}
+
+.bothome{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 69px;
+  position: absolute;
+  bottom: 0;
+}
+
+.bothome_text{
+  color: var(--Secondary-700, #374151);
+  font-family: Pretendard;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%; /* 56px */
+}
+
+.bothome_text > span{
+  display: block;
+}
+
+.bottomhome{
+  display: flex;
+  flex-direction: column-reverse;
+}
