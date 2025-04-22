@@ -142,3 +142,9 @@ text-decoration-thickness: auto;
 text-underline-offset: auto;
 text-underline-position: from-font;
 }
+
+input:focus{
+  outline: none;
+  border-color: #3692FF;
+  border: 1px solid var(--brand-blue, #3692FF);
+}
