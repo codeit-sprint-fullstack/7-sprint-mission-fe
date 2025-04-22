@@ -123,6 +123,8 @@ section {
   align-items: center;
   margin: 138px 344px;
   gap: 64px;
+  background: var(--Secondary-100, #FCFCFC);
+
 }
 
 .section_text{
