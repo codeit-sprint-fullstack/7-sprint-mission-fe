@@ -260,6 +260,11 @@ footer{
   color: var(--Cool-Gray-100, #F3F4F6)
 }
 
+.atag_deco_v2{
+  text-decoration: none;
+  color: var(--Cool-Gray-100, #E5E7EB)
+}
+
 a:visited{
   text-decoration: none;
   color: var(--Cool-Gray-100, #F3F4F6)
