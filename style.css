@@ -103,3 +103,57 @@ header{
   display: block;
   gap: 32px;
 }
+
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+}
+.sectionblock{
+  width: 944px;;
+}
+
+.sectioninline{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin: 138px 344px;
+  gap: 64px;
+}
+
+.section_text{
+
+}
+
+.section_text > .top{
+color: #3692FF;
+font-family: Pretendard;
+font-size: 18px;
+font-style: normal;
+font-weight: 700;
+line-height: 26px; /* 144.444% */
+}
+
+.section_text > .mid {
+  color: var(--Secondary-700, #374151);
+  font-family: Pretendard;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%; /* 56px */
+  letter-spacing: 0.8px;
+}
+
+.section_text > .bot{
+  color: var(--Secondary-700, #374151);
+font-family: Pretendard;
+font-size: 24px;
+font-style: normal;
+font-weight: 500;
+line-height: 32px; /* 133.333% */
+}
+
+section > .sectioninline > div > .section_text > p >span{
+  display: block;
+}
