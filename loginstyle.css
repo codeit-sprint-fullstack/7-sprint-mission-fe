@@ -62,7 +62,7 @@ border: 0px;
   gap: 22.24px;
 }
 
-.login_logo > img{
+.login_logo > a > img {
   width: 103.529px;
   height: 103.88px;
 }
