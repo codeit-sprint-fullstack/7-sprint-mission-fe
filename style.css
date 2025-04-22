@@ -271,3 +271,15 @@ a:visited{
   text-decoration: none;
   color: var(--Cool-Gray-100, #F3F4F6)
 }
+
+.footer_details{
+  height: 640px;
+  background: #FCFCFC;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.footer_img_detail{
+  display: flex;
+}
+
