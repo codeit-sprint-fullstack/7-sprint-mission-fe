@@ -23,7 +23,7 @@ form{
 }
 
 .passwordbox{
-
+position: relative;
 }
 
 .emailbox , .passwordbox{
@@ -147,4 +147,10 @@ input:focus{
   outline: none;
   border-color: #3692FF;
   border: 1px solid var(--brand-blue, #3692FF);
+}
+
+.icon_eye{
+  position: absolute;
+  right: 25px;
+  bottom: 18px;
 }
