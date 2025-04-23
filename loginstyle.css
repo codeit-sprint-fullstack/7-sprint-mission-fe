@@ -1,6 +1,14 @@
 *{
   box-sizing: border-box;
 }
+
+:root{
+  --Secondary-800: #1F2937;
+  --Cool-Gray-100: #F3F4F6;
+  --brand-blue: #3692FF;
+  --Secondary-400: #9CA3AF;
+}
+
 .loginbox{
   display: flex;
   align-items: center;
@@ -33,7 +41,7 @@ position: relative;
 }
 
 .emailbox > label ,.passwordbox > label{
-color: var(--Secondary-800, #1F2937);
+color: var(--Secondary-800);
 font-family: Pretendard;
 font-size: 18px;
 font-style: normal;
@@ -49,7 +57,7 @@ line-height: 26px;
   align-items: center;
   gap: 10px;
 border-radius: 12px;
-background: var(--Cool-Gray-100, #F3F4F6);
+background: var(--Cool-Gray-100);
 border: 0px;
 }
 
@@ -67,7 +75,7 @@ border: 0px;
   height: 103.88px;
 }
 .login_logo > p{
-  color: var(--brand-blue, #3692FF);
+  color: var(--brand-blue);
 font-family: "ROKAF Sans";
 font-size: 66.344px;
 font-style: normal;
@@ -88,9 +96,9 @@ justify-content: center;
 align-items: center;
 gap: 10px;
 border-radius: 40px;
-background: var(--Secondary-400, #9CA3AF);
+background: var(--Secondary-400);
 border: 0px;
-color: var(--Cool-Gray-100, #F3F4F6);
+color: var(--Cool-Gray-100);
 text-align: center;
 /* pretendard/xl-20px-semibold */
 font-family: Pretendard;
@@ -118,7 +126,7 @@ margin: 24px 0px;
 }
 
 .signup_text{
-  color: var(--Secondary-800, #1F2937);
+  color: var(--Secondary-800);
 
 /* pretendard/md-14px-medium */
 font-family: Pretendard;
@@ -129,7 +137,7 @@ line-height: 24px; /* 171.429% */
 }
 
 .signup{
-  color: var(--Primary-100, #3692FF);
+  color: var(--Primary-100);
 font-family: Pretendard;
 font-size: 14px;
 font-style: normal;
@@ -146,11 +154,15 @@ text-underline-position: from-font;
 input:focus{
   outline: none;
   border-color: #3692FF;
-  border: 1px solid var(--brand-blue, #3692FF);
+  border: 1px solid var(--brand-blue);
 }
 
 .icon_eye{
   position: absolute;
   right: 25px;
   bottom: 18px;
+}
+
+form > button:active{
+  background-color: var(--brand-blue);
 }
