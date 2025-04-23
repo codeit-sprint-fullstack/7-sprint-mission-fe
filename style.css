@@ -29,6 +29,13 @@ header{
   justify-content: space-between;
   margin: 9px 400px;
 }
+@media(max-width:1919px){
+  .inlinestyle{
+    display: flex;
+    justify-content: space-between;
+    margin: 9px 200px;
+  }
+}
 
 .header_login_btn{
   display: flex;
@@ -46,7 +53,7 @@ header{
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 1920px;
+  /* min-width: 1920px; */
   height: 540px;
   background: #CFE5FF;
   position: relative;
