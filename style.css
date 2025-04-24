@@ -4,6 +4,16 @@ font-size: 16px;
 white-space: nowrap;
 }
 
+@font-face {
+  font-family: 'ROKAF Sans';
+  src: url('asset/ROKAF.woff2') format('woff2'),
+      url('asset/ROKAF.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 header{
   position: fixed;
   left: 0;
@@ -290,3 +300,12 @@ a:visited{
   display: flex;
 }
 
+.roka_font{
+  color: #3692FF;
+  font-family: "ROKAF Sans";
+  font-size: 25.633px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  height: 57%;
+}
