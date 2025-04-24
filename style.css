@@ -280,7 +280,7 @@ a:visited{
 }
 
 .footer_details{
-  height: 640px;
+  height: 700px;
   background: #FCFCFC;
   display: flex;
   flex-direction: column-reverse;
