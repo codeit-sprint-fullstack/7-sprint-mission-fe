@@ -1,0 +1,155 @@
+*{
+    box-sizing: border-box;
+}
+
+
+/* 메인 컨테이너 설정 */
+.main-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 로그인 컨테이너 */
+.login-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 640px;   
+}
+
+/* 상단 로고 설정 */
+.branding{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap : 22.24px;
+    text-decoration: none;
+    margin-bottom: 40px;
+}
+
+.panda-logo{
+    width: 103.53px;
+    height: 103.88px;
+}
+
+.site-name{
+    font-family:'ROKAF Sans';
+    font-weight: 700;
+    font-size: 66.34px;
+    vertical-align: middle;
+    color:var(--primary-100);
+}
+
+/* 로그인 폼과 내부요소 설정 */
+.login-form{
+    display: flex;
+    flex-direction: column;
+    gap:24px;  
+}
+
+.form-input:focus {
+    border: 1px solid var(--primary-100);
+    outline:none;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    gap:16px;
+}
+
+.form-input{
+    border: none;
+    border-radius: 12px;
+    padding:16px 24px;
+    background-color:var(--secondary-100); 
+}
+
+.form-password{
+    display: flex;
+    flex-direction: column;
+    position: relative; 
+}
+
+.visibility-btn{
+    all:unset;
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    top:50%;
+    transform: translate(0, -50%);
+    right:24px;
+    border: none;
+    z-index: 100;
+}
+
+.visibility-img{
+    width: 24px;
+    height: 24px;
+}
+
+.form-btn {
+    width: 640px;
+    height: 56px;
+    background-color: var(--secondary-400);
+    color: var(--secondary-100);
+    border: none;
+    border-radius: 48px;
+    padding: 16px 24px;
+}
+
+
+/* 간편로그인 */
+.login-social{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 74px;
+    width: 100%;
+    border-radius: 8px;
+    background-color: #E6F2FF;
+    padding:16px 23px;
+    margin: 24px 0px;
+}
+
+.social-title{
+    font-family: 'Pretendard';
+    font-weight: 500;
+    font-size: 16px;
+    color: #1F2937;
+}
+
+.social-btn {
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+}
+
+/* 회원가입 안내 */
+.signup-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+.signup-title{
+    font-family: 'Pretendard';
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 171.429%;
+    color: var(--secondary-800);
+}
+
+.signup-cta {
+    font-family: 'Pretendard';
+    color: var(--primary-100);
+    font-weight: 500;
+    font-size: 14px;
+    text-decoration: 1px underline var(--primary-100);
+}

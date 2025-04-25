@@ -4,10 +4,6 @@
   box-sizing: border-box;
 }
 
-.clickable:hover {
-  cursor: pointer;
-}
-
 .top {
   display: flex;
   flex-direction: row;

@@ -31,6 +31,22 @@
     font-style: normal;
   }
 
+  @font-face {
+    font-family: 'ROKAF Sans';
+    src: url('../assets/fonts/ROKAFSans/woff2/ROKAFSansBold.woff2') format('woff2'),
+         url('../assets/fonts/ROKAFSans/woff/ROKAFSansBold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'ROKAF Sans';
+    src: url('../assets/fonts/ROKAFSans/woff2/ROKAFSansMedium.woff2') format('woff2'),
+         url('../assets/fonts/ROKAFSans/woff/ROKAFSansMedium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+  }
+
 /* 색상 변수 지정 */
 :root {
     /* Primary 색상 */
@@ -52,4 +68,9 @@
 
     /* error 색상 */
     --error-red: #F74747;
+}
+
+/* 클릭 가능한 요소에 마우스 오버 시 커서를 포인터로 변경 */
+.clickable:hover {
+  cursor: pointer;
 }
