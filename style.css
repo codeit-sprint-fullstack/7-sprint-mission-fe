@@ -32,6 +32,7 @@ header{
   font-weight: 1000;
   color: #3692FF;
   font-family: 'Noto Sans KR', sans-serif;
+  cursor: pointer;
 }
 
 .inlinestyle{
@@ -57,6 +58,7 @@ header{
   color: white;
   min-width: 128px;
   min-height: 48px;
+  cursor: pointer;
 }
 
 .tophome{
@@ -267,26 +269,30 @@ footer{
 .footer_gap{
   display: flex;
   gap: 12px;
+  cursor: pointer;
 }
 
 .footer_text_center{
   display: flex;
   gap: 30px;
+  
 }
 
 .atag_deco{
   text-decoration: none;
-  color: var(--Cool-Gray-100, #F3F4F6)
+  color: var(--Cool-Gray-100, #F3F4F6);
+  cursor: pointer;
 }
 
 .atag_deco_v2{
   text-decoration: none;
-  color: var(--Cool-Gray-100, #E5E7EB)
+  color: var(--Cool-Gray-100, #E5E7EB);
+  cursor: pointer;
 }
 
 a:visited{
   text-decoration: none;
-  color: var(--Cool-Gray-100, #F3F4F6)
+  color: var(--Cool-Gray-100, #F3F4F6);
 }
 
 .footer_details{
