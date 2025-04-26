@@ -16,7 +16,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 640px;   
+    width: 640px;
+    margin-top: 60px;   
 }
 
 /* 상단 로고 설정 */
@@ -51,21 +52,38 @@
 }
 
 .form-input:focus {
-    border-style: 1px solid var(--primary-100);
+    border: 1px solid var(--primary-100);
     outline:none;
 }
 
-.form-group{
+.form-input::placeholder {
+    color: var(--secondary-400);
+}
+
+.form-group {
     display: flex;
     flex-direction: column;
     gap:16px;
 }
 
-.form-input{
+.form-label {
+    font-family: 'Pretendard';
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--secondary-800);
+
+}
+.form-input {
     border: none;
+    height: 56px;
     border-radius: 12px;
     padding:16px 24px;
-    background-color:var(--secondary-100); 
+    background-color:var(--secondary-100);
+    font-family: 'Pretendard';
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--secondary-800);
+
 }
 
 .form-password{
@@ -86,7 +104,7 @@
     z-index: 100;
 }
 
-.visibility-img{
+.visibility-btn img{
     width: 24px;
     height: 24px;
 }
@@ -99,6 +117,10 @@
     border: none;
     border-radius: 48px;
     padding: 16px 24px;
+    font-family: 'Pretendard';
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--secondary-100);
 }
 
 
