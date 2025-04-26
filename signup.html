@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="signup.css" />
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <div class="signup-container">
+      <div class="login-logo-box">
+        <a class="login-logo-img" href="/"
+          ><img src="assets/panda_logo.svg" alt="판다마켓 로고"
+        /></a>
+        <a class="login-logo-krname" href="/">판다마켓</a>
+      </div>
+      <div class="login-content-container">
+        <div class="input-container">
+          <!-- 이메일 -->
+          <form class="input-box" method="post" action="/index.html">
+            <div class="login-form-box">
+              <label class="login-form-label">이메일</label>
+              <div class="login-form-field">
+                <div class="form-field-bg">
+                  <input
+                    class="form-field-box"
+                    id="formInputEmail"
+                    type="email"
+                    placeholder="이메일을 입력해주세요"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- 닉네임 -->
+            <div class="login-form-box">
+              <label class="login-form-label">닉네임</label>
+              <div class="login-form-field">
+                <div class="form-field-bg">
+                  <input
+                    class="form-field-box"
+                    id="formInputNickname"
+                    type="text"
+                    placeholder="닉네임을 입력해주세요"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- 비밀번호 -->
+            <div class="login-form-box">
+              <label class="login-form-label">비밀번호</label>
+              <div class="login-form-field">
+                <div class="form-field-bg form-password">
+                  <input
+                    class="form-field-box"
+                    id="formInputPassword"
+                    type="password"
+                    placeholder="비밀번호를 입력해주세요"
+                    required
+                  />
+                  <button class="form-field-passVis">
+                    <img src="assets/btn_visibility_on_24px.png" />
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- 비밀번호 확인 -->
+            <div class="login-form-box">
+              <label class="login-form-label">비밀번호 확인</label>
+              <div class="login-form-field">
+                <div class="form-field-bg form-password">
+                  <input
+                    class="form-field-box"
+                    id="formInputConfirmPassword"
+                    type="password"
+                    placeholder="비밀번호를 다시 한 번 입력해주세요"
+                    required
+                  />
+                  <button class="form-field-passVis">
+                    <img src="assets/btn_visibility_on_24px.png" />
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- 회원가입버튼 -->
+            <button type="submit" class="login-click" id="loginButton">
+              <div class="login-click-txt">회원가입</div>
+            </button>
+          </form>
+        </div>
+        <!-- 소셜로그인 -->
+        <div class="login-social-container">
+          <div class="login-social-box">
+            <div class="login-social-txt">간편 로그인하기</div>
+            <div class="login-social-icon">
+              <a href="https://google.com">
+                <img src="assets/Component_2.svg" alt="구글아이콘" />
+              </a>
+              <a href="https://www.kakaocorp.com/page/">
+                <img src="assets/Component_3.svg" alt="카카오아이콘" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="login-signup-txt">
+          이미 회원이신가요?
+          <a href="login.html" class="footer-url">로그인</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
