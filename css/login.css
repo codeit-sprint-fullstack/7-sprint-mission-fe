@@ -17,6 +17,7 @@
     justify-content: center;
     align-items: center;
     width: 640px;
+    /* 로그인 페이지와 회원가입 페이지의 시작점을 맞추기 위한 마진 */
     margin-top: 60px;   
 }
 
