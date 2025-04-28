@@ -1,0 +1,126 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  body {
+    font-family: 'Pretendard-Regular', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #ffffff;
+    color: #1F2937;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+  }
+  
+
+.logo {
+    display: flex;
+    color: #3692FF;
+    font-weight: 700;
+    font-size: 66px;
+    align-items: center;
+    flex: 1;    /* 늘어나고 줄어듦 */
+    justify-content: center; /* 가운데 정렬 */
+    gap: 5px;
+    margin: 20px 0px 10px;
+}
+
+
+      
+.logo a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: inherit;
+}
+
+.logo img {
+        display: block;
+        width: 40px; height: 40px;
+}
+
+
+.logo p {
+        margin: 0;
+        font-size: 30px;
+        font-weight: 700;
+        color: #3692FF;
+}
+
+
+.wrapper {
+    max-width: 360px;
+    margin: 0 auto;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;       
+    
+}
+  
+.main label {
+    font-size: 12px;
+    color: 1F2937;
+    margin-bottom: 4px;/* 레이블 바로 아래 여백 */
+    font-weight: 600;
+}
+
+
+.main input {
+    font-size: 10px;
+    padding: 10px;
+    border: 1px solid ##F3F4F6;
+    border-radius: 4px;
+    width: 100%;
+    margin-bottom: 6px;     /* 인풋 아래 여백 */
+    box-sizing: border-box;
+}
+
+main input:focus {
+    border: 1px solid #3692FF;
+    outline: none;
+}
+  
+  /* 로그인 버튼 */
+.main button {
+    padding: 10px;
+    background-color: #3692FF;
+    color: #fff;
+    font-size: 10px;
+    border: none;
+    border-radius: 4px;
+}
+
+/*간편 로그인*/
+.sns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3px;
+    background-color: #E6F2FF;  
+    border-radius: 6px;          
+    padding: 8px;               
+    width: 100%;                 
+    box-sizing: border-box;
+}
+
+
+.sns p {
+    margin: 0px;
+    font-size: 12px;
+}
+  
+
+.sns .gk {
+    display: flex;
+    gap: 10px;
+}
