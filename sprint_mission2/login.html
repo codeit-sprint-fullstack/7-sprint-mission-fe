@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>판다마켓 - 로그인</title>
+    <link rel="icon" href="images/logo/favicon.ico">
+    <link rel="stylesheet" 
+          as="style" 
+          crossorigin 
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/login.css">
+        <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-TFX6HKZQ');</script>
+        <!-- End Google Tag Manager -->
+</head>
+    
+<body class="no-header-border">
+    <header style="margin-top: 100px;">
+        <a href="/">
+            <img 
+            src="images/logo/panda-market-logo-big.png"
+            alt="판다마켓 홈"
+            width="153"
+        ></a>
+    </header>
+
+    <div class="login-wrapper">
+        <form class="login-form" action="/login" method="post">
+            <h3>이메일</h3>
+            <input type="text" name="username" placeholder="  아이디를 입력하세요" required>
+
+            <h3>비밀번호</h3>
+            <div class="password-wrapper">
+                <input type="password" name="password" id="password" placeholder="  비밀번호를 입력하세요" required>
+                <span class="toggle-password" onclick="togglePassword()">
+                    <img id="toggleIcon" src="images/logo/pw-eye-closed.png" alt="비밀번호 보기" />
+                  </span>
+            </div>
+
+            <button type="submit">로그인</button>
+        </form>        
+
+        <div class="easyLogin">
+            <p class="easy-login-text">간편 로그인하기</p> 
+            <div class="login-icons">
+                <button onclick="location.href='https://www.google.com'">
+                    <img src="images/sns/google-logo.svg" alt="구글 로그인">
+                </button>
+                <button onclick="location.href='https://www.kakaocorp.com/page/'">
+                    <img src="images/sns/kakaotalk-logo.svg" alt="카카오 로그인">
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <p class="signup-text">판다마켓이 처음이신가요?
+        <a href="signup.html">회원가입</a></p>
+    </div>
+
+    <script>
+        function togglePassword() {
+          const pwInput = document.getElementById("password");
+          const toggleIcon = document.getElementById("toggleIcon");
+      
+          if (pwInput.type === "password") {
+            pwInput.type = "text";
+            toggleIcon.src = "images/logo/pw-eye-closed.png";// 눈 감은 아이콘
+          } else {
+            pwInput.type = "password";
+            toggleIcon.src = "images/logo/pw-eye-open.png"; // 눈 뜬 아이콘
+          }
+        }
+      </script>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TFX6HKZQ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+</body>
+</html>
