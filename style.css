@@ -1,0 +1,425 @@
+@font-face {
+    font-family: 'Pretendard';
+    src: url('./PretendardVariable.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.container{
+    position: sticky;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 12.5rem;
+    box-sizing: border-box;
+    border-bottom: 0.1rem solid #dfdfdf;
+}
+
+.logo{
+    display: flex;
+    gap: 0.537rem;
+}
+
+.title{
+    color: #3682ff;
+    font-family: "ROKAF Sans";
+    font-size: 1.602rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.a_login{
+    white-space: nowrap;
+    text-decoration: none;
+    display: flex;
+    width: 8rem;
+    height: 3rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    background-color: #3692ff;
+    color: #f3f4f6;
+    font-family: Pretendard;
+    cursor: pointer;
+}
+
+.top, .bottom{
+    background-color: #cfe5ff;
+    height: 33.75rem;
+    flex-shrink: 0;
+    width: 100%;
+}
+
+.frame{
+    max-width: 69.375rem;
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4375rem;
+    margin: 12.5rem 25.3125rem 0rem;
+    padding: 0 5vw;
+    box-sizing: border-box;
+}
+
+.link1, link2{
+    display: flex;
+    padding-bottom: 3.75rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.deal{
+    color: #374151;
+    font-family: Pretendard;
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+.look{
+    display: flex;
+    padding: 1rem 7.75rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    border-radius: 2.5rem;
+    background-color: #3692ff;
+    text-decoration: none;
+}
+.looktext{
+    color: #f9fafb;
+    text-align: center;
+    font-family: Pretendard;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 2rem;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.panda_full{
+    display: flex;
+    width: 46.625rem;
+    height: 21.25rem;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.thebody {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 120rem;
+}
+
+.section1{
+    flex-shrink: 0;
+    display: flex;
+    background-color: #fff;
+    padding: 8.625rem 21.5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    position: relative;
+    max-width: 120rem;
+}
+
+.section2{
+    display: flex;
+    background-color: #fff;
+    padding: 8.624rem 21.375rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    position: relative;
+    max-width: 120rem;
+}
+
+.section3{
+    display: flex;
+    background-color: #fff;
+    max-width: 120rem;
+    padding: 8.625rem 22.5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    position: relative;
+}
+
+.box1{
+    display: inline-flex;
+    width: 61.25rem; /* 980px */
+    height: 27.75rem; /* 444px */
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    margin: 0 7.875rem;
+    position: relative;
+    background-color: #fcfcfc;
+}
+
+.homeimg1{
+    position: relative;
+    display: flex;
+    width: 36.75rem;
+    height: 27.75rem;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 0.75rem;
+    background-color: #f3f4f6;
+    overflow: hidden;
+}
+
+.tx1{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    left: 4rem;
+    z-index: 10;
+    flex-shrink: 0;
+}
+
+.text1{
+    color: #3692ff;
+    font-family: Pretendard;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.625rem;
+}
+
+.text2{
+    color: #374151;
+    font-family: Pretendard;
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+    letter-spacing: 0.05rem;
+    padding: 0.75rem 0 1.5rem 0;
+}
+
+.text3{
+    color: #374151;
+    font-family: Pretendard;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2rem;
+}
+
+.box2{
+    display: flex;
+    width: 61.25rem;
+    height: 27.75rem;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    margin: 0 8rem;
+    position: relative;
+    background-color: #fcfcfc;
+}
+
+.tx2{
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    right: 4rem;
+    z-index: 5;
+    flex-shrink: 0;
+}
+
+.text11{
+    color: #3692ff;
+    text-align: right;
+    font-family: Pretendard;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.625rem;
+}
+
+.text22{
+    color: #374151;
+    text-align: right;
+    font-family: Pretendard;
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+    letter-spacing: 0.05rem;
+    padding: 0.75rem 0 1.5rem 0;
+}
+
+.text33{
+    color: #374151;
+    text-align: right;
+    font-family: Pretendard;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2rem;
+}
+
+.box3{
+    display: flex;
+    width: 61.25rem;
+    height: 27.75rem;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    margin: 0 6.875rem;
+    position: relative;
+    background-color: #fcfcfc;
+}
+
+.homeimg3{
+    position: relative;
+    display: flex;
+    width: 36.75rem;
+    height: 27.75rem;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 0 0 0.75rem 0.75rem;
+    background-color: #f3f4f6;
+    overflow: hidden;
+}
+
+.text3333{
+    color: #374151;
+    font-family: Pretendard;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2rem;
+}
+
+.frame2{
+    max-width: 1110px;
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    gap: 4.3125rem;
+    margin: 8.94rem 25.3rem 0 25.3rem;
+    padding: 0 5vw;
+    box-sizing: border-box;
+}
+
+.link2{
+    display: flex;
+    padding-bottom: 3.75rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.625rem;
+    flex-shrink: 0;
+}
+
+.deal2{
+    display: flex;
+    /* padding-bottom: 60px; */
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    flex-shrink: 0;
+    color: #374151;
+    font-family: Pretendard;
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+}
+
+.panda_full2{
+    position: relative;
+    display: flex;
+    width: 46.625rem;
+    height: 24.8125rem;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.navigation2{
+    display: flex;
+    max-width: 120rem;
+    height: 10rem;
+    padding: 2rem 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.625rem;
+    flex-shrink: 0;
+    background-color: #111827;
+}
+
+.footerframe{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    max-width: 100%;
+    padding: 0 12.5rem;
+    box-sizing: border-box;
+    z-index: 10;
+}
+
+.footertext{
+    color: #9ca3af;
+    text-align: center;
+    font-family: Pretemdard;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.footertext2{
+    display: flex;
+    align-items: flex-start;
+    gap: 1.875rem;
+}
+
+.ft{
+    color: #e5e7eb;
+    text-align: center;
+    font-family: Pretemdard;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.footerimg{
+    display: flex;
+    width: 7.25rem;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.footericon{
+    display: flex;
+    width: 1.25rem;
+    height: 1.25rem;
+    padding: 0.0533rem 0.0625rem 0.0717rem 0.0625rem;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
