@@ -1,0 +1,317 @@
+*{
+box-sizing: border-box;
+font-size: 16px;
+white-space: nowrap;
+}
+
+@font-face {
+  font-family: 'ROKAF Sans';
+  src: url('asset/ROKAF.woff2') format('woff2'),
+      url('asset/ROKAF.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+header{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0; 
+  background: white;
+  z-index: 1;
+}
+
+.logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8.59px;
+  font-size: 25.633px;
+  font-weight: 1000;
+  color: #3692FF;
+  font-family: 'Noto Sans KR', sans-serif;
+  cursor: pointer;
+}
+
+.inline_style{
+  display: flex;
+  justify-content: space-between;
+  margin: 9px 400px;
+}
+@media(max-width:1919px){
+  .inlinestyle{
+    display: flex;
+    justify-content: space-between;
+    margin: 9px 200px;
+  }
+}
+
+.header_login_btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 23px;
+  background-color: #3692FF;
+  border-radius: 8px;
+  color: white;
+  min-width: 128px;
+  min-height: 48px;
+  cursor: pointer;
+}
+
+.top_home{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* min-width: 1920px; */
+  height: 540px;
+  background: #CFE5FF;
+  position: relative;
+  overflow: hidden;
+}
+/* 최소 1920이상일경우 */
+@media(min-width:1920){
+  .tophome{
+    min-width: 1fr;
+  }
+}
+
+/* 최소1920미만일경우 */
+@media(max-width:1919){
+  .tophome{
+    min-width: 1920px;
+  }
+}
+
+.top_inline{
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
+  gap: 7px;
+}
+
+.top_home_text{
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 140%;
+  font-style: normal;
+}
+.top_home > .top_inline > div > p {
+  margin-bottom: 32px;
+}
+.top_home > .top_inline > div > .top_home_text > span {
+  display: block;
+}
+.top_home > .top_inline > div > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 124px;
+  background-color: #3692FF;
+  border-radius: 40px;
+  color: white;
+  min-width: 128px;
+  min-height: 48px;
+}
+
+.top_block{
+  display: block;
+  gap: 32px;
+}
+
+.section_first{
+  margin-top: 16px;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sectionblock{
+  width: 944px;;
+}
+
+.section_inline{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin: 138px 344px;
+  gap: 64px;
+  background: var(--Secondary-100, #FCFCFC);
+
+}
+
+.section_text{
+
+}
+
+.section_text_right{
+  text-align: right;
+}
+
+.section_text > .top{
+color: #3692FF;
+font-family: Pretendard;
+font-size: 18px;
+font-style: normal;
+font-weight: 700;
+line-height: 26px; /* 144.444% */
+}
+
+.section_text > .mid {
+  color: var(--Secondary-700, #374151);
+  font-family: Pretendard;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%; /* 56px */
+  letter-spacing: 0.8px;
+}
+
+.section_text > .bot{
+  color: var(--Secondary-700, #374151);
+font-family: Pretendard;
+font-size: 24px;
+font-style: normal;
+font-weight: 500;
+line-height: 32px; /* 133.333% */
+}
+
+section > .section_inline > div > .section_text > p >span{
+  display: block;
+}
+
+.bottom_box{
+position: relative;
+height: 540px;
+display: flex;
+align-items: center;
+justify-content: center;
+background: #CFE5FF;
+}
+
+.bot_home{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 69px;
+  position: absolute;
+  bottom: 0;
+}
+
+.bot_home_text{
+  color: var(--Secondary-700, #374151);
+  font-family: Pretendard;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%; /* 56px */
+}
+
+.bot_home_text > span{
+  display: block;
+}
+
+.bottom_home{
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.foot_text{
+  color:#9CA3AF;
+text-align: center;
+font-family: Pretendard;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+
+}
+
+.foot_text_center{
+color: #E5E7EB;
+text-align: center;
+font-family: Pretendard;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.footer_section{
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  min-height: 160px;
+  position: absolute;
+  background: var(--Secondary-900, #111827);
+  min-width: 100%;
+  padding: 32px 200px;
+}
+
+.footer_text > p {
+  color: #9CA3AF;
+}
+
+.footer_text_center > a{
+  color: #E5E7EB;
+}
+
+footer{
+  position: relative;
+}
+
+.footer_gap{
+  display: flex;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.footer_text_center{
+  display: flex;
+  gap: 30px;
+  
+}
+
+.atag_deco{
+  text-decoration: none;
+  color: var(--Cool-Gray-100, #F3F4F6);
+  cursor: pointer;
+}
+
+.atag_deco_v2{
+  text-decoration: none;
+  color: var(--Cool-Gray-100, #E5E7EB);
+  cursor: pointer;
+}
+
+/* a:visited{
+  text-decoration: none;
+  color: var(--Cool-Gray-100, #F3F4F6);
+} */
+
+.footer_details{
+  height: 700px;
+  background: #FCFCFC;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.footer_img_detail{
+  display: flex;
+}
+
+.roka_font{
+  color: #3692FF;
+  font-family: "ROKAF Sans";
+  font-size: 25.633px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  height: 57%;
+}
