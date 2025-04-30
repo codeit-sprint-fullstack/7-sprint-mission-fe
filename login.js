@@ -19,5 +19,4 @@ function checkEmailPwValidity() {
 emailInput.addEventListener("input", checkEmailPwValidity);
 passwordInput.addEventListener("input", checkEmailPwValidity);
 
-// 초기 상태 설정
 checkEmailPwValidity();
