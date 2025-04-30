@@ -1,0 +1,62 @@
+@charset "utf-8";
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/variable/pretendardvariable.css");
+*{
+    font-family: 'Pretendard Variable', "Pretendard", 'Noto Sans KR', sans-serif; 
+    color:#374151;
+}
+.logo span{
+    display: none;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+.btn.active{
+    background: #3692ff;
+    color: #fff;
+}
+.btn.disabled{
+    background: #9CA3AF;
+    color: #f3f4f6;
+}
+.input-area label{
+    font-size: 18px;
+    font-weight: 600;
+    color:#1f2937;
+}
+.input-box{
+    position: relative;
+}
+.input-box .btn{
+    position: absolute;
+    right: 24px;
+    top:50%;
+    transform: translateY(-50%);
+}
+input{
+    width: 100%;
+    height: 56px;
+    border-radius: 12px;
+    padding: 0 24px;
+    box-sizing: border-box;
+    background: #f3f4f6;
+    border:1px solid #f3f4f6;
+    font-size: 16px;
+    outline: none;
+}
+input:focus{
+    border-color: #3692ff;
+}
+input[type="password"]{
+    padding-right:56px;
+}

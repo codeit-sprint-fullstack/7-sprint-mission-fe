@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 | 판다마켓</title>
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="../../css/member.css" />
+</head>
+<body>
+    <div class="wrap">
+        <div class="member-area">
+            <div class="logo">
+                <h1>
+                    <span>판다마켓</span>
+                    <a href="../../">
+                        <img src="../../img/common/logo.svg" alt="판다마켓" />
+                    </a>
+                </h1>
+            </div>
+            <div class="action-area">
+                <form method="post" action="">
+                    <div class="input-area">
+                        <div class="row">
+                            <dl>
+                                <dt class="body3 txt-color3 txt-bold">
+                                    <label for="email">이메일</label>
+                                </dt>
+                                <dd class="">
+                                    <div class="input-box">
+                                        <input type="email" id="email" name="email" placeholder="이메일을 입력해주세요" autocomplete="off">
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="row">
+                            <dl>
+                                <dt class="body3 txt-color3 txt-bold">
+                                    <label for="password">비밀번호</label>
+                                </dt>
+                                <dd class="">
+                                    <div class="input-box">
+                                        <input type="password" id="password" name="password" placeholder="비밀번호를 입력해주세요" autocomplete="off">
+                                        <button type="button" class="btn btn-visible">
+                                            <img src="../../img/common/ico_visibility_on.png" />
+                                        </button>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="btn-area">
+                        <button type="submit" class="btn disabled">로그인</button>
+                    </div>
+                </form>
+                <div class="add-area">
+                    <div class="sns-box-area">
+                        <p>간편 로그인하기</p>
+                        <ul class="sns-list">
+                            <li>
+                                <a class="google" href="https://www.google.com/" target="_blank">
+                                    <img src="../../img/member/google.png" alt="구글로 로그인" />
+                                </a>
+                            </li>
+                            <li>
+                                <a class="kakao" href="https://www.kakaocorp.com/page/" target="_blank">
+                                    <img src="../../img/member/kakao.png" alt="카카오톡으로 로그인" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="help-area">
+                        <span>판다마켓이 처음이신가요?</span>
+                        <a href="./signup.html">회원가입</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
