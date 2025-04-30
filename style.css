@@ -35,7 +35,7 @@ header{
   cursor: pointer;
 }
 
-.inlinestyle{
+.inline_style{
   display: flex;
   justify-content: space-between;
   margin: 9px 400px;
@@ -61,7 +61,7 @@ header{
   cursor: pointer;
 }
 
-.tophome{
+.top_home{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -85,7 +85,7 @@ header{
   }
 }
 
-.topinline{
+.top_inline{
   display: flex;
   position: absolute;
   justify-content: center;
@@ -94,19 +94,19 @@ header{
   gap: 7px;
 }
 
-.tophome_text{
+.top_home_text{
   font-size: 40px;
   font-weight: 700;
   line-height: 140%;
   font-style: normal;
 }
-.tophome > .topinline > div > p {
+.top_home > .top_inline > div > p {
   margin-bottom: 32px;
 }
-.tophome > .topinline > div > .tophome_text > span {
+.top_home > .top_inline > div > .top_home_text > span {
   display: block;
 }
-.tophome > .topinline > div > a {
+.top_home > .top_inline > div > a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -118,12 +118,12 @@ header{
   min-height: 48px;
 }
 
-.topblock{
+.top_block{
   display: block;
   gap: 32px;
 }
 
-.section_f{
+.section_first{
   margin-top: 16px;
 }
 
@@ -136,7 +136,7 @@ section {
   width: 944px;;
 }
 
-.sectioninline{
+.section_inline{
   display:flex;
   justify-content: center;
   align-items: center;
@@ -182,11 +182,11 @@ font-weight: 500;
 line-height: 32px; /* 133.333% */
 }
 
-section > .sectioninline > div > .section_text > p >span{
+section > .section_inline > div > .section_text > p >span{
   display: block;
 }
 
-.bottombox{
+.bottom_box{
 position: relative;
 height: 540px;
 display: flex;
@@ -195,7 +195,7 @@ justify-content: center;
 background: #CFE5FF;
 }
 
-.bothome{
+.bot_home{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -204,7 +204,7 @@ background: #CFE5FF;
   bottom: 0;
 }
 
-.bothome_text{
+.bot_home_text{
   color: var(--Secondary-700, #374151);
   font-family: Pretendard;
   font-size: 40px;
@@ -213,11 +213,11 @@ background: #CFE5FF;
   line-height: 140%; /* 56px */
 }
 
-.bothome_text > span{
+.bot_home_text > span{
   display: block;
 }
 
-.bottomhome{
+.bottom_home{
   display: flex;
   flex-direction: column-reverse;
 }

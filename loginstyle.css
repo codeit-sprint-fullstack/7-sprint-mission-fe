@@ -9,7 +9,7 @@
   --Secondary-400: #9CA3AF;
 }
 
-.loginbox{
+.login_box{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,7 +17,7 @@
   padding: 231px 640px 284px 640px;
 }
 
-.logobox{
+.logo_box{
   min-width: 396px;
   min-height: 132px;
 }
@@ -27,20 +27,20 @@ form{
   flex-direction: column;
 }
 
-.emailbox{
+.email_box{
 }
 
-.passwordbox{
+.password_box{
 position: relative;
 }
 
-.emailbox , .passwordbox{
+.email_box , .password_box{
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-.emailbox > label ,.passwordbox > label{
+.email_box > label ,.password_box > label{
 color: var(--Secondary-800);
 font-family: Pretendard;
 font-size: 18px;
@@ -49,7 +49,7 @@ font-weight: 700;
 line-height: 26px; 
 }
 
-.emailbox > input , .passwordbox > input{
+.email_box > input , .password_box > input{
   display: flex;
   width: 640px;
   height: 56px;
@@ -84,7 +84,7 @@ line-height: normal;
 height: 57%;
 }
 
-.logobox_botgap{
+.logo_box_botgap{
   margin-bottom: 40px;
 }
 
