@@ -2,7 +2,6 @@
     box-sizing: border-box;
 }
 
-
 /* 메인 컨테이너 설정 */
 .main-container{
     display: flex;
@@ -84,7 +83,6 @@
     font-weight: 400;
     font-size: 16px;
     color: var(--secondary-800);
-
 }
 
 .form-password{
