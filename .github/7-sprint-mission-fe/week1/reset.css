@@ -1,0 +1,38 @@
+/* 리셋 css */
+@import "UTF-8";
+@font-face {
+  font-family: 'ROKAFSansMedium';
+  src: url('./rokafsansmedium-normal.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+
+}
+body {
+    background: #fff;
+    color: #333;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+
+button {
+  background: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  cursor: pointer;
+}

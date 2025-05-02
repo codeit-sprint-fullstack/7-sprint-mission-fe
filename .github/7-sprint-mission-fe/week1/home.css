@@ -1,0 +1,199 @@
+
+/* 기본 폰트 */
+* {
+  font-family: Pretendard;
+}
+
+/* 네비게이션 */
+nav {
+  position: sticky;
+  display: flex;
+  top: 0;
+  background-color: white;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+  padding: 0 200px;
+}
+
+
+.pandaLetter {
+  color: #3692FF;
+  font-family: 'ROKAFSansMedium';
+  font-size: 25.633px;
+  font-weight: 700;
+}
+
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.loginButton {
+  width: 128px;
+  height: 48px;
+  padding: 12px 23px;
+  border-radius: 8px;
+  background: #3692FF;
+  color: #F3F4F6;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* 헤더 */
+
+header {
+  display: flex;
+  justify-content: center;
+  padding-top: 200px;
+  width: 100%;
+  height: 540px;
+  background: #CFE5FF;
+  gap: 60px;
+}
+
+
+
+.headerButton {
+  display: flex;
+  padding: 16px 124px;
+  width: 380px;
+  border-radius: 40px;
+  background: var(--brand-blue, #3692FF);
+  color: var(--Secondary-50, #F9FAFB);
+  text-align: center;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px;
+}
+
+
+.headerButton a {
+  width: 150px;
+}
+
+/* 메인 섹션 */
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.box {
+  display: flex;
+  place-items: center;
+  background: #FCFCFC;
+  border-radius: 12px;
+  justify-content: center;
+  margin: 138px 344px;
+  width: 1050px;
+}
+
+.blue {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 26px;
+  color: var(--Primary-100, #3692FF);
+}
+
+.centerText {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin-left: 64px;
+  color: var(--Secondary-700, #374151);
+}
+
+.bigText {
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  margin-top: 12px;
+  margin-bottom: 24px;
+}
+
+.smallText {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32px;
+}
+
+.box img {  
+  width: 588px;
+  height: 444px;
+  right: 40px;
+}
+
+/* 메인 섹션 2 */
+.second {
+  margin-right: 60px;
+  text-align: right;
+  width: 988px;
+}
+
+
+.middle img { 
+  width: 588px;
+  height: 444px;
+  left: 20px;
+}
+
+/* 바텀 */
+.bottom {
+  display: flex;
+  padding-top: 147px;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  background: #CFE5FF;
+  height: 540px;
+  width: 100%;
+  margin-bottom: 0px;
+  margin-top: 138px;
+}
+
+
+/* 푸터 */
+
+.foot {
+  display: flex;
+  width: 100%;
+  height: 160px;
+  padding: 32px 200px;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+  flex-shrink: 0;
+  background: var(--Secondary-900, #111827);
+  justify-content: space-between;
+  color: var(--Secondary-400, #9CA3AF);
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.PolicyFQA {
+  display: flex;
+  gap: 30px;
+}
+
+/* sns링크 갭 */
+.snsLink {
+  display: flex;
+  gap: 24px;
+}
+
+
+ /* 버튼 클릭 시 포인터  */
+.click {
+  cursor: pointer;
+}

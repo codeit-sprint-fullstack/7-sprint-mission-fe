@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../reset.css">
+  <link rel="stylesheet" href="../auth.css">
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  crossorigin="anonymous"
+/>
+</head>
+<body>
+  <!-- 배너 -->
+  <div class="top">
+    <a href="../index.html"><img src="../img/판다 얼굴.svg" alt="판다얼굴" /></a>
+    <h1>판다마켓</h1>
+  </div>
+  <div >
+    <div class="gap24">
+      <!-- 이메일 패스워드 -->
+      <div class="textPW gap24">
+        <!-- 이메일 -->
+        <div class="gap16">
+          <label>이메일</label>
+          <input type="email" placeholder="이메일을 입력해주세요"/>
+        </div>
+        <!-- 닉네임 -->
+        <div class="gap16">
+          <label>닉네임</label>
+          <input type="text" placeholder="닉네임을 입력해주세요"/>
+        </div>
+
+          <!-- 패스워드 -->
+          <div class="gap16 input_wrap">
+            <label for="password">비밀번호</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="비밀번호를 입력해주세요"
+            />
+            <div class="eyes"><i class="fas fa-eye-slash"></i></div>
+          </div>
+        
+      
+      <!-- 패스워드 확인 -->
+        <div class="gap16 input_wrap">
+          <label for="password">비밀번호 확인</label>
+          <input type="password" id="passwordConfirm" placeholder="비밀번호를 다시 한 번 입력해주세요"/>
+            <div class="eyes" ><i class="fas fa-eye-slash"></i></div>
+        </div>
+      </div>
+    
+
+      <!-- 로그인 -->
+      <div class="loginButton">
+        <input type="submit" value="회원가입" />
+      </div>
+      <!-- 간편로그인 -->
+      <div class="comfort">
+        <p>간편 로그인하기</p>
+        <div class="comlog">
+          <a href="https://www.google.com/"><img src="./img/Component 2@3x.png" alt="google" /></a>
+          <a href="https://www.kakaocorp.com/page/"><img src="./img/Component 3@3x.png" alt="kakaoTalk" /></a>
+        </div>
+      </div>
+      <!-- 회원가입 -->
+      <div class="signlink">
+        <p>이미 회원이신가요? <a href="./login.html">로그인</a></p>
+      </div>
+      </div>
+    </div>
+  </div>
+  
+  <script defer src="./login.js"></script>
+
+</body>
+</html>
