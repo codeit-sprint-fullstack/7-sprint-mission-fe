@@ -197,3 +197,54 @@ input:focus{
 input::-ms-reveal{
   display: none;
 }
+
+.login_modal{
+  display: none;
+  z-index: 2;
+  position: fixed;
+  width: 540px;
+  height: 250px;
+  background-color: rgb(255, 255, 255);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal_box{
+  position: relative;
+
+}
+
+.modal_box > p{
+  position: absolute;
+  margin: 108px 174px;
+
+}
+.modal_box >button{
+  position: absolute;
+  margin: 174px 28px 28px 392px;
+  display: flex;
+width: 120px;
+height: 48px;
+padding: 12px 23px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+border-radius: 8px;
+background: var(--brand-blue, #3692FF);
+color: white;
+border: 0px;
+}
+
+/* 모달창위치 문제고민 */
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* 뿌연 검은색 */
+  z-index: 1;
+}
