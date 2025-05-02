@@ -248,3 +248,11 @@ border: 0px;
   background: rgba(0, 0, 0, 0.5); /* 뿌연 검은색 */
   z-index: 1;
 }
+
+
+.login_button{
+  background: var(--Cool-Gray-400, #9CA3AF);
+}
+.login_button.active{
+  background-color: #3692FF;
+}

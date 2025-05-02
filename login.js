@@ -15,7 +15,27 @@ const USER_DATA = [
     { email: 'codeit4@codeit.com', password: "codeit404!" },
     { email: 'codeit5@codeit.com', password: "codeit505!" },
     { email: 'codeit6@codeit.com', password: "codeit606!" },
+    { email: '1@1', password:"12341234"},
 ]
+//로그인버튼 활성화
+
+const updateButtonId =document.querySelector('.validation_id');
+const updateButtonPw =document.querySelector('.validation_pw');
+
+function updateLoginButton(){
+  if(updateButtonId.value && updateButtonPw.value){
+    loginBuntton.classList.add('active');
+    loginBuntton.disabled  = false;
+  }
+  else{
+    loginBuntton.classList.remove('active');
+    loginBuntton.disabled  = true;
+  }
+}
+updateButtonId.addEventListener('input',updateLoginButton);
+updateButtonPw.addEventListener('input',updateLoginButton);
+
+
 
 //로그인 데이터확인로직
 document.addEventListener('DOMContentLoaded', function () {
@@ -24,12 +44,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const b = document.querySelector('.validation_pw').value;
     const findId = USER_DATA.find(user => user.email == a && user.password == b);
     if(findId){
-      console.log("로그인 성공");
+      console.log("로그인 성공"); //로그인성공하면 /items로 이동
     }
     else{
       console.log("로그인 실패");
       modalClass.style.display ="block";
       overLayPage.style.display ="block";
+      loginBuntton.classList.remove('active');
     }
   });
 });
@@ -39,11 +60,6 @@ modalButton.onclick = () => {
   modalClass.style.display ="none";
   overLayPage.style.display ="none";
 }
-
-// loginBuntton.onclick = function(){
-//   modalClass.style.display ="block";
-//   overLayPage.style.display ="block";
-// }
 
 // 패스워드 문구 추가
 focusOut.forEach(box => {
