@@ -20,6 +20,7 @@ focusOut.forEach(box => {
       const dupLabel = box.querySelector('.input_label');
       if(dupLabel){
         dupLabel.remove();
+        input.classList.remove('focusout_input');
       }
     }
   });
@@ -44,8 +45,12 @@ emailFocusOut.forEach(box => {
       const dupLabel = box.querySelector('.input_label');
       if(dupLabel){
         dupLabel.remove();
+        input.classList.remove('focusout_input');
       }
     }
   });
 });
 
+// 내가 지금 하려고한거
+// 지금회원가입창에서 인풋아래에 라벨이 점점 늘어남 그 이유가 지정이 어딘가 잘못된거같음 
+// 또 느낀거 커밋메시지바꿔야함 아직 유효성검사가 덜됐음

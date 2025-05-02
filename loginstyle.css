@@ -189,3 +189,11 @@ input:focus{
   border-color: #3692FF;
   border: 1px solid var(--brand-blue);
 }
+
+.input_icon_box{
+  position: relative;
+}
+
+input::-ms-reveal{
+  display: none;
+}
