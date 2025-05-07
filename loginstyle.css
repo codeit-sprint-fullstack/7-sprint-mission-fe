@@ -34,7 +34,7 @@ form{
 position: relative;
 }
 
-.email_box , .password_box{
+.email_box , .password_box,.confirm_box,.nickname_box{
   display: flex;
   flex-direction: column;
   gap: 16px;

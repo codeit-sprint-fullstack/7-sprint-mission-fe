@@ -37,8 +37,9 @@ emailFocus.forEach(box => {
   });
 });
 
-let savepw = 0;
 //비밀번호
+
+let savepw = 0;
 passwordFocus.forEach(box => {
   const input = box.querySelector('input');
   input.addEventListener('input', (e) => {
@@ -65,7 +66,7 @@ confirmFocus.forEach(box => {
   });
 });
 
-//
+// 회원가입버튼 활성화 기능
 
 const updateButtonId =document.querySelector('.validation_id');
 const updateButtonPw =document.querySelector('.validation_pw');
@@ -86,3 +87,22 @@ updateButtonId.addEventListener('input',updateLoginButton);
 updateButtonPw.addEventListener('input',updateLoginButton);
 updateButtonnick.addEventListener('input',updateLoginButton);
 updateButtonconf.addEventListener('input',updateLoginButton);
+
+//해야할것 아이콘 눌렀을경우 비밀번호보이게 설정 다음에할건 창이 줄었을경우 보여지는거
+
+const iconClick = document.querySelectorAll('.icon_eye');
+
+iconClick.forEach((icon) => {
+  icon.addEventListener('click', (e) => {
+    const input = icon.closest('.input_icon_box').querySelector('input');
+    if (e.target.classList.contains('fa-eye-slash')) {
+      icon.classList.remove('fa-eye-slash');
+      icon.classList.add('fa-eye');
+      input.setAttribute('type','text');
+    } else {
+      icon.classList.remove('fa-eye');
+      icon.classList.add('fa-eye-slash');
+      input.setAttribute('type','password');
+    }
+  });
+});

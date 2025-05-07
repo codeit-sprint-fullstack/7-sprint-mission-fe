@@ -111,5 +111,19 @@ emailFocusOut.forEach(box => {
   });
 });
 
+const iconClick = document.querySelectorAll('.icon_eye');
 
-//해야할것 지금 라벨만드는곳이 중복되는게있음 이거를 함수만들어서 간편하게 쓸수있도록 정리해보도록하자
+iconClick.forEach((icon) => {
+  icon.addEventListener('click', (e) => {
+    const input = icon.closest('.input_icon_box').querySelector('input');
+    if (e.target.classList.contains('fa-eye-slash')) {
+      icon.classList.remove('fa-eye-slash');
+      icon.classList.add('fa-eye');
+      input.setAttribute('type','text');
+    } else {
+      icon.classList.remove('fa-eye');
+      icon.classList.add('fa-eye-slash');
+      input.setAttribute('type','password');
+    }
+  });
+});
