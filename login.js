@@ -17,6 +17,7 @@ const USER_DATA = [
     { email: 'codeit6@codeit.com', password: "codeit606!" },
     { email: '1@1', password:"12341234"},
 ]
+
 //로그인버튼 활성화
 
 const updateButtonId =document.querySelector('.validation_id');
@@ -109,3 +110,6 @@ emailFocusOut.forEach(box => {
     }
   });
 });
+
+
+//해야할것 지금 라벨만드는곳이 중복되는게있음 이거를 함수만들어서 간편하게 쓸수있도록 정리해보도록하자

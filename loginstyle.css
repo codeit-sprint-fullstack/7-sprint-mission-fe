@@ -236,7 +236,6 @@ color: white;
 border: 0px;
 }
 
-/* 모달창위치 문제고민 */
 
 .overlay {
   display: none;
@@ -245,7 +244,7 @@ border: 0px;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.5); /* 뿌연 검은색 */
+  background: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
 

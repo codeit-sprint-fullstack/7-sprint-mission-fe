@@ -25,19 +25,23 @@
           <label>이메일</label>
           <input class="focus_line" type="email" placeholder="이메일을 입력해주세요" />
         </div> 
-        <div class="password_box"> <!--비밀번호-->
+        <div class="nickname_box"> <!--비밀번호-->
           <label>닉네임</label>
           <input class="focus_line" type="text" placeholder="닉네임을 입력해주세요" />
         </div>
         <div class="password_box"> <!--비밀번호-->
           <label>비밀번호</label>
-          <input class="focus_line" type="password" placeholder="비밀번호을 입력해주세요" />
-          <i class="fa-solid fa-eye-slash icon_eye"></i>
+          <div class="input_icon_box">
+            <input type="password" placeholder="비밀번호을 입력해주세요" class="passwordTarget focus_line validation_pw"/>
+            <i class="fa-solid fa-eye-slash icon_eye icon_position"></i>
+          </div>
         </div>
-        <div class="password_box"> <!--비밀번호-->
+        <div class="confirm_box"> <!--비밀번호-->
           <label>비밀번호 확인</label>
-          <input class="focus_line" type="password" placeholder="비밀번호을 다시 한 번 입력해주세요" />
-          <i class="fa-solid fa-eye-slash icon_eye"></i>
+          <div class="input_icon_box">
+            <input type="password" placeholder="비밀번호을 입력해주세요" class="passwordTarget focus_line validation_pw"/>
+            <i class="fa-solid fa-eye-slash icon_eye icon_position"></i>
+          </div>
         </div>
         <button>회원가입</button>
       </form>
