@@ -3,6 +3,17 @@ const emailFocus = document.querySelectorAll('[class$="email_box"]');
 const confirmFocus = document.querySelectorAll('[class$="confirm_box"]');
 const signBuntton =document.querySelector('.sign_button');
 
+const USER_DATA = [
+  { email: 'codeit1@codeit.com', password: "codeit101!" },
+    { email: 'codeit2@codeit.com', password: "codeit202!" },
+    { email: 'codeit3@codeit.com', password: "codeit303!" },
+    { email: 'codeit4@codeit.com', password: "codeit404!" },
+    { email: 'codeit5@codeit.com', password: "codeit505!" },
+    { email: 'codeit6@codeit.com', password: "codeit606!" },
+    { email: '1@1', password:"12341234"},
+]
+
+
 
 function upDateLabel(targetBox, message) {
   const input = targetBox.querySelector('input');
@@ -106,3 +117,34 @@ iconClick.forEach((icon) => {
     }
   });
 });
+
+// 모달창
+const modalButton =document.querySelector('.modal_button');
+const loginBuntton =document.querySelector('.sign_button');
+const modalClass =document.querySelector('.login_modal');
+const overLayPage =document.querySelector('.overlay');
+
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelector('.sign_button').addEventListener('click', function () {
+    const a = document.querySelector('.validation_id').value;
+    const b = document.querySelector('.validation_pw').value;
+    const d = document.querySelector('.validation_conf').value;
+    const findId = USER_DATA.find(user => user.email != a && (b == d));
+    if(findId){
+      console.log("로그인 성공"); //로그인성공하면 /items로 이동
+      window.location.href = '/login';
+    }
+    else{
+      console.log("로그인 실패");
+      modalClass.style.display ="block";
+      overLayPage.style.display ="block";
+      loginBuntton.classList.remove('active');
+    }
+  });
+});
+
+
+modalButton.onclick = () => {  
+  modalClass.style.display ="none";
+  overLayPage.style.display ="none";
+}

@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const findId = USER_DATA.find(user => user.email == a && user.password == b);
     if(findId){
       console.log("로그인 성공"); //로그인성공하면 /items로 이동
+      window.location.href = '/items';
     }
     else{
       console.log("로그인 실패");
