@@ -23,15 +23,17 @@
       <div>
       <form>    <!--이메일 ,비밀번호 로그인-->
         <div class="email_box"> <!--이메일-->
-          <label>이메일</label>
-          <input type="email" placeholder="이메일을 입력해주세요"/>
+          <label class="email_box_label">이메일</label>
+          <input type="email" placeholder="이메일을 입력해주세요" class="focus_line validation_id"/>
         </div> 
         <div class="password_box"> <!--비밀번호-->
-          <label>비밀번호</label>
-          <input type="password" placeholder="비밀번호을 입력해주세요" />
-          <i class="fa-solid fa-eye-slash icon_eye"></i>
+          <label class="email_box_label">비밀번호</label>
+          <div class="input_icon_box">
+          <input type="password" placeholder="비밀번호을 입력해주세요" class="passwordTarget focus_line validation_pw"/>
+          <i class="fa-solid fa-eye-slash icon_eye icon_position"></i>
         </div>
-        <button>로그인</button>
+        </div>
+        <button class="login_button" type="button" disabled>로그인</button>
       </form>
     </div>
       <div class="conv_login">
@@ -47,8 +49,18 @@
         <p class="signup_text">판다마켓이 처음이신가요? <a class="signup" href="/signup">회원가입</a></p>
       </div>  <!--회원가입 칸-->
     </div>
+    <div class="overlay">
+
+    </div>
+    <!-- 모달창 -->
+    <div class="login_modal"> <!--모달창을 감싸는 div -->
+      <div class="modal_box">  <!--모달창내에서 가운데-->
+        <p>비밀번호가 일치하지않습니다.</p>
+        <button class="modal_button">확인</button>
+      </div>
+    </div>
   </main>
   <footer></footer>
-
+<script src="login.js"></script>
 </body>
 </html>
