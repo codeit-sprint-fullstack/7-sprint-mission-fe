@@ -1,3 +1,5 @@
+import {USER_DATA} from '../7-sprint-mission-fe/userData.js';
+
 const focusOut = document.querySelectorAll('[class$="password_box"]');
 const emailFocusOut =document.querySelectorAll('[class$="email_box"]');
 const loginBuntton =document.querySelector('.login_button');
@@ -6,17 +8,6 @@ const modalButton =document.querySelector('.modal_button');
 const overLayPage =document.querySelector('.overlay');
 const validation =document.querySelector('.focus_line');
 
-
-
-const USER_DATA = [
-  { email: 'codeit1@codeit.com', password: "codeit101!" },
-    { email: 'codeit2@codeit.com', password: "codeit202!" },
-    { email: 'codeit3@codeit.com', password: "codeit303!" },
-    { email: 'codeit4@codeit.com', password: "codeit404!" },
-    { email: 'codeit5@codeit.com', password: "codeit505!" },
-    { email: 'codeit6@codeit.com', password: "codeit606!" },
-    { email: '1@1', password:"12341234"},
-]
 
 //로그인버튼 활성화
 
