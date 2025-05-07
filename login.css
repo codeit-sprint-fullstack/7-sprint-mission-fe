@@ -3,7 +3,9 @@
   /* background-color: pink; */
   align-items: center;
   flex-direction: column;
-  padding-top: 231px;
+  padding-top: 100px;
+  padding-bottom: 24px;
+  gap: 40px;
 }
 .login-logo-img {
   width: 103px;
@@ -27,7 +29,6 @@
   justify-content: center;
   align-items: center;
   gap: 22px;
-  margin-bottom: 40px;
 }
 
 .login-content-container {
@@ -35,6 +36,8 @@
   gap: 24px;
   /* background-color: skyblue; */
   flex-direction: column;
+  margin: 0 2%;
+  width: 90%;
 }
 .login-form-box {
   display: flex;
@@ -53,7 +56,7 @@
 }
 .form-field-bg {
   display: flex;
-  width: 640px;
+  /* width: 640px; */
   height: 56px;
   padding: 16px 24px;
   align-items: center;
@@ -71,7 +74,7 @@
 
 .login-click {
   display: flex;
-  width: 640px;
+  /* width: 640px; */
   height: 56px;
   padding: 16px 124px;
   justify-content: center;
@@ -140,7 +143,7 @@
 }
 
 .login-social-container {
-  width: 640px;
+  /* width: 640px; */
   height: 74px;
   border-radius: 8px;
   background: #e6f2ff;
@@ -160,6 +163,7 @@
   gap: 4px;
   justify-content: center;
   align-items: center;
+  font-size: 15px;
 }
 .login-signup-txt .footer-url {
   color: var(--Primary-100, #3692ff);
@@ -174,4 +178,31 @@
   text-decoration-thickness: auto;
   text-underline-offset: auto;
   text-underline-position: from-font;
+}
+
+@media (max-width: 743px) {
+  .login-container {
+    padding-top: 24px;
+    gap: 24px;
+  }
+  .login-logo-img {
+    width: 51px;
+    height: 51px;
+  }
+  .login-logo-krname {
+    font-size: 33px;
+  }
+  .login-logo-box {
+    gap: 11px;
+    height: 52px;
+  }
+  .login-form-box {
+    gap: 8px;
+  }
+  .input-box {
+    gap: 16px;
+  }
+  .login-form-label {
+    font-size: 14px;
+  }
 }

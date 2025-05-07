@@ -26,7 +26,7 @@
               <div class="login-form-field">
                 <div class="form-field-bg error-border">
                   <input
-                    class="form-field-box"
+                    class="form-field-box customValid"
                     id="formInputEmail"
                     type="email"
                     placeholder="이메일을 입력해주세요"
@@ -42,15 +42,22 @@
               <div class="login-form-field">
                 <div class="form-field-bg form-password error-border">
                   <input
-                    class="form-field-box"
+                    class="form-field-box customValid"
                     id="formInputPassword"
                     type="password"
                     placeholder="비밀번호를 입력해주세요"
                     required
                   />
-                  <button class="form-field-passVis">
-                    <img src="assets/btn_visibility_on_24px.png" />
-                  </button>
+                  <span
+                    class="form-field-passVis"
+                    role="button"
+                    aria-label="비밀번호 보기"
+                  >
+                    <img
+                      id="passVisImg"
+                      src="assets/btn_visibility_on_24px.svg"
+                    />
+                  </span>
                 </div>
                 <p class="error-text"></p>
               </div>

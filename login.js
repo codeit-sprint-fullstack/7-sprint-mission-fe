@@ -1,11 +1,22 @@
 const emailInput = document.getElementById("formInputEmail");
 const passwordInput = document.getElementById("formInputPassword");
 const loginButton = document.getElementById("loginButton");
-
+const togglePw = document.querySelector(".form-field-passVis");
+const togglePwImg = document.getElementById("passVisImg");
 const errorBorder = document.getElementsByClassName("error-border");
 const errorText = document.getElementsByClassName("error-text");
 //error-border[0] - email
 //error-border[1] - pw
+
+//비밀번호 표시 토글버튼
+togglePw.addEventListener("click", () => {
+  const isBlured = passwordInput.type === "text";
+  passwordInput.type = isBlured ? "password" : "text";
+  togglePwImg.src = isBlured
+    ? "assets/btn_visibility_on_24px.svg"
+    : "assets/btn_visibility_off_24px.svg";
+  togglePw.ariaLable = isBlured ? "비밀번호 보기" : "비밀번호 숨기기";
+});
 
 function validatePw() {
   const modPwInput = passwordInput.value.trim();
