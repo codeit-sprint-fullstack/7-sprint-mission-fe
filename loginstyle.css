@@ -255,3 +255,10 @@ border: 0px;
 .login_button.active{
   background-color: #3692FF;
 }
+
+.sign_button{
+  background: var(--Cool-Gray-400, #9CA3AF);
+}
+.sign_button.active{
+  background-color: #3692FF;
+}
