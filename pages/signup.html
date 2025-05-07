@@ -24,14 +24,18 @@
 
                 <div class="form-group">
                     <label class="form-label" for="user-email" >이메일</label>
-                    <input  type="email" class="form-input" id="user-email" placeholder="이메일을 입력해주세요"/>
-                    <p class="error-message hide">이메일을 입력해주세요.</p>
-                    <p class="error-message hide">잘못된 이메일 형식입니다.</p>
+                    <div class="input-group">
+                        <input  type="email" class="form-input" id="user-email" placeholder="이메일을 입력해주세요"/>
+                        <p class="error-message hide" data-error-for="email">에러 메세지</p>
+                    </div>
                 </div>
 
                 <div class="form-group">
                     <label class="form-label" for="user-nickname">닉네임</label>
-                    <input type="text" class="form-input" id="user-nickname" placeholder="닉네임을 입력해주세요"/>
+                    <div class="input-group">
+                        <input type="text" class="form-input" id="user-nickname" placeholder="닉네임을 입력해주세요"/>
+                        <p class="error-message hide" data-error-for="nickName">에러 메세지</p>
+                    </div>
                 </div>
 
                 <div class="form-group">

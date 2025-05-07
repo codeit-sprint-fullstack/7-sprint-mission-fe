@@ -62,6 +62,12 @@
     width:100%;
 }
 
+.input-group {
+    display: flex;
+    flex-direction: column;
+    width:100%;
+}
+
 .form-label {
     font-family: 'Pretendard';
     font-weight: 700;
