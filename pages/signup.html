@@ -25,6 +25,8 @@
                 <div class="form-group">
                     <label class="form-label" for="user-email" >이메일</label>
                     <input  type="email" class="form-input" id="user-email" placeholder="이메일을 입력해주세요"/>
+                    <p class="error-message hide">이메일을 입력해주세요.</p>
+                    <p class="error-message hide">잘못된 이메일 형식입니다.</p>
                 </div>
 
                 <div class="form-group">
@@ -37,6 +39,7 @@
                     <div class="form-password">
                         <input type="password"class="form-input" id="user-password" placeholder="비밀번호를 입력해주세요"/>
                         <button type="button" class="visibility-btn clickable"><img src="../assets/images/icons/btn_visibility_off_24px.svg"/></button>
+                        <p class="error-message hide" data-error-for="password">에러 메세지</p>
                     </div>
                 </div>
 
@@ -45,6 +48,7 @@
                     <div class="form-password">
                         <input type="password"class="form-input" id="check-user-password" placeholder="비밀번호를 다시 한 번 입력해주세요"/>
                         <button type="button" class="visibility-btn clickable"><img src="../assets/images/icons/btn_visibility_off_24px.svg"/></button>
+                        <p class="error-message hide" data-error-for="checkPassword">비밀번호가 일치하지 않습니다.</p>
                     </div>  
                 </div>
 
@@ -66,21 +70,7 @@
                 <a class="login-cta" href="../pages/login.html">로그인</a>
             </div>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <script src="../js/signup.js"></script>
     </mian>
     
 </body>
