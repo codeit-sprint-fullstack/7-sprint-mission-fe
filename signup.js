@@ -1,17 +1,10 @@
+import {USER_DATA} from '../7-sprint-mission-fe/userData.js';
+
 const passwordFocus = document.querySelectorAll('[class$="password_box"]');
 const emailFocus = document.querySelectorAll('[class$="email_box"]');
 const confirmFocus = document.querySelectorAll('[class$="confirm_box"]');
 const signBuntton =document.querySelector('.sign_button');
 
-const USER_DATA = [
-  { email: 'codeit1@codeit.com', password: "codeit101!" },
-    { email: 'codeit2@codeit.com', password: "codeit202!" },
-    { email: 'codeit3@codeit.com', password: "codeit303!" },
-    { email: 'codeit4@codeit.com', password: "codeit404!" },
-    { email: 'codeit5@codeit.com', password: "codeit505!" },
-    { email: 'codeit6@codeit.com', password: "codeit606!" },
-    { email: '1@1', password:"12341234"},
-]
 
 
 
@@ -99,7 +92,7 @@ updateButtonPw.addEventListener('input',updateLoginButton);
 updateButtonnick.addEventListener('input',updateLoginButton);
 updateButtonconf.addEventListener('input',updateLoginButton);
 
-//해야할것 아이콘 눌렀을경우 비밀번호보이게 설정 다음에할건 창이 줄었을경우 보여지는거
+//해야할것 아이콘 눌렀을경우 비밀번호보이게 설정
 
 const iconClick = document.querySelectorAll('.icon_eye');
 
