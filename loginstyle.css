@@ -34,13 +34,13 @@ form{
 position: relative;
 }
 
-.email_box , .password_box{
+.email_box , .password_box,.confirm_box,.nickname_box{
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-.email_box > label ,.password_box > label{
+.email_box > .email_box_label ,.password_box > .email_box_label{
 color: var(--Secondary-800);
 font-family: Pretendard;
 font-size: 18px;
@@ -49,7 +49,7 @@ font-weight: 700;
 line-height: 26px; 
 }
 
-.email_box > input , .password_box > input{
+.focus_line{
   display: flex;
   width: 640px;
   height: 56px;
@@ -152,11 +152,11 @@ text-underline-offset: auto;
 text-underline-position: from-font;
 }
 
-input:focus{
+/* input:focus{
   outline: none;
   border-color: #3692FF;
   border: 1px solid var(--brand-blue);
-}
+} */
 
 .icon_eye{
   position: absolute;
@@ -166,4 +166,99 @@ input:focus{
 
 form > button:active{
   background-color: var(--brand-blue);
+}
+
+.input_label{
+color: var(--error-red, #F74747);
+font-family: Pretendard;
+font-size: 15px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+margin-left: 16px;
+}
+
+.focusout_input{
+  border-radius: 12px;
+border: 1px solid var(--error-red, #F74747);
+background: var(--Cool-Gray-100, #F3F4F6);
+}
+
+input:focus{
+  outline: none;
+  border-color: #3692FF;
+  border: 1px solid var(--brand-blue);
+}
+
+.input_icon_box{
+  position: relative;
+}
+
+input::-ms-reveal{
+  display: none;
+}
+
+.login_modal{
+  display: none;
+  z-index: 2;
+  position: fixed;
+  width: 540px;
+  height: 250px;
+  background-color: rgb(255, 255, 255);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal_box{
+  position: relative;
+
+}
+
+.modal_box > p{
+  position: absolute;
+  margin: 108px 174px;
+
+}
+.modal_box >button{
+  position: absolute;
+  margin: 174px 28px 28px 392px;
+  display: flex;
+width: 120px;
+height: 48px;
+padding: 12px 23px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+border-radius: 8px;
+background: var(--brand-blue, #3692FF);
+color: white;
+border: 0px;
+}
+
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+
+.login_button{
+  background: var(--Cool-Gray-400, #9CA3AF);
+}
+.login_button.active{
+  background-color: #3692FF;
+}
+
+.sign_button{
+  background: var(--Cool-Gray-400, #9CA3AF);
+}
+.sign_button.active{
+  background-color: #3692FF;
 }
