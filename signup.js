@@ -119,10 +119,10 @@ const overLayPage =document.querySelector('.overlay');
 
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelector('.sign_button').addEventListener('click', function () {
-    const a = document.querySelector('.validation_id').value;
-    const b = document.querySelector('.validation_pw').value;
-    const d = document.querySelector('.validation_conf').value;
-    const findId = USER_DATA.find(user => user.email != a && (b == d));
+    const idValue = document.querySelector('.validation_id').value;
+    const pwValue = document.querySelector('.validation_pw').value;
+    const confValue = document.querySelector('.validation_conf').value;
+    const findId = USER_DATA.find(user => user.email != idValue && (pwValue == confValue));
     if(findId){
       console.log("로그인 성공"); //로그인성공하면 /items로 이동
       window.location.href = '/login';
