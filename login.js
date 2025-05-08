@@ -8,6 +8,48 @@ const errorText = document.getElementsByClassName("error-text");
 //error-border[0] - email
 //error-border[1] - pw
 
+const modal = document.getElementById("loginModal");
+const modalCloseBtn = document.getElementById("modalCloseBtn");
+const modalMsg = modal.querySelector(".modal-message");
+
+//모달 띄우기
+function showModal(message) {
+  modalMsg.textContent = message;
+  modal.classList.remove("hidden");
+}
+//모달 닫기
+modalCloseBtn.addEventListener("click", () => {
+  modal.classList.add("hidden");
+  if (loginCondition) {
+    window.location.href = "index.html"; //추후 items.html로 이동
+  }
+});
+
+const USER_DATA = [
+  { email: "codeit1@codeit.com", password: "codeit101!" },
+  { email: "codeit2@codeit.com", password: "codeit202!" },
+  { email: "codeit3@codeit.com", password: "codeit303!" },
+  { email: "codeit4@codeit.com", password: "codeit404!" },
+  { email: "codeit5@codeit.com", password: "codeit505!" },
+  { email: "codeit6@codeit.com", password: "codeit606!" },
+];
+
+function checkLoginInfo() {
+  const emailValue = emailInput.value;
+  const pwValue = passwordInput.value;
+  const loginValidity = USER_DATA.find((el) => {
+    return el.email == emailValue && el.password == pwValue;
+  });
+  // console.log("loginValidity콘솔 : ", loginValidity);
+  return loginValidity
+    ? `${emailValue} 로그인 성공`
+    : "아이디 혹은 비밀번호가 일치하지 않습니다.";
+}
+loginButton.addEventListener("click", () => {
+  // alert(checkLoginInfo());
+  showModal(checkLoginInfo());
+});
+
 //비밀번호 표시 토글버튼
 togglePw.addEventListener("click", () => {
   const isBlured = passwordInput.type === "text";
@@ -83,19 +125,21 @@ function isPasswordValid() {
   const value = passwordInput.value.trim();
   return value !== "" && value.length >= 8 && passwordInput.checkValidity();
 }
+let loginCondition = false;
 
 function updateLoginBtnState() {
   // if (validatePw() && validateEmail())
   //이렇게 하면 이메일 칠때 비밀번호도 같이 검사해버림 따로 상태만 검사
-
   if (isEmailValid() && isPasswordValid()) {
-    loginButton.disbled = false;
+    loginButton.disabled = false;
     loginButton.style.backgroundColor = "#3692ff";
     loginButton.style.cursor = "pointer";
+    loginCondition = true;
   } else {
     loginButton.disabled = true;
     loginButton.style.backgroundColor = "#9ca3af";
     loginButton.style.cursor = "not-allowed";
+    loginCondition = false;
   }
 }
 

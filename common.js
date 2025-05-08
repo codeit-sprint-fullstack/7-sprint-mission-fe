@@ -8,6 +8,6 @@ aTagNewTab.forEach((x) => {
 //input태그에 required는 사용하면서 oninvalid oninput 기본값 지우기
 const inputTagCustomValid = document.querySelectorAll("input.customValid");
 inputTagCustomValid.forEach((x) => {
-  x.setAttribute("oninvalid", "this.setcustomValidity(' ')");
-  x.setAttribute("oninput", "this.setcustomValidity('')");
+  x.setAttribute("oninvalid", "this.setCustomValidity(' ')");
+  x.setAttribute("oninput", "this.setCustomValidity('')");
 });

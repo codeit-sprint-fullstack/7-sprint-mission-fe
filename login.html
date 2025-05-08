@@ -19,8 +19,8 @@
       </div>
       <div class="login-content-container">
         <div class="input-container">
-          <!-- 이메일 -->
-          <form class="input-box" method="post" action="/index.html">
+          <!-- 이메일 action="./index.html" -->
+          <form class="input-box" method="post">
             <div class="login-form-box">
               <label class="login-form-label">이메일</label>
               <div class="login-form-field">
@@ -62,7 +62,7 @@
                 <p class="error-text"></p>
               </div>
             </div>
-            <button type="submit" class="login-click" id="loginButton">
+            <button type="button" class="login-click" id="loginButton" disabled>
               <div class="login-click-txt">로그인</div>
             </button>
           </form>
@@ -85,6 +85,13 @@
           판다마켓이 처음인가요?
           <a href="signup.html" class="footer-url">회원가입</a>
         </div>
+      </div>
+    </div>
+    <!--배경 모달-->
+    <div id="loginModal" class="login-modal hidden">
+      <div class="modal-content">
+        <p class="modal-message"></p>
+        <button id="modalCloseBtn" class="modal-button">확인</button>
       </div>
     </div>
     <script src="./common.js"></script>
