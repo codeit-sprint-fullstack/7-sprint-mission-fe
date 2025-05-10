@@ -20,24 +20,39 @@ const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 // 이메일 유효성 검사를 위한 이메일 input과 에러메세지 요소
 const emailInput = document.querySelector('#user-email');
-const emailErrorMassage = document.querySelector('[data-error-for="email"]');
+const emailErrorMessage = document.querySelector('[data-error-for="email"]');
 
 // 이메일 유효성 검사
 emailInput.addEventListener('blur', function() {
     const email = emailInput.value;
 
     if(email === ''){
-        showError(emailInput, emailErrorMassage, '이메일을 입력해주세요.');
+        showError(emailInput, emailErrorMessage, '이메일을 입력해주세요.');
         return;
     }
 
     if(!emailReg.test(email)) {
-        showError(emailInput, emailErrorMassage, '잘못된 이메일 형식입니다.');
+        showError(emailInput, emailErrorMessage, '잘못된 이메일 형식입니다.');
         return;
     } 
     
-    hideError(emailInput, emailErrorMassage);
+    hideError(emailInput, emailErrorMessage);
     
+});
+
+// 닉네임 유효성 검사를 위한 닉네임 input과 에러메세지 요소
+const nicknameInput = document.querySelector('#user-nickname');
+const nicknameErrorMessage = document.querySelector('[data-error-for="nickname"]');
+
+// 닉네임 유효성 검사
+nicknameInput.addEventListener('blur', function() {
+    const nickname = nicknameInput.value;
+
+    if(nickname === ''){
+        showError(nicknameInput, nicknameErrorMessage, '닉네임을 입력해주세요.');
+    } else {
+        hideError(nicknameInput,nicknameErrorMessage);
+    }
 });
 
 // 비밀번호 정규 표현식(소문자 + 숫자 + 특수문자 + 8자 이상)
