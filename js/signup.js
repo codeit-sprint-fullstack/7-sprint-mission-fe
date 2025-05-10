@@ -109,3 +109,59 @@ checkPasswordInput.addEventListener('blur', function() {
         hideError(checkPasswordInput, checkPasswordErrorMessage);
     }
 });
+
+// 회원가입 버튼 요소 선택
+const signupBtn = document.querySelector('.form-btn');
+
+// 회원가입 조건을 실시간으로 검사하여 활성화/비활성화 하는 함수
+function validateSignupConditions (){
+    const email = emailInput.value.trim();
+    const nickname = nicknameInput.value.trim();
+    const password = passwordInput.value;
+    const checkPassword = checkPasswordInput.value;
+
+    // 에러를 가진 요소가 하나 이상일 경우 true 한개도 없을경우 false
+    const hasError = document.querySelectorAll('.error').length > 0;
+    const allFieldsFilled = email && nickname && password && checkPassword;
+    const passwordMatch = isMatch(password, checkPassword);
+
+    if(allFieldsFilled && !hasError && passwordMatch) {
+        signupBtn.disabled = false;
+        signupBtn.classList.add('active');
+    }else {
+        signupBtn.disabled = true;
+        signupBtn.classList.remove('active');
+    }
+}
+
+// 4개의 입력필드에 input이벤트가 발생할때 마다 validSignupConditions 함수를 호출해서 조건 검사
+[emailInput, nicknameInput, passwordInput, checkPasswordInput].forEach(input => {
+    input.addEventListener('input', validateSignupConditions)
+});
+
+// 회원가입 버튼 클릭 시 실행되는 함수
+function handleSignup() {
+    const email = emailInput.value.trim();
+    const password = passwordInput.value;
+
+    //이메일 중복 검사
+    const isDuplicate = USER_DATA.some(user => user.email === email);
+
+    if (isDuplicate) {
+        alert('사용중인 이메일입니다.');
+        return;
+    }
+
+    const newUser = {
+        email: email,
+        password: password
+    };
+
+    USER_DATA.push(newUser);
+    alert('회원가입이 완료되었습니다.');
+
+    window.location.href = '../pages/login.html'
+}
+
+// 회원가입 버튼에 클릭 이벤트 연결
+signupBtn.addEventListener('click',handleSignup)
