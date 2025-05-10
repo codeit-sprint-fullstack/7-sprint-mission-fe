@@ -90,6 +90,15 @@ input:focus {
     outline: none;
 }
 
+.wrong-input {
+    border: 1px solid red;
+    outline: none;    
+}
+
+.wrong-red-text {
+    color: red;
+}
+
 
 .login-button {
     width: 100%;
@@ -97,6 +106,10 @@ input:focus {
     border-radius: 40px;
     background: var(--Secondary-400, #9CA3AF);
 
+}
+
+.login-available {
+    background: var(--brand-blue, #3692FF);
 }
 
 .login-button-text {

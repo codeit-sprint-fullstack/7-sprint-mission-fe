@@ -2,7 +2,7 @@
 
 <html>
     <head>
-        <title>로그인</title>
+        <title>회원가입</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="signup-style.css">
     </head>
@@ -16,10 +16,10 @@
             <form>
                 <div class="email inputbox">
                     <label class="label" for="email">이메일</label>
-                    <input id="email" name="email" type="email" placeholder="이메일을 입력해주세요" required>
+                    <input id="email" class="" name="email" type="email" placeholder="이메일을 입력해주세요" required>
                 </div>
                 <div class="nickname inputbox">
-                    <label class="label" for="nickname">이메일</label>
+                    <label class="label" for="nickname">닉네임</label>
                     <input id="nickname" name="email" placeholder="닉네임을 입력해주세요" required>
                 </div>
                 <div class="password inputbox">
@@ -27,15 +27,17 @@
                     <input
                     id="password"
                     name="password"
+                    class=""
                     placeholder="비밀번호를 입력해주세요"
                     type="password"
                     required>
                 </div>
                 <div class="password-check inputbox">
-                    <label class="label" for="password-check">비밀번호</label>
+                    <label class="label" for="password-check">비밀번호 확인</label>
                     <input
                     id="password-check"
                     name="password"
+                    class=""
                     placeholder="비밀번호를 다시 한 번 입력해주세요"
                     type="password"
                     required>
@@ -63,6 +65,7 @@
             </div>
 
         </main>
+        <script src="script_signup.js"></script>
 
     </body>
 </html>

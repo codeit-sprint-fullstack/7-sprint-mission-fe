@@ -108,6 +108,10 @@ input:focus {
 
 }
 
+.login-available {
+    background: var(--brand-blue, #3692FF);
+}
+
 .login-button-text {
     color: var(--Cool-Gray-100, #F3F4F6);
     text-align: center;

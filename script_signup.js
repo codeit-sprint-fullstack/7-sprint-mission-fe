@@ -9,8 +9,9 @@ const USER_DATA = [
 
 const form = document.querySelector('form');
 const inputEmail = form.children[0].children[1];
-const inputPassword = form.children[1].children[1];
-const loginButton = form.children[2]
+const inputPassword = form.children[2].children[1];
+const inputPasswordAgain = form.children[3].children[1];
+const signupButton = form.children[4]
 
 
 //해당 element의 value가 비었는지 체크 (비어있을 때 true)
@@ -105,21 +106,40 @@ function checkPassword() {
     }
 }
 
-//로그인 버튼 활성화/비활성화
-function checkLoginButton() {
+//패스워드 확인 칸 체크 
+function checkPasswordAgain() {
+    //새롭게 입력할 때는 기존의 wrong-red이 있다면 전부 삭제
+    // 그 뒤의 p문구도 중복을 막기 위해 삭제
+    if (inputPasswordAgain.classList.contains('wrong-input')) {
+        inputPasswordAgain.classList.remove('wrong-input');
+        inputPasswordAgain.nextElementSibling.remove();
+    }
+
+    if (inputPassword.value !== inputPasswordAgain.value) {
+        //일치하지 않을 때
+        inputPasswordAgain.classList.add('wrong-input');
+        const wrongPasswordAgainText = document.createElement('p');
+        wrongPasswordAgainText.textContent = '비밀번호와 일치하지 않습니다.'
+        wrongPasswordAgainText.setAttribute('class', 'wrong-red-text')
+        inputPasswordAgain.after(wrongPasswordAgainText);    
+    }
+}
+
+//회원가입 버튼 활성화/비활성화
+function checkSignupButton() {
     // 아이디, 비밀번호가 전부 유효한 형식인지 검사
-    if (!checkBlank(inputEmail) && !checkEmailType(inputEmail) && !checkBlank(inputPassword) && !checkLength(inputPassword)) {
-        loginButton.classList.add('login-available');
-        loginButton.setAttribute('href', 'items.html')
+    if (!checkBlank(inputEmail) && !checkEmailType(inputEmail) && !checkBlank(inputPassword) && !checkLength(inputPassword) && inputPassword.value === inputPasswordAgain.value) {
+        signupButton.classList.add('login-available');
+        signupButton.setAttribute('href', 'items.html')
     } else {
-        if (loginButton.classList.contains('login-available')) {
-            loginButton.classList.remove('login-available');
-            loginButton.removeAttribute('href')
+        if (signupButton.classList.contains('login-available')) {
+            signupButton.classList.remove('login-available');
+            signupButton.removeAttribute('href')
         }
     }
 }
 
-//아이디, 비밀번호가 db에 있는지 확인
+//아이디가 db에 있는지 확인
 //이 함수를 멘토님이라면 어떻게 작성했을지 질문(뭐가 제일 계산량이 적은 알고리즘일지..)
 idList = []
 pwList = []
@@ -130,23 +150,18 @@ for (idpw of USER_DATA) {
 }
 
 
-function checkAvailableLogin () {
-    currentId = inputEmail.value;
-    currentPw = inputPassword.value;
-    currentIndex = idList.indexOf(currentId);
-
-    if (currentIndex !== -1 && pwList[currentIndex] === currentPw) {
-        //이거 제출 성공했을 때도 페이지 이동이 안되어서 챗지피티한테 물어본 코드로 작성함. 멘토님한테 관련해서 질문할 것.
-        event.preventDefault(); // 폼 제출은 왜 막아야 하는거지...
-        window.location.href = 'items.html';  // 다른 페이지로 이동
+function checkAvailableSignup () {
+    event.preventDefault();
+    if (idList.includes(inputEmail.value)) {
+        alert('사용 중인 이메일입니다');
     } else {
-        loginButton.removeAttribute('href');
-        alert("비밀번호가 일치하지 않습니다.");
+        window.location.href = 'login.html';  // 다른 페이지로 이동
     }
 }
 
 
 inputEmail.addEventListener('focusout', checkEmail);
 inputPassword.addEventListener('focusout', checkPassword);
-form.addEventListener('keyup', checkLoginButton);
-form.addEventListener('submit', checkAvailableLogin);
+inputPasswordAgain.addEventListener('focusout', checkPasswordAgain);
+form.addEventListener('keyup', checkSignupButton);
+form.addEventListener('submit', checkAvailableSignup);
