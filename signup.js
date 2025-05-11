@@ -79,8 +79,10 @@ const updateButtonconf =document.querySelector('.validation_conf');
 
 function updateLoginButton(){
   if(updateButtonId.value && updateButtonPw.value && updateButtonnick.value && updateButtonconf.value){
+    if(updateButtonPw.value.length>=8 && updateButtonconf.value.length >= 8){
     signBuntton.classList.add('active');
     signBuntton.disabled  = false;
+    }
   }
   else{
     signBuntton.classList.remove('active');
@@ -122,13 +124,26 @@ document.addEventListener('DOMContentLoaded', function () {
     const idValue = document.querySelector('.validation_id').value;
     const pwValue = document.querySelector('.validation_pw').value;
     const confValue = document.querySelector('.validation_conf').value;
-    const findId = USER_DATA.find(user => user.email != idValue && (pwValue == confValue));
+    const findId = !USER_DATA.some(user => user.email === idValue);
     if(findId){
-      console.log("로그인 성공"); //로그인성공하면 /items로 이동
-      window.location.href = '/login';
+      if(!(pwValue === confValue)){
+        const modelRename = document.querySelector('.modal_box');
+        const modelFirstChild = modelRename.firstElementChild;
+        modelFirstChild.textContent = "비밀번호가 일치하지 않습니다.";
+        modalClass.style.display ="block";
+        overLayPage.style.display ="block";
+        loginBuntton.classList.remove('active');
+      }
+      else{
+        console.log("로그인 성공"); //로그인성공하면 /items로 이동
+        window.location.href = '/login';
+      }
     }
     else{
       console.log("로그인 실패");
+      const modelRename = document.querySelector('.modal_box');
+      const modelFirstChild = modelRename.firstElementChild;
+      modelFirstChild.textContent = "사용 중인 이메일입니다.";
       modalClass.style.display ="block";
       overLayPage.style.display ="block";
       loginBuntton.classList.remove('active');
