@@ -73,3 +73,49 @@ passwordInput.addEventListener('blur', function(){
 
     hideError(passwordInput,passwordErrorMessage);
 });
+
+const loginBtn = document.querySelector('.form-btn');
+
+function validateLoginConditions(){
+    const email = emailInput.value.trim();
+    const password = passwordInput.value;
+
+    const emailValid = emailReg.test(email);
+    const passwordValid = strongPasswordReg.test(password);
+    const allFieldsFilled = email && password;
+    
+    if (emailValid && passwordValid && allFieldsFilled) {
+        loginBtn.disabled = false;
+        loginBtn.classList.add('active');
+    } else {
+        loginBtn.disabled = true;
+        loginBtn.classList.remove('active');
+    }
+    
+}
+
+// 2개의 입력필드에 input이벤트가 발생할때 마다 validLoginConditions 함수를 호출해서 조건 검사
+[emailInput, passwordInput].forEach(input => {
+    input.addEventListener('input', validateLoginConditions)
+});
+
+// 로그인 버튼 클릭 시 실행되는 함수
+function handleLogin(e) {
+    e.preventDefault();
+    
+    const email = emailInput.value;
+    const password = passwordInput.value;
+
+    const isDuplicate = USER_DATA.some(user => 
+        user.email === email && user.password === password
+    );
+    
+    if(isDuplicate){
+        window.location.href = '../pages/items.html'
+    } else {
+        alert("비밀번호가 일치하지 않습니다.");
+    }
+}
+
+//로그인버튼에 클릭 이벤트 연결
+loginBtn.addEventListener('click', handleLogin);

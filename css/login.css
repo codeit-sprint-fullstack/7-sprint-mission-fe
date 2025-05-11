@@ -146,6 +146,9 @@
     color: var(--secondary-100);
 }
 
+.form-btn.active {
+    background-color: var(--primary-100);
+}
 
 /* 간편로그인 */
 .login-social{
