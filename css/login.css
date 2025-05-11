@@ -60,10 +60,34 @@
     color: var(--secondary-400);
 }
 
+
+.error {
+    border: 1px solid var(--error-red);
+}
+
+.hide {
+    display: none;
+}
+
+.error-message {
+    font-family: 'Pretendard';
+    font-weight: 600;
+    font-size: 15px;
+    margin-top: 8px;
+    margin-left: 16px;
+    color: var(--error-red);
+}
+
 .form-group {
     display: flex;
     flex-direction: column;
     gap:16px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    width:100%;
 }
 
 .form-label {
