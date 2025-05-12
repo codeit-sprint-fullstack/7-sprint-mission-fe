@@ -8,10 +8,8 @@
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/login.css">
-
-
-    
   </head>
+  
   <body>
     <main class="main-container">
 
@@ -27,14 +25,18 @@
         <form class="login-form" action="#" method="post">
           <div class="form-group">
             <label class ="form-label" for="user-email">이메일</label>
-            <input class="form-input" type="email" placeholder="이메일을 입력해주세요" id="user-email">
+            <div class="input-group">
+              <input class="form-input" type="email" placeholder="이메일을 입력해주세요" id="user-email">
+              <p class="error-message hide" data-error-for="email">에러 메세지</p>
+            </div>
           </div>
-
+            
           <div class="form-group">
             <label class ="form-label" for="user-password">비밀번호</label>
             <div class="form-password">
               <input class="form-input" type="password" placeholder="비밀번호를 입력해주세요" id="user-password">
               <button type="button" class="visibility-btn clickable"><img src="../assets/images/icons/btn_visibility_off_24px.svg"/></button>
+              <p class="error-message hide" data-error-for="password">에러 메세지</p>
             </div>
             
           </div>  
@@ -55,26 +57,9 @@
           <h3 class="signup-title">판다마켓이 처음이신가요?</h3>
           <a class="signup-cta" href="./signup.html">회원가입</a>
         </div>
-
-      
       </div>
-    
     </main>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <script src="../js/userData.js"></script>
+    <script src="../js/login.js"></script>
   </body>
 </html>

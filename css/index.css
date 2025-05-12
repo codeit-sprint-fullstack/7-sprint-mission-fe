@@ -86,6 +86,7 @@
   align-items: flex-start;
   gap: 32px;
   padding-bottom: 60px;
+  flex-shrink:0;
 }
 
 .hero-subtitle {
@@ -203,6 +204,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  flex-shrink:0;
 }
 
 .trust-text {

@@ -2,7 +2,6 @@
     box-sizing: border-box;
 }
 
-
 /* 메인 컨테이너 설정 */
 .main-container{
     display: flex;
@@ -61,10 +60,34 @@
     color: var(--secondary-400);
 }
 
+
+.error {
+    border: 1px solid var(--error-red);
+}
+
+.hide {
+    display: none;
+}
+
+.error-message {
+    font-family: 'Pretendard';
+    font-weight: 600;
+    font-size: 15px;
+    margin-top: 8px;
+    margin-left: 16px;
+    color: var(--error-red);
+}
+
 .form-group {
     display: flex;
     flex-direction: column;
     gap:16px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    width:100%;
 }
 
 .form-label {
@@ -84,7 +107,6 @@
     font-weight: 400;
     font-size: 16px;
     color: var(--secondary-800);
-
 }
 
 .form-password{
@@ -124,6 +146,9 @@
     color: var(--secondary-100);
 }
 
+.form-btn.active {
+    background-color: var(--primary-100);
+}
 
 /* 간편로그인 */
 .login-social{
