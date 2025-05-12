@@ -23,11 +23,7 @@
       <header>
         <h1>
           <a href="./index.html" class="go-home">
-            <img
-              class="panda-face"
-              src="./images/home/panda-face.svg"
-              alt="로고"
-            />
+            <img class="panda-face" src="./images/home/panda-face.svg" alt="로고" />
             판다마켓
           </a>
         </h1>
@@ -42,6 +38,8 @@
             name="user-email"
             placeholder="이메일을 입력해주세요"
           />
+          <span id="user-email-error">잘못된 이메일 형식입니다.</span>
+          <span id="user-email-empty-error">이메일을 입력해주세요.</span>
         </div>
 
         <div class="nick-name">
@@ -51,6 +49,7 @@
             type="text"
             name="user-nick-name"
             placeholder="닉네임을 입력해주세요"
+            autocomplete="nickname"
           />
         </div>
 
@@ -62,26 +61,33 @@
               class="password-input"
               type="password"
               name="user-password"
+              minlength="8"
               placeholder="비밀번호를 입력해주세요"
+              autocomplete="new-password"
             />
             <i class="fas fa-eye icon" id="togglePassword"></i>
           </div>
+          <span id="user-password-error">비밀번호를 8자 이상 입력해주세요.</span>
+          <span id="user-password-empty-error">비밀번호를 입력해주세요.</span>
         </div>
 
         <div class="password-check">
-          <label for="user-password-check" class="user-password-check"
-            >비밀번호 확인</label
-          >
-          <div class="password-eye-set2">
+          <label for="user-password-check" class="user-password-check">비밀번호 확인</label>
+          <div class="password-check-eye-set">
             <input
               id="user-password-check"
               class="password-input-check"
               type="password"
               name="user-password-check"
+              minlength="8"
               placeholder="비밀번호를 다시 한 번 입력해주세요"
+              autocomplete="new-password"
             />
             <i class="fas fa-eye icon" id="togglePasswordCheck"></i>
           </div>
+          <span id="user-password-check-error">비밀번호를 8자 이상 입력해주세요.</span>
+          <span id="user-password-check-empty-error">비밀번호를 입력해주세요.</span>
+          <span id="user-password-check-input-error">입력하신 비밀번호가 일치하지 않습니다.</span>
         </div>
 
         <button type="submit" class="sign-button">회원가입</button>
@@ -93,11 +99,7 @@
       <div class="easy-login-right">
         <a href="http://www.google.com" target="_blank">
           <div class="google">
-            <img
-              src="./images/login/google.svg"
-              alt="구글 로그인"
-              class="google-icon"
-            />
+            <img src="./images/login/google.svg" alt="구글 로그인" class="google-icon" />
           </div>
         </a>
         <a href="http://www.kakao.com/page/" target="_blank">
@@ -112,6 +114,6 @@
       <p>이미 회원이신가요?</p>
       <a href="./login.html" class="login">로그인</a>
     </div>
-    <script src="./script/login.js"></script>
+    <script src="./script/sign.js"></script>
   </body>
 </html>

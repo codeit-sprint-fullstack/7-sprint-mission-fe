@@ -80,7 +80,7 @@ input {
   height: 56px;
   padding: 16px 24px;
   border: none;
-  margin-bottom: 40px;
+  /* margin-bottom: 40px; */
   outline-color: #3692ff;
 }
 
@@ -89,6 +89,7 @@ input {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  margin-bottom: 24px;
 }
 
 .password,
@@ -96,10 +97,11 @@ input {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  margin-bottom: 24px;
 }
 
 .password-eye-set,
-.password-eye-set2 {
+.password-check-eye-set {
   display: flex;
   position: relative;
   /* height: 56px; */
@@ -136,8 +138,8 @@ input {
   color: #f3f4f6;
   font-size: 20px;
   font-weight: 600;
-  background-color: #3692ff;
-  cursor: pointer;
+  background-color: #9ca3af;
+  cursor: not-allowed;
   border: none;
   margin-bottom: 24px;
 }
@@ -183,4 +185,18 @@ input {
 
 .login {
   color: #3692ff;
+}
+
+#user-email-error,
+#user-email-empty-error,
+#user-password-error,
+#user-password-empty-error,
+#user-password-check-error,
+#user-password-check-empty-error,
+#user-password-check-input-error {
+  color: red;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding-left: 16px;
+  display: none;
 }
