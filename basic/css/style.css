@@ -73,3 +73,8 @@ input:focus{
 input[type="password"]{
     padding-right:56px;
 }
+@media (max-width: 744px) {
+    .input-area label{
+        width: 14px;
+    }
+}

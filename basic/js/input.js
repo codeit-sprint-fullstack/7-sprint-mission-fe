@@ -1,6 +1,7 @@
 const emailInput = document.querySelector('#email');
 const passwordInput = document.querySelector('#password');
 const passwordCheckInput = document.querySelector('#password_check');
+const toggleBtns = document.querySelectorAll('.btn-visible');
 
 function showError(el, msg){
     el.classList.add('input-error');
@@ -61,3 +62,14 @@ if (passwordCheckInput) {
     passwordCheckInput.addEventListener('input', pwCheckValidate);
     passwordCheckInput.addEventListener('focus', () => clearError(passwordCheckInput));
 }
+
+toggleBtns.forEach((toggleBtn) => {
+    toggleBtn.addEventListener('click', () => {
+        const $input = toggleBtn.parentElement.querySelector('input');
+        const isPassword = $input.type === 'password';
+        $input.type = isPassword ? 'text' : 'password';
+        
+        const icon = toggleBtn.querySelector('img');
+        icon.src = isPassword ? '../../img/common/ico_visibility_on.png' : '../../img/common/ico_visibility_off.png';
+    });
+})
