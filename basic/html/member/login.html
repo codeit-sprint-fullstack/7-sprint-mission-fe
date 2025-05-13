@@ -19,11 +19,11 @@
                 </h1>
             </div>
             <div class="action-area">
-                <form method="post" action="">
+                <form method="get" action="../items">
                     <div class="input-area">
                         <div class="row">
                             <dl>
-                                <dt class="body3 txt-color3 txt-bold">
+                                <dt class="">
                                     <label for="email">이메일</label>
                                 </dt>
                                 <dd class="">
@@ -35,7 +35,7 @@
                         </div>
                         <div class="row">
                             <dl>
-                                <dt class="body3 txt-color3 txt-bold">
+                                <dt class="">
                                     <label for="password">비밀번호</label>
                                 </dt>
                                 <dd class="">
@@ -50,7 +50,7 @@
                         </div>
                     </div>
                     <div class="btn-area">
-                        <button type="submit" class="btn disabled">로그인</button>
+                        <button type="button" id="btn_login" class="btn disabled">로그인</button>
                     </div>
                 </form>
                 <div class="add-area">
@@ -77,5 +77,7 @@
             </div>
         </div>
     </div>
+    <script src="../../js/input.js"></script>
+    <script type="module" src="../../js/login.js"></script>
 </body>
 </html>

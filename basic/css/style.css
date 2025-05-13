@@ -28,6 +28,7 @@ a{
 .btn.disabled{
     background: #9CA3AF;
     color: #f3f4f6;
+    cursor:default;
 }
 .input-area label{
     font-size: 18px;
@@ -40,8 +41,17 @@ a{
 .input-box .btn{
     position: absolute;
     right: 24px;
-    top:50%;
+    top: 28px;
     transform: translateY(-50%);
+}
+.input-box p.txt-help{
+    padding:8px 0 0 16px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #666;
+}
+.input-box p.txt-help.error{
+    color: #F74747;
 }
 input{
     width: 100%;
@@ -53,6 +63,9 @@ input{
     border:1px solid #f3f4f6;
     font-size: 16px;
     outline: none;
+}
+.input-error{
+    border-color: #F74747;
 }
 input:focus{
     border-color: #3692ff;
