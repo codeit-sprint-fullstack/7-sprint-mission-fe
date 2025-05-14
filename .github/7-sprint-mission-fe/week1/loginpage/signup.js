@@ -15,7 +15,10 @@ document.querySelectorAll('.eyes').forEach(eye => {
 
 
 
+
 //email
+
+
 function isValidEmail(email) {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return regex.test(email);
@@ -26,6 +29,9 @@ function validateEmail() {
   const email = document.getElementById('email');
   const errorDiv = document.getElementById('email-error');
   const value = email.value.trim();
+  // const emailwrap = email.closest('.email-wrap')
+  // const emailFocusOut = emailwrap.querySelector('email-error');
+
   if (!value) {
     email.classList.add('error');
     errorDiv.textContent = '이메일을 입력해주세요.';
@@ -45,6 +51,8 @@ document.getElementById('email').addEventListener('blur', () => {
   validateEmail();
   checkFormValidity();
 });
+
+
 
 
 
@@ -75,6 +83,35 @@ document.getElementById('password').addEventListener('blur', () => {
 
 
 
+// 비밀번호 확인
+function validateConfirmPassword() {
+  const password = document.getElementById('password');
+  const confirm = document.getElementById('confirm-password');
+  const errorDiv = document.getElementById('confirm-password-error');
+
+  if (!confirm.value) {
+    confirm.classList.add('error');
+    errorDiv.textContent = '비밀번호 확인을 입력해주세요.';
+    return false;
+  } else if (confirm.value !== password.value) {
+    confirm.classList.add('error');
+    errorDiv.textContent = '비밀번호가 일치하지 않습니다.';
+    return false;
+  } else {
+    confirm.classList.remove('error');
+    errorDiv.textContent = '';
+    return true;
+  }
+}
+
+
+document.getElementById('confirm-password').addEventListener('blur', () => {
+  validateConfirmPassword();
+  checkFormValidity();
+});
+
+
+
 
 // 포커스 시 에러 제거
 function removeErrorOnFocus(id, errorId) {
@@ -89,8 +126,7 @@ function removeErrorOnFocus(id, errorId) {
 // focus 이벤트 등록 (빨간 테두리 제거)
 removeErrorOnFocus('email', 'email-error');
 removeErrorOnFocus('password', 'password-error');
-
-
+removeErrorOnFocus('confirm-password', 'confirm-password-error');
 
 
 
@@ -105,49 +141,53 @@ const USER_DATA = [
   { email: 'codeit6@codeit.com', password: "codeit606!" },
 ];
 
-
-
-
-function checkFormValidity() {
-  const isValid = validateEmail() && validatePassword();
-  const loginButton = document.getElementById('login-button');
-  loginButton.disabled = !isValid;
-}
-// 이메일과 비밀번호 입력 시 유효성 검사 연결
-document.getElementById('email').addEventListener('input', checkFormValidity);
-document.getElementById('password').addEventListener('input', checkFormValidity);
-
-// 로그인 버튼 클릭 이벤트
-document.getElementById('login-button').addEventListener('click', function (e) {
+// 회원가입 버튼 클릭 이벤트
+document.getElementById('signup-button').addEventListener('click', function (e) {
   e.preventDefault();
 
+  // 입력값 가져오기
   const emailInput = document.getElementById('email').value.trim();
   const passwordInput = document.getElementById('password').value;
+  const confirmPasswordInput = document.getElementById('confirm-password').value;
+
+
 
 
 
   // 모달 버튼
-  const modalBack = document.getElementById('modalBack')
-  const modalOpen = document.getElementById('pwModalButton')
-  const modalClose = document.getElementById('CloseBtn')
-  const modalOpenSuccess = document.getElementById('successModalButton')
-  const modalMove = document.getElementById('moveBtn')
-  
+const modalBack = document.getElementById('modalBack')
+// const modalOpen = document.getElementById('pwMatchButton')
+const modalAlreadyExist = document.getElementById('alreadyExist')
+const modalClose = document.getElementById('CloseBtn')
+
+// const modalMove = document.getElementById('moveBtn')
+
+
+// //비밀번호 불일치
+//   if (passwordInput !== confirmPasswordInput) {
+//     modalOpen.style.display = 'block';
+//     modalBack.style.display = 'block';
+//     modalClose.addEventListener('click', function () {
+//       modalOpen.style.display = 'none';
+//       modalBack.style.display = 'none';
+//     })
+//   }
+
+
+  // 이메일 중복 확인
   const foundUser = USER_DATA.find(user => user.email === emailInput);
 
-  if (!foundUser || foundUser.password !== passwordInput) {
-    modalOpen.style.display = 'block';
+  if (foundUser) {
+    modalAlreadyExist.style.display = 'block';
     modalBack.style.display = 'block';
     modalClose.addEventListener('click', function () {
-      modalOpen.style.display = 'none';
+      modalAlreadyExist.style.display = 'none';
       modalBack.style.display = 'none';
     })
   } else {
-    modalOpenSuccess.style.display = 'block';
-    modalBack.style.display = 'block';
-    modalMove.addEventListener('click', function () {
-      window.location.href = '/items';
-    })
-    
-  }
+    USER_DATA.push({ email: emailInput, password: passwordInput });
+    window.location.href = '/login';
+
+}
 });
+

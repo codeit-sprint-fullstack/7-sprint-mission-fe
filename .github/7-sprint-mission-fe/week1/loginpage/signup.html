@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>회원가입페이지</title>
   <link rel="stylesheet" href="../reset.css">
   <link rel="stylesheet" href="../auth.css">
   <link
@@ -23,10 +23,14 @@
       <!-- 이메일 패스워드 -->
       <div class="textPW gap24">
         <!-- 이메일 -->
-        <div class="gap16">
-          <label>이메일</label>
-          <input type="email" placeholder="이메일을 입력해주세요"/>
+        <div>
+          <div class="gap16">
+            <label>이메일</label>
+            <input type="email" id="email" placeholder="이메일을 입력해주세요"/>
+          </div>
+          <div><div id="email-error" class="error-message"></div></div>
         </div>
+        
         <!-- 닉네임 -->
         <div class="gap16">
           <label>닉네임</label>
@@ -34,6 +38,7 @@
         </div>
 
           <!-- 패스워드 -->
+          <div>
           <div class="gap16 input_wrap">
             <label for="password">비밀번호</label>
             <input
@@ -42,22 +47,44 @@
               placeholder="비밀번호를 입력해주세요"
             />
             <div class="eyes"><i class="fas fa-eye-slash"></i></div>
-          </div>
-        
-      
+            
+          </div><div id="password-error" class="error-message"></div></div>
+
       <!-- 패스워드 확인 -->
+      <div>
         <div class="gap16 input_wrap">
           <label for="password">비밀번호 확인</label>
-          <input type="password" id="passwordConfirm" placeholder="비밀번호를 다시 한 번 입력해주세요"/>
+          <input type="password" id="confirm-password" placeholder="비밀번호를 다시 한 번 입력해주세요"/>
             <div class="eyes" ><i class="fas fa-eye-slash"></i></div>
-        </div>
+            
+        </div>  <div id="confirm-password-error" class="error-message"></div></div>
       </div>
-    
 
-      <!-- 로그인 -->
+    
+      <!-- 회원가입 -->
       <div class="loginButton">
-        <input type="submit" value="회원가입" />
+        <button type="submit" value="회원가입" id="signup-button" disabled>회원가입</button>
       </div>
+
+
+        <!-- 모달 버튼 -->
+        <div class="modal-background">
+
+          <div class="modal-background-color" id="modalBack"></div>
+          <div class="modal-button" id="alreadyExist">
+            <h2 >사용 중인 이메일입니다.</h2>
+            <button type="button" class="modal-btn" id="CloseBtn">확인</button>
+          </div>
+
+          <!-- <div class="modal-background-color" id="modalBack"></div>
+          <div class="modal-button" id="pwMatchButton">
+            <h2 >비밀번호가 일치하지 않습니다.</h2>
+            <button type="button" class="modal-btn" id="CloseBtn">확인</button>
+          </div>
+          -->
+        </div>
+
+
       <!-- 간편로그인 -->
       <div class="comfort">
         <p>간편 로그인하기</p>
@@ -69,12 +96,13 @@
       <!-- 회원가입 -->
       <div class="signlink">
         <p>이미 회원이신가요? <a href="./login.html">로그인</a></p>
+        
       </div>
       </div>
     </div>
   </div>
   
-  <script defer src="./login.js"></script>
+  <script defer src="./signup.js"></script>
 
 </body>
 </html>
