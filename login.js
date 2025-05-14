@@ -3,8 +3,11 @@ const passwordInput = document.getElementById("formInputPassword");
 const loginButton = document.getElementById("loginButton");
 const togglePw = document.querySelector(".form-field-passVis");
 const togglePwImg = document.getElementById("passVisImg");
-const errorBorder = document.getElementsByClassName("error-border");
-const errorText = document.getElementsByClassName("error-text");
+// const errorBorder = document.getElementsByClassName("error-border");
+// const errorText = document.getElementsByClassName("error-text");
+const [errBorderEmail, errBorderPw] =
+  document.getElementsByClassName("error-border");
+const [errTextEmail, errTextPw] = document.getElementsByClassName("error-text");
 //error-border[0] - email
 //error-border[1] - pw
 
@@ -24,7 +27,7 @@ let loginStatus = false;
 modalCloseBtn.addEventListener("click", () => {
   modal.classList.add("hidden");
   if (loginStatus) {
-    window.location.href = "index.html"; //추후 items.html로 이동
+    window.location.href = "items.html";
   }
   loginStatus = false;
   //질문필요 왜 모달닫기 확인때 loginStatus else에서
@@ -50,13 +53,12 @@ function checkLoginInfo() {
   const loginValidity = USER_DATA.find((el) => {
     return el.email == emailValue && el.password == pwValue;
   });
-  // console.log("loginValidity콘솔 : ", loginValidity);
+  loginStatus = !!loginValidity; //undefined면 false 객체들어오면 true
   return loginValidity
     ? `${emailValue} 로그인 성공`
     : "아이디 혹은 비밀번호가 일치하지 않습니다.";
 }
 loginButton.addEventListener("click", () => {
-  // alert(checkLoginInfo());
   const msg = checkLoginInfo();
   showModal(msg);
   loginStatus = msg.includes("로그인 성공") ? true : false;
@@ -76,27 +78,27 @@ function validatePw() {
   const modPwInput = passwordInput.value.trim();
   if (modPwInput === "") {
     //공란처리
-    errorBorder[1].style.border = "1px solid red";
-    errorText[1].textContent = "비밀번호를 입력해주세요.";
-    errorText[1].style.display = "block";
+    errBorderPw.style.border = "1px solid red";
+    errTextPw.textContent = "비밀번호를 입력해주세요.";
+    errTextPw.style.display = "block";
     return false;
   } else if (modPwInput.length < 8) {
     //비번 길이 검사
-    errorBorder[1].style.border = "1px solid red";
-    errorText[1].textContent = "비밀번호를 8자 이상 입력해주세요";
-    errorText[1].style.display = "block";
+    errBorderPw.style.border = "1px solid red";
+    errTextPw.textContent = "비밀번호를 8자 이상 입력해주세요";
+    errTextPw.style.display = "block";
     return false;
   } else if (!passwordInput.checkValidity()) {
     //pw checkValidity 통과 실패시
-    errorBorder[1].style.border = "1px solid red";
-    errorText[1].textContent = "잘못된 비밀번호 형식입니다.";
-    errorText[1].style.display = "block";
+    errBorderPw.style.border = "1px solid red";
+    errTextPw.textContent = "잘못된 비밀번호 형식입니다.";
+    errTextPw.style.display = "block";
     return false;
   } else {
     //정상
-    errorBorder[1].style.border = "0px";
-    errorText[1].textContent = "";
-    errorText[1].style.display = "none";
+    errBorderPw.style.border = "0px";
+    errTextPw.textContent = "";
+    errTextPw.style.display = "none";
     return true;
   }
   //https://velog.io/@purplew/input-validity
@@ -106,9 +108,9 @@ function validateEmail() {
   const modEmailInput = emailInput.value.trim();
   if (modEmailInput === "") {
     //공란처리
-    errorBorder[0].style.border = "1px solid red";
-    errorText[0].textContent = "이메일을 입력해주세요.";
-    errorText[0].style.display = "block";
+    errBorderEmail.style.border = "1px solid red";
+    errTextEmail.textContent = "이메일을 입력해주세요.";
+    errTextEmail.style.display = "block";
     return false;
   }
   //debounce fn으로 해결
@@ -117,15 +119,15 @@ function validateEmail() {
   //}
   else if (!emailInput.checkValidity()) {
     //이메일 checkValidity 통과 실패시
-    errorBorder[0].style.border = "1px solid red";
-    errorText[0].textContent = "잘못된 이메일 형식입니다.";
-    errorText[0].style.display = "block";
+    errBorderEmail.style.border = "1px solid red";
+    errTextEmail.textContent = "잘못된 이메일 형식입니다.";
+    errTextEmail.style.display = "block";
     return false;
   } else {
     //정상
-    errorBorder[0].style.border = "0px";
-    errorText[0].textContent = "";
-    errorText[0].style.display = "none";
+    errBorderEmail.style.border = "0px";
+    errTextEmail.textContent = "";
+    errTextEmail.style.display = "none";
     return true;
   }
 }
@@ -146,12 +148,12 @@ function updateLoginBtnState() {
     loginButton.disabled = false;
     loginButton.style.backgroundColor = "#3692ff";
     loginButton.style.cursor = "pointer";
-    loginCondition = true;
+    // loginCondition = true;
   } else {
     loginButton.disabled = true;
     loginButton.style.backgroundColor = "#9ca3af";
     loginButton.style.cursor = "not-allowed";
-    loginCondition = false;
+    // loginCondition = false;
   }
 }
 
