@@ -1,4 +1,4 @@
-import { USER_DATA } from './userData.js';
+import { users } from './userData.js';
 
 const loginEmailInput  = document.querySelector('#email');
 const loginPasswordInput = document.querySelector('#password');
@@ -9,7 +9,7 @@ function checkUserInfo(){
     const emailValue = loginEmailInput .value;
     const passwordValue = loginPasswordInput.value;
     
-    const user = USER_DATA.find((el) => {
+    const user = users.find((el) => {
         console.log(el.email === emailValue)
         return el.email === emailValue;
     })

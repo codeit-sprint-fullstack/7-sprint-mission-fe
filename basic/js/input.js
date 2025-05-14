@@ -29,17 +29,21 @@ function emailValidate(){
 
     if (!emailInput.value) {
         showError(emailInput, '이메일을 입력해주세요.');
+        return;
     }else if (!emailRegex.test(emailInput.value)) {
         showError(emailInput, '잘못된 이메일 형식입니다.');
+        return;
     } else{
         clearError(emailInput);
     }
 }
 function pwValidate(){
-    if (!passwordInput.value) {
+    if (!passwordInput.value || passwordInput.value.length === 0) {
         showError(passwordInput, '비밀번호를 입력해주세요.');
+        return;
     }else if (passwordInput.value.length < 8) {
         showError(passwordInput, '비밀번호는 8자 이상이어야 합니다.');
+        return;
     } else {
         clearError(passwordInput);
     }
@@ -48,6 +52,7 @@ function pwValidate(){
 function pwCheckValidate(e){
     if(e.target.value !== passwordInput.value){
         showError(passwordCheckInput, '비밀번호가 일치하지 않습니다.');
+        return;
     } else{
         clearError(e.target);
     }

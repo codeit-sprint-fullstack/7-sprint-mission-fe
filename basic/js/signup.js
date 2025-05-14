@@ -1,13 +1,13 @@
-import { USER_DATA } from './userData.js';
+import { users } from './userData.js';
 
 const joinEmailInput  = document.querySelector('#email');
 const joinBtn = document.querySelector('#btn_join');
 const $form = document.querySelector('form');
 
-function checkEmailInfo(){
+function checkEmail(){
     const emailValue = joinEmailInput .value;
     
-    const user = USER_DATA.find((el) => {
+    const user = users.find((el) => {
         return el.email === emailValue;
     })
     
@@ -17,20 +17,29 @@ function checkEmailInfo(){
         joinEmailInput.focus();
     } 
 }
-joinEmailInput.addEventListener('blur', checkEmailInfo);
+joinEmailInput.addEventListener('blur', checkEmail);
 
-$form.addEventListener('input', function(){
+
+function validateForm(){
     const inputs = $form.querySelectorAll('input');
     let data = true;
     for (let i = 0; i < inputs.length; i++) {
         if (inputs[i].value.trim() === '') {
             data = false;
-            console.log("11");
         }
     }
     if (data && !$form.querySelector('.input-error')) {
         joinBtn.classList.replace("disabled", "active")
     } else{
         joinBtn.classList.replace("active", "disabled");
+    }
+}
+$form.addEventListener('input', validateForm);
+
+joinBtn.addEventListener('click', function(){
+    validateForm();
+    
+    if(joinBtn.classList.contains("active")){
+        window.location.href = './login.html';
     }
 });
