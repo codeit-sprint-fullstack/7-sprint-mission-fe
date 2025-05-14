@@ -86,7 +86,7 @@
     color:#3692ff;
     text-decoration: underline;
 }
-@media (max-width: 744px) {
+@media (max-width: 743px) {
     .wrap{
         min-width: 375px;
         padding: 48px 16px;
