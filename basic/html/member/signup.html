@@ -23,7 +23,7 @@
                     <div class="input-area">
                         <div class="row">
                             <dl>
-                                <dt class="body3 txt-color3 txt-bold">
+                                <dt class="">
                                     <label for="email">이메일</label>
                                 </dt>
                                 <dd class="">
@@ -35,7 +35,7 @@
                         </div>
                         <div class="row">
                             <dl>
-                                <dt class="body3 txt-color3 txt-bold">
+                                <dt class="">
                                     <label for="nickname">닉네임</label>
                                 </dt>
                                 <dd class="">
@@ -47,14 +47,14 @@
                         </div>
                         <div class="row">
                             <dl>
-                                <dt class="body3 txt-color3 txt-bold">
+                                <dt class="">
                                     <label for="password">비밀번호</label>
                                 </dt>
                                 <dd class="">
                                     <div class="input-box">
                                         <input type="password" id="password" name="password" placeholder="비밀번호를 입력해주세요" autocomplete="off">
                                         <button type="button" class="btn btn-visible">
-                                            <img src="../../img/common/ico_visibility_on.png" />
+                                            <img src="../../img/common/ico_visibility_off.png" />
                                         </button>
                                     </div>
                                 </dd>
@@ -62,14 +62,14 @@
                         </div>
                         <div class="row">
                             <dl>
-                                <dt class="body3 txt-color3 txt-bold">
+                                <dt class="">
                                     <label for="password_check">비밀번호 확인</label>
                                 </dt>
                                 <dd class="">
                                     <div class="input-box">
                                         <input type="password" id="password_check" name="password_check" placeholder="비밀번호를 다시 한 번 입력해주세요" autocomplete="off">
                                         <button type="button" class="btn btn-visible">
-                                            <img src="../../img/common/ico_visibility_on.png" />
+                                            <img src="../../img/common/ico_visibility_off.png" />
                                         </button>
                                     </div>
                                 </dd>
@@ -77,7 +77,7 @@
                         </div>
                     </div>
                     <div class="btn-area">
-                        <button type="submit" class="btn disabled">회원가입</button>
+                        <button type="button" id="btn_join" class="btn disabled">회원가입</button>
                     </div>
                 </form>
                 <div class="add-area">
@@ -104,5 +104,7 @@
             </div>
         </div>
     </div>
+    <script src="../../js/input.js"></script>
+    <script type="module" src="../../js/signup.js"></script>
 </body>
 </html>

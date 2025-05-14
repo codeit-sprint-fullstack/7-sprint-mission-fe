@@ -86,3 +86,17 @@
     color:#3692ff;
     text-decoration: underline;
 }
+@media (max-width: 743px) {
+    .wrap{
+        min-width: 375px;
+        padding: 48px 16px;
+    }
+    .member-area{
+        gap:24px;
+        width: 100%;
+        max-width: 400px;
+    }
+    .member-area .logo img{
+        width: 198px;
+    }
+}
