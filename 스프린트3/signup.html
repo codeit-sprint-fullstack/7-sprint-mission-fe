@@ -2,15 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="img_pandaface.svg" type="image/x-icon" />
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style_signup.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://celebrated-cucurucho-985c3d.netlify.app/signup"/>
+    <meta property="og:title" content="판다마켓 - 회원가입"/>
+    <meta property="og:image" content="image/img_pandaface.svg"/>
+    <meta property="og:description" content="일상의 모든 물건을 거래해 보세요"/>
+
+    <link rel="stylesheet" href="style/reset.css">
+    <link rel="stylesheet" href="style/signup.css">
+    <link rel="icon" href="image/img_pandaface.svg" type="image/x-icon" />
     <title>판다마켓 회원가입</title>
 </head>
+
 <body>
     <div class="logo">
         <a href="index.html">
-        <img src="./img_pandaface.svg" alt="로고">
+        <img src="image/img_pandaface.svg" alt="로고">
         <p>판다마켓</p>
         </a>
     </div>
@@ -23,8 +31,8 @@
             <input type="nickname" id="nickname" name="nickname" placeholder="닉네임을 입력해주세요">
             <label for="password">비밀번호</label>
             <input type="password" id="password" name="password" placeholder="비밀번호를 입력해주세요">
-            <label for="password">비밀번호 확인</label>
-            <input type="password" id="password" name="password" placeholder="비밀번호를 다시 한 번 입력해주세요"> 
+            <label for="password-confirm">비밀번호 확인</label>
+            <input type="password" id="password-confirm" name="password-confirm" placeholder="비밀번호를 다시 한 번 입력해주세요"> 
 
             <button>회원가입</button>
     
@@ -32,16 +40,16 @@
                 <p>간편 로그인하기</p>
                 <div class="gk">
                     <a href="http://www.google.com">
-                        <img src="google.png" alt="구글로그인" width="30" height="30">
+                        <img src="image/google-logo.png" alt="구글로그인" width="30" height="30">
                     </a>
                     <a href="https://www.kakaocorp.com/page/">
-                        <img src="kakao.png" alt="카카오로그인" width="30" height="30">
+                        <img src="image/kakao.png" alt="카카오로그인" width="30" height="30">
                     </a>
                 </div>
             </div>
         </div>
         <br>
-        <p>이미 회원이신가요? <span> <a href="login.html"> 로그인 </a></span></p>
+        <p>이미 회원이신가요? <a href="login.html"> 로그인 </a> </p>
     </div>
 
     

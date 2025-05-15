@@ -10,6 +10,10 @@ html {
   font-size: 62.5%;  
 }
 
+body {
+  font-size: 1.6rem; /* 16px */
+}
+
 
 .with-header {
   margin: 0;  
@@ -38,7 +42,7 @@ select {
 
 button {
   background: none;
-  border: none
+  border: none;
   outline: none;
   box-shadow: none;
   cursor: pointer;
@@ -150,6 +154,13 @@ h1 {
   background-repeat: no-repeat;  
   background-position: 80% bottom;  
   background-size: 55%;  
+}
+
+.banner-top {
+  background-image: url('Img_home_top.png');
+  background-position: center;
+  background-size: cover;
+  width: 55%;
 }
 
 .features {

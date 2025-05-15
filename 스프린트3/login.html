@@ -3,19 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="img_pandaface.svg" type="image/x-icon" />
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style_login.css">
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://celebrated-cucurucho-985c3d.netlify.app/login"/>
+    <meta property="og:title" content="판다마켓 - 로그인"/>
+    <meta property="og:image" content="image/img_pandaface.svg"/>
+    <meta property="og:description" content="일상의 모든 물건을 거래해 보세요"/>
+
+    <link rel="stylesheet" href="style/reset.css">
+    <link rel="stylesheet" href="style/login.css">
+    <link rel="icon" href="image/img_pandaface.svg" type="image/x-icon" />
+
     <title>판다마켓 로그인</title>
 </head>
 <body>
-    
     <a href="index.html"> 
         <div class="logo">
-        <img src="img_pandaface.svg" alt="로고" width="396">
+        <img src="image/img_pandaface.svg" alt="로고" width="396">
         <p>판다마켓<p>
+        </div>
     </a>  
-    </div>
+  
     <br>
     <div class="wrapper">
         <div class="main"> 
@@ -45,48 +52,12 @@
         <p>판다마켓이 처음이신가요? <span> <a href="signup.html">회원가입</a></span></p>
         </div>
     </div>
-    <script>
-        const emailInput = document.getElementById("email");
-        const emailError = document.getElementById("email-error");
-        const passwordInput = document.getElementById("password");
-      
+    <div id="error-modal" class="modal">
+      <div class="modal-conteent">
+        <p id="modal-message"></p>
+        <button id="confirm-button" class="confirm-button">확인</button>
+      </div>
+    </div>
 
-        emailInput.addEventListener("blur", function () {
-          const email = emailInput.value;
-      
-          if (email === "") {
-            emailInput.style.border = "1px solid red";
-            emailError.textContent = "이메일을 입력해주세요.";
-            emailError.style.display = "block";
-          } else if (!(email.includes("@") && email.includes("."))) {
-            emailInput.style.border = "1px solid red";
-            emailError.textContent = "잘못된 이메일 형식입니다.";
-            emailError.style.display = "block";
-          } else {
-            emailInput.style.border = "1px solid #ccc";
-            emailError.style.display = "none";
-          }
-        });
-      
-        // 버튼 눌렀을 때 검사
-        document.querySelector("button").addEventListener("click", function (e) {
-          e.preventDefault();
-      
-          const email = emailInput.value.trim();
-          const password = passwordInput.value.trim();
-      
-          if (!(email.includes("@") && email.includes("."))) {
-            alert("잘못된 이메일 형식입니다.");
-            return;
-          }
-      
-          if (password.length < 8) {
-            alert("비밀번호를 8자 이상 입력해주세요.");
-            return;
-          }
-      
-          alert("로그인 정보가 유효합니다!");
-        });
-      </script>
 </body>
 </html>
