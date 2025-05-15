@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
   padding: 231px 640px 284px 640px;
+  background-color: #FCFCFC
 
 }
 
@@ -92,7 +93,7 @@
 
 .input-wrapper {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   width: 640px;
   height: 56px;
   background-color: transparent;
@@ -100,6 +101,7 @@
   position: relative;
   border-radius: 12px;
   gap: 10px;
+  flex-direction: column;
 }
 
 .btn-visibility {
@@ -108,6 +110,7 @@
   cursor: pointer;
   position: absolute;
   right: 24px;
+  top: 13px;
 }
 
 .login {
@@ -167,6 +170,7 @@
   align-items: flex-start;
   gap: 10px;
   border-radius: 8px;
+  background-color: #e3f2ff
 }
 
 .inner {
@@ -244,4 +248,145 @@
   text-decoration-thickness: auto;
   text-underline-offset: auto;
   text-underline-position: from-font;
+}
+
+.text-input.error {
+  border: 1px solid red !important;
+}
+
+.error-message {
+  padding-left: 16px;
+  color: var(--error-red, #F74747);
+  font-family: Pretendard;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+button[disabled] {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* 비활성 상태 */
+#loginButton {
+  background-color: #9CA3AF;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 16px;
+  font-size: 16px;
+}
+
+/* 로그인 버튼 활성화 상태 */
+#loginButton:enabled {
+  background-color: #3692FF;
+  cursor: pointer;
+}
+
+/* 회원가입 버튼 활성화 */
+#signupButton:enabled {
+  background-color: #3692FF;
+  cursor: pointer;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.70);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 540px;
+  height: 250px;
+  flex-shrink: 0;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+#modalMessage {
+  color: var(--Cool-Gray-800, #1F2937);
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 30px;
+}
+
+#modalConfirmButton {
+  display: flex;
+  width: 120px;
+  height: 48px;
+  padding: 12px 23px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: var(--brand-blue, #3692FF);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-family: Pretendard, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+#signupModalMessage {
+  color: var(--Cool-Gray-800, #1F2937);
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 30px;
+}
+
+#signupModalConfirmButton {
+  display: flex;
+  width: 120px;
+  height: 48px;
+  padding: 12px 23px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: var(--brand-blue, #3692FF);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-family: Pretendard, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.form-container {
+  width: calc(100% - 32px);
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+@media (min-width: 744px) {
+  .container {
+    width: 100%;
+    max-width: none;
+    margin: 0 auto;
+  }
 }

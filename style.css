@@ -56,6 +56,7 @@
   display: flex;
   align-items: end;
   justify-content: center;
+  background-color:#CFE5FF
 }
 
 .rect {
@@ -115,17 +116,19 @@
   justify-content: center;
   align-items: center;
   gap: 64px;
+  background-color: #FFFFFF
 }
 
 .top-img-text1 {
   display: flex;
-width: 988px;
-justify-content: center;
-align-items: center;
-gap: 64px;
+  width: 988px;
+  justify-content: center;
+  align-items: center;
+  gap: 64px;
+  background-color: #FCFCFC
 }
 
-.text1-1 {
+.main-top-text1-1 {
   color: #3692FF;
   font-family: Pretendard;
   font-size: 18px;
@@ -134,7 +137,7 @@ gap: 64px;
   line-height: 26px; /* 144.444% */
 }
 
-.text1-2 {
+.main-top-text1-2 {
   color: #374151;
   font-family: Pretendard;
   font-size: 40px;
@@ -145,7 +148,7 @@ gap: 64px;
   margin-top: 12px;
 }
 
-.text1-3 {
+.main-top-text1-3 {
   color: #374151;
   font-family: Pretendard;
   font-size: 24px;
@@ -168,6 +171,7 @@ gap: 64px;
   justify-content: center;
   align-items: center;
   gap: 64px;
+  background-color: #FFFFFF
 }
 
 .middle-img-text2 {
@@ -176,9 +180,10 @@ gap: 64px;
   justify-content: center;
   align-items: center;
   gap: 64px;
+  background-color: #FCFCFC
 }
 
-.text2-1 {
+.main-middle-text2-1 {
   color: #3692FF;
   font-family: Pretendard;
   font-size: 18px;
@@ -187,7 +192,7 @@ gap: 64px;
   line-height: 26px; /* 144.444% */
 }
 
-.text2-2 {
+.main-middle-text2-2 {
   color: #374151;
   text-align: right;
   font-family: Pretendard;
@@ -199,7 +204,7 @@ gap: 64px;
   margin-top: 12px;
 }
 
-.text2-3 {
+.main-middle-text2-3 {
   color: #374151;
   text-align: right;
   font-family: Pretendard;
@@ -223,6 +228,7 @@ gap: 64px;
   justify-content: center;
   align-items: center;
   gap: 64px;
+  background-color: #FFFFFF
 }
 
 .bottom-img-text3 {
@@ -231,9 +237,10 @@ gap: 64px;
   justify-content: center;
   align-items: center;
   gap: 64px;
+  background-color: #FCFCFC
 }
 
-.text3-1 {
+.main-bottom-text3-1 {
   color: #3692FF;
   font-family: Pretendard;
   font-size: 18px;
@@ -242,7 +249,7 @@ gap: 64px;
   line-height: 26px; /* 144.444% */
 }
 
-.text3-2 {
+.main-bottom-text3-2 {
   color: #374151;
   font-family: Pretendard;
   font-size: 40px;
@@ -253,7 +260,7 @@ gap: 64px;
   margin-top: 12px;
 }
 
-.text3-3 {
+.main-bottom-text3-3 {
   color: #374151;
   font-family: Pretendard;
   font-size: 24px;
@@ -272,6 +279,7 @@ gap: 64px;
 
 .blank {
   height: 138px;
+  background-color: #FFFFFF
 }
 
 .pandahome-bottom {
@@ -280,6 +288,7 @@ gap: 64px;
   justify-content: center;
   align-items: end;
   gap: 64px;
+  background-color:#CFE5FF
 }
 
 .text4-area {
@@ -314,6 +323,7 @@ gap: 64px;
   align-items: flex-start;
   gap: 10px;
   flex-shrink: 0;
+  background-color: #111827
 }
 
 .final-contents {
