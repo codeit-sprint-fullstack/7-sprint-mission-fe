@@ -9,7 +9,7 @@ export function getArticleList(page, pageSize, keyword){
     return response.json();
   })
   .catch((error)=>{
-    console.log(error);
+    console.error(error);
   })
 }
 
@@ -26,9 +26,8 @@ export function createArticle(title,content,image) {
       }
   })
   .then((response)=>{
-
     if(!response.ok){
-      throw new Error("error");
+      throw new Error("createArticle에러");
     }
     return response.json();
   })
@@ -69,7 +68,4 @@ export function deleteArticle(id){
   .catch((error)=>{
     console.log(error);
   })
-}
-function asd(){
-  
 }
