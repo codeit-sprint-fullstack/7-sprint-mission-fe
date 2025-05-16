@@ -32,7 +32,7 @@ export async function createProduct(name,description,price,tags,images) {
     }
   });
   if(!response.ok){
-    throw new Error("에러");
+    throw new Error("create에러");
   }
   const data = await response.json();
   return data;
@@ -53,7 +53,7 @@ export async function patchProduct(id, update) {
   });
 
   if(!response.ok){
-    throw new Error("에러");
+    throw new Error("patch에러");
   }
   const data = await response.json();
   return data;
@@ -69,10 +69,8 @@ export async function deleteProduct(id) {
     method: "DELETE",
   });
   if(!response.ok){
-    throw new Error("에러");
+    throw new Error("딜리트에러");
   }
-  const data = await response.json();
-  return data;
   }
   catch(error){
     console.error(error);
