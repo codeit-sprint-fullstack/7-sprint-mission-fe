@@ -1,4 +1,4 @@
-import { checkBlank, checkEmailType, checkLength, resetWrongInput, changeWrongInput, checkValidInput} from "functions.js";
+import { checkBlank, checkEmailType, checkLength, resetWrongInput, changeWrongInput, checkValidInput} from "./functions.js";
 
 const USER_DATA = [
     { email: 'codeit1@codeit.com', password: "codeit101!" },
@@ -18,9 +18,6 @@ const loginButton = form.children[2]
 // 이메일 칸을 체크하는 함수. 비어있지 않은지, 올바른 이메일 형식인지를 검사한다.
 // 비어 있거나 잘못된 형식이면 스타일에 변화가 있다(경고 문구+붉은색)
 function checkEmail() {
-    // 이 alert도 실행이 안되는 이유가 뭐지 아 
-    alert('이메일 나감');
-
     //스타일 초기화
     resetWrongInput(inputEmail);
 
@@ -39,7 +36,8 @@ function checkPassword() {
 }
 
 function validLogin() {
-    if (!checkValidInput(inputEmail) && !checkValidInput(inputPassword)) {
+    if (!checkValidInput(inputEmail).length 
+    && !checkValidInput(inputPassword).length) {
         return true;
     } else {
         return false;
@@ -61,7 +59,7 @@ function checkLoginButton() {
 }
 
 
-function checkAvailableLogin () {
+function checkAvailableLogin (event) {
     currentEmail = inputEmail.value;
     currentPassword = inputPassword.value;
     
@@ -82,4 +80,4 @@ function checkAvailableLogin () {
 inputEmail.addEventListener('focusout', checkEmail);
 inputPassword.addEventListener('focusout', checkPassword);
 form.addEventListener('keyup', checkLoginButton);
-form.addEventListener('submit', checkAvailableLogin);
+form.addEventListener('submit', checkAvailableLogin)

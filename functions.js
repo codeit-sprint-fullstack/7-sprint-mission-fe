@@ -28,6 +28,15 @@ function checkLength(element) {
     }
 }
 
+//두 개의 element가 일치하는지 확인 (일치하면 false. 일치하지 않아야 true)
+function checkMismatch(element, standard) {
+    if (element.value === standard.value) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
 //경고 문구가 있는 경우, 스타일 초기화 함수
 function resetWrongInput(inputElement) {
     if (inputElement.classList.contains('wrong-input')) {
@@ -39,8 +48,8 @@ function resetWrongInput(inputElement) {
 
 // 잘못된 양식인 경우 스타일 변화
 function changeWrongInput (inputElement) {
-    data = checkValidInput(inputElement);
-    if (data) {
+    const data = checkValidInput(inputElement);
+    if (data.length >= 1) {
         inputElement.classList.add('wrong-input');
         const warningText = document.createElement('p');      
         warningText.textContent = data[2];
@@ -62,9 +71,8 @@ function checkValidInput(inputElement) {
             } else if (checkEmailType(inputElement)) {
                 return [elementType, 'wrong email', '잘못된 이메일 형식입니다.'];
             } else {
-                return false;
+                return [];
             }
-            break;
 
         case 'password':
             if (checkBlank(inputElement)) {
@@ -72,15 +80,23 @@ function checkValidInput(inputElement) {
             } else if (checkLength(inputElement)) {
                 return [elementType, 'wrong length', '비밀번호를 8자 이상 입력해주세요.'];
             } else {
-                return false;
+                return [];
             }
-            break;
+
+        case 'password-check':
+            const standard = inputElement.parentElement.previousElementSibling.children[1]
+            if (checkMismatch(inputElement, standard)) {
+                return [elementType, 'mismatch', '비밀번호가 일치하지 않습니다.'];
+            } else {
+                return [];
+            }
 
         default:
             console.log('현재 값은 이메일과 패스워드가 아닙니다.');
-            return false;
+            return [];
     }
 }
+
 
 
 export { checkBlank, checkEmailType, checkLength, resetWrongInput, changeWrongInput, checkValidInput };
