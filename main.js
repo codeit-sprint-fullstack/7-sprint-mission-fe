@@ -56,4 +56,8 @@ import * as products from './ProductService.js';
 // .then((data)=>{
 //   console.log("deleteProduct",data)
 // })
-//지금 안한거 그냥 get을 안함 좀있다가할것 
+
+// products.getProduct(170)
+// .then((data)=>{
+//   console.log("get",data);
+// })

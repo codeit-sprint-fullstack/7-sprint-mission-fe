@@ -85,6 +85,8 @@ export async function getProduct(id) {
     if(!response.ok){
       throw new Error("get에러");
     }
+    const data = await response.json();
+    return data
   }
   catch(error){
     console.error(error);
