@@ -127,12 +127,12 @@ const overLayPage = document.querySelector(".overlay");
 
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelector(".sign_button").addEventListener("click", function () {
-    const idValue = document.querySelector(".validation_id").value;
-    const pwValue = document.querySelector(".validation_pw").value;
-    const confValue = document.querySelector(".validation_conf").value;
-    const findId = !USER_DATA.some((user) => user.email === idValue);
+    const idId = document.querySelector(".validation_id").value;
+    const pwId = document.querySelector(".validation_pw").value;
+    const confId = document.querySelector(".validation_conf").value;
+    const findId = !USER_DATA.some((user) => user.email === idId);
     if (findId) {
-      if (!(pwValue === confValue)) {
+      if (!(pwId === confId)) {
         const modelRename = document.querySelector(".modal_box");
         const modelFirstChild = modelRename.firstElementChild;
         modelFirstChild.textContent = "비밀번호가 일치하지 않습니다.";
