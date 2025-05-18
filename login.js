@@ -32,9 +32,9 @@ updateButtonPw.addEventListener('input',updateLoginButton);
 //로그인 데이터확인로직
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelector('.login_button').addEventListener('click', function () {
-    const a = document.querySelector('.validation_id').value;
-    const b = document.querySelector('.validation_pw').value;
-    const findId = USER_DATA.find(user => user.email == a && user.password == b);
+    const validationId = document.querySelector('.validation_id').value;
+    const validationPw = document.querySelector('.validation_pw').value;
+    const findId = USER_DATA.find(user => user.email == validationId && user.password == validationPw);
     if(findId){
       console.log("로그인 성공"); //로그인성공하면 /items로 이동
       window.location.href = '/items';
