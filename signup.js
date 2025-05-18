@@ -8,7 +8,7 @@ const signBuntton =document.querySelector('.sign_button');
 
 
 
-function upDateLabel(targetBox, message) {
+function updateLabel(targetBox, message) {
   const input = targetBox.querySelector('input');
   if (!targetBox.querySelector('.input_label')) {
     const newLabel = document.createElement('label');
@@ -34,7 +34,7 @@ emailFocus.forEach(box => {
   const input = box.querySelector('input');
   input.addEventListener('input', (e) => {
     if (e.target.value.includes("@") != true) { 
-      upDateLabel(box, "잘못된 이메일 형식입니다.");
+      updateLabel(box, "잘못된 이메일 형식입니다.");
     } else {
       removeLabel(box);
     }
@@ -48,7 +48,7 @@ passwordFocus.forEach(box => {
   const input = box.querySelector('input');
   input.addEventListener('input', (e) => {
     if (e.target.value.length < 8) { 
-      upDateLabel(box, "비밀번호를 8자 이상 입력해주세요");
+      updateLabel(box, "비밀번호를 8자 이상 입력해주세요");
     } else {
       removeLabel(box);
     }
@@ -63,7 +63,7 @@ confirmFocus.forEach(box => {
   const input = box.querySelector('input');
   input.addEventListener('input', (e) => {
     if (savepw != e.target.value) { 
-      upDateLabel(box, "비밀번호가 일치하지 않습니다.");
+      updateLabel(box, "비밀번호가 일치하지 않습니다.");
     } else {
       removeLabel(box);
     }
