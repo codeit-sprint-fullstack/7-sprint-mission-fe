@@ -6,7 +6,11 @@ import * as products from './ProductService.js';
 // .then((data)=>{
 //   console.log("createArcticle결과:",data)
 // })
-// //성공
+//성공
+// articles.getArticle(202)
+// .then((data)=>{
+//   console.log("get",data);
+// })
 
 // articles.patchArticle(195,{
 //   "title": "1",
