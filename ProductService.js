@@ -77,3 +77,17 @@ export async function deleteProduct(id) {
   }
 
 }
+
+export async function getProduct(id) {
+  try{
+    const response = await fetch(`${ProductUrl}/${id}`);
+
+    if(!response.ok){
+      throw new Error("get에러");
+    }
+  }
+  catch(error){
+    console.error(error);
+  }
+  
+}

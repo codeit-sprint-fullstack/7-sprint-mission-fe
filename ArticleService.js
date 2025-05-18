@@ -69,3 +69,16 @@ export function deleteArticle(id){
     console.log(error);
   })
 }
+
+export function getArticle(id){
+  return fetch(`${articlesUrl}/${id}`)
+  .then((response)=>{
+    if(!response.ok){
+      throw new Error("get에러");
+    }
+    return response.json();
+  })
+  .catch((error)=>{
+    console.error(error);
+  })
+};
