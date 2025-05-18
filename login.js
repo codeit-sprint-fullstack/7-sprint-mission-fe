@@ -2,7 +2,7 @@ import {USER_DATA} from '../7-sprint-mission-fe/userData.js';
 
 const focusOut = document.querySelectorAll('[class$="password_box"]');
 const emailFocusOut =document.querySelectorAll('[class$="email_box"]');
-const loginBuntton =document.querySelector('.login_button');
+const loginButton =document.querySelector('.login_button');
 const modalClass =document.querySelector('.login_modal');
 const modalButton =document.querySelector('.modal_button');
 const overLayPage =document.querySelector('.overlay');
@@ -16,12 +16,12 @@ const updateButtonPw =document.querySelector('.validation_pw');
 
 function updateLoginButton(){
   if(updateButtonId.value && updateButtonPw.value){
-    loginBuntton.classList.add('active');
-    loginBuntton.disabled  = false;
+    loginButton.classList.add('active');
+    loginButton.disabled  = false;
   }
   else{
-    loginBuntton.classList.remove('active');
-    loginBuntton.disabled  = true;
+    loginButton.classList.remove('active');
+    loginButton.disabled  = true;
   }
 }
 updateButtonId.addEventListener('input',updateLoginButton);
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
       console.log("로그인 실패");
       modalClass.style.display ="block";
       overLayPage.style.display ="block";
-      loginBuntton.classList.remove('active');
+      loginButton.classList.remove('active');
     }
   });
 });
