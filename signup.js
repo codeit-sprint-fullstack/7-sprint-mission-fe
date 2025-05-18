@@ -135,12 +135,12 @@ document.addEventListener('DOMContentLoaded', function () {
         loginBuntton.classList.remove('active');
       }
       else{
-        console.log("로그인 성공"); //로그인성공하면 /items로 이동
+        console.log("회원가입 성공"); //회원가입 성공하면 /items로 이동
         window.location.href = '/login';
       }
     }
     else{
-      console.log("로그인 실패");
+      console.log("회원가입 실패");
       const modelRename = document.querySelector('.modal_box');
       const modelFirstChild = modelRename.firstElementChild;
       modelFirstChild.textContent = "사용 중인 이메일입니다.";
