@@ -5,8 +5,7 @@ const emailFocus = document.querySelectorAll('[class$="email_box"]');
 const confirmFocus = document.querySelectorAll('[class$="confirm_box"]');
 const signBuntton =document.querySelector('.sign_button');
 
-
-
+const emailRegex = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
 
 function updateLabel(targetBox, message) {
   const input = targetBox.querySelector('input');
@@ -33,7 +32,7 @@ function removeLabel(targetBox) {
 emailFocus.forEach(box => {
   const input = box.querySelector('input');
   input.addEventListener('input', (e) => {
-    if (e.target.value.includes("@") != true) { 
+    if (!emailRegex.test(e.target.value)) { 
       updateLabel(box, "잘못된 이메일 형식입니다.");
     } else {
       removeLabel(box);

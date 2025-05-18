@@ -13,7 +13,7 @@ const validation =document.querySelector('.focus_line');
 
 const updateButtonId =document.querySelector('.validation_id');
 const updateButtonPw =document.querySelector('.validation_pw');
-
+const emailRegex = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
 function updateLoginButton(){
   if(updateButtonId.value && updateButtonPw.value){
     loginButton.classList.add('active');
@@ -84,7 +84,7 @@ emailFocusOut.forEach(box => {
   const targetInput = document.querySelector(".email_box");
   
   input.addEventListener('input' ,(e) => {
-    if(e.target.value.includes("@") != true){
+    if(!emailRegex.test(e.target.value)){
       if(!box.querySelector('.input_label')){
         const newLabel = document.createElement("label");
         newLabel.textContent = "잘못된 이메일 형식입니다.";
