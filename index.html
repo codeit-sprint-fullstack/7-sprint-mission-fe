@@ -1,141 +1,173 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>판다마켓</title>
-  <link rel="stylesheet" href="reset.css"/>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-</head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-L7Y42DEEDN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  // require('dotenv').config(); 안되는이유 
-  gtag('config', 'G-L7Y42DEEDN');
-</script>
-<body>
-  <header>
-    <div class="inline_style">
-      <div class="logo">
-        <a href="/"><img src="./img/icon_panda.svg" rel="판다아이콘"/></a>
-        <p class="roka_font">판다마켓</p>
-      </div>     <!--판다로고,판다마켓-->
-      <div class="header_login_btn">
-        <a class="atag_deco" href="/login">로그인</a>
-      </div>     <!--로그인 버튼-->
-    </div>
-  </header>
-  <main>
-    <div class="top_home">
-      <div class="top_inline">
-        <div class="top_gap">
-          <p class="top_home_text">
-            <span>일상의 모든 물건을</span>
-            <span>거래해 보세요</span></p>
-          <a class="atag_deco" href="/items">구경하러 가기</a>
-        </div>  <!--글씨및 버튼-->
-        <div>
-          <img src="./img/Img_home_top.png" alt="판다이미지"/>
-        </div>  <!--판다그림-->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>판다마켓</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-L7Y42DEEDN"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    // require('dotenv').config(); 안되는이유
+    gtag("config", "G-L7Y42DEEDN");
+  </script>
+  <body>
+    <header>
+      <div class="inline_style">
+        <div class="logo">
+          <a href="/"><img src="./img/icon_panda.svg" rel="판다아이콘" /></a>
+          <p class="roka_font">판다마켓</p>
+        </div>
+        <!--판다로고,판다마켓-->
+        <div class="header_login_btn">
+          <a class="atag_deco" href="/login">로그인</a>
+        </div>
+        <!--로그인 버튼-->
       </div>
-    </div>
-    <section class="section_first">
-      <div class="section_inline">
-        <div>
-          <img src="./img/Img_home_01.png" alt="홈 사진1"/>
-        </div>    <!--이미지-->
-        <div>
-          <div class="section_text">
-            <p class="top">Hot item</p>
-            <p class="mid">
-              <span>인기 상품을</span>
-              <span>확인해 보세요</span>
+    </header>
+    <main>
+      <div class="top_home">
+        <div class="top_inline">
+          <div class="top_gap">
+            <p class="top_home_text">
+              <span>일상의 모든 물건을</span>
+              <span>거래해 보세요</span>
             </p>
-            <p class="bot">
-              <span>가장 HOT한 중고거래 물품을</span>
-              <span>판다 마켓에서 확인해 보세요</span>
-            </p>
-          </div>  <!--3개블럭 글씨-->
+            <a class="atag_deco" href="/items">구경하러 가기</a>
+          </div>
+          <!--글씨및 버튼-->
+          <div>
+            <img src="./img/Img_home_top.png" alt="판다이미지" />
+          </div>
+          <!--판다그림-->
         </div>
       </div>
-    </section>
-    <section>
-      <div class="section_inline">
-        <div>  <!--3개블럭 글씨-->
-          <div class="section_text section_text_right">
-            <p class="top">Search</p>
-            <p class="mid">
-              <span>구매를 원하는</span>
-              <span>상품을 검색하세요</span>
-            </p>
-            <p class="bot">
-              <span>구매하고 싶은 물품은 검색해서</span>
-              <span>쉽게 찾아보세요</span>
-            </p>
+      <section class="section_first">
+        <div class="section_inline">
+          <div>
+            <img src="./img/Img_home_01.png" alt="홈 사진1" />
+          </div>
+          <!--이미지-->
+          <div>
+            <div class="section_text">
+              <p class="top">Hot item</p>
+              <p class="mid">
+                <span>인기 상품을</span>
+                <span>확인해 보세요</span>
+              </p>
+              <p class="bot">
+                <span>가장 HOT한 중고거래 물품을</span>
+                <span>판다 마켓에서 확인해 보세요</span>
+              </p>
+            </div>
+            <!--3개블럭 글씨-->
           </div>
         </div>
-        <div> <!--이미지-->
-          <img src="./img/Img_home_02.png" alt="홈 사진1"/>
+      </section>
+      <section>
+        <div class="section_inline">
+          <div>
+            <!--3개블럭 글씨-->
+            <div class="section_text section_text_right">
+              <p class="top">Search</p>
+              <p class="mid">
+                <span>구매를 원하는</span>
+                <span>상품을 검색하세요</span>
+              </p>
+              <p class="bot">
+                <span>구매하고 싶은 물품은 검색해서</span>
+                <span>쉽게 찾아보세요</span>
+              </p>
+            </div>
+          </div>
+          <div>
+            <!--이미지-->
+            <img src="./img/Img_home_02.png" alt="홈 사진1" />
+          </div>
         </div>
-      </div>
-    </section>
-    <section>
-      <div class="section_inline">
-        <div>
-          <img src="./img/Img_home_03.png" alt="홈 사진3"/>
-        </div>    <!--이미지-->
-        <div>
-          <div class="section_text">
-            <p class="top">Register</p>
-            <p class="mid">
-              <span>판매를 원하는</span>
-              <span>상품을 등록하세요</span>
-            </p>
-            <p class="bot">
-              <span>어떤 물건이든 판매하고 싶은</span>
-              <span>판다 마켓에서 확인해 보세요</span>
-            </p>
-          </div>  <!--3개블럭 글씨-->
+      </section>
+      <section>
+        <div class="section_inline">
+          <div>
+            <img src="./img/Img_home_03.png" alt="홈 사진3" />
+          </div>
+          <!--이미지-->
+          <div>
+            <div class="section_text">
+              <p class="top">Register</p>
+              <p class="mid">
+                <span>판매를 원하는</span>
+                <span>상품을 등록하세요</span>
+              </p>
+              <p class="bot">
+                <span>어떤 물건이든 판매하고 싶은</span>
+                <span>판다 마켓에서 확인해 보세요</span>
+              </p>
+            </div>
+            <!--3개블럭 글씨-->
+          </div>
         </div>
-      </div>
-    </section>
-  </main>
-  <div class="footer_details">
-    <footer>
-      <div class="footer_section">
-        <div class="footer_text">
-          <p>©codeit - 2024</p>
+      </section>
+    </main>
+    <div class="footer_details">
+      <footer>
+        <div class="footer_section">
+          <div class="footer_text">
+            <p>©codeit - 2024</p>
+          </div>
+          <div class="footer_text_center">
+            <a class="atag_deco_v2" href="/privacy">Privacy Policy</a>
+            <a class="atag_deco_v2" href="/faq">FAQ</a>
+          </div>
+          <div class="footer_gap">
+            <a
+              href="https://ko-kr.facebook.com/login.php/?login_attempt=1&display=popup"
+              target="_blank"
+              ><img src="./img/ic_facebook.png"
+            /></a>
+            <a href="https://x.com/search-home" target="_blank"
+              ><img src="./img/ic_twitter.png"
+            /></a>
+            <a href="https://www.youtube.com/" target="_blank"
+              ><img src="./img/ic_youtube.png"
+            /></a>
+            <a href="https://www.instagram.com/?hl=ko" target="_blank"
+              ><img src="./img/ic_instagram.png"
+            /></a>
+          </div>
         </div>
-        <div class="footer_text_center ">
-          <a class="atag_deco_v2" href="/privacy">Privacy Policy</a>
-          <a class="atag_deco_v2" href="/faq">FAQ</a>
-        </div>
-        <div class="footer_gap">
-          <a href="https://ko-kr.facebook.com/login.php/?login_attempt=1&display=popup" target="_blank" ><img src="./img/ic_facebook.png"/></a>
-          <a href="https://x.com/search-home" target="_blank" ><img src="./img/ic_twitter.png"/></a>
-          <a href="https://www.youtube.com/" target="_blank" ><img src="./img/ic_youtube.png"/></a>
-          <a href="https://www.instagram.com/?hl=ko" target="_blank" ><img src="./img/ic_instagram.png"/></a>
-        </div>
-      </div>
       </footer>
-    <div class="bottom_box">
-      <div class="bot_home">
-        <div class="">
-          <p class="bot_home_text">
-          <span>믿을 수 있는</span>
-          <span>판다마켓 중고 거래</span></p>
-        </div>    <!--글씨-->
-        <div class="footer_img_detail">
-          <img src="./img/Img_home_bottom.png" alt="판다이미지"/>
-        </div>    <!--판다이미지-->
+      <div class="bottom_box">
+        <div class="bot_home">
+          <div class="">
+            <p class="bot_home_text">
+              <span>믿을 수 있는</span>
+              <span>판다마켓 중고 거래</span>
+            </p>
+          </div>
+          <!--글씨-->
+          <div class="footer_img_detail">
+            <img src="./img/Img_home_bottom.png" alt="판다이미지" />
+          </div>
+          <!--판다이미지-->
+        </div>
       </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>
 
 <!--https://zingy-axolotl-a42751.netlify.app/-->

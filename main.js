@@ -1,6 +1,5 @@
-import * as articles from './ArticleService.js';
-import * as products from './ProductService.js';
-
+import * as articles from "./ArticleService.js";
+import * as products from "./ProductService.js";
 
 // articles.createArticle("문자열","문자열","문자열")
 // .then((data)=>{
@@ -31,7 +30,6 @@ import * as products from './ProductService.js';
 // .then((data)=>{
 //   console.log("deleteArticle결과",data)
 // })
-
 
 // products.createProduct("문자열","문자열",3,["문자열"],["문자열"])
 // .then((data)=>{
