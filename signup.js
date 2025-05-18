@@ -133,24 +133,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const findId = !USER_DATA.some((user) => user.email === idId);
     if (findId) {
       if (!(pwId === confId)) {
-        const modelRename = document.querySelector(".modal_box");
-        const modelFirstChild = modelRename.firstElementChild;
-        modelFirstChild.textContent = "비밀번호가 일치하지 않습니다.";
-        modalClass.style.display = "block";
-        overLayPage.style.display = "block";
-        loginBuntton.classList.remove("active");
+        modelBox("비밀번호가 일치하지 않습니다.");
       } else {
         console.log("회원가입 성공"); //회원가입 성공하면 /items로 이동
         window.location.href = "/login";
       }
     } else {
       console.log("회원가입 실패");
-      const modelRename = document.querySelector(".modal_box");
-      const modelFirstChild = modelRename.firstElementChild;
-      modelFirstChild.textContent = "사용 중인 이메일입니다.";
-      modalClass.style.display = "block";
-      overLayPage.style.display = "block";
-      loginBuntton.classList.remove("active");
+      modelBox("사용 중인 이메일입니다.");
     }
   });
 });
@@ -159,3 +149,12 @@ modalButton.onclick = () => {
   modalClass.style.display = "none";
   overLayPage.style.display = "none";
 };
+
+function modelBox(text) {
+  const modelRename = document.querySelector(".modal_box");
+  const modelFirstChild = modelRename.firstElementChild;
+  modelFirstChild.textContent = text;
+  modalClass.style.display = "block";
+  overLayPage.style.display = "block";
+  loginBuntton.classList.remove("active");
+}
