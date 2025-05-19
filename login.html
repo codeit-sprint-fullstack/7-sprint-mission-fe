@@ -31,19 +31,25 @@
     </header>
 
     <div class="login-wrapper">
-        <form class="login-form" action="/login" method="post">
+        <form class="login-form" action="/login" method="post" novalidate>
             <h3>이메일</h3>
-            <input type="text" name="username" placeholder="  아이디를 입력하세요" required>
+            <input type="email" id="email" placeholder="  이메일을 입력하세요">
+            <p id="emailError" style="color: red; display: none; font-size: 0.9em;">
+              이메일을 입력해주세요.
+            </p>
 
             <h3>비밀번호</h3>
             <div class="password-wrapper">
-                <input type="password" name="password" id="password" placeholder="  비밀번호를 입력하세요" required>
+                <input type="password" name="password" id="password" placeholder="  비밀번호를 입력하세요">
                 <span class="toggle-password" onclick="togglePassword()">
                     <img id="toggleIcon" src="images/logo/pw-eye-closed.png" alt="비밀번호 보기" />
                   </span>
             </div>
+            <p id="passwordError" style="color: red; display: none; font-size: 0.9em;">
+              비밀번호를 입력해주세요.
+            </p>
 
-            <button type="submit">로그인</button>
+            <button type="submit" disabled>로그인</button>
         </form>        
 
         <div class="easyLogin">
@@ -63,21 +69,7 @@
         <p class="signup-text">판다마켓이 처음이신가요?
         <a href="signup.html">회원가입</a></p>
     </div>
-
-    <script>
-        function togglePassword() {
-          const pwInput = document.getElementById("password");
-          const toggleIcon = document.getElementById("toggleIcon");
-      
-          if (pwInput.type === "password") {
-            pwInput.type = "text";
-            toggleIcon.src = "images/logo/pw-eye-closed.png";// 눈 감은 아이콘
-          } else {
-            pwInput.type = "password";
-            toggleIcon.src = "images/logo/pw-eye-open.png"; // 눈 뜬 아이콘
-          }
-        }
-      </script>
+    <script src="script.js"></script>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TFX6HKZQ"
         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
