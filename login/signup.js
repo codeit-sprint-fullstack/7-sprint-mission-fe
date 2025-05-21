@@ -84,7 +84,7 @@ seeButtons.forEach(button => {
     const isVisible = input.type === 'text';
     input.type = isVisible ? 'password' : 'text';
 
-    button.src = isVisible ? './image/close eye.png' : './image/open eye.png';
+    button.src = isVisible ? './image/close_eye.png' : './image/open_eye.png';
     button.alt = isVisible ? '비밀번호 보기' : '비밀번호 숨기기';
   });
 });
@@ -92,10 +92,10 @@ seeButtons.forEach(button => {
 // alert 메세지
 function showAlert(message) {
   alertMessage.textContent = message;
-  alertBox.classList.remove("alert-hidden");
+  alertBox.style.display = 'flex';
 }
 function closeAlert() {
-  alertBox.classList.add("alert-hidden");
+  alertBox.style.display = 'none';
 }
 alertButton.addEventListener("click", closeAlert);
 
