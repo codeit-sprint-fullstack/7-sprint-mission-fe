@@ -1,3 +1,4 @@
+import { getUserList } from "./userList.js";
 const emailInput = document.getElementById("formInputEmail");
 const passwordInput = document.getElementById("formInputPassword");
 const loginButton = document.getElementById("loginButton");
@@ -38,23 +39,16 @@ modalCloseBtn.addEventListener("click", () => {
   // }
 });
 
-const USER_DATA = [
-  { email: "codeit1@codeit.com", password: "codeit101!" },
-  { email: "codeit2@codeit.com", password: "codeit202!" },
-  { email: "codeit3@codeit.com", password: "codeit303!" },
-  { email: "codeit4@codeit.com", password: "codeit404!" },
-  { email: "codeit5@codeit.com", password: "codeit505!" },
-  { email: "codeit6@codeit.com", password: "codeit606!" },
-];
-
 function checkLoginInfo() {
-  const emailValue = emailInput.value;
-  const pwValue = passwordInput.value;
-  const loginValidity = USER_DATA.find((el) => {
-    return el.email == emailValue && el.password == pwValue;
+  const emailValue = emailInput.value.trim();
+  const pwValue = passwordInput.value.trim();
+  const users = getUserList();
+
+  const userExistence = users.find((user) => {
+    return user.email == emailValue && user.password == pwValue;
   });
-  loginStatus = !!loginValidity; //undefined면 false 객체들어오면 true
-  return loginValidity
+  loginStatus = !!userExistence; //undefined면 false 객체들어오면 true
+  return userExistence
     ? `${emailValue} 로그인 성공`
     : "아이디 혹은 비밀번호가 일치하지 않습니다.";
 }

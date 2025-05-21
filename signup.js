@@ -1,3 +1,4 @@
+import { saveUserList, getUserList } from "./userList.js";
 const emailInput = document.getElementById("formInputEmail");
 const passwordInput = document.getElementById("formInputPassword");
 const passwordConfirmInput = document.getElementById(
@@ -34,27 +35,35 @@ let loginStatus = false;
 modalCloseBtn.addEventListener("click", () => {
   modal.classList.add("hidden");
   if (loginStatus) {
-    window.location.href = "index.html"; //추후 items.html로 이동
+    window.location.href = "login.html"; //추후 items.html로 이동
   }
   loginStatus = false;
 });
 
-const USER_DATA = [
-  { email: "codeit1@codeit.com", password: "codeit101!" },
-  { email: "codeit2@codeit.com", password: "codeit202!" },
-  { email: "codeit3@codeit.com", password: "codeit303!" },
-  { email: "codeit4@codeit.com", password: "codeit404!" },
-  { email: "codeit5@codeit.com", password: "codeit505!" },
-  { email: "codeit6@codeit.com", password: "codeit606!" },
-];
-
 function checkSignUpInfo() {
   const modEmailValue = emailInput.value.trim();
+  const modPwValue = passwordInput.value.trim();
+  const modNicknameValue = nicknameInput.value.trim();
+  const currentUsers = getUserList();
 
-  const signupValidity = USER_DATA.some((user) => user.email === modEmailValue);
-  return signupValidity
-    ? `${modEmailValue}은(는) 사용 중인 이메일 입니다.`
-    : "회원가입이 완료되었습니다.";
+  const isDuplicated = currentUsers.some(
+    (user) => user.email === modEmailValue
+  );
+  if (isDuplicated) {
+    return `${modEmailValue}은(는) 사용 중인 이메일입니다.`;
+  }
+  currentUsers.push({
+    email: modEmailValue,
+    password: modPwValue,
+    nickname: modNicknameValue,
+  });
+  saveUserList(currentUsers);
+  return `${modEmailValue} 계정 회원가입 완료
+  ${modNicknameValue}님 환영합니다.`;
+
+  // return isDuplicated
+  //   ? `${modEmailValue}은(는) 사용 중인 이메일 입니다.`
+  //   : "회원가입이 완료되었습니다.";
 }
 
 loginButton.addEventListener("click", () => {
