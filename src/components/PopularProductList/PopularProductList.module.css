@@ -1,0 +1,60 @@
+/* PopularProductList.module.css (Grid 버전) */
+.title {
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--secondary-900);
+  margin-bottom: 16px;
+}
+.popularProductList {
+  --popular-product-list-gap: 16px; /* 카드 간 간격 변수. 필요시 이 값을 조절하세요. */
+  display: grid; /* Grid 레이아웃 사용 */
+  gap: var(--popular-product-list-gap); /* 아이템 간 간격 */
+  list-style: none;
+  /* --- Mobile Styles (375px 이상 ~ 743px 이하) --- */
+  /* 기본값: 모바일에서 1개 아이템을 위한 1열 그리드 */
+  grid-template-columns: 1fr; /* 또는 repeat(1, 1fr) */
+}
+
+.popularProductList li {
+  box-sizing: border-box;
+  display: none; /* 기본적으로 모든 li 요소를 숨깁니다. */
+  /* Grid 아이템은 grid-template-columns에 의해 크기가 제어되므로, */
+  /* 별도의 width나 flex-basis 설정이 필요하지 않을 수 있습니다. */
+}
+
+/* 모바일: 첫 번째 아이템만 표시 (위의 grid-template-columns: 1fr에 맞춰짐) */
+.popularProductList li:nth-child(1) {
+  display: block; /* 첫 번째 아이템 표시 */
+}
+
+/* --- Tablet Styles (744px 이상 ~ 1199px 이하) --- */
+/* 목표: 2개 아이템 표시 */
+@media (min-width: 744px) {
+  .popularProductList {
+    grid-template-columns: repeat(2, 1fr); /* 태블릿에서 2열 그리드 */
+  }
+
+  /* 태블릿: 첫 번째와 두 번째 아이템 표시 */
+  .popularProductList li:nth-child(1),
+  .popularProductList li:nth-child(2) {
+    display: block;
+  }
+  /* li:nth-child(n+3)는 기본 display:none 규칙에 의해 숨겨진 상태로 유지됩니다. */
+}
+
+/* --- PC Styles (1200px 이상) --- */
+/* 목표: 4개 아이템 표시 */
+@media (min-width: 1200px) {
+  .popularProductList {
+    grid-template-columns: repeat(4, 1fr); /* PC에서 4열 그리드 */
+  }
+
+  /* PC: 첫 4개 아이템 표시 */
+  .popularProductList li:nth-child(1),
+  .popularProductList li:nth-child(2),
+  .popularProductList li:nth-child(3),
+  .popularProductList li:nth-child(4) {
+    display: block;
+  }
+  /* li:nth-child(n+5)는 기본 display:none 규칙에 의해 숨겨진 상태로 유지됩니다. */
+}
