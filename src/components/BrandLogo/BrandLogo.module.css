@@ -1,3 +1,14 @@
+@media (max-width: 743px) {
+  .logoImg {
+    display: none; /* 로고 이미지를 숨김 */
+  }
+
+  .logoText.small,
+  .logoText.large {
+    margin-left: 0;
+  }
+}
+
 .logo {
   display: flex;
   justify-content: row;
@@ -12,6 +23,7 @@
 }
 
 .logoText.small {
+  font-family: "ROKAF Sans";
   color: var(--primary-100);
   font-weight: 700;
   font-size: 25px;

@@ -1,6 +1,7 @@
 .btn {
   color: var(--secondary-100);
   font-weight: 600;
+  flex-shrink: 0;
 }
 
 .large {
