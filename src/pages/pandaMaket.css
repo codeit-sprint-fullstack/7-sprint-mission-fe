@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+
+.BestItemList {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: flex-start;
+  gap: 1.5rem;
+}
+.BestItemsLabel {
+  color: var(--Secondary-900, #111827);
+  font-family: Pretendard;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2rem;
+}
+/* Tablet: 744px ~ 1199px */
+@media screen and (max-width: 1199px) and (min-width: 744px) {
+  .BestItemList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile: 375px ~ 743px */
+@media screen and (max-width: 743px) and (min-width: 375px) {
+  .BestItemList {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.BestItemsBox {
+  max-width: 1200px;
+  max-height: 426px;
+}
+.PandaMaketTopLevel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
