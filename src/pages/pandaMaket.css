@@ -37,19 +37,20 @@
 
 .SalesItemsBox {
   display: flex;
-  flex-direction: row;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 1.5rem;
   width: 100%;
-  max-width: 88rem; /* 1200px → 75rem */
-  padding: 40px 0px 24px 0px;
+  max-width: 75rem;
+  padding: 2rem 1rem;
   align-items: center;
+  margin: 0 auto;
 }
 .SalesItemList {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  justify-content: flex-start;
-  gap: 0.0625rem; /* 1px → 0.0625rem */
-  max-width: 75rem; /* 1200px → 75rem */
+  gap: 1rem;
+  width: 100%;
+  max-width: 75rem;
 }
 .SalesItemImg .ItemImg {
   width: 15.0625rem; /* 241px → 15.0625rem */
@@ -95,15 +96,13 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 90rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+  min-width: 640px;
 }
 .salesControlGroup {
   display: flex;
   gap: 1rem; /* 오른쪽 요소 사이 간격 */
-}
-
-.salesTitleWrapper {
-  padding-left: 103px;
 }
 
 /* Tablet: 744px ~ 1199px */
@@ -114,6 +113,15 @@
   }
   .SalesItemList {
     grid-template-columns: repeat(3, 1fr);
+  }
+  .salesSearch {
+    width: 200px;
+  }
+  .salesHeaderContainer {
+    width: 58%;
+  }
+  .SalesItemList {
+    width: 72%;
   }
 }
 

@@ -4,9 +4,9 @@ import "./pandaMaket.css";
 import { useEffect } from "react";
 import Pagination from "../component/pagination/pagination";
 const PandaMaket = () => {
-  const [ItemsCount, setItemsCount] = useState(4);
+  const [bestItemCount, setBestItemCount] = useState(4);
   const [sort, setSort] = useState("latest");
-  const [salesItem, setSalesItem] = useState(10);
+  const [salesItemCount, setSalesItemCount] = useState(10);
   const [startPage, setStartPage] = useState(1);
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -36,19 +36,21 @@ const PandaMaket = () => {
     const updatedItems = () => {
       const width = window.innerWidth;
       if (width >= 375 && width <= 743) {
-        setItemsCount(1); // Mobile
-        setSalesItem(4);
+        setBestItemCount(1); // Mobile
+        setSalesItemCount(4);
       } else if (width >= 744 && width <= 1199) {
-        setItemsCount(2); // Tablet
-        setSalesItem(6);
+        setBestItemCount(2); // Tablet
+        setSalesItemCount(6);
       } else if (width >= 1200) {
-        setItemsCount(4); // PC
-        setSalesItem(10);
+        setBestItemCount(4); // PC
+        setSalesItemCount(10);
       }
     };
     updatedItems();
-    const result = window.addEventListener("resize", updatedItems);
-    return result;
+    window.addEventListener("resize", updatedItems);
+    return () => {
+      window.removeEventListener("resize", updatedItems);
+    };
   }, []);
   return (
     <>
@@ -58,7 +60,7 @@ const PandaMaket = () => {
             <p className="PandaMaketItemsLabel">베스트 상품</p>
           </div>
           <div className="BestItemList">
-            {Array.from({ length: ItemsCount }).map((_, i) => (
+            {Array.from({ length: bestItemCount }).map((_, i) => (
               <Items key={i} />
             ))}
           </div>
@@ -67,7 +69,7 @@ const PandaMaket = () => {
       <div className="PandaMaketMiddleLevel">
         <div className="SalesItemsBox">
           <div className="salesHeaderContainer ">
-            <div className="salesTitleWrapper ">
+            <div>
               <p className="PandaMaketItemsLabel">판매 중인 상품</p>
             </div>
             <div className="salesControlGroup">
@@ -86,11 +88,11 @@ const PandaMaket = () => {
               </select>
             </div>
           </div>
-        </div>
-        <div className="SalesItemList">
-          {Array.from({ length: salesItem }).map((_, i) => (
-            <Items key={i} className="SalesItemImg" />
-          ))}
+          <div className="SalesItemList">
+            {Array.from({ length: salesItemCount }).map((_, i) => (
+              <Items key={i} className="SalesItemImg" />
+            ))}
+          </div>
         </div>
       </div>
       <div>
