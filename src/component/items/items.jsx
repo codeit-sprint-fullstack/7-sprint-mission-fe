@@ -2,10 +2,10 @@ import React from "react";
 import ItemImg from "../../assets/image/ItemImage.png";
 import "./items.css";
 import HeartLogo from "../../assets/image/ic_heart.svg";
-const Items = () => {
+const Items = ({ className }) => {
   return (
     <div className="ItemsTopLevel">
-      <div>
+      <div className={`ItemWrapper ${className || ""}`}>
         <img className="ItemImg" src={ItemImg} alt="설명" />
       </div>
       <div>

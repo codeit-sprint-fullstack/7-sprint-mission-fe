@@ -8,7 +8,7 @@
   justify-content: flex-start;
   gap: 1.5rem;
 }
-.BestItemsLabel {
+.PandaMaketItemsLabel {
   color: var(--Secondary-900, #111827);
   font-family: Pretendard;
   font-size: 1.25rem;
@@ -17,25 +17,115 @@
   line-height: 2rem;
 }
 .BestItemsBox {
-  max-width: 1200px;
-  max-height: 426px;
+  max-width: 75rem; /* 1200px → 75rem */
+  max-height: 26.625rem; /* 426px → 26.625rem */
 }
 .PandaMaketTopLevel {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 2rem 0;
+}
+
+.PandaMaketMiddleLevel {
+  display: flex;
+  flex-direction: column;
+  margin-top: 4rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.SalesItemsBox {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  width: 100%;
+  max-width: 88rem; /* 1200px → 75rem */
+  padding: 40px 0px 24px 0px;
+  align-items: center;
+}
+.SalesItemList {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-content: flex-start;
+  gap: 0.0625rem; /* 1px → 0.0625rem */
+  max-width: 75rem; /* 1200px → 75rem */
+}
+.SalesItemImg .ItemImg {
+  width: 15.0625rem; /* 241px → 15.0625rem */
+  height: 19.1875rem; /* 307px → 19.1875rem */
+}
+.productRegistration {
+  display: flex;
+  height: 42px;
+  padding: 12px 23px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  background: var(--Primary-100, #3692ff);
+}
+.sortStyle {
+  display: flex;
+  width: 130px;
+  height: 42px;
+  padding: 12px 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  border: 1px solid var(--Cool-Gray-200, #e5e7eb);
+  background: #fff;
+}
+.salesSearch {
+  display: flex;
+  width: 325px;
+  height: 42px;
+  padding: 9px 20px 9px 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 12px;
+  background: var(--Secondary-100, #f3f4f6);
+}
+
+.salesHeaderContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 90rem;
+}
+.salesControlGroup {
+  display: flex;
+  gap: 1rem; /* 오른쪽 요소 사이 간격 */
+}
+
+.salesTitleWrapper {
+  padding-left: 103px;
 }
 
 /* Tablet: 744px ~ 1199px */
-@media screen and (max-width: 1199px) and (min-width: 744px) {
+@media screen and (max-width: 74.9375rem) and (min-width: 46.5rem) {
+  /* 1199px → 74.9375rem, 744px → 46.5rem */
   .BestItemList {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .SalesItemList {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 /* Mobile: 375px ~ 743px */
-@media screen and (max-width: 743px) and (min-width: 375px) {
+@media screen and (max-width: 46.4375rem) and (min-width: 23.4375rem) {
+  /* 743px → 46.4375rem, 375px → 23.4375rem */
   .BestItemList {
     grid-template-columns: repeat(1, 1fr);
   }
+  .SalesItemList {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
+
+/* 지금 해야할일 반응형 판매상품 만들기 */
