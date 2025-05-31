@@ -1,6 +1,5 @@
 import axios from "axios";
 
-const prev = "https://sprint-mission-api.vercel.app/products";
 const PRODUCTS_BASE_URL = "https://panda-market-api.vercel.app/products";
 
 // 1. 상품 목록 조회

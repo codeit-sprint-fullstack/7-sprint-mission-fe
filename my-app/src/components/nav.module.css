@@ -1,0 +1,52 @@
+.nav {
+  padding: 12px 0;
+  background-color: white;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logoWrap {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo {
+  height: 32px;
+  margin-right: 8px;
+}
+
+.logoText {
+  color: #3692ff;
+  font-family: "ROKAF Sans";
+  font-size: 25.633px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.menu {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  list-style: none;
+}
+
+.loginBtn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #3692ff;
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}

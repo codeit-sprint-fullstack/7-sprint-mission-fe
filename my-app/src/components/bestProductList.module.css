@@ -1,0 +1,36 @@
+.list {
+  display: grid;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+  .list {
+    grid-template-columns: repeat(
+      4,
+      minmax(250px, 1fr)
+    ); /* 카드 커질 수 있게 */
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .list {
+    grid-template-columns: repeat(2, minmax(300px, 1fr)); /* 2개 커짐 */
+    gap: 16px;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .list {
+    grid-template-columns: 90%;
+    justify-content: center; /* 1개일 때 가운데 정렬 */
+    margin: 0 auto;
+  }
+}
