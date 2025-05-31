@@ -1,4 +1,4 @@
-import favoriteIcon from "../../assets/ic_heart.svg";
+import favoriteIcon from "../../assets/icons/ic_heart.svg";
 import styles from "./ProductCard.module.css";
 
 export const ProductCard = ({ src, name, price, favoriteCount }) => {

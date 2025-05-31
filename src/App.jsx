@@ -1,4 +1,4 @@
-import { ProductPage } from "./pages/productPage";
+import { ProductPage } from "../src/pages/ProductPage";
 
 function App() {
   return <ProductPage />;

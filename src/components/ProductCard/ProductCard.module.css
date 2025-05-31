@@ -45,3 +45,21 @@
   font-size: 12px;
   color: var(--secondary-600);
 }
+
+@media (min-width: 345px) {
+  .productImage {
+    min-width: 160px;
+  }
+}
+
+@media (min-width: 744px) {
+  .productImage {
+    min-width: 221px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .productImage {
+    min-width: 221px;
+  }
+}

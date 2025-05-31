@@ -22,8 +22,6 @@ export const PopularProductList = () => {
     fetchData();
   }, []);
 
-  const postLike = async () => {};
-
   return (
     <section>
       <h2 className={styles.title}>베스트 상품</h2>
