@@ -11,6 +11,7 @@
 }
 
 .title {
+  flex-shrink: 0;
   font-weight: 700;
   font-size: 20px;
   color: var(--secondary-900);
@@ -45,11 +46,14 @@
 .productListGrid {
   display: grid;
 }
+
 @media (min-width: 345px) {
   .productListGrid {
     grid-template-columns: repeat(2, 1fr);
     gap: 8px;
+    margin-top: 16px;
   }
+
   .toolbar {
     gap: 24px;
   }
@@ -59,7 +63,9 @@
   .productListGrid {
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
+    margin-top: 24px;
   }
+
   .toolbar {
     gap: 24px;
   }
@@ -67,9 +73,11 @@
 
 @media (min-width: 1200px) {
   .productListGrid {
+    margin-top: 24px;
     grid-template-columns: repeat(5, 1fr);
     gap: 24px;
   }
+
   .toolbar {
     gap: 24px;
   }

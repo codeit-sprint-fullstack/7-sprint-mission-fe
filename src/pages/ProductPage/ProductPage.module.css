@@ -1,34 +1,28 @@
-.productPage {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 .productContainer {
   display: flex;
   flex-direction: column;
-
-  flex-shrink: 0;
+  justify-content: center;
 }
 @media (min-width: 345px) {
   .productContainer {
-    padding: 16px;
+    /* header를 사용하기 위해 상단 패딩값에 + 70px을 해준다. */
+    padding: 87px 16px 140px;
     gap: 24px;
   }
 }
 
 @media (min-width: 744px) {
   .productContainer {
-    padding: 24px;
+    /* header를 사용하기 위해 상단 패딩값에 + 70px을 해준다. */
+    padding: 94px 24px 140px;
     gap: 40px;
   }
 }
 
 @media (min-width: 1200px) {
   .productContainer {
-    min-width: 1200px;
-
-    padding: 26px 10vw 140px 10vw;
-    gap: 40px;
+    /* header를 사용하기 위해 상단 패딩값에 + 70px을 해준다. */
+    padding: 96px 10vw 140px;
+    gap: 24px;
   }
 }

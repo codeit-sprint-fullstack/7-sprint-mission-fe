@@ -23,7 +23,7 @@ export const PopularProductList = () => {
   }, []);
 
   return (
-    <section>
+    <section className={styles.popularProductContainer}>
       <h2 className={styles.title}>베스트 상품</h2>
       <ul className={styles.popularProductList}>
         {products.map((product) => (

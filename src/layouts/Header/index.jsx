@@ -7,6 +7,7 @@ import styles from "./Header.module.css";
  * Header 컴포넌트
  * @param {object} props - 컴포넌트 props
  * @param {'full' | 'simple'} [props.type='full'] - 헤더 타입 ('full': 네비게이션 있음, 'simple': 네비게이션 없음)
+ * - Header 컴포넌트 사용시 아래 컴포넌트에 margin-top: 70px을 추가해주세요
  */
 export const Header = ({ type = "full" }) => {
   return (
