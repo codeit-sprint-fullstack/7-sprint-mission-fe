@@ -37,9 +37,7 @@ const PandaMaket = () => {
   const handleSortChange = (e) => {
     setSort(e.target.value);
   };
-  // 흠... 검색할떄마다 불러오는건 비효율적인거같음.. 일단 기존에 데이터들을 다불러오고 거기서 일치하는것들만 가져오면될듯?
   const handleSearch = async (e) => {
-    // let searchItem = e.target.value;
     if (e.key === "Enter") {
       try {
         const res = await fetch(
@@ -137,7 +135,6 @@ const PandaMaket = () => {
               <div className="searchGroup">
                 <img className="searchGroupIcon" src={SearchIcon}></img>
                 <input
-                  // onChange={handleSearch}
                   placeholder={"검색할 상품을 입력해주세요"}
                   className="salesSearch"
                   onKeyDown={handleSearch}

@@ -1,7 +1,7 @@
 .ItemImg {
-  width: 17.625rem; /* 282px / 16 */
-  height: 18.9375rem; /* 303px / 16 */
-  border-radius: 0.625rem; /* 10px / 16 */
+  width: 17.625rem;
+  height: 18.9375rem;
+  border-radius: 0.625rem;
 }
 
 .ItemImgSales {
@@ -14,52 +14,45 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 0.25rem; /* 4px / 16 */
+  gap: 0.25rem;
 }
 
 .ItemsBoxText {
   color: var(--Secondary-800, #1f2937);
-
-  /* pretendard/md-14px-medium */
   font-family: Pretendard;
-  font-size: 0.875rem; /* 14px / 16 */
+  font-size: 0.875rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 1.5rem; /* 24px / 16 */
+  line-height: 1.5rem;
 }
 
 .ItemBoxPrice {
   color: var(--Secondary-800, #1f2937);
-
-  /* pretendard/lg-16px-bold */
   font-family: Pretendard;
-  font-size: 1rem; /* 16px / 16 */
+  font-size: 1rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 1.625rem; /* 26px / 16 */
+  line-height: 1.625rem;
 }
 
 .ItemBoxLike {
   color: var(--Secondary-600, #4b5563);
-
-  /* pretendard/xs-12px-medium */
   font-family: Pretendard;
-  font-size: 0.75rem; /* 12px / 16 */
+  font-size: 0.75rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 1.125rem; /* 18px / 16 */
+  line-height: 1.125rem;
 }
 
 .ItemsTopLevel {
-  /* min-width: 220px; */
   height: auto;
-  gap: 1.5rem; /* 24px / 16 */
+  gap: 1.5rem;
   padding: 0px 24px 40px 0px;
 }
 @media screen and (max-width: 46.4375rem) and (min-width: 23.4375rem) {
   .ItemImg {
-    width: 27.625rem; /* 282px / 16 */
-    height: 28.9375rem; /* 303px / 16 */
-    border-radius: 0.625rem; /* 10px / 16 */
+    width: 27.625rem;
+    height: 28.9375rem;
+    border-radius: 0.625rem;
   }
 }

@@ -1,5 +1,4 @@
-import React from "react";
-import "./footer.css"; // CSS 파일명에 맞게 경로 수정해주세요
+import "./footer.css";
 import faceBook from "../../assets/image/ic_facebook.png";
 import instagram from "../../assets/image/ic_instagram.png";
 import twitter from "../../assets/image/ic_twitter.png";

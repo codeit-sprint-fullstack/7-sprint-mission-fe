@@ -20,8 +20,6 @@
   line-height: 2rem;
 }
 .BestItemsBox {
-  /* max-width: 75rem; /* 1200px → 75rem */
-  /* max-height: 26.625rem; 426px → 26.625rem */
 }
 .PandaMaketTopLevel {
   display: flex;
@@ -51,12 +49,10 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 1rem;
-  /* width: 100%;
-  max-width: 75rem; */
 }
 .SalesItemImg .ItemImg {
-  width: 15.0625rem; /* 241px → 15.0625rem */
-  height: 19.1875rem; /* 307px → 19.1875rem */
+  width: 15.0625rem;
+  height: 19.1875rem;
 }
 .productRegistration {
   color: white;
@@ -105,7 +101,7 @@
 }
 .salesControlGroup {
   display: flex;
-  gap: 1rem; /* 오른쪽 요소 사이 간격 */
+  gap: 1rem;
 }
 
 .searchGroup {
@@ -123,7 +119,6 @@ select {
 }
 /* Tablet: 744px ~ 1199px */
 @media screen and (max-width: 74.9375rem) and (min-width: 46.5rem) {
-  /* 1199px → 74.9375rem, 744px → 46.5rem */
   .BestItemList {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -143,7 +138,6 @@ select {
 
 /* Mobile: 375px ~ 743px */
 @media screen and (max-width: 46.4375rem) and (min-width: 23.4375rem) {
-  /* 743px → 46.4375rem, 375px → 23.4375rem */
   .BestItemList {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -163,4 +157,3 @@ select {
     justify-content: flex-start;
   }
 }
-/* 지금 해야할일 반응형 판매상품 만들기 */
