@@ -3,6 +3,9 @@ import Items from "../component/items/items";
 import "./pandaMaket.css";
 import { useEffect } from "react";
 import Pagination from "../component/pagination/pagination";
+import SearchIcon from "../assets/image/ic_search.svg";
+import CustomButton from "../component/customSelect/customSelect.jsx";
+
 const PandaMaket = () => {
   const [bestItemCount, setBestItemCount] = useState(4);
   const [sort, setSort] = useState("recent");
@@ -34,6 +37,21 @@ const PandaMaket = () => {
   const handleSortChange = (e) => {
     setSort(e.target.value);
   };
+  // 흠... 검색할떄마다 불러오는건 비효율적인거같음.. 일단 기존에 데이터들을 다불러오고 거기서 일치하는것들만 가져오면될듯?
+  const handleSearch = async (e) => {
+    // let searchItem = e.target.value;
+    if (e.key === "Enter") {
+      try {
+        const res = await fetch(
+          `https://panda-market-api.vercel.app/products?keyword=${e.target.value}`
+        );
+        const data = await res.json();
+        setGetSalesItem(data.list || []);
+      } catch (err) {
+        console.error("판매 상품 가져오기 실패:", err);
+      }
+    }
+  };
 
   const fetchSalesItems = async () => {
     try {
@@ -55,7 +73,7 @@ const PandaMaket = () => {
       const data = await res.json();
       setGetBestItem(data.list || []);
     } catch (err) {
-      console.error("베스트 아이템 가져오기 실패:", err);
+      console.error("베스트 상품 가져오기 실패:", err);
     }
   };
 
@@ -115,10 +133,15 @@ const PandaMaket = () => {
               <p className="PandaMaketItemsLabel">판매 중인 상품</p>
             </div>
             <div className="salesControlGroup">
-              <input
-                placeholder={"검색할 상품을 입력해주세요"}
-                className="salesSearch"
-              ></input>
+              <div className="searchGroup">
+                <img className="searchGroupIcon" src={SearchIcon}></img>
+                <input
+                  // onChange={handleSearch}
+                  placeholder={"검색할 상품을 입력해주세요"}
+                  className="salesSearch"
+                  onKeyDown={handleSearch}
+                ></input>
+              </div>
               <span className="productRegistration">상품 등록하기</span>
               <select
                 value={sort}
@@ -128,6 +151,11 @@ const PandaMaket = () => {
                 <option value="recent">최신순</option>
                 <option value="favorite">좋아요순</option>
               </select>
+              <CustomButton
+                value={sort}
+                onChange={handleSortChange}
+                className="customSelect"
+              ></CustomButton>
             </div>
           </div>
           <div className="SalesItemList">
@@ -138,6 +166,7 @@ const PandaMaket = () => {
                 price={item.price}
                 favoriteCount={item.favoriteCount}
                 image={item.images[0]}
+                className={"ItemImgSales"}
               />
             ))}
           </div>

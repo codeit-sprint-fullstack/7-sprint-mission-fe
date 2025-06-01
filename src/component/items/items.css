@@ -4,6 +4,12 @@
   border-radius: 0.625rem; /* 10px / 16 */
 }
 
+.ItemImgSales {
+  width: 13.79rem;
+  height: 14.82rem;
+  border-radius: 0.625rem;
+}
+
 .ItemLikeBox {
   display: flex;
   justify-content: flex-start;

@@ -17,8 +17,8 @@
   line-height: 2rem;
 }
 .BestItemsBox {
-  max-width: 75rem; /* 1200px → 75rem */
-  max-height: 26.625rem; /* 426px → 26.625rem */
+  /* max-width: 75rem; /* 1200px → 75rem */
+  /* max-height: 26.625rem; 426px → 26.625rem */
 }
 .PandaMaketTopLevel {
   display: flex;
@@ -49,14 +49,15 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 1rem;
-  width: 100%;
-  max-width: 75rem;
+  /* width: 100%;
+  max-width: 75rem; */
 }
 .SalesItemImg .ItemImg {
   width: 15.0625rem; /* 241px → 15.0625rem */
   height: 19.1875rem; /* 307px → 19.1875rem */
 }
 .productRegistration {
+  color: white;
   display: flex;
   height: 42px;
   padding: 12px 23px;
@@ -83,7 +84,7 @@
   display: flex;
   width: 325px;
   height: 42px;
-  padding: 9px 20px 9px 16px;
+  padding: 9px 20px 9px 28px;
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
@@ -105,6 +106,19 @@
   gap: 1rem; /* 오른쪽 요소 사이 간격 */
 }
 
+.searchGroup {
+}
+.searchGroupIcon {
+  position: absolute;
+  pointer-events: none;
+  transform: translate(26%, 38%);
+}
+.customSelect {
+  display: none;
+}
+select {
+  display: block;
+}
 /* Tablet: 744px ~ 1199px */
 @media screen and (max-width: 74.9375rem) and (min-width: 46.5rem) {
   /* 1199px → 74.9375rem, 744px → 46.5rem */
@@ -133,6 +147,9 @@
   }
   .SalesItemList {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .sortStyle {
+    display: none;
   }
 }
 
