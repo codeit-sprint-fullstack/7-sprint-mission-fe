@@ -1,0 +1,24 @@
+footer {
+  padding: 32px 200px;
+  height: 160px;
+  background: #111827;
+}
+.inner {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+.snsList {
+  display: flex;
+  gap: 12px;
+}
+.fUtil {
+  display: flex;
+  gap: 30px;
+}
+.fUtil a {
+  color: #e5e7eb;
+}
+.copyright {
+  color: #9ca3af;
+}

@@ -1,0 +1,56 @@
+section.subSection {
+  padding: 48px 0;
+}
+.inner {
+  width: 1200px;
+  margin: 0 auto;
+}
+section.subSection .inner {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.titleArea {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.titleArea .titleAreaUtil {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.titleArea h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+.titleArea .searchForm .inputBox {
+  position: relative;
+}
+.titleArea .searchForm .inputBox::before {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  margin-top: -12px;
+  display: block;
+  width: 24px;
+  height: 24px;
+  content: "";
+  background: url("../assets/ic_search.svg") 50% 50% no-repeat;
+}
+.titleArea .searchForm .inputBox input {
+  height: 42px;
+  padding-left: 44px;
+}
+.titleArea .titleAreaUtil > .btn {
+  height: 42px;
+  padding: 0 22px;
+}
+.titleArea .selectBox {
+  height: 42px;
+  width: 130px;
+  border-radius: 12px;
+}
+.titleArea .selectBox ul {
+  top: 50px;
+}

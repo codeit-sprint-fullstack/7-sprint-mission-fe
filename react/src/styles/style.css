@@ -1,0 +1,123 @@
+@charset "utf-8";
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/variable/pretendardvariable.css");
+* {
+  font-family: "Pretendard Variable", "Pretendard", "Noto Sans KR", sans-serif;
+  color: #374151;
+}
+.logo span {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+.btn.active {
+  background: #3692ff;
+  color: #fff;
+}
+.btn.disabled {
+  background: #9ca3af;
+  color: #f3f4f6;
+  cursor: default;
+}
+.inputArea label {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+}
+.inputBox {
+  position: relative;
+}
+.inputBox .btn {
+  position: absolute;
+  right: 24px;
+  top: 28px;
+  transform: translateY(-50%);
+}
+.inputBox p.txt-help {
+  padding: 8px 0 0 16px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #666;
+}
+.inputBox p.txt-help.error {
+  color: #f74747;
+}
+input {
+  width: 100%;
+  height: 56px;
+  border-radius: 12px;
+  padding: 0 24px;
+  box-sizing: border-box;
+  background: #f3f4f6;
+  border: 1px solid #f3f4f6;
+  font-size: 16px;
+  outline: none;
+}
+.input-error {
+  border-color: #f74747;
+}
+input:focus {
+  border-color: #3692ff;
+}
+input[type="password"] {
+  padding-right: 56px;
+}
+.selectBox {
+  position: relative;
+  display: flex;
+  padding: 0 48px 0 20px;
+  height: 56px;
+  font-size: 16px;
+  border: 1px solid #e5e7eb;
+  box-sizing: border-box;
+  z-index: 5;
+}
+.selectBox::after {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  margin-top: -12px;
+  display: block;
+  width: 24px;
+  height: 24px;
+  content: "";
+  background: url("../assets/ic_arrow_down.png") 50% 50% no-repeat;
+}
+.selectBox ul {
+  display: none;
+}
+.selectBox.active ul {
+  display: block;
+  position: absolute;
+  top: 64px;
+  left: 0;
+  width: 100%;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #fff;
+}
+.selectBox.active ul li,
+.selectBox.active ul button {
+  width: 100%;
+  height: 42px;
+  text-align: center;
+}
+.selectBox.active ul button:hover {
+  background: #f7f7f7;
+}
+@media (max-width: 743px) {
+  .inputArea label {
+    width: 14px;
+  }
+}
