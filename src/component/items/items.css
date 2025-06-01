@@ -56,3 +56,10 @@
   gap: 1.5rem; /* 24px / 16 */
   padding: 0px 24px 40px 0px;
 }
+@media screen and (max-width: 46.4375rem) and (min-width: 23.4375rem) {
+  .ItemImg {
+    width: 27.625rem; /* 282px / 16 */
+    height: 28.9375rem; /* 303px / 16 */
+    border-radius: 0.625rem; /* 10px / 16 */
+  }
+}
