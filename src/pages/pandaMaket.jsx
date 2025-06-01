@@ -132,6 +132,7 @@ const PandaMaket = () => {
             <div>
               <p className="PandaMaketItemsLabel">판매 중인 상품</p>
             </div>
+            <span className="productRegistration">상품 등록하기</span>
             <div className="salesControlGroup">
               <div className="searchGroup">
                 <img className="searchGroupIcon" src={SearchIcon}></img>

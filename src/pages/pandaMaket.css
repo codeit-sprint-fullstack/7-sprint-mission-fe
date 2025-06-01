@@ -1,6 +1,9 @@
 * {
   box-sizing: border-box;
 }
+.salesHeaderContainer > .productRegistration {
+  display: none;
+}
 
 .BestItemList {
   display: grid;
@@ -40,10 +43,9 @@
   flex-direction: column;
   gap: 1.5rem;
   width: 100%;
-  max-width: 75rem;
+  max-width: 84rem;
   padding: 2rem 1rem;
-  align-items: center;
-  margin: 0 auto;
+  align-items: flex-start;
 }
 .SalesItemList {
   display: grid;
@@ -151,6 +153,14 @@ select {
   .sortStyle {
     display: none;
   }
+  .salesHeaderContainer > .salesControlGroup > .productRegistration {
+    display: none;
+  }
+  .salesHeaderContainer > .productRegistration {
+    display: block;
+  }
+  .salesHeaderContainer {
+    justify-content: flex-start;
+  }
 }
-
 /* 지금 해야할일 반응형 판매상품 만들기 */
