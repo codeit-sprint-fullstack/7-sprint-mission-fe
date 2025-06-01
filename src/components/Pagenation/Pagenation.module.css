@@ -1,0 +1,9 @@
+.pagenation {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+}

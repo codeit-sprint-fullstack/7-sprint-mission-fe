@@ -4,6 +4,7 @@ import { getProductList } from "../../api/productApi";
 import { getPageSizeForWidth } from "../../../utils/screenUtils/getPageSizeForWidth";
 import styles from "./ProductList.module.css";
 import { Button } from "../Button";
+import { Pagenation } from "../Pagenation";
 
 export const ProductList = () => {
   const [products, setProducts] = useState([]);
@@ -72,7 +73,7 @@ export const ProductList = () => {
   }, [setPage, setPageSize]);
 
   return (
-    <div className={styles.prdouctListSection}>
+    <div className={styles.productListSection}>
       <div className={styles.listHeaderContainer}>
         <h2 className={styles.title}>판매 중인 상품</h2>
         <div className={styles.toolbar}>
@@ -116,6 +117,11 @@ export const ProductList = () => {
           );
         })}
       </ul>
+      <Pagenation
+        currentPage={page}
+        totalPages={parseInt(totalCount / pageSize)}
+        onPageChange={(newPage) => setPage(newPage)}
+      />
     </div>
   );
 };
