@@ -40,7 +40,7 @@ function Nav() {
           </ul>
         </div>
         <button className={styles.loginBtn}>
-          <UserMenu className={styles.loginText}/>
+          <UserMenu className={styles.loginText} />
         </button>
       </NavContainer>
     </div>

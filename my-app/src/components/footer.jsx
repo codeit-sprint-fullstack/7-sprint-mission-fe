@@ -1,6 +1,12 @@
 import styles from "./footer.module.css";
 
 const Footer = () => {
+  const socialLinks = [
+    { href: "https://facebook.com", icon: "facebook" },
+    { href: "https://twitter.com", icon: "twitter" },
+    { href: "https://youtube.com", icon: "youtube" },
+    { href: "https://instagram.com", icon: "instagram" },
+  ];
   return (
     <footer className={styles.footer}>
       <div className={styles.left}>©codeit - 2024</div>
@@ -15,26 +21,17 @@ const Footer = () => {
       </div>
 
       <div className={styles.right}>
-        <a
-          href="https://facebook.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fab fa-facebook-f"></i>
-        </a>
-        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-          <i className="fab fa-twitter"></i>
-        </a>
-        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
-          <i className="fab fa-youtube"></i>
-        </a>
-        <a
-          href="https://instagram.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fab fa-instagram"></i>
-        </a>
+        {socialLinks.map((link, idx) => (
+          <a
+            key={idx}
+            href={link.href}
+            aria-label={`${link.icon} icon`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className={`fab fa-${link.icon}`}></i>
+          </a>
+        ))}
       </div>
     </footer>
   );
