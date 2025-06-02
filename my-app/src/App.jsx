@@ -4,6 +4,7 @@ import { Header } from "./components/header";
 import Nav from "./components/nav.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MarketPage from "./pages/marketPage.jsx";
+import Footer from "./components/footer.jsx";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MarketPage />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }

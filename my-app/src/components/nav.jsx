@@ -15,7 +15,7 @@ function Nav() {
   return (
     <div className={styles.nav}>
       <NavContainer className={styles.container}>
-        <div className={styles.navRight}>
+        <div className={styles.navLeft}>
           <ul className={styles.menu}>
             <li>
               <Link to={PATH.index()} className={styles.logoWrap}>
@@ -39,7 +39,9 @@ function Nav() {
             </li>
           </ul>
         </div>
-        <UserMenu className={styles.loginBtn} />
+        <button className={styles.loginBtn}>
+          <UserMenu className={styles.loginText}/>
+        </button>
       </NavContainer>
     </div>
   );
