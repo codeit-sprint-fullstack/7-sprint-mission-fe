@@ -1,0 +1,136 @@
+.NavLogo {
+  display: flex;
+  align-items: center;
+  width: 153px;
+  height: 51px;
+  padding: 5.017px 0px 5.848px 0px;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 8.592px;
+  flex-shrink: 0;
+}
+
+.LogoText {
+  color: #3692ff;
+  font-family: "ROKAF Sans";
+  font-size: 25.633px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.NavTopLevel {
+  border-bottom: 1px solid #dfdfdf;
+  background: #fff;
+  padding: 0px 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.NavBtnStyle {
+  color: var(--Secondary-600, #4b5563);
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 26px;
+  margin: 15px 21px;
+}
+.NavButton {
+  display: flex;
+  justify-items: flex-start;
+}
+
+.NavLogin {
+  color: #fff;
+  display: flex;
+  height: 42px;
+  padding: 12px 23px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  background: var(--Primary-100, #3692ff);
+}
+
+.NavLeft {
+  display: flex;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.NavLogo img {
+  vertical-align: middle;
+}
+
+.NavLogo span {
+  vertical-align: middle;
+}
+
+.LogoWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.NavLeft {
+  gap: 24px;
+}
+.LoginText {
+  display: inline;
+}
+.LoginIcon {
+  display: none;
+}
+.LogoIcon {
+  display: inline;
+}
+@media screen and (max-width: 1199px) and (min-width: 744px) {
+  .NavTopLevel {
+    padding: 0px 24px;
+  }
+  .LoginText {
+    display: none;
+  }
+  .LoginIcon {
+    display: inline;
+  }
+  .NavLogin {
+    background: transparent;
+  }
+}
+
+/* Mobile: 375px ~ 743px */
+@media screen and (max-width: 743px) and (min-width: 375px) {
+  .LoginText {
+    display: none;
+  }
+  .LoginIcon {
+    display: inline;
+  }
+  .NavLogin {
+    background: transparent;
+  }
+  .NavLogo {
+    padding: 0px 16px;
+  }
+  .LogoIcon {
+    display: none;
+  }
+  .NavTopLevel {
+    padding: 0px 16px;
+  }
+  .NavButton {
+    gap: 8px;
+  }
+  .NavButton {
+    margin: 25px 0px;
+  }
+  .NavLeft {
+    align-items: center;
+  }
+  .NavLogo {
+    all: unset;
+  }
+}

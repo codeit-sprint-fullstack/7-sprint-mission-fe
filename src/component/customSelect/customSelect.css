@@ -1,0 +1,46 @@
+* {
+  caret-color: transparent;
+}
+
+.modelBox {
+  position: absolute;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid #eee;
+  border-radius: 16px;
+  width: 92px;
+  background: white;
+}
+.model:first-child {
+  width: 100%;
+  border-bottom: 1px solid #eee;
+}
+.model:first-child:hover {
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.model:last-child:hover {
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+.model:hover {
+  background-color: gray;
+}
+.display {
+  display: none;
+}
+@media screen and (max-width: 46.4375rem) and (min-width: 23.4375rem) {
+  .display {
+    display: block;
+  }
+}
+
+.btnSort {
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+.btnSort:active {
+  filter: brightness(0.7) grayscale(1);
+}

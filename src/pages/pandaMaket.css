@@ -1,0 +1,162 @@
+* {
+  box-sizing: border-box;
+}
+.salesHeaderContainer > .productRegistration {
+  display: none;
+}
+
+.BestItemList {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: flex-start;
+  gap: 1.5rem;
+}
+.PandaMaketItemsLabel {
+  color: var(--Secondary-900, #111827);
+  font-family: Pretendard;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2rem;
+}
+.BestItemsBox {
+}
+.PandaMaketTopLevel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.PandaMaketMiddleLevel {
+  display: flex;
+  flex-direction: column;
+  margin-top: 4rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.SalesItemsBox {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 84rem;
+  padding: 2rem 1rem;
+  align-items: flex-start;
+}
+.SalesItemList {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+.SalesItemImg .ItemImg {
+  width: 15.0625rem;
+  height: 19.1875rem;
+}
+.productRegistration {
+  color: white;
+  display: flex;
+  height: 42px;
+  padding: 12px 23px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  background: var(--Primary-100, #3692ff);
+}
+.sortStyle {
+  display: flex;
+  width: 130px;
+  height: 42px;
+  padding: 12px 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  border: 1px solid var(--Cool-Gray-200, #e5e7eb);
+  background: #fff;
+}
+.salesSearch {
+  display: flex;
+  width: 325px;
+  height: 42px;
+  padding: 9px 20px 9px 28px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 12px;
+  background: var(--Secondary-100, #f3f4f6);
+  caret-color: black;
+}
+
+.salesHeaderContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 1rem;
+  min-width: 640px;
+}
+.salesControlGroup {
+  display: flex;
+  gap: 1rem;
+}
+
+.searchGroup {
+}
+.searchGroupIcon {
+  position: absolute;
+  pointer-events: none;
+  transform: translate(26%, 38%);
+}
+.customSelect {
+  display: none;
+}
+select {
+  display: block;
+}
+/* Tablet: 744px ~ 1199px */
+@media screen and (max-width: 74.9375rem) and (min-width: 46.5rem) {
+  .BestItemList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .SalesItemList {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .salesSearch {
+    width: 200px;
+  }
+  .salesHeaderContainer {
+  }
+  .SalesItemList {
+    width: 72%;
+  }
+}
+
+/* Mobile: 375px ~ 743px */
+@media screen and (max-width: 46.4375rem) and (min-width: 23.4375rem) {
+  .BestItemList {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .SalesItemList {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 auto;
+  }
+  .sortStyle {
+    display: none;
+  }
+  .salesHeaderContainer > .salesControlGroup > .productRegistration {
+    display: none;
+  }
+  .salesHeaderContainer > .productRegistration {
+    display: block;
+  }
+  .salesHeaderContainer {
+    justify-content: center;
+  }
+  .dlatldyd {
+    margin-right: 16%;
+  }
+}

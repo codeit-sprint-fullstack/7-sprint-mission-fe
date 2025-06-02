@@ -1,0 +1,72 @@
+.ItemImg {
+  width: 17.625rem;
+  height: 18.9375rem;
+  border-radius: 0.625rem;
+}
+
+.ItemImgSales {
+  width: 13.79rem;
+  height: 14.82rem;
+  border-radius: 0.625rem;
+}
+
+.ItemLikeBox {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.ItemsBoxText {
+  color: var(--Secondary-800, #1f2937);
+  font-family: Pretendard;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5rem;
+}
+
+.ItemBoxPrice {
+  color: var(--Secondary-800, #1f2937);
+  font-family: Pretendard;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.625rem;
+}
+
+.ItemBoxLike {
+  color: var(--Secondary-600, #4b5563);
+  font-family: Pretendard;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.125rem;
+}
+
+.ItemsTopLevel {
+  height: auto;
+  gap: 1.5rem;
+  padding: 0px 24px 40px 0px;
+}
+@media screen and (max-width: 46.4375rem) and (min-width: 23.4375rem) {
+  .ItemImg {
+    width: 21.625rem;
+    height: 21.9375rem;
+    border-radius: 0.625rem;
+  }
+  .ItemsTopLevel {
+    padding: 0;
+  }
+  .ItemImgSales {
+    width: 11.625rem;
+    height: 12.9375rem;
+  }
+}
+@media screen and (max-width: 74.9375rem) and (min-width: 46.5rem) {
+  .ItemImg {
+    width: 21.625rem;
+    height: 22.9375rem;
+    border-radius: 0.625rem;
+  }
+}
