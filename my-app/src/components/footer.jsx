@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+import { PATH } from "../utils/path";
 import styles from "./footer.module.css";
 
 const Footer = () => {
@@ -12,12 +14,12 @@ const Footer = () => {
       <div className={styles.left}>©codeit - 2024</div>
 
       <div className={styles.center}>
-        <a href="/privacy" className={styles.link}>
+        <Link to={PATH.privacy()} className={styles.link}>
           Privacy Policy
-        </a>
-        <a href="/faq" className={styles.link}>
+        </Link>
+        <Link to={PATH.faq()} className={styles.link}>
           FAQ
-        </a>
+        </Link>
       </div>
 
       <div className={styles.right}>

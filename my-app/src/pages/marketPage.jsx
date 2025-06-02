@@ -1,4 +1,3 @@
-
 import BestProductList from "../components/bestProductList.jsx";
 import ProductList from "../components/productList.jsx";
 import axios from "axios";
@@ -9,6 +8,8 @@ import SearchBar from "../components/searchBar.jsx";
 import useWindowWidth from "../hooks/useWindowWidth.js";
 import Pagination from "../components/pagination.jsx";
 import KeywordNoResult from "../components/keywordNoResult.jsx";
+import { useNavigate } from "react-router-dom";
+import { PATH } from "../utils/path.js";
 
 const SORT_OPTIONS = {
   recent: "최신순",
@@ -16,6 +17,7 @@ const SORT_OPTIONS = {
 };
 
 const MarketPage = () => {
+  const navigate = useNavigate();
   const width = useWindowWidth();
   const getPageSize = () => {
     if (width <= 768) return 4;
@@ -74,6 +76,12 @@ const MarketPage = () => {
         <h2>판매 중인 상품</h2>
         <div className={styles.topBarRight}>
           <SearchBar onSearch={handleSearch} />
+          <button
+            className={styles.addButton}
+            onClick={() => navigate(PATH.productRegister())}
+          >
+            상품등록하기
+          </button>
           <select
             value={orderBy}
             onChange={handleSortChange}

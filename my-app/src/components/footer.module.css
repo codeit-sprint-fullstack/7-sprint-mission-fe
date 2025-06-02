@@ -29,10 +29,6 @@
   text-decoration: none;
 }
 
-.link:hover {
-  text-decoration: underline;
-}
-
 .right a {
   margin-left: 16px;
   color: white;

@@ -1,6 +1,8 @@
 // src/components/SearchBar.jsx
 import { useState } from "react";
 import styles from "./searchBar.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 const SearchBar = ({ onSearch }) => {
   const [keyword, setKeyword] = useState("");
@@ -16,16 +18,20 @@ const SearchBar = ({ onSearch }) => {
 
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
-      <input
-        type="text"
-        value={keyword}
-        onChange={handleKeywordChange}
-        placeholder="검색할 상품을 입력하세요"
-        className={styles.input}
-      />
-      <button type="submit" className={styles.button}>
-        검색
-      </button>
+      <div className={styles.inputWrap}>
+        <FontAwesomeIcon
+          icon={faSearch}
+          className={styles.icon}
+          onClick={handleSubmit}
+        />
+        <input
+          type="text"
+          value={keyword}
+          onChange={handleKeywordChange}
+          placeholder="검색할 상품을 입력하세요"
+          className={styles.input}
+        />
+      </div>
     </form>
   );
 };

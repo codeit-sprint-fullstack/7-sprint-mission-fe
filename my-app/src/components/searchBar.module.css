@@ -4,26 +4,30 @@
   margin: 20px 0;
   gap: 12px;
 }
+.inputWrap {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
 
 .input {
   width: 300px;
-  padding: 10px;
+  padding: 12px 12px 12px 40px; /*돋보기크기만큼 padding left 40*/
   font-size: 16px;
   border: 1px solid #ccc;
-  border-radius: 4px 0 0 4px;
+  border-radius: 12px;
   outline: none;
 }
 
-.button {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #3692ff;
-  color: white;
-  border: none;
-  border-radius: 4px;
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #adb5bd;
   cursor: pointer;
 }
-
-.button:hover {
-  background-color: #147eff;
+.icon:hover {
+  color: #2d2d2d;
 }
