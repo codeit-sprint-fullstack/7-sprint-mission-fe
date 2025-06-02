@@ -1,3 +1,7 @@
+* {
+  caret-color: transparent;
+}
+
 .modelBox {
   position: absolute;
   text-align: center;
@@ -31,4 +35,12 @@
   .display {
     display: block;
   }
+}
+
+.btnSort {
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+.btnSort:active {
+  filter: brightness(0.7) grayscale(1);
 }

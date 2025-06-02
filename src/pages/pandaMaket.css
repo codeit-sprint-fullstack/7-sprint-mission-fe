@@ -40,7 +40,6 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  width: 100%;
   max-width: 84rem;
   padding: 2rem 1rem;
   align-items: flex-start;
@@ -88,6 +87,7 @@
   gap: 10px;
   border-radius: 12px;
   background: var(--Secondary-100, #f3f4f6);
+  caret-color: black;
 }
 
 .salesHeaderContainer {
@@ -129,7 +129,6 @@ select {
     width: 200px;
   }
   .salesHeaderContainer {
-    width: 58%;
   }
   .SalesItemList {
     width: 72%;
@@ -143,6 +142,7 @@ select {
   }
   .SalesItemList {
     grid-template-columns: repeat(2, 1fr);
+    margin: 0 auto;
   }
   .sortStyle {
     display: none;
@@ -154,6 +154,9 @@ select {
     display: block;
   }
   .salesHeaderContainer {
-    justify-content: flex-start;
+    justify-content: center;
+  }
+  .dlatldyd {
+    margin-right: 16%;
   }
 }

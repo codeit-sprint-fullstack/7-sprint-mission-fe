@@ -16,7 +16,7 @@ const CustomSelect = ({ value, onChange }) => {
   return (
     <div className="display">
       <div onClick={() => setIsOpen((prev) => !prev)}>
-        <img src={btnSort} alt="정렬 버튼" />
+        <img className="btnSort" src={btnSort} alt="정렬 버튼" />
       </div>
 
       {isOpen && (

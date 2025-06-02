@@ -127,7 +127,7 @@ const PandaMaket = () => {
       <div className="PandaMaketMiddleLevel">
         <div className="SalesItemsBox">
           <div className="salesHeaderContainer ">
-            <div>
+            <div className="dlatldyd">
               <p className="PandaMaketItemsLabel">판매 중인 상품</p>
             </div>
             <span className="productRegistration">상품 등록하기</span>

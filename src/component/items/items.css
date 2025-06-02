@@ -51,8 +51,22 @@
 }
 @media screen and (max-width: 46.4375rem) and (min-width: 23.4375rem) {
   .ItemImg {
-    width: 27.625rem;
-    height: 28.9375rem;
+    width: 21.625rem;
+    height: 21.9375rem;
+    border-radius: 0.625rem;
+  }
+  .ItemsTopLevel {
+    padding: 0;
+  }
+  .ItemImgSales {
+    width: 11.625rem;
+    height: 12.9375rem;
+  }
+}
+@media screen and (max-width: 74.9375rem) and (min-width: 46.5rem) {
+  .ItemImg {
+    width: 21.625rem;
+    height: 22.9375rem;
     border-radius: 0.625rem;
   }
 }
