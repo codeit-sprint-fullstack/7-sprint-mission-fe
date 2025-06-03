@@ -1,12 +1,23 @@
-# React + Vite
+# 중고거래 플랫폼(웹)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+중고거래 웹 플랫폼입니다.
 
-Currently, two official plugins are available:
+## 목차
+- [특징](#특징)
+  - [좋아요 많이 받은 중고상품 조회하기](#인기상품-조회하기)
+  - [최근순으로 등록된 중고상품 조회하기](#구매상품-조회하기)
+  - [판매상품 검색하기](#판매상품-검색하기)
+- [디자인 & BI](#디자인-&-BI)
+- [TBD](#TBD)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 특징
+### 중고마켓 인기상품 조회하기
+- 현재 가장 많이 좋아요를 받은 인기 중고 상품을 확인할 수 있어요.
+### 중고마켓 최신상품 조회하기
+- 최근순으로 등록된 중고 상품을 확인할 수 있어요.
+### 판매상품 검색하기
+- 중고상품 정보를 입력하고 손쉽게 검색하세요.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 디자인 & BI
+- 이미지가 깨지는 경우 "상품 준비중" 대체 이미지 적용
+## TBD
