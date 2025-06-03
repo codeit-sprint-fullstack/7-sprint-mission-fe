@@ -6,7 +6,7 @@ import styles from "./BestProductList.module.css";
 import SkeletonCard from "./skeletonCard.jsx";
 import useWindowWidth from "../hooks/useWindowWidth.js";
 
-const BestProductList = () => {
+const BestProductList = ({ onImageClick }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const width = useWindowWidth();
@@ -41,7 +41,11 @@ const BestProductList = () => {
               <SkeletonCard key={idx} />
             ))
           : visibleBestProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
+              <ProductCard
+                key={product.id}
+                product={product}
+                onImageClick={onImageClick}
+              />
             ))}
       </div>
     </div>

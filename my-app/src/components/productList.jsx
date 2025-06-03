@@ -2,7 +2,7 @@ import ProductCard from "./productCard.jsx";
 import styles from "./productList.module.css";
 import SkeletonCard from "./skeletonCard.jsx";
 
-const ProductList = ({ products, loading, pageSize }) => {
+const ProductList = ({ products, loading, pageSize, onImageClick }) => {
   return (
     <div className={styles.list}>
       {loading
@@ -10,7 +10,11 @@ const ProductList = ({ products, loading, pageSize }) => {
             <SkeletonCard key={idx} />
           ))
         : products.map((product) => (
-            <ProductCard key={product.id} product={product} />
+            <ProductCard
+              key={product.id}
+              product={product}
+              onImageClick={onImageClick}
+            />
           ))}
     </div>
   );

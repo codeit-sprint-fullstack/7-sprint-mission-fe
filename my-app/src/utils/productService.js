@@ -15,7 +15,7 @@ export function getProductList(
     })
     .then((res) => {
       if (res.status >= 200 && res.status < 300) {
-        console.log(res.data);
+        // console.log(res.data);
         return res.data;
       } else {
         console.error("상품 목록 조회 실패:", res.status, "getProductList");

@@ -1,7 +1,7 @@
 import styles from "./productCard.module.css";
 import productPlaceHolder from "../assets/landscape-placeholder-svgrepo-com.svg";
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product,onImageClick }) => {
   const { name, price, images, favoriteCount } = product;
   const imgUrl = images && images.length > 0 ? images[0] : productPlaceHolder;
 
@@ -15,6 +15,7 @@ const ProductCard = ({ product }) => {
         alt={name}
         className={styles.image}
         onError={handleXBoxImage}
+        onClick={() => onImageClick(product)}
       />
       <div className={styles.info}>
         <h3 className={styles.title}>{name}</h3>

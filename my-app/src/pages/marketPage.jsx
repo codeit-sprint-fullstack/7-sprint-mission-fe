@@ -10,6 +10,7 @@ import Pagination from "../components/pagination.jsx";
 import KeywordNoResult from "../components/keywordNoResult.jsx";
 import { useNavigate } from "react-router-dom";
 import { PATH } from "../utils/path.js";
+import ProductModal from "../components/productModal.jsx";
 
 const SORT_OPTIONS = {
   recent: "최신순",
@@ -32,6 +33,14 @@ const MarketPage = () => {
   const [page, setPage] = useState(1);
   const [totalCount, setTotalCount] = useState(0);
   const [prevPageSize, setPrevPageSize] = useState(pageSize);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
+  const openModal = (product) => {
+    setSelectedProduct(product);
+  };
+  const closeModal = () => {
+    setSelectedProduct(null);
+  };
 
   useEffect(() => {
     if (pageSize !== prevPageSize) {
@@ -57,6 +66,7 @@ const MarketPage = () => {
     };
     fetchProducts();
   }, [orderBy, keyword, page, pageSize]);
+
   const handleSortChange = (e) => {
     setOrderBy(e.target.value);
     setPage(1);
@@ -71,7 +81,7 @@ const MarketPage = () => {
 
   return (
     <div>
-      <BestProductList />
+      <BestProductList onImageClick={(product) => openModal(product)} />
       <div className={styles.topBar}>
         <h2>판매 중인 상품</h2>
         <div className={styles.topBarRight}>
@@ -103,7 +113,17 @@ const MarketPage = () => {
           products={products}
           loading={loading}
           pageSize={pageSize}
+          onImageClick={(product) => openModal(product)}
         />
+      )}
+      {selectedProduct && (
+        <>
+          <ProductModal
+            isOpen={true}
+            onRequestClose={closeModal}
+            product={selectedProduct}
+          />
+        </>
       )}
 
       <Pagination
