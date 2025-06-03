@@ -99,11 +99,15 @@ function AllItemsSection() {
       </div>
 
       <div className="allItemsCardSection">
-        {loading && <div>로딩 중...</div>}
-        {error && <div>에러 발생: {error.message}</div>}
-        {itemList?.map((item) => (
-          <ItemCard item={item} key={`market-item-${item.id}`} />
-        ))}
+        {loading ? (
+          <div>로딩 중...</div>
+        ) : error ? (
+          <div>에러 발생: {error.message}</div>
+        ) : (
+          itemList?.map((item) => (
+            <ItemCard item={item} key={`market-item-${item.id}`} />
+          ))
+        )}
       </div>
 
       <div className="paginationBarWrapper">
