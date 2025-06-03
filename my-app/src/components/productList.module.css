@@ -1,0 +1,26 @@
+.list {
+  display: grid;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+  .list {
+    grid-template-columns: repeat(5, minmax(200px, 1fr)); /* 5열 */
+  }
+}
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .list {
+    grid-template-columns: repeat(3, minmax(200px, 1fr)); /* 3열 */
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .list {
+    grid-template-columns: repeat(2, 1fr); /* 2열 */
+  }
+}

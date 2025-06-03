@@ -35,6 +35,8 @@ const myErrProduct = {
   images: ["https://codeit.com"],
 };
 
+
+
 // getArticleList(1, 5, "").then(console.log);
 // getArticleList(-1, 5, ""); // 500err
 // getArticle(38).then(console.log);

@@ -1,0 +1,33 @@
+.form {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  gap: 12px;
+}
+.inputWrap {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.input {
+  width: 200px;
+  padding: 12px 12px 12px 40px; /*돋보기크기만큼 padding left 40*/
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  outline: none;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #adb5bd;
+  cursor: pointer;
+}
+.icon:hover {
+  color: #2d2d2d;
+}

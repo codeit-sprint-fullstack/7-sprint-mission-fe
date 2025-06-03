@@ -1,0 +1,78 @@
+.container {
+  padding: 40px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.submitButton {
+  background-color: #3692ff;
+  color: white;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.submitButton:hover {
+  background-color: #549bf1;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+input,
+textarea {
+  background-color: #f5f6f8;
+  border: none;
+  border-radius: 8px;
+  padding: 14px;
+  font-size: 16px;
+}
+
+textarea {
+  resize: none;
+  min-height: 160px;
+}
+
+.tagList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.tag {
+  background-color: #f5f6f8;
+  border-radius: 20px;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.tagRemoveButton {
+  background: none;
+  border: none;
+  margin-left: 8px;
+  cursor: pointer;
+}

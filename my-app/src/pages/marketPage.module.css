@@ -1,0 +1,53 @@
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding: 0 20px;
+}
+.topBarRight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.addButton {
+  padding: 12px 24px;
+  background-color: #2196f3; /* 파란색 버튼 */
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.addButton:hover {
+  background-color: #1976d2; /* hover 시 조금 더 진한 파란색 */
+}
+
+.sortSelect {
+  padding: 8px 12px;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .topBar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .topBarRight {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .topBarRight > div, /* SearchBar */
+  .topBarRight > button, /* addButton */
+  .topBarRight > select /* sortSelect */ {
+    width: 100%;
+  }
+}

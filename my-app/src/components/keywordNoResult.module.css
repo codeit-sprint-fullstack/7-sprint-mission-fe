@@ -1,0 +1,14 @@
+.wrapper {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.message {
+  font-size: 18px;
+  color: #666;
+}
+
+.message span {
+  font-weight: bold;
+  color: #ff6f61; /* 강조 컬러 */
+}
