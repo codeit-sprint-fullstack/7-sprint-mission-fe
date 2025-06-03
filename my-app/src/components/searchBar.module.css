@@ -11,7 +11,7 @@
 }
 
 .input {
-  width: 300px;
+  width: 200px;
   padding: 12px 12px 12px 40px; /*돋보기크기만큼 padding left 40*/
   font-size: 16px;
   border: 1px solid #ccc;
