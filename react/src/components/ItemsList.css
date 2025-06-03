@@ -1,0 +1,39 @@
+.ItemsList {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  width: 1200px;
+}
+
+.ItemsList.selling {
+  flex-wrap: wrap;
+  gap: 40px 16px;
+}
+
+.ItemsListItem {
+  display: flex;
+  flex-direction: column;
+  width: 282px;
+  gap: 16px;
+}
+
+.ItemsListItem.selling {
+  display: flex;
+  flex-direction: column;
+  width: 221px;
+  gap: 16px;
+}
+
+.ItemImg {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.ItemInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
