@@ -1,0 +1,85 @@
+.productListSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.listHeaderContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  flex-shrink: 0;
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--secondary-900);
+}
+
+.toolbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+.searchForm {
+  background-color: var(--secondary-100);
+  color: var(--secondary-400);
+}
+
+.searchInput {
+  margin: 9px, 16px;
+}
+.sortSelect {
+  padding: 12px 20px;
+  border: 1px solid var(--secondary-200);
+  border-radius: 12px;
+}
+
+.value {
+  border: 1px solid var(--secondary-200);
+  border-radius: 12px;
+}
+
+.productListGrid {
+  display: grid;
+}
+
+@media (min-width: 345px) {
+  .productListGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .toolbar {
+    gap: 24px;
+  }
+}
+
+@media (min-width: 744px) {
+  .productListGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .toolbar {
+    gap: 24px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .productListGrid {
+    margin-top: 24px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 24px;
+  }
+
+  .toolbar {
+    gap: 24px;
+  }
+}

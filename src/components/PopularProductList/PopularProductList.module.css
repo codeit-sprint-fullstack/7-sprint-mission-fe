@@ -1,0 +1,59 @@
+.popularProductContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--secondary-900);
+}
+
+.popularProductList {
+  display: grid;
+  gap: 24px;
+  list-style: none;
+  grid-template-columns: 1fr;
+}
+
+.popularProductList li {
+  box-sizing: border-box;
+  display: none; /* 기본적으로 모든 li 요소를 숨깁니다. */
+}
+
+.popularProductList li:nth-child(1) {
+  display: block; /* 첫 번째 아이템 표시 */
+}
+
+/* --- Tablet Styles (744px 이상 ~ 1199px 이하) --- */
+/* 목표: 2개 아이템 표시 */
+@media (min-width: 744px) {
+  .popularProductList {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  /* 태블릿: 첫 번째와 두 번째 아이템 표시 */
+  .popularProductList li:nth-child(1),
+  .popularProductList li:nth-child(2) {
+    display: block;
+  }
+}
+
+/* --- PC Styles (1200px 이상) --- */
+/* 목표: 4개 아이템 표시 */
+@media (min-width: 1200px) {
+  .popularProductList {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  /* PC: 첫 4개 아이템 표시 */
+  .popularProductList li:nth-child(1),
+  .popularProductList li:nth-child(2),
+  .popularProductList li:nth-child(3),
+  .popularProductList li:nth-child(4) {
+    display: block;
+  }
+}

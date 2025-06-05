@@ -1,0 +1,28 @@
+.navigation {
+  display: flex;
+  flex-direction: row;
+}
+
+.boardLink {
+  padding: 21px 15px;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--secondary-600);
+}
+
+.itemsLink {
+  padding: 21px 15px;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--secondary-600);
+}
+
+@media (max-width: 743px) {
+  .boardLink {
+    padding: 21px 0;
+  }
+
+  .itemsLink {
+    padding: 21px 0 0 8px;
+  }
+}
