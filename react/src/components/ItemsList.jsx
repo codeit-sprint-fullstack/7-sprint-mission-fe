@@ -7,7 +7,6 @@ function ItemsListItem({ item, itemsSection }) {
   return (
     <div className={`ItemsListItem ${itemsSection}`}>
       <img className={`ItemImg ${itemsSection}`} src={images} alt={name} />
-
       <div className={`ItemInfo ${itemsSection}`}>
         <div>{name}</div>
         <div>{price}</div>

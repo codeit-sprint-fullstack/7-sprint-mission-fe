@@ -1,0 +1,17 @@
+.BestItemsSection {
+  width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.SectionTitle {
+  color: var(--Secondary-900, #111827);
+
+  /* pretendard/xl-20px-bold */
+  font-family: Pretendard;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px; /* 160% */
+}
