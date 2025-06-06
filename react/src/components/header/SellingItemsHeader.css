@@ -1,9 +1,8 @@
-.BestItemsSection {
-  width: 1200px;
+.SellingItemsHeader {
+  width: 100%;
+  height: 42px;
   display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-bottom: 40px;
+  flex-direction: row;
 }
 
 .SectionTitle {
@@ -15,4 +14,6 @@
   font-style: normal;
   font-weight: 700;
   line-height: 32px; /* 160% */
+  display: block;
+  flex-grow: 1;
 }

@@ -1,3 +1,5 @@
+import "./PageButtonBox.css";
+
 // 총 페이지 수를 찾아주는 함수.
 // 전체 아이템 개수, 페이지 사이즈 입력(페이지 사이즈는 기본 10)
 function pageEndFind(itemsCount, pageSize = 10) {
@@ -42,27 +44,46 @@ function PageButtonBox({ page, itemsCount, onClick }) {
     onClick(newPage);
   };
 
+  // 현재 페이지에 클래스 추가
+  function currentPage(p, page) {
+    if (p === page) {
+      return "CurrentPage";
+    } else {
+      return "";
+    }
+  }
+
   return (
-    <div>
-      <div className="PageButtonBox">
-        <ol>
-          <button key="pageLeftButton" onClick={onPageLeftRight}>
-            {"<"}
-          </button>
-          {pageFieldFind(page, maxPage).map((p) => {
-            return (
-              <button key={((p - 1) % 5) + 1} onClick={onPageChange}>
-                {p}
-              </button>
-            );
-          })}
-          {pageFieldFind(page, maxPage).length === 5 && (
-            <button key="pageRightButton" onClick={onPageLeftRight}>
-              {">"}
+    <div className="PageButtonBox">
+      <ol className="PageButtonList">
+        <button
+          key="pageLeftButton"
+          className="PageButton"
+          onClick={onPageLeftRight}
+        >
+          {"<"}
+        </button>
+        {pageFieldFind(page, maxPage).map((p) => {
+          return (
+            <button
+              key={((p - 1) % 5) + 1}
+              className={`PageButton ${currentPage(p, page)}`}
+              onClick={onPageChange}
+            >
+              {p}
             </button>
-          )}
-        </ol>
-      </div>
+          );
+        })}
+        {pageFieldFind(page, maxPage).length === 5 && (
+          <button
+            key="pageRightButton"
+            className="PageButton"
+            onClick={onPageLeftRight}
+          >
+            {">"}
+          </button>
+        )}
+      </ol>
     </div>
   );
 }

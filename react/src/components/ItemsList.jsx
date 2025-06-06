@@ -1,16 +1,22 @@
 import "./ItemsList.css";
 import "../reset.css";
+import IcHeart from "../assets/ic_heart.svg";
 
-function ItemsListItem({ item, itemsSection }) {
+function Item({ item, itemsSection }) {
   const { name, descripton, price, images, favoriteCount, createdAt } = item;
 
   return (
-    <div className={`ItemsListItem ${itemsSection}`}>
+    <div className={`Item ${itemsSection}`}>
       <img className={`ItemImg ${itemsSection}`} src={images} alt={name} />
       <div className={`ItemInfo ${itemsSection}`}>
-        <div>{name}</div>
-        <div>{price}</div>
-        <div>{favoriteCount}</div>
+        <div className={`ItemText ${itemsSection}`}>
+          <div className="ItemTitle">{name}</div>
+          <div className="ItemPrice">{price}</div>
+        </div>
+        <div className={`ItemHeart ${itemsSection}`}>
+          <img src={IcHeart} alt="heart icon" />
+          {favoriteCount}
+        </div>
       </div>
     </div>
   );
@@ -21,7 +27,7 @@ function ItemsList({ items, itemsSection }) {
     <ul className={`ItemsList ${itemsSection}`}>
       {items.map((item) => (
         <li key={item.id}>
-          <ItemsListItem itemsSection={itemsSection} item={item} />
+          <Item itemsSection={itemsSection} item={item} />
         </li>
       ))}
     </ul>

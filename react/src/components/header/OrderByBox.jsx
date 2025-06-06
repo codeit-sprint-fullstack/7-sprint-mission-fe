@@ -1,3 +1,5 @@
+import "./OrderByBox.css";
+
 //orderBy를 한<->영 변환용 함수
 function orderByKorEng(word) {
   switch (word) {
