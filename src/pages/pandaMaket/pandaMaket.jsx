@@ -1,10 +1,10 @@
 import { useState } from "react";
-import Items from "../component/items/items";
+import Items from "../../component/items/items.jsx";
 import "./pandaMaket.css";
 import { useEffect } from "react";
-import Pagination from "../component/pagination/pagination";
+import Pagination from "../../component/pagination/pagination.jsx";
 import SearchIcon from "../assets/image/ic_search.svg";
-import CustomButton from "../component/customSelect/customSelect.jsx";
+import CustomButton from "../../component/customSelect/customSelect.jsx";
 
 const PandaMaket = () => {
   const [bestItemCount, setBestItemCount] = useState(4);
@@ -127,7 +127,7 @@ const PandaMaket = () => {
       <div className="PandaMaketMiddleLevel">
         <div className="SalesItemsBox">
           <div className="salesHeaderContainer ">
-            <div className="dlatldyd">
+            <div className="saleMargin">
               <p className="PandaMaketItemsLabel">판매 중인 상품</p>
             </div>
             <span className="productRegistration">상품 등록하기</span>
