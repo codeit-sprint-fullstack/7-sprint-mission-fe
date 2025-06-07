@@ -1,4 +1,5 @@
 import "./homeFeature.css";
+import React from "react";
 
 const HomeFeature = ({ imageSrc, alt, title, heading, description }) => {
   return (

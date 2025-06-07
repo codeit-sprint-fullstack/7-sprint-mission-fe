@@ -1,3 +1,4 @@
+import Feature from "../homeFeature/homeFeature.jsx";
 import "../homeFeature/homeFeature.css";
 
 const HomeFeaturesSectuon = () => {
