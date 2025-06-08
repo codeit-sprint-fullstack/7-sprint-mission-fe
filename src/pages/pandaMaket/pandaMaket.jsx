@@ -1,21 +1,26 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Items from "../../component/items/items.jsx";
-import "./pandaMaket.css";
-import { useEffect } from "react";
 import Pagination from "../../component/pagination/pagination.jsx";
-import SearchIcon from "../../assets/image/ic_search.svg";
-import CustomButton from "../../component/customSelect/customSelect.jsx";
 import SalesHeader from "../../component/salesHeader/salesHeader.jsx";
+import { fetchSalesItems, fetchBestItems, searchItems } from "../../api/api.js";
+import "./pandaMaket.css";
 
 const PandaMaket = () => {
-  const [bestItemCount, setBestItemCount] = useState(4);
+  const DEVICE_CONFIG = {
+    Mobile: { best: 1, sales: 4 },
+    Tablet: { best: 2, sales: 6 },
+    PC: { best: 4, sales: 10 },
+    Sort: { newest: "recent", like: "favorite" },
+  };
+
+  const [bestItemCount, setBestItemCount] = useState(DEVICE_CONFIG.PC.best);
   const [sort, setSort] = useState("recent");
   const [salesItemCount, setSalesItemCount] = useState(10);
   const [startPage, setStartPage] = useState(1);
   const [currentPage, setCurrentPage] = useState(1);
 
   const [getBestItem, setGetBestItem] = useState([]);
-  const [salesItems, setsalesItems] = useState([]);
+  const [salesItems, setSalesItems] = useState([]);
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
@@ -38,42 +43,29 @@ const PandaMaket = () => {
   const handleSortChange = (e) => {
     setSort(e.target.value);
   };
+
   const handleSearch = async (e) => {
     if (e.key === "Enter") {
-      try {
-        const res = await fetch(
-          `https://panda-market-api.vercel.app/products?keyword=${e.target.value}`
-        );
-        const data = await res.json();
-        setsalesItems(data.list || []);
-      } catch (err) {
-        console.error("판매 상품 가져오기 실패:", err);
-      }
+      const keyword = e.target.value;
+      const data = await searchItems(keyword);
+      setSalesItems(data);
     }
   };
 
-  const fetchSalesItems = async () => {
-    try {
-      const res = await fetch(
-        `https://panda-market-api.vercel.app/products?page=${currentPage}&pageSize=${salesItemCount}&orderBy=${sort}`
-      );
-      const data = await res.json();
-      setsalesItems(data.list || []);
-    } catch (err) {
-      console.error("판매 상품 가져오기 실패:", err);
-    }
+  const loadSalesItems = async () => {
+    const data = await fetchSalesItems({
+      page: currentPage,
+      pageSize: salesItemCount,
+      orderBy: sort,
+    });
+    setSalesItems(data);
   };
 
-  const fetchBestItems = async () => {
-    try {
-      const res = await fetch(
-        `https://panda-market-api.vercel.app/products?page=1&pageSize=${bestItemCount}&orderBy=favorite`
-      );
-      const data = await res.json();
-      setGetBestItem(data.list || []);
-    } catch (err) {
-      console.error("베스트 상품 가져오기 실패:", err);
-    }
+  const loadBestItems = async () => {
+    const data = await fetchBestItems({
+      pageSize: bestItemCount,
+    });
+    setGetBestItem(data);
   };
 
   const updatedItems = () => {
@@ -91,11 +83,11 @@ const PandaMaket = () => {
   };
 
   useEffect(() => {
-    fetchSalesItems();
+    loadSalesItems();
   }, [currentPage, salesItemCount, sort]);
 
   useEffect(() => {
-    fetchBestItems();
+    loadBestItems();
   }, [bestItemCount]);
 
   useEffect(() => {
@@ -105,6 +97,7 @@ const PandaMaket = () => {
       window.removeEventListener("resize", updatedItems);
     };
   }, []);
+
   return (
     <>
       <div className="PandaMaketTopLevel">
@@ -125,6 +118,7 @@ const PandaMaket = () => {
           </div>
         </div>
       </div>
+
       <div className="PandaMaketMiddleLevel">
         <div className="SalesItemsBox">
           <SalesHeader
@@ -146,6 +140,7 @@ const PandaMaket = () => {
           </div>
         </div>
       </div>
+
       <div>
         <Pagination
           startPage={startPage}
@@ -158,4 +153,5 @@ const PandaMaket = () => {
     </>
   );
 };
+
 export default PandaMaket;

@@ -2,6 +2,7 @@ import Pagination from "../../component/pagination/pagination.jsx";
 import SalesHeader from "../../component/salesHeader/salesHeader.jsx";
 import Items from "../../component/items/items.jsx";
 import { useState } from "react";
+import defaultImg from "../../assets/image/img_default.svg";
 const Selling = () => {
   const [bestItemCount, setBestItemCount] = useState(4);
   const [sort, setSort] = useState("recent");
@@ -43,6 +44,15 @@ const Selling = () => {
   const handleSortChange = (e) => {
     setSort(e.target.value);
   };
+
+  const defaultItems = Array(10).fill({
+    id: null,
+    name: "상품 없음",
+    price: 0,
+    favoriteCount: 0,
+    images: [defaultImg],
+  });
+  const itemsToRender = salesItems.length > 0 ? salesItems : defaultItems;
   return (
     <>
       <div className="PandaMaketMiddleLevel">
@@ -53,7 +63,7 @@ const Selling = () => {
             onSearch={handleSearch}
           />
           <div className="SalesItemList">
-            {salesItems.map((item) => (
+            {itemsToRender.map((item) => (
               <Items
                 key={item.id}
                 name={item.name}
