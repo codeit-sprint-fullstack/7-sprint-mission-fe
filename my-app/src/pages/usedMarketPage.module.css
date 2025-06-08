@@ -1,0 +1,44 @@
+/* UsedMarketPage.module.css */
+
+.container {
+  padding: 2rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.addButton {
+  background: #3b82f6;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+.sortSelect {
+  padding: 0.4rem;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.pagination {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+}

@@ -1,48 +1,41 @@
+/* productModal.module.css */
+
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.75); /* 배경 어둡게 */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
 }
 
 .modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background: white;
-  padding: 20px;
-  border-radius: 12px;
-  width: 90%;
+  width: 80%;
   max-width: 600px;
-  max-height: 90%;
-  overflow-y: auto;
-  position: relative;
+  border-radius: 8px;
+  padding: 1rem;
+  z-index: 1001;
 }
 
 .modalContent {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 1rem;
+}
+
+.swiper {
+  width: 100%;
+  height: 300px; /* 슬라이더 높이 지정 */
 }
 
 .image {
   width: 100%;
-  border-radius: 8px;
-}
-
-.info {
-  text-align: center;
-}
-
-.likeButton {
-  margin-top: 12px;
-  background-color: #f44336;
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 16px;
+  height: 100%;
+  object-fit: cover; /* 이미지 비율 유지하며 꽉 채우기 */
 }

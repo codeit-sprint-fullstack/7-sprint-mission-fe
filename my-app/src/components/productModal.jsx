@@ -7,9 +7,6 @@ import styles from "./productModal.module.css";
 import { useEffect } from "react";
 
 const ProductModal = ({ isOpen, onRequestClose, product }) => {
-  // useEffect(() => {
-  //   console.log("🔥 Modal Mount됨, isOpen:", isOpen, "product:", product);
-  // }, [isOpen, product]);
   return (
     <Modal
       isOpen={isOpen}
@@ -23,13 +20,13 @@ const ProductModal = ({ isOpen, onRequestClose, product }) => {
           <Swiper
             modules={[Navigation]}
             navigation
-            loop={product?.images?.length > 1}
+            loop={product?.imageUrls?.length > 1}
             className={styles.swiper}
           >
-            {product.images.map((img, idx) => (
+            {product.imageUrls.map((url, idx) => (
               <SwiperSlide key={idx}>
                 <img
-                  src={img}
+                  src={url}
                   alt={`${product.name} 이미지 ${idx + 1}`}
                   className={styles.image}
                 />

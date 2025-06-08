@@ -1,7 +1,8 @@
 import styles from "./productCard.module.css";
-import productPlaceHolder from "../assets/landscape-placeholder-svgrepo-com.svg";
+import productPlaceHolder from "../assets/logos/panda_question.svg";
+// import productPlaceHolder from "../assets/landscape-placeholder-svgrepo-com.svg";
 
-const ProductCard = ({ product,onImageClick }) => {
+const ProductCard = ({ product, onImageClick }) => {
   const { name, price, images, favoriteCount } = product;
   const imgUrl = images && images.length > 0 ? images[0] : productPlaceHolder;
 
