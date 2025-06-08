@@ -1,0 +1,65 @@
+.ProductItemName {
+  color: var(--Secondary-800, #1f2937);
+  font-family: Pretendard;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 26px;
+}
+
+.productContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.productItemInput {
+  height: 56px;
+  padding: 16px 24px;
+  align-items: flex-start;
+  align-self: stretch;
+  border-radius: 12px;
+  background: var(--Cool-Gray-100, #f3f4f6);
+  border: 0px;
+  font-family: Pretendard;
+  resize: none;
+  overflow-x: hidden;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-size: 16px;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+.tagsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tagItem {
+  background-color: #e0e0e0;
+  color: #333;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.tagDeleteBtn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1;
+  color: #555;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+.tagDeleteBtn:hover {
+  color: #f33;
+}

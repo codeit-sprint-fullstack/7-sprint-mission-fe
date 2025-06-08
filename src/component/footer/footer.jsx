@@ -6,7 +6,7 @@ import youtube from "../../assets/image/ic_youtube.png";
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className="footerContainer">
       <div className="footer_section">
         <div className="footer_text">
           <p>©codeit - 2024</p>
