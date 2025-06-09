@@ -3,14 +3,12 @@ import SalesHeader from "../../component/salesHeader/salesHeader.jsx";
 import Items from "../../component/items/items.jsx";
 import { useState } from "react";
 import defaultImg from "../../assets/image/img_default.svg";
+import { DEVICE_CONFIG } from "../../config/device.js";
+
 const Selling = () => {
-  const [bestItemCount, setBestItemCount] = useState(4);
   const [sort, setSort] = useState("recent");
-  const [salesItemCount, setSalesItemCount] = useState(10);
   const [startPage, setStartPage] = useState(1);
   const [currentPage, setCurrentPage] = useState(1);
-
-  const [getBestItem, setGetBestItem] = useState([]);
   const [salesItems, setsalesItems] = useState([]);
   const handleNextClick = () => {
     const newStart = startPage + 5;
@@ -44,8 +42,7 @@ const Selling = () => {
   const handleSortChange = (e) => {
     setSort(e.target.value);
   };
-
-  const defaultItems = Array(10).fill({
+  const defaultItems = Array(DEVICE_CONFIG.PC.sales).fill({
     id: null,
     name: "상품 없음",
     price: 0,

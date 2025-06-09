@@ -4,15 +4,8 @@ import Pagination from "../../component/pagination/pagination.jsx";
 import SalesHeader from "../../component/salesHeader/salesHeader.jsx";
 import { fetchSalesItems, fetchBestItems, searchItems } from "../../api/api.js";
 import "./pandaMaket.css";
-
+import { DEVICE_CONFIG } from "../../config/device.js";
 const PandaMaket = () => {
-  const DEVICE_CONFIG = {
-    Mobile: { best: 1, sales: 4 },
-    Tablet: { best: 2, sales: 6 },
-    PC: { best: 4, sales: 10 },
-    Sort: { newest: "recent", like: "favorite" },
-  };
-
   const [bestItemCount, setBestItemCount] = useState(DEVICE_CONFIG.PC.best);
   const [sort, setSort] = useState("recent");
   const [salesItemCount, setSalesItemCount] = useState(10);
