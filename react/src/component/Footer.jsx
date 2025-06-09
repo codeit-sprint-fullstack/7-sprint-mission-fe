@@ -21,7 +21,7 @@ function Footer() {
             </Link>
           </li>
           <li>
-            <Link to="https://x.com/" target="_blank">
+            <Link to="https://youtube.com/" target="_blank">
               <img src={youtubeIcon} alt="유튜브" />
             </Link>
           </li>
@@ -39,7 +39,7 @@ function Footer() {
             <Link to="/">FAQ</Link>
           </li>
         </ul>
-        <p class={styles.copyright}>&copy;codeit - 2024</p>
+        <p className={styles.copyright}>&copy;codeit - 2024</p>
       </div>
     </footer>
   );

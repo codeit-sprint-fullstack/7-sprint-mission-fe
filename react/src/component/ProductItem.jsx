@@ -1,5 +1,5 @@
 import heartIcon from "../assets/ic_heart.svg";
-function ProductList({ item }) {
+function ProductItem({ item }) {
   console.log(item);
   return (
     <div className="productItem">
@@ -20,4 +20,4 @@ function ProductList({ item }) {
   );
 }
 
-export default ProductList;
+export default ProductItem;
