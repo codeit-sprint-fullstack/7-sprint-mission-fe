@@ -1,5 +1,7 @@
-import { useState } from "react";
-import styles from "./ProductRegisterPage.module.css";
+import React, { useState } from "react";
+import styles from "./productRegisterPage.module.css";
+import { createProduct } from "../api/product.js";
+import { useNavigate } from "react-router-dom";
 
 const ProductRegisterPage = () => {
   const [productName, setProductName] = useState("");
@@ -8,9 +10,15 @@ const ProductRegisterPage = () => {
   const [tagInput, setTagInput] = useState("");
   const [tags, setTags] = useState([]);
 
+  // ✅ 등록 API 호출 상태 관리용 loading, error state 추가
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  // ✅ 등록 후 페이지 이동을 위한 navigate 함수
+  const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // create api 여기
+
     console.log({
       productName,
       description,

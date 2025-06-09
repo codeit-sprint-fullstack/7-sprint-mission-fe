@@ -4,9 +4,9 @@ export const PATH = {
   index: () => "/",
   board: () => "/board",
   market: () => "/market",
-  usedMarket:()=>"/used-market",
+  usedMarket: () => "/used-market",
   login: () => "/login",
-  productRegister: () => "registration",
+  productRegister: () => "/registration",
   privacy: () => "/privacy",
   faq: () => "/faq",
 };
