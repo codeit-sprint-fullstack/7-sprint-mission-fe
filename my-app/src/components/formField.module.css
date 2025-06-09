@@ -1,27 +1,23 @@
-.container {
-  max-width: 720px;
-  margin: 0 auto;
-}
-.form {
-  background: #fff;
-  border-radius: 12px;
-  padding: 40px 0;
-}
-.error {
-  color: #d32f2f;
-  margin-bottom: 1rem;
-  font-weight: 500;
-}
+/* src/components/FormField.module.css */
 .field {
   margin-bottom: 1.5rem;
 }
-.field label {
+.label {
   display: block;
   font-size: 1.1rem;
   font-weight: 600;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
   color: #333;
 }
+
+/* 에러 메시지 */
+.error {
+  color: #d32f2f;
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+}
+
+
 .field input,
 .field textarea {
   width: 100%;

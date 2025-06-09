@@ -3,12 +3,21 @@ import dotenv from "dotenv";
 import cors from "cors";
 import productRouter from "./routes/product.route.js";
 
+// ES 모듈에서 __dirname 만들기
+import path from "path";
+import { fileURLToPath } from "url";
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 dotenv.config();
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+// ✨ uploads 폴더를 /uploads 경로로 정적 서빙
+app.use("/uploads", express.static(path.join(__dirname, "../uploads")));
 
 // 기본 API 테스트
 app.get("/", (req, res) => {
