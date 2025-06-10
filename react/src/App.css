@@ -1,43 +1,8 @@
-.ItemsSection {
+#Main {
+  width: 1920px;
   display: flex;
   flex-direction: column;
-  gap: 40px;
-}
-
-.BestItemsSection {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.SellingItemsSection {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.SectionTitle {
-  color: var(--Secondary-900, #111827);
-
-  /* pretendard/xl-20px-bold */
-  font-family: Pretendard;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 32px; /* 160% */
-
-  display: inline-block;
-  flex-grow: 1;
-}
-
-.SellingItemsHeader {
-  display: flex;
-  flex-direction: row;
-}
-
-.PageButtonBox {
-  margin-top: 40px;
-  display: flex;
-  flex-direction: row;
-  gap: 4px;
+  justify-content: center;
+  align-items: center;
+  padding: 26px 360px 140px;
 }

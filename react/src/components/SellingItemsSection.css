@@ -1,0 +1,14 @@
+.SellingItemsSection {
+  width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+#Rerendering {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  gap: 43px;
+}

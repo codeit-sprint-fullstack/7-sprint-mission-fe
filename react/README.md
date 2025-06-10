@@ -1,3 +1,21 @@
+현재 컴포넌트 구조
+
+- App
+  - BestItemsSection
+    - ItemsList
+  - SellingItemsSection
+    - SearchBox
+    - ItemRegBox
+    - OrderByBox
+    - ItemsList
+      - Item
+    - PageButtonBox
+      (여기에 왼/오 버튼 말고 PageButton 하나하나가 좀 커서 이것도 분리해야 하나..? 싶습니다)
+
+사용 중인 상태
+BestItemsSection - bestItems
+SellingItemsSection - orderBy, page, searchValue, items, itemsCount
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
