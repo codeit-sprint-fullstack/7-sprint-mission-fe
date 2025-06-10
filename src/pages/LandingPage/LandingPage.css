@@ -1,0 +1,173 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  width: 1920px;
+  margin: auto;
+}
+
+main {
+  background-color: #fcfcfc;
+  margin: 0;
+  width: 1920px;
+  padding-bottom: 138px;
+}
+
+Link {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+h2 {
+  margin: 0;
+  color: var(--Secondary-700, #374151);
+  font-family: Pretendard;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%; /* 56px */
+}
+
+.main h2 {
+  letter-spacing: 0.8px;
+}
+
+.image {
+  background-color: #cfe5ff;
+  width: 1920px;
+  height: 540px;
+  display: flex;
+  justify-content: center;
+}
+
+.top-image-main {
+  padding-top: 200px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.top-image-text {
+  padding-bottom: 60px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  text-align: start;
+}
+
+.top-image {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.items.link {
+  border-radius: 40px;
+  background-color: var(--brand-blue, #3692ff);
+  margin-top: 32px;
+  padding: 16px 124px;
+  text-align: center;
+  font-size: 20px;
+  color: white;
+  display: inline-block;
+}
+
+.itemsLink {
+  text-align: center;
+  font-size: 20px;
+  color: white;
+}
+
+.itemsLink:hover {
+  color: white;
+}
+
+.main {
+  width: 1920px;
+  height: 720px;
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff;
+}
+
+.main.hot-item {
+  padding: 138px 344px;
+}
+
+.main.search {
+  padding: 138px 342px;
+}
+
+.main.register {
+  padding: 138px 360px;
+}
+
+.section-main-text {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.section-title {
+  color: var(--Primary-100, #3692ff);
+
+  /* pretendard/2lg-18px-bold */
+  font-family: Pretendard;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 26px; /* 144.444% */
+}
+
+.section-text {
+  color: var(--Secondary-700, #374151);
+
+  /* pretendard/2xl-24px-medium */
+  font-family: Pretendard;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px; /* 133.333% */
+}
+
+.hot-item-main,
+.search-main,
+.register-main {
+  background-color: #fcfcfc;
+  width: 988px;
+  height: 444px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 64px;
+}
+
+.search-main-text {
+  text-align: end;
+}
+
+.hot-item-main-text,
+.register-main-text {
+  text-align: start;
+}
+
+.bottom.image {
+  padding: 143px 405px 0;
+}
+
+.bottom-image-main {
+  display: flex;
+  align-items: center;
+  gap: 69px;
+}
+
+.bottom-image-text {
+  padding-bottom: 60px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  text-align: start;
+}
+
+.bottom-image {
+  flex-grow: 0;
+  flex-shrink: 0;
+}

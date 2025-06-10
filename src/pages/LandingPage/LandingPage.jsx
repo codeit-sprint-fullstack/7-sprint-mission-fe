@@ -1,13 +1,23 @@
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
-import LandingMain from "../../components/LandingMain";
+import BottomImgSection from "./components/BottomImgSection";
+import HotItemSection from "./components/HotItemSection";
+import RegisterSection from "./components/RegisterSection";
+import SearchSection from "./components/SearchSection";
+import TopImgSection from "./components/TopImgSection";
+import "./LandingPage.css";
 
 function RandingPage() {
   return (
     <>
       <Header />
-      <LandingMain />
-      <Footer />
+      <TopImgSection />
+      <main>
+        <HotItemSection />
+        <SearchSection />
+        <RegisterSection />
+      </main>
+      <BottomImgSection />
     </>
   );
 }

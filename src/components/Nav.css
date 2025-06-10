@@ -1,0 +1,80 @@
+.navHeader {
+  padding: 0 200px;
+  position: static;
+  border-bottom: 1px solid #dfdfdf;
+  background: #fff;
+  height: 68px;
+  width: 1920px;
+  margin-bottom: 26px;
+  display: flex;
+}
+
+.nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.logo-text {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  height: 51px;
+  gap: 8px;
+}
+
+.logo {
+  flex-shrink: 0;
+  flex-grow: 0;
+  display: block;
+}
+
+h1 {
+  color: #3692ff;
+  font-size: 25.633px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  flex-grow: 1;
+  flex-shrink: 0;
+  margin: 0;
+}
+
+.linksList {
+  margin-left: 24px;
+}
+
+.comLink,
+.itemsLink {
+  padding: 21px 15px;
+  color: #3692ff;
+  color: var(--Secondary-600, #4b5563);
+  text-align: center;
+
+  /* pretendard/2lg-18px-bold */
+  font-family: Pretendard;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 26px; /* 144.444% */
+}
+
+.login {
+  width: 128px;
+  height: 48px;
+  padding: 12px 23px;
+  text-align: center;
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 16px;
+  background: var(--Primary-100, #3692ff);
+  flex-shrink: 0;
+}
+
+.loginLink {
+  color: #ffffff;
+  font-size: 16px;
+}
