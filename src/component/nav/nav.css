@@ -134,3 +134,6 @@ a {
     all: unset;
   }
 }
+.active span {
+  color: #3692ff;
+}
