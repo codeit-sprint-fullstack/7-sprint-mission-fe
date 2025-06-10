@@ -1,6 +1,7 @@
 // src/pages/productRegisterPage.jsx
 
 import styles from "./productRegisterPage.module.css";
+import fieldStyles from "../components/formField.module.css";
 import FormHeader from "../components/formHeader.jsx";
 import FormField from "../components/formField.jsx";
 
@@ -15,7 +16,9 @@ const ProductRegisterPage = () => {
     fields,
     images,
     loading,
-    error,
+    submissionError, // 서버 에러
+    errors, // 필드별 에러 메시지 객체
+    isValid,
     imageInputRef,
     onChange,
     addTag,
@@ -34,8 +37,14 @@ const ProductRegisterPage = () => {
         }}
         className={styles.form}
       >
-        <FormHeader title="상품 등록하기" onSubmit={submit} loading={loading} />
-        {error && <p className={styles.error}>{error}</p>}
+        <FormHeader
+          title="상품 등록하기"
+          onSubmit={submit}
+          loading={loading}
+          disabled={!isValid}
+        />
+
+        {submissionError && <p className={styles.error}>{submissionError}</p>}
         <ImageUploader
           images={images}
           inputRef={imageInputRef}
@@ -43,37 +52,43 @@ const ProductRegisterPage = () => {
           onRemove={handleRemoveImage}
         />
 
-        <FormField label="" />
-
-        {productFieldConfigs.map(
-          ({ key, label, type, placeholder, required }) => (
-            <FormField key={key} label={label}>
-              {type === "textarea" ? (
-                <textarea
-                  value={fields[key]}
-                  onChange={onChange(key)}
-                  placeholder={placeholder}
-                  required={required}
-                />
-              ) : (
-                <input
-                  type={type}
-                  value={fields[key]}
-                  onChange={onChange(key)}
-                  placeholder={placeholder}
-                  required={required}
-                />
-              )}
-            </FormField>
-          )
-        )}
+        {fields &&
+          productFieldConfigs.map(
+            ({ key, label, type, placeholder, required }) => (
+              <FormField
+                key={key}
+                label={label}
+                errorMessage={errors?.[key] ?? ""}
+              >
+                {type === "textarea" ? (
+                  <textarea
+                    className={errors?.[key] ? fieldStyles.errorInput : ""}
+                    value={fields[key] ?? ""}
+                    onChange={onChange(key)}
+                    placeholder={placeholder}
+                    required={required}
+                  />
+                ) : (
+                  <input
+                    className={errors?.[key] ? fieldStyles.errorInput : ""}
+                    type={type}
+                    value={fields[key] ?? ""}
+                    onChange={onChange(key)}
+                    placeholder={placeholder}
+                    required={required}
+                  />
+                )}
+              </FormField>
+            )
+          )}
 
         <TagInput
-          tags={fields.tags}
-          value={fields.tagInput}
+          tags={fields?.tags}
+          value={fields?.tagInput}
           onChange={onChange("tagInput")}
           onAdd={addTag}
           onRemove={removeTag}
+          errorMessage={errors?.tagInput || errors?.tags}
         />
       </form>
     </div>

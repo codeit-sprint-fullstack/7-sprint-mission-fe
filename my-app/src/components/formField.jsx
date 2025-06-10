@@ -1,4 +1,4 @@
-// src/components/FormField.jsx
+// src/components/formField.jsx
 import React from "react";
 import styles from "./formField.module.css";
 

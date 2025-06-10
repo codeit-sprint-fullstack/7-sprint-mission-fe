@@ -30,3 +30,12 @@
   font-size: 0.9rem;
   cursor: pointer;
 }
+
+.errorInput {
+  border: 1px solid #e74c3c;
+}
+.error {
+  color: #e74c3c;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}

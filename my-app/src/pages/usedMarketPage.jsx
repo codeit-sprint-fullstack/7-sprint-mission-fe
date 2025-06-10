@@ -1,4 +1,4 @@
-// src/pages/UsedMarketPage.jsx
+// src/pages/usedMarketPage.jsx
 import React, { useEffect, useState } from "react";
 import { fetchProducts } from "../api/product.js";
 import { useNavigate } from "react-router-dom";
@@ -17,7 +17,6 @@ import useProducts from "../hooks/useProducts.js";
 import { getPageSize } from "../utils/getPageSize.js";
 
 export default function UsedMarketPage() {
-  
   const width = useWindowWidth();
   const pageSize = getPageSize(width);
 
@@ -31,9 +30,6 @@ export default function UsedMarketPage() {
     page,
     pageSize,
   });
-  // const [totalCount, setTotalCount] = useState(0);
-  // const [products, setProducts] = useState([]);
-  // const [loading, setLoading] = useState(true);
 
   const handleSearch = (k) => {
     setKeyword(k);
@@ -43,7 +39,7 @@ export default function UsedMarketPage() {
     setOrderBy(e.target.value);
     setPage(1);
   };
-  // const handlePage = (p) => setPage(p);
+
   const openModal = (p) => setModal(p);
   const closeModal = () => setModal(null);
 
