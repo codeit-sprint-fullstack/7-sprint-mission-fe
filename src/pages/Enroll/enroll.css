@@ -1,0 +1,21 @@
+.erollContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  justify-content: center;
+}
+.erollContainer > div {
+  min-width: 80vw;
+}
+
+.erollContainer > .productTag {
+  margin-bottom: 12.5vw;
+}
+.erollContainer > :last-child {
+  margin-top: -23px;
+}
+.refContainer {
+  min-height: 90vh;
+  margin-top: 16px;
+}

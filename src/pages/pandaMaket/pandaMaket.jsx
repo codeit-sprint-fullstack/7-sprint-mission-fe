@@ -1,20 +1,19 @@
-import { useState } from "react";
-import Items from "../component/items/items";
+import { useState, useEffect } from "react";
+import Items from "../../component/items/items.jsx";
+import Pagination from "../../component/pagination/pagination.jsx";
+import SalesHeader from "../../component/salesHeader/salesHeader.jsx";
+import { fetchSalesItems, fetchBestItems, searchItems } from "../../api/api.js";
 import "./pandaMaket.css";
-import { useEffect } from "react";
-import Pagination from "../component/pagination/pagination";
-import SearchIcon from "../assets/image/ic_search.svg";
-import CustomButton from "../component/customSelect/customSelect.jsx";
-
+import { DEVICE_CONFIG } from "../../config/device.js";
 const PandaMaket = () => {
-  const [bestItemCount, setBestItemCount] = useState(4);
+  const [bestItemCount, setBestItemCount] = useState(DEVICE_CONFIG.PC.best);
   const [sort, setSort] = useState("recent");
   const [salesItemCount, setSalesItemCount] = useState(10);
   const [startPage, setStartPage] = useState(1);
   const [currentPage, setCurrentPage] = useState(1);
 
   const [getBestItem, setGetBestItem] = useState([]);
-  const [getSalesItem, setGetSalesItem] = useState([]);
+  const [salesItems, setSalesItems] = useState([]);
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
@@ -37,42 +36,29 @@ const PandaMaket = () => {
   const handleSortChange = (e) => {
     setSort(e.target.value);
   };
+
   const handleSearch = async (e) => {
     if (e.key === "Enter") {
-      try {
-        const res = await fetch(
-          `https://panda-market-api.vercel.app/products?keyword=${e.target.value}`
-        );
-        const data = await res.json();
-        setGetSalesItem(data.list || []);
-      } catch (err) {
-        console.error("판매 상품 가져오기 실패:", err);
-      }
+      const keyword = e.target.value;
+      const data = await searchItems(keyword);
+      setSalesItems(data);
     }
   };
 
-  const fetchSalesItems = async () => {
-    try {
-      const res = await fetch(
-        `https://panda-market-api.vercel.app/products?page=${currentPage}&pageSize=${salesItemCount}&orderBy=${sort}`
-      );
-      const data = await res.json();
-      setGetSalesItem(data.list || []);
-    } catch (err) {
-      console.error("판매 상품 가져오기 실패:", err);
-    }
+  const loadSalesItems = async () => {
+    const data = await fetchSalesItems({
+      page: currentPage,
+      pageSize: salesItemCount,
+      orderBy: sort,
+    });
+    setSalesItems(data);
   };
 
-  const fetchBestItems = async () => {
-    try {
-      const res = await fetch(
-        `https://panda-market-api.vercel.app/products?page=1&pageSize=${bestItemCount}&orderBy=favorite`
-      );
-      const data = await res.json();
-      setGetBestItem(data.list || []);
-    } catch (err) {
-      console.error("베스트 상품 가져오기 실패:", err);
-    }
+  const loadBestItems = async () => {
+    const data = await fetchBestItems({
+      pageSize: bestItemCount,
+    });
+    setGetBestItem(data);
   };
 
   const updatedItems = () => {
@@ -90,11 +76,11 @@ const PandaMaket = () => {
   };
 
   useEffect(() => {
-    fetchSalesItems();
+    loadSalesItems();
   }, [currentPage, salesItemCount, sort]);
 
   useEffect(() => {
-    fetchBestItems();
+    loadBestItems();
   }, [bestItemCount]);
 
   useEffect(() => {
@@ -104,6 +90,7 @@ const PandaMaket = () => {
       window.removeEventListener("resize", updatedItems);
     };
   }, []);
+
   return (
     <>
       <div className="PandaMaketTopLevel">
@@ -124,40 +111,16 @@ const PandaMaket = () => {
           </div>
         </div>
       </div>
+
       <div className="PandaMaketMiddleLevel">
         <div className="SalesItemsBox">
-          <div className="salesHeaderContainer ">
-            <div className="dlatldyd">
-              <p className="PandaMaketItemsLabel">판매 중인 상품</p>
-            </div>
-            <span className="productRegistration">상품 등록하기</span>
-            <div className="salesControlGroup">
-              <div className="searchGroup">
-                <img className="searchGroupIcon" src={SearchIcon}></img>
-                <input
-                  placeholder={"검색할 상품을 입력해주세요"}
-                  className="salesSearch"
-                  onKeyDown={handleSearch}
-                ></input>
-              </div>
-              <span className="productRegistration">상품 등록하기</span>
-              <select
-                value={sort}
-                onChange={handleSortChange}
-                className="sortStyle"
-              >
-                <option value="recent">최신순</option>
-                <option value="favorite">좋아요순</option>
-              </select>
-              <CustomButton
-                value={sort}
-                onChange={handleSortChange}
-                className="customSelect"
-              ></CustomButton>
-            </div>
-          </div>
+          <SalesHeader
+            sort={sort}
+            onSortChange={handleSortChange}
+            onSearch={handleSearch}
+          />
           <div className="SalesItemList">
-            {getSalesItem.map((item) => (
+            {salesItems.map((item) => (
               <Items
                 key={item.id}
                 name={item.name}
@@ -170,6 +133,7 @@ const PandaMaket = () => {
           </div>
         </div>
       </div>
+
       <div>
         <Pagination
           startPage={startPage}
@@ -182,4 +146,5 @@ const PandaMaket = () => {
     </>
   );
 };
+
 export default PandaMaket;

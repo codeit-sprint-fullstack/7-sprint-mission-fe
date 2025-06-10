@@ -1,9 +1,10 @@
 import LogoIcon from "../../assets/image/icon_panda.svg";
 import "./nav.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import LoginIcon from "../../assets/image/LoginIcon.png";
 
 const Nav = () => {
+  const location = useLocation();
   return (
     <div className="NavTopLevel">
       <div className="NavLeft">
@@ -20,7 +21,10 @@ const Nav = () => {
             </Link>
           </div>
           <div className="NavBtnStyle">
-            <Link>
+            <Link
+              to={"/items"}
+              className={location.pathname === "/items" ? "active" : ""}
+            >
               <span>중고마켓</span>
             </Link>
           </div>
