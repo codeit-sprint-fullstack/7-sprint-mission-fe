@@ -1,0 +1,158 @@
+.registration {
+  min-height: calc(100vh - 200px);
+  padding: 40px 20px;
+  background-color: #ffffff;
+}
+
+.registrationContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.registrationHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+}
+
+.registrationTitle {
+  color: #1f2937;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px; /* 160% */
+}
+
+.registrationForm {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.formLabel {
+  color: #1f2937;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 26px;
+  margin-bottom: 16px;
+}
+
+.formInput,
+.formTextarea {
+  display: flex;
+  height: 56px;
+  padding: 16px 24px;
+  align-items: flex-start;
+  gap: 10px;
+  align-self: stretch;
+  border-radius: 12px;
+  background: #f3f4f6;
+  border-style: none;
+}
+
+.formInput::placeholder,
+.formTextarea::placeholder {
+  color: #9ca3af;
+}
+
+.formInput:focus,
+.formTextarea:focus {
+  outline: none;
+  background-color: #e5e7eb;
+}
+
+.formTextarea {
+  min-height: 200px;
+  font-family: inherit;
+  line-height: 1.5;
+}
+
+.tagButtons {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.tagButton {
+  padding: 8px 16px;
+  background-color: #f3f4f6;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tagButton:hover {
+  background-color: #e5e7eb;
+  color: #374151;
+}
+
+.tagButton.active {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.submitBtn {
+  display: flex;
+  padding: 12px 23px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: #3692ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 26px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  min-width: 80px;
+}
+
+.submitBtn:hover:not(:disabled) {
+  background-color: #3692ff;
+}
+
+.submitBtn:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .registration {
+    padding: 20px 16px;
+  }
+
+  .registrationHeader {
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+  }
+
+  .registrationTitle {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .submitBtn {
+    width: 100%;
+  }
+
+  .tagButtons {
+    flex-wrap: wrap;
+  }
+}
