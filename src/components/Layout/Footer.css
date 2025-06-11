@@ -1,0 +1,40 @@
+footer {
+    background-color: #111827;
+    color: #9ca3af;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-top: auto;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    padding: 3rem 0 10rem 0;
+}
+
+.footer-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    width: 100%;
+    justify-content: space-around; 
+    gap: 3rem;
+}
+
+#footerMenu {
+    display: flex;
+    gap: 3rem;
+    color: #e5e7eb
+}
+
+#socialMedia {
+    display: flex;
+    gap: 1rem;
+}
+
+#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
