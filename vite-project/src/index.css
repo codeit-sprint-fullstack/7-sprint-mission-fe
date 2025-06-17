@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  min-width: 375px;
+}
+button {
+  border: 0;
+  background-color: transparent;
+}
+input {
+  outline: none;
+  border: 0;
+}
+
+#root {
+  padding: 16px;
+  width: 375px;
+  margin: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 600px) {
+  #root {
+    width: 475px;
+  }
+}
+
+@media screen and (min-width: 744px) {
+  #root {
+    width: 100%;
+    margin: unset;
+  }
+}

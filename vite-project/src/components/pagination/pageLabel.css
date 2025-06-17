@@ -1,0 +1,20 @@
+.page-label {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #e5e7eb;
+  background-color: #fff;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.page-label__icon--right {
+  transform: rotate(180deg);
+}
+
+.page-label--active {
+  background-color: #3692ff;
+  color: #fff;
+}

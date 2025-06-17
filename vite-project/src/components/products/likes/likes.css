@@ -1,0 +1,12 @@
+.like {
+  display: flex;
+  align-items: center;
+  margin-top: 7px;
+}
+
+.like__count {
+  font-size: 12px;
+  font-weight: 500;
+  margin-left: 4px;
+  display: inline-block;
+}

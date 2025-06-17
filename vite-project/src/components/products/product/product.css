@@ -1,0 +1,20 @@
+.product {
+  display: flex;
+  flex-direction: column;
+}
+
+.product__info {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+}
+.product__name {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.product__price {
+  font-weight: 700;
+  margin-top: 6px;
+}

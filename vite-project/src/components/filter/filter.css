@@ -1,0 +1,37 @@
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.filter__title {
+  font-size: 20px;
+  font-weight: 700;
+  flex: 1;
+  white-space: nowrap;
+  order: 1;
+}
+
+.filter__btn {
+  order: 2;
+}
+
+.filter__input {
+  flex: 1;
+  order: 3;
+}
+
+.filter__sort {
+  order: 4;
+}
+
+@media screen and (min-width: 744px) {
+  .filter__btn {
+    order: 3;
+  }
+
+  .filter__input {
+    order: 2;
+  }
+}
