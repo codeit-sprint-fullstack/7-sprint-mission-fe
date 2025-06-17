@@ -7,9 +7,11 @@ import styles from "./productModal.module.css";
 import { useEffect } from "react";
 
 const ProductModal = ({ isOpen, onRequestClose, product }) => {
-  // useEffect(() => {
-  //   console.log("🔥 Modal Mount됨, isOpen:", isOpen, "product:", product);
-  // }, [isOpen, product]);
+  if (!product) return null;
+  // 이미지를 절대/상대 URL 처리
+  const getFullUrl = (url) =>
+    url.startsWith("http") ? url : `http://localhost:5500${url}`; // 필요시 env 변수로 교체
+
   return (
     <Modal
       isOpen={isOpen}
@@ -23,13 +25,13 @@ const ProductModal = ({ isOpen, onRequestClose, product }) => {
           <Swiper
             modules={[Navigation]}
             navigation
-            loop={product?.images?.length > 1}
+            loop={product?.imageUrls?.length > 1}
             className={styles.swiper}
           >
-            {product.images.map((img, idx) => (
+            {product.imageUrls.map((url, idx) => (
               <SwiperSlide key={idx}>
                 <img
-                  src={img}
+                  src={getFullUrl(url)}
                   alt={`${product.name} 이미지 ${idx + 1}`}
                   className={styles.image}
                 />

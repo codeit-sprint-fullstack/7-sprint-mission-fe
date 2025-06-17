@@ -37,6 +37,11 @@ function Nav() {
                 중고마켓
               </NavLink>
             </li>
+            <li>
+              <NavLink to={PATH.usedMarket()} style={getStyles}>
+                우진중고마켓
+              </NavLink>
+            </li>
           </ul>
         </div>
         <button className={styles.loginBtn}>

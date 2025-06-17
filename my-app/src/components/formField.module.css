@@ -1,0 +1,38 @@
+/* src/components/formField.module.css */
+.field {
+  margin-bottom: 1.5rem;
+}
+.label {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  background: #f5f5f5;
+  border: 1px solid transparent; /* ← none → transparent */
+  border-radius: 8px;
+  padding: 1rem;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+.field input.errorInput,
+.field textarea.errorInput {
+  border: 1px solid #e74c3c;
+}
+/* 에러 메시지 */
+
+.error {
+  color: #e74c3c;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.field textarea {
+  min-height: 120px;
+}

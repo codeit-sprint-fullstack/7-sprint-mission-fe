@@ -1,0 +1,33 @@
+/* src/components/productControls.module.css */
+
+/* 검색창, 등록 버튼, 정렬 select을 감싸는 영역 */
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* 요소 간 간격 */
+}
+
+/* 상품 등록하기 버튼 */
+.addButton {
+  background-color: #3b82f6;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.addButton:hover {
+  background-color: #2563eb;
+}
+
+/* 정렬 옵션 select */
+.sortSelect {
+  padding: 0.4rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  background-color: #fff;
+  font-size: 0.875rem;
+  cursor: pointer;
+}

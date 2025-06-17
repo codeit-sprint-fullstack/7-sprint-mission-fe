@@ -5,7 +5,12 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon app.js"
+    "dev": "nodemon src/app.js",
+    "start": "node src/app.js",
+    "seed": "node prisma/seed.js"
+  },
+  "prisma": {
+    "seed": "node prisma/seed.js"
   },
   "repository": {
     "type": "git",
@@ -19,11 +24,18 @@
   },
   "homepage": "https://github.com/jwj3171/7-sprint-mission-fe#readme",
   "dependencies": {
+    "@faker-js/faker": "^9.8.0",
+    "@prisma/client": "^6.9.0",
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
+    "is-email": "^1.0.2",
+    "is-uuid": "^1.0.2",
     "mongoose": "^8.15.1",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "multer": "^2.0.1",
+    "prisma": "^6.9.0",
+    "superstruct": "^2.0.2"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"

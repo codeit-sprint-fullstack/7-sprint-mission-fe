@@ -1,0 +1,35 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+/* 공통 버튼 스타일 */
+.button {
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  border: none;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* 활성 버튼 */
+.buttonEnabled {
+  background-color: #1ea7fd;
+  color: white;
+  cursor: pointer;
+}
+.buttonEnabled:hover {
+  background-color: #168bdc;
+  transform: scale(1.02);
+}
+
+/* 비활성 버튼 */
+.buttonDisabled {
+  background-color: #ddd;
+  color: #aaa;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
