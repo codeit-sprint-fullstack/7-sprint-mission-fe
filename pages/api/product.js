@@ -7,3 +7,10 @@ export async function fetchCommentList() {
 
   return data;
 }
+
+export async function fetchUserList() {
+  const res = await axios.get(`${PRODUCT_URL}/api/user`);
+  const data = res.data;
+
+  return data;
+}

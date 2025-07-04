@@ -9,7 +9,11 @@ export default function NavBar() {
           <div className={style.navBox}>
             {" "}
             {/*판다마켓로고 */}
-            <Image src={PandaIcon} style={{ width: 50, height: 50 }} />
+            <Image
+              src={PandaIcon}
+              style={{ width: 50, height: 50 }}
+              alt="로고이미지"
+            />
             <p>판다마켓</p>
           </div>
           <div>

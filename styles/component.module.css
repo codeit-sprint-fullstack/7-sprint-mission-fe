@@ -7,11 +7,147 @@
 .navBox {
   display: flex;
 }
+.boardFont {
+  font-size: 20px;
+  font-weight: 700;
+}
 
 .boardBox {
   display: flex;
+  gap: 24px;
 }
 
 .boardItemBox {
   display: flex;
+  gap: 15px;
+}
+
+.boardContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.boardCard {
+  width: 340px;
+  height: 153px;
+  background-color: #ccc;
+  padding: 0px 24px;
+  border-radius: 5px;
+}
+
+.boardImgtag {
+  display: flex;
+  background-color: #3692ff;
+  width: 102px;
+  border-radius: 0px 0px 16px 16px;
+  justify-content: center;
+}
+.boardImgtag > p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px;
+  font-size: 16px;
+  font-weight: 600;
+  color: aliceblue;
+}
+.boardCommentBox {
+  display: flex;
+}
+
+.boardCommentBox > .boardCommentImg {
+  border: 1px solid red;
+}
+.boardCommentBox > .boardCommentText {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.boardItemBox > .boardItemText {
+  font-size: 14px;
+  font-weight: 400;
+  color: #4b5563;
+}
+
+.userBoardTitle {
+  display: flex;
+  justify-content: space-between;
+}
+
+.userBoradContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.userBoradBox {
+  flex-direction: column;
+  padding-top: 30px;
+}
+
+.userBoardTitleFont {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.userBoardTitleButton {
+  display: flex;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  height: 42px;
+  padding: 12px 23px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  background-color: var(--brand-blue, #3692ff);
+  color: aliceblue;
+}
+
+.userBoardOption {
+  display: flex;
+}
+
+.userBoardOptionInput {
+  display: flex;
+  width: 930px;
+  height: 42px;
+  padding: 9px 20px 9px 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 12px;
+}
+
+.userBoardOptionSelect {
+  display: flex;
+  width: 130px;
+  height: 42px;
+  padding: 12px 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 12px;
+  border: 1px solid var(--Cool-Gray-200, #e5e7eb);
+  background: #fff;
+}
+
+.boardItemBetween {
+  display: flex;
+  justify-content: space-between;
+}
+.boardItemBetweenBox {
+  display: flex;
+}
+
+.BoardItemContainer {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.userBoardByBoardItem {
+  padding-top: 30px;
 }

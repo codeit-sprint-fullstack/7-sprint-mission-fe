@@ -1,42 +1,54 @@
 import { useEffect, useState } from "react";
 import BoardItem from "./boardItem";
-import { fetchCommentList } from "@/pages/api/product";
+import useComment from "@/Util/useComment";
+import style from "@/styles/component.module.css";
+import useUser from "@/Util/useUser";
+import { useRouter } from "next/router";
 
 export default function UserBoard() {
-  const [comment, setComment] = useState([]);
+  const { users } = useUser();
+  const router = useRouter();
 
-  useEffect(() => {
-    fetchCommentList().then((data) => {
-      console.log("받아온 데이터:", data);
-      setComment(data);
-    });
-  }, []);
+  const commentList = users
+    ?.filter((user) => user.Comment?.length > 0)
+    .flatMap((user) =>
+      user.Comment.map((comment) => ({
+        ...comment,
+        user, // 사용자 정보 함께 전달
+      }))
+    );
+
   return (
-    <>
-      <div>
-        <div>
-          <div>
-            <p>게시글</p>
-          </div>
-          <div>
-            <button>글쓰기</button>
-          </div>
+    <div className={style.userBoradContainer}>
+      <div className={style.userBoradBox}>
+        <div className={style.userBoardTitle}>
+          <p className={style.userBoardTitleFont}>게시글</p>
+          <button
+            className={style.userBoardTitleButton}
+            onClick={() => {
+              router.push("/write");
+            }}
+          >
+            글쓰기
+          </button>
         </div>
-        <div>
-          <div>
-            <input></input>
-          </div>
-          <div>
-            <select></select>
-          </div>
+        <div className={style.userBoardOption}>
+          <input className={style.userBoardOptionInput} />
+          <select className={style.userBoardOptionSelect}>
+            <option>최신순</option>
+            <option>오래된순</option>
+          </select>
         </div>
-        <div>
-          {/* 여기서 map활용해서 보더아이템이 쫘르륵나오도록 */}
-          {comment.map((item) => (
-            <BoardItem key={item.id} item={item} />
-          ))}
+        <div className={style.userBoardByBoardItem}>
+          {commentList?.length > 0 ? (
+            commentList.map((item) => (
+              <BoardItem key={item.id} item={item} userInfo={item.user} />
+            ))
+          ) : (
+            <p>게시글이 없습니다.</p>
+          )}
         </div>
       </div>
-    </>
+    </div>
   );
 }

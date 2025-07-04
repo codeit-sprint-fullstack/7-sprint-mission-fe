@@ -1,29 +1,46 @@
 import style from "@/styles/component.module.css";
-const userInfoconfig = {
+import panda from "@/public/icon_panda.svg";
+import Image from "next/image";
+
+const defaultUserInfo = {
   name: "총명한판다",
   like: 9999,
   date: "2024.04.16",
 };
+
 export default function BoardItem({
   Img = "",
-  item = "",
-  userInfo = userInfoconfig,
+  item = {},
+  userInfo = defaultUserInfo,
 }) {
+  const { content, createdAt } = item;
+  const user = userInfo || defaultUserInfo;
+
   return (
-    <>
-      <div>
-        <div>{/* 베스트이미지 */}</div>
+    <div className={style.BoardItemContainer}>
+      <div className={style.boardItemBetween}>
         <div>
-          {/* 글내용 */}
-          <p>{item.content}</p>
+          <p>{content}</p>
         </div>
-        <div className={style.boardItemBox}>
-          {/* 이름 좋아요 날짜  */}
-          <p>{userInfo.name}</p>
-          <p>{userInfo.like}</p>
-          <p>{userInfo.date}</p>
+        <div>
+          <Image
+            className={style.boardCommentImg}
+            src={panda}
+            width={50}
+            height={50}
+            alt="유저 이미지"
+          />
         </div>
       </div>
-    </>
+      <div className={style.boardItemBetween}>
+        <div className={style.boardItemBetweenBox}>
+          <p>{user.name}</p>
+          <p>{new Date(createdAt).toLocaleDateString("ko-KR")}</p>
+        </div>
+        <div>
+          <p>❤️ {user.like || 9999}</p>
+        </div>
+      </div>
+    </div>
   );
 }
