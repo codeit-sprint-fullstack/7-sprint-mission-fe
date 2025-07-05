@@ -6,7 +6,6 @@ import { NAV_MENUS } from "@/utils/path";
 
 export default function NavMenu() {
   const pathname = usePathname();
-
   return (
     <nav>
       <ul className={styles.menu}>

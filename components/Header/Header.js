@@ -1,4 +1,3 @@
-"use client";
 import logoImg from "@/public/assets/panda_logo.svg";
 import { PATH } from "@/utils/path";
 import Image from "next/image";

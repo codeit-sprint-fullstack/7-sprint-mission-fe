@@ -1,0 +1,29 @@
+.bestArticles {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  flex: 1;
+  text-align: center;
+}
+
+.card span {
+  display: inline-block;
+  background: #ffd700;
+  color: #333;
+  font-weight: bold;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+}
