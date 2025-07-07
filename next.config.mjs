@@ -9,6 +9,16 @@ const nextConfig = {
         pathname: "/**",
         search: "",
       },
+      {
+        protocol: "https",
+        hostname: "example.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "www.kjcnews.co.kr",
+        pathname: "/**",
+      },
     ],
   },
 };
