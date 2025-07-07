@@ -1,30 +1,47 @@
-.articleCard {
-  display: flex;
-  align-items: center;
+.card {
+  padding: 1rem 0;
   border-bottom: 1px solid #eee;
-  padding-bottom: 1rem;
 }
 
-.articleContent {
-  flex: 1;
+.link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .title {
-  font-weight: bold;
-  margin-bottom: 0.25rem;
+  font-weight: 600;
+  font-size: 1rem;
 }
 
 .meta {
-  font-size: 0.8rem;
-  color: #666;
+  font-size: 0.875rem;
+  color: #888;
+  display: flex;
+  gap: 0.5rem;
 }
 
-.imageWrap {
-  margin-left: 1rem;
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
 }
 
-.like {
-  font-size: 0.8rem;
-  color: #e85b81;
-  margin-left: 0.5rem;
+.thumbnail {
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.likes {
+  font-size: 0.875rem;
+  color: #555;
 }

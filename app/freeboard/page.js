@@ -12,10 +12,11 @@ export default async function FreeBoard({ searchParams }) {
 
   const bestRes = await fetch(
     getArticlePath({ page: 1, pageSize: 3, orderBy: "like" }),
-    { cache: "no-store" }
+    {  next: { revalidate: 60 } } //베스트 게시글은 60초에 한번만
   );
   const bestData = await bestRes.json();
   const bestArticles = mapArticlesWithPlaceholder(bestData.list);
+
   const recentRes = await fetch(getArticlePath({ page, pageSize, orderBy }), {
     cache: "no-store",
   });
