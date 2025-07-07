@@ -1,4 +1,4 @@
-import PandaLogo from "../assets/panda-logo.svg";
+import PandaLogo from "@/public/panda-logo.svg";
 import Image from "next/image";
 import styles from "./Navbar.module.css";
 import Link from "next/link";
