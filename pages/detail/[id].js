@@ -8,7 +8,6 @@ export default function Detail() {
         <div>
           <CommentList />
         </div>
-
         <div>
           {/* comment */}
           <div className={style.detailCommentBox}>
