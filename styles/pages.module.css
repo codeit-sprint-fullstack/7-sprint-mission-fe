@@ -1,6 +1,7 @@
 .wirteTitle {
   display: flex;
   justify-content: space-between;
+  width: 50vw;
 }
 
 .wirteContainer {
@@ -8,4 +9,91 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.wirteHeadline {
+  width: 100%;
+}
+
+.wirteContent {
+  width: 100%;
+}
+
+.wirte {
+  display: flex;
+  justify-content: center;
+  margin: 94px 360px 954px 360px;
+}
+
+.writeInput {
+  width: 50vw;
+  background-color: #f3f4f6;
+  border-radius: 12px;
+  height: auto;
+  padding: 16px 24px;
+}
+
+.wirteTitleFont {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.wirteContentFont {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.writeInputArea {
+  width: 50vw;
+  background-color: #f3f4f6;
+  border-radius: 12px;
+  height: 262px;
+  padding: 16px 24px;
+}
+
+.writeTitleButton {
+  display: flex;
+  height: 42px;
+  padding: 12px 23px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+}
+
+.detailContainer {
+  margin: 102px 360px 353px 360px;
+}
+
+.detailCommentFont {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.detailCommentInput {
+  display: flex;
+  width: 100%;
+  height: 104px;
+  padding: 16px 24px;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 12px;
+  background: var(--Cool-Gray-100, #f3f4f6);
+}
+
+.detailCommentButton {
+  display: flex;
+  height: 42px;
+  padding: 12px 23px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  background: var(--Cool-Gray-400, #9ca3af);
+  position: absolute;
+  right: 0;
+}
+
+.detailCommentBox {
+  position: relative;
 }

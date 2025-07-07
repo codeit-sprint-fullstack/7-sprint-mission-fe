@@ -151,3 +151,45 @@
 .userBoardByBoardItem {
   padding-top: 30px;
 }
+
+.commentListTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.CommentListInfo {
+  display: flex;
+  margin: 20px;
+  gap: 10px;
+}
+.CommentListInfo > .CommentListInfoImage {
+  background-color: #ccc;
+  border-radius: 50%;
+}
+
+.CommentListBox {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+}
+
+.commentListTitleFont {
+  font-size: 20px;
+  font-weight: 700;
+}
+.commentListTitleIconBox {
+  display: flex;
+  align-items: center;
+}
+
+.line {
+  width: 1px;
+  background-color: #ccc;
+
+  margin: 20px 0px;
+}
+
+.CommentListContent {
+  font-size: 16px;
+  font-weight: 600;
+}

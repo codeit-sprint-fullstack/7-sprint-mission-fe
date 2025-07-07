@@ -14,3 +14,20 @@ export async function fetchUserList() {
 
   return data;
 }
+
+export async function postBoard(title, content) {
+  const res = await axios.post(`${PRODUCT_URL}/api/articles`, {
+    title,
+    content,
+  });
+  const data = res.data;
+
+  return data;
+}
+
+export async function getBoardById(id) {
+  const res = await axios.get(`${PRODUCT_URL}/api/articles/${id}`);
+  const data = res.data;
+
+  return data;
+}
