@@ -3,6 +3,8 @@
 
 import { useState } from "react";
 import styles from "./CommentForm.module.css";
+import { postArticleCommentPath } from "@/constants/apiPath";
+import { postJson } from "@/utils/apiRequest";
 
 export default function CommentForm({
   articleId,
@@ -21,22 +23,9 @@ export default function CommentForm({
     setError("");
 
     try {
-      const res = await fetch(
-        `https://panda-market-api.vercel.app/articles/${articleId}/comments`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ content }),
-        }
-      );
-
-      if (!res.ok) {
-        throw new Error("댓글 등록에 실패했습니다.");
-      }
-
-      const data = await res.json();
+      const data = await postJson(postArticleCommentPath(articleId), {
+        content,
+      });
       setContent("");
       if (onSubmitSuccess) onSubmitSuccess(data);
     } catch (err) {

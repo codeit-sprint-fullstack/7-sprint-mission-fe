@@ -1,7 +1,7 @@
 import ArticleList from "@/components/ArticleList";
 import BestArticles from "@/components/BestArticles";
 import { ORDER_BY, PAGE_SIZE } from "@/constants";
-import { getArticlePath } from "@/constants/api";
+import { getArticlePath } from "@/constants/apiPath";
 import { mapArticlesWithPlaceholder } from "@/utils/placeholderMapping";
 
 export default async function FreeBoard({ searchParams }) {
@@ -12,7 +12,7 @@ export default async function FreeBoard({ searchParams }) {
 
   const bestRes = await fetch(
     getArticlePath({ page: 1, pageSize: 3, orderBy: "like" }),
-    {  next: { revalidate: 60 } } //베스트 게시글은 60초에 한번만
+    { next: { revalidate: 60 } } //베스트 게시글은 60초에 한번만
   );
   const bestData = await bestRes.json();
   const bestArticles = mapArticlesWithPlaceholder(bestData.list);

@@ -7,17 +7,17 @@ import styles from "./CommentSection.module.css";
 import CommentList from "./CommentList";
 import LoadingSpinner from "../LoadingSpinner";
 import CommentForm from "./CommentForm";
+import { getArticleCommentsPath } from "@/constants/apiPath";
 
 export default function CommentSection({ articleId }) {
   const [comments, setComments] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(
-      `https://panda-market-api.vercel.app/articles/${articleId}/comments?limit=10`
-    )
+    fetch(getArticleCommentsPath(articleId))
       .then((res) => res.json())
       .then((data) => setComments(data.list))
+      .catch((err) => console.error("댓글 불러오기 실패 : ", err.message))
       .finally(() => setLoading(false));
   }, [articleId]);
 
