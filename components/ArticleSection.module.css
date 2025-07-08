@@ -1,0 +1,40 @@
+.section {
+  width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.header {
+  width: 100%;
+  height: 42px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.title {
+  color: var(--Secondary-800, #1f2937);
+
+  /* pretendard/xl-20px-bold */
+  font-family: Pretendard;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px; /* 160% */
+}
+
+.option {
+  width: 100%;
+  height: 42px;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.articleList {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
