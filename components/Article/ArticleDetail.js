@@ -2,6 +2,7 @@ import styles from "./ArticleDetail.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import profileIcon from "@/public/assets/icons/profile_icon.svg";
+import CommentSection from "../Comment/CommentSection";
 
 export default function ArticleDetail({ article }) {
   return (
@@ -31,6 +32,7 @@ export default function ArticleDetail({ article }) {
           />
         )}
       </div>
+      <CommentSection articleId={article.id}/>
 
       {/* 여기에 댓글, 수정/삭제, 스크랩, 공감 버튼 컴포넌트 추가 */}
       <Link href="/freeboard" className={styles.backButton}>

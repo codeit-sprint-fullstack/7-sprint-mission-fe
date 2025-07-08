@@ -2,34 +2,50 @@
   padding: 1.5rem;
 }
 
-.title {
-  font-size: 1.5rem;
+.pageTitle {
+  font-size: 1.25rem;
   font-weight: bold;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #ddd;
 }
 
-.meta {
+.metaBox {
   display: flex;
-  gap: 1rem;
+  align-items: center;
+  gap: 0.5rem;
   font-size: 0.9rem;
   color: #888;
-  margin: 0.5rem 0 1rem 0;
-}
-
-.content {
-  margin-bottom: 2rem;
-}
-
-.image {
-  border-radius: 6px;
-  object-fit: cover;
   margin-bottom: 1rem;
 }
 
-.backButton {
-  display: inline-block;
-  background: #3692ff;
-  color: white;
-  padding: 0.5rem 1rem;
+.nickname {
+  font-weight: 500;
+}
+
+.date {
+  border-left: 1px solid #ddd;
+  padding-left: 0.5rem;
+}
+
+.likes {
+  margin-left: auto;
+  font-size: 0.9rem;
+  color: #eb5230;
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.content {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.mainImage {
   border-radius: 6px;
-  text-decoration: none;
+  margin-top: 1rem;
 }
