@@ -5,7 +5,7 @@ export default function Home() {
     <>
       <div>
         <Board />
-        <UserBoard></UserBoard>
+          <UserBoard></UserBoard>
       </div>
     </>
   );

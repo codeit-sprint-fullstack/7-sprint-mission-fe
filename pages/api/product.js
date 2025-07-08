@@ -31,3 +31,54 @@ export async function getBoardById(id) {
 
   return data;
 }
+
+export async function getAricleList() {
+  const res = await axios.get(`${PRODUCT_URL}/api/articles`);
+  const data = res.data;
+
+  return data;
+}
+
+export async function postComment({ userId, articleId, content }) {
+  const res = await axios.post(`${PRODUCT_URL}/api/comment`, {
+    userId,
+    articleId,
+    content,
+  });
+  const data = res.data;
+
+  return data;
+}
+
+export async function getCommentListByAricleId(articleId) {
+  const res = await axios.get(
+    `${PRODUCT_URL}/api/comment/article/${articleId}`
+  );
+  const data = res.data;
+
+  return data;
+}
+
+export async function deleteArticle(id) {
+  const res = await axios.delete(`${PRODUCT_URL}/api/articles/${id}`);
+  const data = res.data;
+
+  return data;
+}
+
+export async function deleteComment(id) {
+  console.log("api에서확인해보는거딜리트", `${PRODUCT_URL}/api/comment/${id}`);
+  const res = await axios.delete(`${PRODUCT_URL}/api/comment/${id}`);
+  const data = res.data;
+
+  return data;
+}
+
+export async function patchComment(id, content) {
+  const res = await axios.patch(`${PRODUCT_URL}/api/comment/${id}`, {
+    content,
+  });
+  const data = res.data;
+
+  return data;
+}

@@ -4,8 +4,29 @@ import { FiMoreVertical } from "react-icons/fi";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import Image from "next/image";
 import defaultImage from "@/public/defaultImage.png";
+import { useEffect, useState } from "react";
+import CustomSelect from "@/component/customSelect";
+import { deleteArticle } from "@/pages/api/product";
+import { useRouter } from "next/router";
+
 export default function CommentList() {
   const { article } = useGetBoardById();
+  const [modal, setmodal] = useState(false);
+  const router = useRouter();
+
+  const handleClick = () => {
+    setmodal(true);
+
+    if (modal == true) setmodal(false);
+  };
+
+  const handleDelete = async () => {
+    console.log("삭제하는 콘솔확인", article.id);
+    await deleteArticle(article.id);
+    router.push(`/`);
+  };
+
+  const handleFetch = async () => {};
 
   return (
     <div>
@@ -13,7 +34,15 @@ export default function CommentList() {
         <p className={style.commentListTitleFont}>
           {article ? article.title : "제목 로딩중 .."}
         </p>
-        <FiMoreVertical size={20} />
+        <div onClick={(e) => e.stopPropagation()}>
+          <FiMoreVertical onClick={handleClick} size={20} />
+          {modal ? (
+            <CustomSelect
+              onDelete={handleDelete}
+              onFetch={handleFetch}
+            ></CustomSelect>
+          ) : null}
+        </div>
       </div>
       <div className={style.CommentListBox}>
         <div className={style.CommentListInfo}>
@@ -29,7 +58,9 @@ export default function CommentList() {
         </div>
       </div>
       <div>
-        <p className={style.CommentListContent}>{article ? article.content : "내용 로딩중 ..."}</p>
+        <p className={style.CommentListContent}>
+          {article ? article.content : "내용 로딩중 ..."}
+        </p>
       </div>
     </div>
   );

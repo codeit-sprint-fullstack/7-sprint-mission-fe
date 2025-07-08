@@ -4,19 +4,21 @@ import useComment from "@/Util/useComment";
 import style from "@/styles/component.module.css";
 import useUser from "@/Util/useUser";
 import { useRouter } from "next/router";
+import useArticleList from "@/Util/useArticlesList";
 
 export default function UserBoard() {
-  const { users } = useUser();
+  // const { users } = useUser();
   const router = useRouter();
+  const { articleList } = useArticleList();
 
-  const commentList = users
-    ?.filter((user) => user.Comment?.length > 0)
-    .flatMap((user) =>
-      user.Comment.map((comment) => ({
-        ...comment,
-        user, // 사용자 정보 함께 전달
-      }))
-    );
+  // const commentList = users
+  //   ?.filter((user) => user.Comment?.length > 0)
+  //   .flatMap((user) =>
+  //     user.Comment.map((comment) => ({
+  //       ...comment,
+  //       user, // 사용자 정보 함께 전달
+  //     }))
+  //   );
 
   return (
     <div className={style.userBoradContainer}>
@@ -26,6 +28,7 @@ export default function UserBoard() {
           <button
             className={style.userBoardTitleButton}
             onClick={() => {
+              console.log("asdasdasdasdasd", articleList);
               router.push("/write");
             }}
           >
@@ -40,9 +43,11 @@ export default function UserBoard() {
           </select>
         </div>
         <div className={style.userBoardByBoardItem}>
-          {commentList?.length > 0 ? (
-            commentList.map((item) => (
-              <BoardItem key={item.id} item={item} userInfo={item.user} />
+          {articleList?.length > 0 ? (
+            articleList.map((item) => (
+              <span onClick={() => router.push(`/detail/${item.id}`)}>
+                <BoardItem key={item.id} item={item} userInfo={item.user} />
+              </span>
             ))
           ) : (
             <p>게시글이 없습니다.</p>
