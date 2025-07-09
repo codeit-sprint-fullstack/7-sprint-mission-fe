@@ -1,0 +1,12 @@
+.article {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 94px;
+  padding-bottom: 293px;
+}
+
+.articleBox {
+  display: flex;
+  width: 1200px;
+}
