@@ -7,6 +7,7 @@ import { PAGE_SIZE } from "@/constants/index";
 export default function ArticleList({ articles, totalCount, currentPage }) {
   return (
     <section>
+      <h2 className={styles.sectionTitle}>그냥 게시글</h2>
       {articles.map((article) => (
         <ArticleCard key={article.id} article={article} />
       ))}

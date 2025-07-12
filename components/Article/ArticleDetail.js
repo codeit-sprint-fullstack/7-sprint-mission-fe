@@ -11,7 +11,7 @@ export default function ArticleDetail({ article }) {
 
       <div className={styles.metaBox}>
         <Image src={profileIcon} alt="프로필 아이콘" width={24} height={24} />
-        <span className={styles.nickname}>{article.writer.nickname}</span>
+        <span className={styles.nickname}>{article.user.nickname}</span>
         <span className={styles.date}>
           {new Date(article.createdAt).toLocaleDateString()}
         </span>
@@ -27,12 +27,12 @@ export default function ArticleDetail({ article }) {
             src={article.image}
             alt={article.title}
             width={400}
-            height={300}
+            height={400}
             className={styles.mainImage}
           />
         )}
       </div>
-      <CommentSection articleId={article.id}/>
+      <CommentSection articleId={article.id} />
 
       {/* 여기에 댓글, 수정/삭제, 스크랩, 공감 버튼 컴포넌트 추가 */}
       <Link href="/freeboard" className={styles.backButton}>

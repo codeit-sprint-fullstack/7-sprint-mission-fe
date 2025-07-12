@@ -2,6 +2,7 @@
 import SafeImage from "./SafeImage";
 import styles from "./ArticleCard.module.css";
 import Link from "next/link";
+import { formatKoreanDate } from "@/utils/formatKrDate";
 
 export default function ArticleCard({ article }) {
   return (
@@ -10,8 +11,8 @@ export default function ArticleCard({ article }) {
         <div className={styles.left}>
           <h3 className={styles.title}>{article.title}</h3>
           <div className={styles.meta}>
-            <span>{article.writer.nickname}</span>
-            <span>{new Date(article.createdAt).toLocaleDateString()}</span>
+            <span>{article.user.nickname}</span>
+            <span>{formatKoreanDate(article.createdAt)}</span>
           </div>
         </div>
         <div className={styles.right}>
