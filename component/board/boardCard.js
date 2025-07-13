@@ -4,17 +4,22 @@ import Image from "next/image";
 import useUser from "@/Util/useUser";
 import { useEffect } from "react";
 import panda from "@/public/icon_panda.svg";
+import useArticleList from "@/Util/useArticlesList";
 
 export default function BoardCard({}) {
-  const { users } = useUser();
-
+  const { articleList } = useArticleList();
+  const top3ByLike = articleList
+    .slice()
+    .sort((a, b) => b.like - a.like)
+    .slice(0, 3);
+    
   useEffect(() => {
-    console.log("유저리스트불러와지나?", users);
-  }, [users]);
+    console.log("유저리스트불러와지나?7/13", articleList);
+  }, [articleList]);
   return (
     <>
-      {users.slice(0, 3).map((users) => (
-        <div className={style.boardCard}>
+      {top3ByLike.slice(0, 3).map((users) => (
+        <div key={users.id} className={style.boardCard}>
           <div className={style.boardImgtag}>
             {/* 베스트이미지 */}
             <Image
@@ -27,7 +32,7 @@ export default function BoardCard({}) {
           <div className={style.boardCommentBox}>
             {/* 글내용 */}
             <p className={style.boardCommentText}>
-              {users.Comment?.[0]?.content || "아무것도안적엇지롱"}
+              {users.title || "아무것도안적엇지롱"}
             </p>
             <Image
               className={style.boardCommentImg}
@@ -38,9 +43,9 @@ export default function BoardCard({}) {
           </div>
           <div className={style.boardItemBox}>
             {/* 이름 좋아요 날짜  */}
-            <p className={style.boardItemText}>{users?.name}</p>
-            <p className={style.boardItemText}>{users?.like || "9999"}</p>
-            <p className={style.boardItemText}>{users?.date || "2025-07-02"}</p>
+            <p className={style.boardItemText}>{users.user?.name || "익명"}</p>
+            <p className={style.boardItemText}>{users?.like}</p>
+            <p className={style.boardItemText}>{users?.createdAt}</p>
           </div>
         </div>
       ))}

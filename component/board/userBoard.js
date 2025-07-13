@@ -45,7 +45,10 @@ export default function UserBoard() {
         <div className={style.userBoardByBoardItem}>
           {articleList?.length > 0 ? (
             articleList.map((item) => (
-              <span onClick={() => router.push(`/detail/${item.id}`)}>
+              <span
+                key={item.id}
+                onClick={() => router.push(`/detail/${item.id}`)}
+              >
                 <BoardItem key={item.id} item={item} userInfo={item.user} />
               </span>
             ))

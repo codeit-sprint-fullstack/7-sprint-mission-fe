@@ -13,7 +13,7 @@ export default function BoardItem({
   item = {},
   userInfo = defaultUserInfo,
 }) {
-  const { content, createdAt } = item;
+  const { content, createdAt, like } = item;
   const user = userInfo || defaultUserInfo;
 
   return (
@@ -38,7 +38,7 @@ export default function BoardItem({
           <p>{new Date(createdAt).toLocaleDateString("ko-KR")}</p>
         </div>
         <div>
-          <p>❤️ {user.like || 9999}</p>
+          <p>❤️ {like ?? 9999}</p>
         </div>
       </div>
     </div>

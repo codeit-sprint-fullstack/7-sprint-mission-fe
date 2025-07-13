@@ -12,6 +12,7 @@ import { useRouter } from "next/router";
 export default function CommentList() {
   const { article } = useGetBoardById();
   const [modal, setmodal] = useState(false);
+  const [editMode, setEditMode] = useState(true);
   const router = useRouter();
 
   const handleClick = () => {
@@ -26,13 +27,26 @@ export default function CommentList() {
     router.push(`/`);
   };
 
-  const handleFetch = async () => {};
+  const handleFetch = async () => {
+    setEditMode(false);
+  };
 
   return (
     <div>
       <div className={style.commentListTitle}>
         <p className={style.commentListTitleFont}>
-          {article ? article.title : "제목 로딩중 .."}
+          {editMode ? (
+            article ? (
+              article.title
+            ) : (
+              "제목 로딩중 .."
+            )
+          ) : (
+            <div>
+              <input></input>
+              <button>확인</button>
+            </div>
+          )}
         </p>
         <div onClick={(e) => e.stopPropagation()}>
           <FiMoreVertical onClick={handleClick} size={20} />
@@ -54,12 +68,25 @@ export default function CommentList() {
         </div>
         <div className={style.line}></div>
         <div className={style.commentListTitleIconBox}>
-          <AiFillHeart size={28} color="gray" />
+          <button>
+            <AiFillHeart size={28} color="gray" />
+          </button>
         </div>
       </div>
       <div>
         <p className={style.CommentListContent}>
-          {article ? article.content : "내용 로딩중 ..."}
+          {editMode ? (
+            article ? (
+              article.content
+            ) : (
+              "내용 로딩중 ..."
+            )
+          ) : (
+            <div>
+              <textarea></textarea>
+              <button>확인</button>
+            </div>
+          )}
         </p>
       </div>
     </div>
