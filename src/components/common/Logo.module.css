@@ -1,0 +1,44 @@
+@media (max-width: 743px) {
+  .logoImg {
+    display: none; /* 로고 이미지를 숨김 */
+  }
+
+  .logoTitle.small,
+  .logoTitle.large {
+    margin-left: 0;
+  }
+}
+
+.logoContainer {
+  display: flex;
+  justify-content: row;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logoImage.small {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin-right: 8.59px;
+}
+
+.logoTitle.small {
+  font-family: "ROKAF Sans";
+  color: var(--primary-100);
+  font-weight: 700;
+  font-size: 25px;
+}
+
+.logoImage.large {
+  position: relative;
+  width: 103px;
+  height: 103px;
+  margin-right: 22.24px;
+}
+
+.logoTitle.large {
+  color: var(--primary-100);
+  font-weight: 700;
+  font-size: 66.3px;
+}
