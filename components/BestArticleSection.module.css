@@ -1,0 +1,92 @@
+.bestArticleSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.title {
+  color: var(--Cool-Gray-900, #111827);
+  font-family: Pretendard;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+
+.item {
+  display: flex;
+  width: 384px;
+  height: 169px;
+  padding: 0px 24px;
+  flex-direction: column;
+
+  border-radius: 8px;
+  background: var(--Cool-Gray-50, #f9fafb);
+}
+
+.bestMark {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+
+  width: 102px;
+  padding: 2px 24px 2px 22px;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 0px 0px 16px 16px;
+  background: var(--brand-blue, #3692ff);
+
+  color: #fff;
+
+  /* pretendard/lg-16px-semibold */
+  font-family: Pretendard;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 26px; /* 162.5% */
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+
+  margin: 16px 0 18px;
+}
+
+.contentTitle {
+  flex-grow: 1;
+
+  color: var(--Secondary-800, #1f2937);
+
+  /* pretendard/xl-20px-semibold */
+  font-family: Pretendard;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px; /* 160% */
+}
+
+.articleImg {
+  width: 72px;
+  height: 72px;
+  padding: 13.714px 12px;
+
+  border-radius: 6px;
+  border: 1px solid var(--Cool-Gray-200, #e5e7eb);
+  background: #fff;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}

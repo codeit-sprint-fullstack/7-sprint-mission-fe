@@ -16,9 +16,12 @@
   display: flex;
   flex-direction: row;
   gap: 8px;
+  align-self: stretch;
 }
 
 .title {
+  flex-grow: 1;
+
   color: var(--Cool-Gray-800, #1f2937);
 
   /* pretendard/xl-20px-semibold */
@@ -44,6 +47,11 @@
   gap: 8px;
 
   align-items: center;
+}
+
+.userImg {
+  background-color: #d1d5db;
+  border-radius: 50px;
 }
 
 .nickname {

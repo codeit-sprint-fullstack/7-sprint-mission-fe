@@ -9,4 +9,7 @@
 .articleBox {
   display: flex;
   width: 1200px;
+
+  flex-direction: column;
+  gap: 40px;
 }

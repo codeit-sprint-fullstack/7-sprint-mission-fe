@@ -1,4 +1,4 @@
-import ArticleContent from "@/components/ArticleContent";
+import IdArticleContent from "@/components/IdArticleContent";
 import CommentInput from "@/components/CommentInput";
 import CommentList from "@/components/CommentList";
 import CustomButtonSquare from "@/components/CustomButtonSquare";
@@ -7,7 +7,7 @@ export default function ArticleId() {
   return (
     <>
       <div>
-        <ArticleContent />
+        <IdArticleContent />
         <CommentInput />
         <CommentList />
       </div>

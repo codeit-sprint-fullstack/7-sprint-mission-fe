@@ -1,8 +1,8 @@
 import Image from "next/image";
-import styles from "./ArticleContent.module.css";
+import styles from "./IdArticleContent.module.css";
 import IcHeart from "@/public/ic_heart.svg";
 
-export default function ArticleContent() {
+export default function IdArticleContent() {
   return (
     <div className={styles.articleContent}>
       <div className={styles.header}>
