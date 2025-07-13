@@ -2,17 +2,25 @@ import axios from "axios";
 const PRODUCT_URL = "http://localhost:5000";
 
 export async function fetchCommentList() {
-  const res = await axios.get(`${PRODUCT_URL}/api/comment/product`);
-  const data = res.data;
+  try {
+    const res = await axios.get(`${PRODUCT_URL}/api/comment/product`);
+    const data = res.data;
 
-  return data;
+    return data;
+  } catch (error) {
+    console.error("API[fetchCommentList] error: ", error);
+  }
 }
 
 export async function fetchUserList() {
-  const res = await axios.get(`${PRODUCT_URL}/api/user`);
-  const data = res.data;
+  try {
+    const res = await axios.get(`${PRODUCT_URL}/api/user`);
+    const data = res.data;
 
-  return data;
+    return data;
+  } catch (error) {
+    console.error("API[fetchUserList] error :", error);
+  }
 }
 
 export async function postBoard(title, content) {
@@ -33,10 +41,14 @@ export async function getBoardById(id) {
 }
 
 export async function getAricleList() {
-  const res = await axios.get(`${PRODUCT_URL}/api/articles`);
-  const data = res.data;
+  try {
+    const res = await axios.get(`${PRODUCT_URL}/api/articles`);
+    const data = res.data;
 
-  return data;
+    return data;
+  } catch (error) {
+    console.error("API[getAricleList] error :", error);
+  }
 }
 
 export async function postComment({ userId, articleId, content }) {
@@ -76,6 +88,16 @@ export async function deleteComment(id) {
 
 export async function patchComment(id, content) {
   const res = await axios.patch(`${PRODUCT_URL}/api/comment/${id}`, {
+    content,
+  });
+  const data = res.data;
+
+  return data;
+}
+
+export async function patchArticle(id, title, content) {
+  const res = await axios.patch(`${PRODUCT_URL}/api/articles/${id}`, {
+    title,
     content,
   });
   const data = res.data;

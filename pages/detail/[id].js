@@ -16,11 +16,6 @@ export default function Detail() {
   const { commentList, refetchComments } = useCommentList(id);
 
   const handleComment = async () => {
-    console.log(
-      "commentList댓글리스트가 어떤형식으로넘어오는지테스트 ",
-      commentList
-    );
-    console.log({ userId: testUser.id, articleId: id, content: comment });
     const res = await postComment({
       content: comment,
       articleId: id,
@@ -31,47 +26,42 @@ export default function Detail() {
   };
 
   return (
-    <>
-      <div className={style.detailContainer}>
-        <div>
-          <CommentList />
-        </div>
-        <div>
-          {/* comment */}
-          <div className={style.detailCommentBox}>
-            <p className={style.detailCommentFont}>댓글달기</p>
-            <textarea
-              className={style.detailCommentInput}
-              placeholder="댓글을 입력해주세요."
-              value={comment}
-              onChange={(e) => setComment(e.target.value)}
-            ></textarea>
-            <button
-              onClick={handleComment}
-              className={style.detailCommentButton}
-            >
-              등록
-            </button>
-          </div>
-        </div>
-        <div className={style.detailCommentList}>
-          {/* 댓글리스트 */}
-          {commentList.map((comment) => {
-            return (
-              <DetailCommentList
-                key={comment.id}
-                content={comment.content}
-                id={comment.id}
-                createdAt={comment.createdAt}
-                onDeleteSuccess={refetchComments}
-              ></DetailCommentList>
-            );
-          })}
-        </div>
-        <div>
-          <button onClick={() => router.push("/")}>목록으로 돌아가기</button>
+    <div className={style.detailContainer}>
+      <div>
+        <CommentList />
+      </div>
+      <div>
+        {/* comment */}
+        <div className={style.detailCommentBox}>
+          <p className={style.detailCommentFont}>댓글달기</p>
+          <textarea
+            className={style.detailCommentInput}
+            placeholder="댓글을 입력해주세요."
+            value={comment}
+            onChange={(e) => setComment(e.target.value)}
+          ></textarea>
+          <button onClick={handleComment} className={style.detailCommentButton}>
+            등록
+          </button>
         </div>
       </div>
-    </>
+      <div className={style.detailCommentList}>
+        {/* 댓글리스트 */}
+        {commentList.map((comment) => {
+          return (
+            <DetailCommentList
+              key={comment.id}
+              content={comment.content}
+              id={comment.id}
+              createdAt={comment.createdAt}
+              onDeleteSuccess={refetchComments}
+            ></DetailCommentList>
+          );
+        })}
+      </div>
+      <div>
+        <button onClick={() => router.push("/")}>목록으로 돌아가기</button>
+      </div>
+    </div>
   );
 }

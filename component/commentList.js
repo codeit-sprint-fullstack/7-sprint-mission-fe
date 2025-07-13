@@ -8,12 +8,23 @@ import { useEffect, useState } from "react";
 import CustomSelect from "@/component/customSelect";
 import { deleteArticle } from "@/pages/api/product";
 import { useRouter } from "next/router";
+import usePatchArticle from "@/Util/usePatchArticle";
 
 export default function CommentList() {
-  const { article } = useGetBoardById();
+  const { article, setArticle } = useGetBoardById();
   const [modal, setmodal] = useState(false);
   const [editMode, setEditMode] = useState(true);
   const router = useRouter();
+  const { articlePatch } = usePatchArticle();
+  const [title, setTitle] = useState(article?.title || "");
+  const [content, setContent] = useState(article?.content || "");
+
+  const handlePatchTitleContent = async () => {
+    const res = await articlePatch(article.id, title, content);
+    setArticle(res);
+    setEditMode(true);
+    setmodal(false);
+  };
 
   const handleClick = () => {
     setmodal(true);
@@ -43,8 +54,8 @@ export default function CommentList() {
             )
           ) : (
             <div>
-              <input></input>
-              <button>확인</button>
+              <input value={title} onChange={(e) => setTitle(e.target.value)} />
+              <button onClick={handlePatchTitleContent}>확인</button>
             </div>
           )}
         </p>
@@ -83,8 +94,11 @@ export default function CommentList() {
             )
           ) : (
             <div>
-              <textarea></textarea>
-              <button>확인</button>
+              <textarea
+                value={content}
+                onChange={(e) => setContent(e.target.value)}
+              />
+              <button onClick={handlePatchTitleContent}>확인</button>
             </div>
           )}
         </p>

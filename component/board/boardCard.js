@@ -1,21 +1,14 @@
 import style from "@/styles/component.module.css";
 import ic_medal from "@/public/ic_medal.png";
 import Image from "next/image";
-import useUser from "@/Util/useUser";
-import { useEffect } from "react";
 import panda from "@/public/icon_panda.svg";
 import useArticleList from "@/Util/useArticlesList";
+import { AiOutlineHeart } from "react-icons/ai";
 
 export default function BoardCard({}) {
   const { articleList } = useArticleList();
-  const top3ByLike = articleList
-    .slice()
-    .sort((a, b) => b.like - a.like)
-    .slice(0, 3);
-    
-  useEffect(() => {
-    console.log("유저리스트불러와지나?7/13", articleList);
-  }, [articleList]);
+  const top3ByLike = articleList.slice().sort((a, b) => b.like - a.like);
+
   return (
     <>
       {top3ByLike.slice(0, 3).map((users) => (
@@ -37,15 +30,27 @@ export default function BoardCard({}) {
             <Image
               className={style.boardCommentImg}
               src={panda}
-              style={{ width: 50, height: 50 }}
+              width={50}
+              height={50}
               alt="대충이미지"
             />
           </div>
           <div className={style.boardItemBox}>
             {/* 이름 좋아요 날짜  */}
-            <p className={style.boardItemText}>{users.user?.name || "익명"}</p>
-            <p className={style.boardItemText}>{users?.like}</p>
-            <p className={style.boardItemText}>{users?.createdAt}</p>
+            <div className={style.boardItemBoxFlex}>
+              <p className={style.boardItemText}>
+                {users.user?.name || "익명"}
+              </p>
+              <div className={style.boardItemHeartBox}>
+                <AiOutlineHeart size={20} color="gray" />
+                <p className={style.boardItemText}>{users?.like}</p>
+              </div>
+            </div>
+            <div>
+              <p className={style.boardItemText}>
+                {users?.createdAt.slice(0, 10)}
+              </p>
+            </div>
           </div>
         </div>
       ))}

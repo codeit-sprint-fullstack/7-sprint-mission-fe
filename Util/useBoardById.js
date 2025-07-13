@@ -14,5 +14,5 @@ export default function useGetBoardById() {
     getBoardById(id).then((data) => setArticle(data));
   }, [id]);
 
-  return { article };
+  return { article, setArticle };
 }

@@ -20,6 +20,7 @@
 .boardItemBox {
   display: flex;
   gap: 15px;
+  justify-content: space-between;
 }
 
 .boardContainer {
@@ -54,10 +55,16 @@
 }
 .boardCommentBox {
   display: flex;
+  position: relative;
 }
 
 .boardCommentBox > .boardCommentImg {
-  border: 1px solid red;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  position: absolute;
+  right: 0;
+  top: 10px;
 }
 .boardCommentBox > .boardCommentText {
   font-size: 20px;
@@ -141,6 +148,8 @@
 }
 .boardItemBetweenBox {
   display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .BoardItemContainer {
@@ -167,6 +176,13 @@
 .CommentListInfo > .CommentListInfoImage {
   background-color: #ccc;
   border-radius: 50%;
+}
+
+.boardItemUserInfoImg {
+  background-color: #ccc;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
 }
 
 .CommentListBox {
@@ -240,4 +256,23 @@
 }
 .CustomSelectContainer > .CustomSelectBox {
   border-bottom: 1px solid #ccc;
+}
+
+.boardItemTitleArea {
+  height: 85px;
+}
+
+.boardItemIamgeBox {
+  margin-top: 13px;
+}
+
+.boardItemBoxFlex {
+  display: flex;
+  gap: 10px;
+}
+
+.boardItemHeartBox {
+  display: flex;
+  align-items: center;
+  gap: 3px;
 }

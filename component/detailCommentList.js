@@ -41,41 +41,39 @@ export default function DetailCommentList({
   };
 
   return (
-    <>
-      <div className={style.DetailCommentListContainer}>
-        <div>
-          {fetchInput ? (
-            <div>
-              <input
-                value={inputValue}
-                onChange={(e) => setInputValue(e.target.value)}
-              ></input>
-              <button onClick={handlesubmitPatch}>확인</button>
-            </div>
-          ) : (
-            inputValue
-          )}
-        </div>
-        <div className={style.DetailCommentListBox}>
+    <div className={style.DetailCommentListContainer}>
+      <div>
+        {fetchInput ? (
           <div>
-            <Image className={style.DetailCommentListImage} src={panda} />
+            <input
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+            ></input>
+            <button onClick={handlesubmitPatch}>확인</button>
           </div>
-          <div>{id}</div>
-          <div>{createdAt}</div>
-        </div>
-        <div
-          onClick={(e) => e.stopPropagation()}
-          className={style.DetailCommentListIcon}
-        >
-          <FiMoreVertical onClick={handleClick} size={20} />
-          {modal ? (
-            <CustomSelect
-              onDelete={handleDelete}
-              onFetch={handleFetch}
-            ></CustomSelect>
-          ) : null}
-        </div>
+        ) : (
+          inputValue
+        )}
       </div>
-    </>
+      <div className={style.DetailCommentListBox}>
+        <div>
+          <Image className={style.DetailCommentListImage} src={panda} />
+        </div>
+        <div>{id}</div>
+        <div>{createdAt}</div>
+      </div>
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className={style.DetailCommentListIcon}
+      >
+        <FiMoreVertical onClick={handleClick} size={20} />
+        {modal ? (
+          <CustomSelect
+            onDelete={handleDelete}
+            onFetch={handleFetch}
+          ></CustomSelect>
+        ) : null}
+      </div>
+    </div>
   );
 }

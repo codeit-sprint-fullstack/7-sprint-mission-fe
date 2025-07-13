@@ -1,24 +1,11 @@
-import { useEffect, useState } from "react";
 import BoardItem from "./boardItem";
-import useComment from "@/Util/useComment";
 import style from "@/styles/component.module.css";
-import useUser from "@/Util/useUser";
 import { useRouter } from "next/router";
 import useArticleList from "@/Util/useArticlesList";
 
 export default function UserBoard() {
-  // const { users } = useUser();
   const router = useRouter();
   const { articleList } = useArticleList();
-
-  // const commentList = users
-  //   ?.filter((user) => user.Comment?.length > 0)
-  //   .flatMap((user) =>
-  //     user.Comment.map((comment) => ({
-  //       ...comment,
-  //       user, // 사용자 정보 함께 전달
-  //     }))
-  //   );
 
   return (
     <div className={style.userBoradContainer}>
