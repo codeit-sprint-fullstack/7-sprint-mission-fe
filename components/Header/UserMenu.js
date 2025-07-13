@@ -4,25 +4,23 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import styles from "./Header.module.css";
+import { useUser } from "../Contexts/UserContext";
 
 export default function UserMenu() {
-  const [user, setUser] = useState(null);
+  const { user, setUser, fetchUser } = useUser();
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const storedUser = localStorage.getItem("user");
-      if (storedUser) {
-        setUser(JSON.parse(storedUser));
-      }
+  //@TODO fetch부분 리팩토링
+  const handleLogout = async () => {
+    try {
+      await fetch("http://localhost:4000/auth/logout", {
+        method: "POST",
+        credentials: "include",
+      });
+      setUser(null);
+      window.location.reload(); // 상태 갱신
+    } catch (err) {
+      console.error("로그아웃 실패:", err);
     }
-  }, []);
-
-  const handleLogout = () => {
-    localStorage.removeItem("user");
-    localStorage.removeItem("accessToken");
-    localStorage.removeItem("refreshToken");
-    setUser(null);
-    window.location.reload();
   };
 
   if (!user) {

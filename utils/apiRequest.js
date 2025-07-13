@@ -9,6 +9,7 @@ export async function postJson(url, body) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(body),
+    credentials: "include",
   });
 
   if (!res.ok) {
@@ -19,11 +20,12 @@ export async function postJson(url, body) {
   return res.json(); // 응답을 바로 파싱해서 반환
 }
 
-export async function signIn({ email, password }) {
+export async function postSignIn({ email, password }) {
   const res = await fetch(signInPath(), {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ email, password }),
+    credentials: "include",
   });
 
   if (!res.ok) {

@@ -3,11 +3,15 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { postSignIn } from "@/utils/apiRequest";
+import { useUser } from "@/components/Contexts/UserContext";
 
 export default function LoginForm({}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+
+  const { fetchUser } = useUser();
   const router = useRouter();
 
   const handleSubmit = async (e) => {
@@ -15,21 +19,9 @@ export default function LoginForm({}) {
     setError("");
 
     try {
-      const res = await fetch("http://localhost:4000/auth/signIn", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
-      });
-
-      if (!res.ok) throw new Error("로그인 실패");
-
-      const data = await res.json();
-      const { accessToken, refreshToken, user } = data;
-
-      // 토큰 저장 (로컬스토리지 or 쿠키)
-      localStorage.setItem("accessToken", accessToken);
-      localStorage.setItem("refreshToken", refreshToken);
-      localStorage.setItem("user", JSON.stringify(user));
+      const { user } = await postSignIn({ email, password });
+      await fetchUser();
+      alert(`${user.nickname}님 환영합니다!`); //@TODO alert모달 / toast 처리
       router.push("/");
     } catch (err) {
       setError(err.message);
