@@ -9,6 +9,10 @@ export default function Write() {
   const router = useRouter();
 
   const handleSubmit = async () => {
+    if (!title && !content) {
+      alert("제목과 내용을 입력하시오");
+      return;
+    }
     const res = await submitPost(title, content);
     setTitle("");
     setContent("");

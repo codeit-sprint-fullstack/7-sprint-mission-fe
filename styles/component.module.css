@@ -276,3 +276,19 @@
   align-items: center;
   gap: 3px;
 }
+
+.commentListLikeButton {
+  display: inline-flex;
+  height: 40px;
+  padding: 4px 12px;
+  align-items: center;
+  gap: 10px;
+  border-radius: 35px;
+  border: 1px solid var(--Secondary-200, #e5e7eb);
+  background: #fff;
+  margin-left: 20px;
+}
+
+.CommentListInfoCreatedAt {
+  color: #9ca3af;
+}

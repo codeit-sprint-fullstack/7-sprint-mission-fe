@@ -33,7 +33,6 @@ export default function CommentList() {
   };
 
   const handleDelete = async () => {
-    console.log("삭제하는 콘솔확인", article.id);
     await deleteArticle(article.id);
     router.push(`/`);
   };
@@ -73,14 +72,15 @@ export default function CommentList() {
         <div className={style.CommentListInfo}>
           <Image className={style.CommentListInfoImage} src={defaultImage} />
           <p>{article ? article.id.slice(0, 5) : "ID 로딩중 ..."}</p>
-          <p>
+          <p className={style.CommentListInfoCreatedAt}>
             {article ? article.createdAt.slice(0, 10) : "생성날짜 로딩중.."}
           </p>
         </div>
         <div className={style.line}></div>
         <div className={style.commentListTitleIconBox}>
-          <button>
-            <AiFillHeart size={28} color="gray" />
+          <button className={style.commentListLikeButton}>
+            <AiFillHeart size={24} color="gray" />
+            <p>{article ? article.like : "0"}</p>
           </button>
         </div>
       </div>

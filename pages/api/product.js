@@ -24,13 +24,17 @@ export async function fetchUserList() {
 }
 
 export async function postBoard(title, content) {
-  const res = await axios.post(`${PRODUCT_URL}/api/articles`, {
-    title,
-    content,
-  });
-  const data = res.data;
+  try {
+    const res = await axios.post(`${PRODUCT_URL}/api/articles`, {
+      title,
+      content,
+    });
+    const data = res.data;
 
-  return data;
+    return data;
+  } catch (error) {
+    console.error("API[postBoard] error : ", error);
+  }
 }
 
 export async function getBoardById(id) {
@@ -40,9 +44,11 @@ export async function getBoardById(id) {
   return data;
 }
 
-export async function getAricleList() {
+export async function getAricleList(sort) {
   try {
-    const res = await axios.get(`${PRODUCT_URL}/api/articles`);
+    const res = await axios.get(`${PRODUCT_URL}/api/articles`, {
+      params: { sort },
+    });
     const data = res.data;
 
     return data;

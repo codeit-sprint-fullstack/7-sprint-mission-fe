@@ -2,10 +2,17 @@ import BoardItem from "./boardItem";
 import style from "@/styles/component.module.css";
 import { useRouter } from "next/router";
 import useArticleList from "@/Util/useArticlesList";
+import { useState } from "react";
 
 export default function UserBoard() {
   const router = useRouter();
-  const { articleList } = useArticleList();
+  const [searchKeyword, setSearchKeyWord] = useState("");
+  const [sort, setSort] = useState("recent");
+
+  const { articleList } = useArticleList(sort);
+  const filteredArticles = articleList?.filter((item) =>
+    item.title.toLowerCase().includes(searchKeyword.toLowerCase())
+  );
 
   return (
     <div className={style.userBoradContainer}>
@@ -23,24 +30,45 @@ export default function UserBoard() {
           </button>
         </div>
         <div className={style.userBoardOption}>
-          <input className={style.userBoardOptionInput} />
-          <select className={style.userBoardOptionSelect}>
-            <option>최신순</option>
-            <option>오래된순</option>
+          <input
+            className={style.userBoardOptionInput}
+            value={searchKeyword}
+            onChange={(e) => setSearchKeyWord(e.target.value)}
+          />
+          <select
+            className={style.userBoardOptionSelect}
+            value={sort}
+            onChange={(e) => setSort(e.target.value)}
+          >
+            <option value="recent">최신순</option>
+            <option value="old">오래된순</option>
           </select>
         </div>
         <div className={style.userBoardByBoardItem}>
-          {articleList?.length > 0 ? (
-            articleList.map((item) => (
+          {searchKeyword === "" ? (
+            articleList?.length > 0 ? (
+              articleList.map((item) => (
+                <span
+                  key={item.id}
+                  onClick={() => router.push(`/detail/${item.id}`)}
+                >
+                  <BoardItem item={item} userInfo={item.user} />
+                </span>
+              ))
+            ) : (
+              <p>게시글이 없습니다.</p>
+            )
+          ) : filteredArticles?.length > 0 ? (
+            filteredArticles.map((item) => (
               <span
                 key={item.id}
                 onClick={() => router.push(`/detail/${item.id}`)}
               >
-                <BoardItem key={item.id} item={item} userInfo={item.user} />
+                <BoardItem item={item} userInfo={item.user} />
               </span>
             ))
           ) : (
-            <p>게시글이 없습니다.</p>
+            <p>검색 결과가 없습니다.</p>
           )}
         </div>
       </div>
