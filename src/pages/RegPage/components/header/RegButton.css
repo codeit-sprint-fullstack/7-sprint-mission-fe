@@ -1,0 +1,18 @@
+.regButton > * {
+  color: var(--Cool-Gray-100, #f3f4f6);
+
+  /* pretendard/lg-16px-semibold */
+  font-family: Pretendard;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 26px; /* 162.5% */
+}
+
+.regButton {
+  height: 100%;
+  margin: 0;
+  padding: 12px 23px;
+  height: 42px;
+  border-radius: 8px;
+}
