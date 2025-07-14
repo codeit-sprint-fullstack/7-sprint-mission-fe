@@ -71,7 +71,7 @@ export default function CommentList() {
       <div className={style.CommentListBox}>
         <div className={style.CommentListInfo}>
           <Image className={style.CommentListInfoImage} src={defaultImage} />
-          <p>{article ? article.id.slice(0, 5) : "ID 로딩중 ..."}</p>
+          <p>{article ? article.user?.name || "익명" : "ID 로딩중 ..."}</p>
           <p className={style.CommentListInfoCreatedAt}>
             {article ? article.createdAt.slice(0, 10) : "생성날짜 로딩중.."}
           </p>

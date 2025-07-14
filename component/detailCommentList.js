@@ -12,16 +12,21 @@ export default function DetailCommentList({
   id,
   createdAt,
   onDeleteSuccess,
+  user,
 }) {
   const [modal, setmodal] = useState(false);
   const [fetchInput, setFetchInput] = useState(false);
   const { submitPatch } = usePatch();
   const [inputValue, setInputValue] = useState(content);
+  const now = Date.now();
+  const createdAtTime = new Date(createdAt).getTime();
   const handleClick = () => {
     setmodal(true);
 
     if (modal == true) setmodal(false);
   };
+
+  const timeElapsed = (now - createdAtTime) / 1000 / 60 / 60;
 
   const handleDelete = async () => {
     console.log(id);
@@ -59,8 +64,10 @@ export default function DetailCommentList({
         <div>
           <Image className={style.DetailCommentListImage} src={panda} />
         </div>
-        <div>{id}</div>
-        <div>{createdAt}</div>
+        <div>
+          <div>{user || "익명"}</div>
+          <div>{Math.floor(timeElapsed)}시간 전</div>
+        </div>
       </div>
       <div
         onClick={(e) => e.stopPropagation()}

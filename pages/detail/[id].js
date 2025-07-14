@@ -63,6 +63,7 @@ export default function Detail() {
                 id={comment.id}
                 createdAt={comment.createdAt}
                 onDeleteSuccess={refetchComments}
+                user={comment.user.name}
               ></DetailCommentList>
             );
           })
