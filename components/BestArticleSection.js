@@ -3,6 +3,7 @@ import Image from "next/image";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import styles from "./BestArticleSection.module.css";
+import Hearts from "./Hearts";
 
 function BestArticle({ article }) {
   if (!article) {
@@ -26,9 +27,13 @@ function BestArticle({ article }) {
         <Image src={DefaultImg} className={styles.articleImg} alt="이미지" />
       </div>
       <div className={styles.info}>
-        <p className={styles.userName}>user name</p>
-        <p className={styles.heartCount}>hearts</p>
-        <p className={styles.date}>2025.7.13</p>
+        <p className={styles.userName}>{article.user.nickname}</p>
+        <Hearts
+          heartId={article.AHeart[0]}
+          articleId={article.id}
+          heartCount={article._count.AHeart}
+        />
+        <p className={styles.date}>{article.updatedAt.split("T")[0]}</p>
       </div>
     </div>
   );

@@ -1,12 +1,14 @@
 import Image from "next/image";
 import styles from "./ArticleItem.module.css";
-import IcHeart from "@/public/ic_heart.svg";
+import Hearts from "./Hearts";
 
-export default function ArticleItem() {
+export default function ArticleItem({ article }) {
+  console.log(article);
+  const updatedAt = article.updatedAt.split("T")[0];
   return (
     <div className={styles.article}>
       <div className={styles.content}>
-        <div className={styles.title}>{`title`}</div>
+        <div className={styles.title}>{article.title}</div>
         <Image src={"/default.png"} alt="이미지" width={48} height={48} />
       </div>
       <div className={styles.info}>
@@ -18,13 +20,14 @@ export default function ArticleItem() {
             width={24}
             height={24}
           />
-          <div className={styles.nickname}>{`nickname`}</div>
-          <div className={styles.updatedAt}>{`updatedAt`}</div>
+          <div className={styles.nickname}>{article.user.nickname}</div>
+          <div className={styles.updatedAt}>{updatedAt}</div>
         </div>
-        <div className={styles.heart}>
-          <Image src={IcHeart} className={styles.heartBtn} alt="이미지" />
-          <div className={styles.heartCount}>{`heartCount`}</div>
-        </div>
+        <Hearts
+          heartId={article.AHeart[0]}
+          articleId={article.id}
+          heartCount={article._count.AHeart}
+        />
       </div>
     </div>
   );
