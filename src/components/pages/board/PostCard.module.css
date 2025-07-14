@@ -1,0 +1,78 @@
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  gap: 16px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--secondary-200);
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.title {
+  font-family: "Pretendard";
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--secondary-800);
+  flex-shrink: 1;
+}
+
+.imageContainerWithPadding {
+  width: 72px;
+  height: 72px;
+  padding: 12px;
+  flex-shrink: 0;
+  background-color: var(--white);
+}
+
+.imageContainer {
+  position: relative;
+}
+
+.metaContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.metaSubContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.userImageContainer {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.author {
+  font-family: "Pretendard";
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--secondary-600);
+}
+
+.date {
+  font-family: "Pretendard";
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.likesContainer {
+  display: flex;
+  gap: 8px;
+}
+
+.likesCount {
+  font-family: Pretendard;
+  font-size: 16px;
+  font-weight: 400px;
+}

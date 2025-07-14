@@ -1,6 +1,7 @@
 import BestPostList from "@/components/pages/board/BestPostList";
 import styles from "./BoardPage.module.css";
 import axios from "@/lib/axios.js";
+import PostCard from "@/components/pages/board/PostCard";
 
 export async function getServerSideProps(context) {
   try {
@@ -28,6 +29,7 @@ export default function BoardPage({ bestPosts, error }) {
   return (
     <div className={styles.boardPageContainer}>
       <BestPostList bestPosts={bestPosts} />
+      <PostCard />
     </div>
   );
 }
