@@ -7,15 +7,7 @@ const DEFAULT_IMAGE_URL = "/images/post.png";
 
 const DEFAULT_USER_IMAGE = "/images/common/default_user.svg";
 
-const post = {
-  id: "cd558be2-9538-4b9c-a9dc-18d4bba4356f",
-  title: "APPLE 애플워치 SE 2세대 파는분 계신가요?",
-  createdAt: "2025-07-12T09:19:24.799Z",
-  likesCount: 0,
-  userNickname: "minji",
-  userImage: null,
-};
-export default function PostCard() {
+export default function PostCard({ post }) {
   const { createdAt } = post;
   const dateOnly = createdAt.slice(0, 10);
   return (

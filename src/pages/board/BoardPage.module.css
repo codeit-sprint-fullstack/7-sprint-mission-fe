@@ -2,10 +2,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* Mobile (기본) */
-  min-width: 336px;
+  padding: 0 1rem;
   margin-top: 24px;
-  padding: 0 1rem; /* 모바일에서는 여백을 약간 줄일 수 있습니다. */
+}
+
+.inner {
+  width: 100%;
+  max-width: 1056px;
+  display: flex;
+  flex-direction: column;
   gap: 40px;
 }
 
