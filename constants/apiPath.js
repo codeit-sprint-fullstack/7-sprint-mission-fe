@@ -1,3 +1,4 @@
+// constants/apiPath.js
 import { API_BASE_URL, ORDER_BY, PAGE_SIZE } from "./index";
 
 export function getArticlePath({
@@ -18,6 +19,20 @@ export function postArticleCommentPath(articleId) {
   return `${API_BASE_URL}/articles/${articleId}/comments`;
 }
 
+// 로그인 (POST)
 export function signInPath() {
   return `${API_BASE_URL}/auth/signIn`;
+}
+
+// 게시글 작성 (POST)
+export function postArticlePath() {
+  return `${API_BASE_URL}/articles`;
+}
+
+export function getUserMePath() {
+  return `${API_BASE_URL}/auth/me`;
+}
+
+export function logoutPath() {
+  return `${API_BASE_URL}/auth/logout`;
 }

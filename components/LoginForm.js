@@ -22,7 +22,7 @@ export default function LoginForm({}) {
       const { user } = await postSignIn({ email, password });
       await fetchUser();
       alert(`${user.nickname}님 환영합니다!`); //@TODO alert모달 / toast 처리
-      router.push("/");
+      router.push("/freeboard");
     } catch (err) {
       setError(err.message);
     }

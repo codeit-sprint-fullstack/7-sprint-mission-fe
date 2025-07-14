@@ -1,28 +1,29 @@
 // components/Header/UserMenu.js
 "use client";
 
-import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import styles from "./Header.module.css";
 import { useUser } from "../Contexts/UserContext";
+import LoadingSpinner from "../LoadingSpinner";
+import { postLogout } from "@/utils/apiRequest";
 
 export default function UserMenu() {
-  const { user, setUser, fetchUser } = useUser();
+  const { user, setUser, isFetchUserLoading } = useUser();
+  const router = useRouter();
 
-  //@TODO fetch부분 리팩토링
   const handleLogout = async () => {
     try {
-      await fetch("http://localhost:4000/auth/logout", {
-        method: "POST",
-        credentials: "include",
-      });
+      await postLogout();
       setUser(null);
-      window.location.reload(); // 상태 갱신
+      router.push("/");
     } catch (err) {
-      console.error("로그아웃 실패:", err);
+      console.error("로그아웃 실패:", err.message);
     }
   };
-
+  if (isFetchUserLoading) {
+    return <LoadingSpinner />;
+  }
   if (!user) {
     return (
       <Link href="/login">
