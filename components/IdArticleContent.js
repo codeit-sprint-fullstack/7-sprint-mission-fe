@@ -1,6 +1,8 @@
 import Image from "next/image";
 import styles from "./IdArticleContent.module.css";
 import IcHeart from "@/public/ic_heart.svg";
+import Hearts from "./Hearts";
+import DropOption from "./DropOption";
 
 export default function IdArticleContent({ data }) {
   console.log(data);
@@ -10,21 +12,30 @@ export default function IdArticleContent({ data }) {
       <div className={styles.header}>
         <div className={styles.titleHeader}>
           <div className={styles.title}>{data.title}</div>
-          <div className={styles.dropOption}>{`drop option`}</div>
+          <DropOption />
         </div>
         <div className={styles.info}>
           <div className={styles.user}>
-            {/* <Image /> */}
-            <div className={styles.nickname}>{`user name`}</div>
-            <div className={styles.date}>{`date`}</div>
+            <Image
+              className={styles.userImg}
+              src={"/user-default-img.svg"}
+              width={40}
+              height={40}
+              alt="유저 이미지"
+            />
+            <div className={styles.nickname}>{data.user.nickname}</div>
+            <div className={styles.date}>{data.updatedAt.split("T")[0]}</div>
           </div>
-          <div className={styles.heart}>
-            {/* <Image className={styles.heartIc} src={IcHeart} /> */}
-            <div className={styles.heartCount}>{`heart count`}</div>
-          </div>
+          <div className={styles.line}></div>
+          <Hearts
+            heartId={data.AHeart.id}
+            articleId={data.id}
+            heartCount={data._count.AHeart}
+          />
         </div>
+        <div className={styles.longLine}></div>
       </div>
-      <div className={styles.textContent}>{`text content`}</div>
+      <div className={styles.textContent}>{data.content}</div>
     </div>
   );
 }

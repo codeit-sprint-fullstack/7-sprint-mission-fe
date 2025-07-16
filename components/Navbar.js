@@ -2,14 +2,21 @@ import PandaLogo from "@/public/panda-logo.svg";
 import Image from "next/image";
 import styles from "./Navbar.module.css";
 import Link from "next/link";
-import { useUrl } from "@/lib/UrlContext";
+import { useRouter } from "next/router";
 
 function PageLink({ link, text }) {
-  const { url } = useUrl();
+  const router = useRouter();
+  function blueText(link) {
+    if (router.asPath === "/") {
+      return false;
+    }
+
+    return router.asPath.includes(link);
+  }
 
   return (
     <div
-      className={`${styles.pageLink} ${link === url ? styles.blueText : ""}`}
+      className={`${styles.pageLink} ${blueText(link) ? styles.blueText : ""}`}
     >
       <Link href={link}>{text}</Link>
     </div>

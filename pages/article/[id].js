@@ -5,26 +5,28 @@ import CustomButtonSquare from "@/components/CustomButtonSquare";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import styles from "@/styles/articleId.module.css";
 
 export default function ArticleId() {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [article, setArticle] = useState({});
   const router = useRouter();
   const { id } = router.query;
 
   useEffect(() => {
+    if (!id) {
+      return;
+    }
+
     async function getArticleById(id) {
       setIsLoading(true);
-      if (id) {
-        try {
-          const res = await axios.get(`http://localhost:5000/article/${id}`);
-          setArticle(res.data);
-          console.log(res.data);
-        } catch (e) {
-          console.error(e);
-        } finally {
-          setIsLoading(false);
-        }
+      try {
+        const res = await axios.get(`http://localhost:5000/article/${id}`);
+        setArticle(res.data);
+      } catch (e) {
+        console.error(e);
+      } finally {
+        setIsLoading(false);
       }
     }
 
@@ -36,13 +38,20 @@ export default function ArticleId() {
   }
 
   return (
-    <>
-      <div>
-        <IdArticleContent data={article} />
-        <CommentInput />
-        <CommentList />
+    <div className={styles.articleId}>
+      <div className={styles.articleIdBox}>
+        <div className={styles.content}>
+          <IdArticleContent data={article} />
+          <CommentInput />
+          <CommentList data={article} />
+        </div>
+        <CustomButtonSquare
+          text="목록으로 돌아가기"
+          onClick={() => {
+            router.push("/article");
+          }}
+        />
       </div>
-      <CustomButtonSquare text="목록으로 돌아가기" />
-    </>
+    </div>
   );
 }

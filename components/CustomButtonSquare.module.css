@@ -1,5 +1,6 @@
 .button {
   display: flex;
+  width: fit-content;
   height: 42px;
   justify-content: center;
   align-items: center;
