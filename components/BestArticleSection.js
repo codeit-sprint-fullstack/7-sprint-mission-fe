@@ -4,14 +4,22 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import styles from "./BestArticleSection.module.css";
 import Hearts from "./Hearts";
+import { useRouter } from "next/router";
 
 function BestArticle({ article }) {
+  const router = useRouter();
+
   if (!article) {
     return <div>로딩 중...</div>;
   }
 
   return (
-    <div className={styles.item}>
+    <div
+      className={styles.item}
+      onClick={() => {
+        router.push(`/article/${article.id}`);
+      }}
+    >
       <div className={styles.bestMark}>
         <Image
           src={"/ic_medal.svg"}

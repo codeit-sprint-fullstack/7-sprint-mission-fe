@@ -48,6 +48,8 @@ export default function Hearts({
   }
 
   const handleHeartBtn = (e) => {
+    e.preventDefault();
+
     // 로그인 안하면 좋아요 이용 불가
     if (!userId) {
       alert("좋아요 기능은 로그인 후 이용할 수 있습니다.");
