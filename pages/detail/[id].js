@@ -8,25 +8,29 @@ import DetailCommentList from "@/component/detailCommentList";
 import emptyComment from "@/public/Img_reply_empty.png";
 import Image from "next/image";
 import { IoReturnDownBack } from "react-icons/io5";
+import { useAuth } from "@/Auth/authprovider";
 
 export default function Detail() {
   const [comment, setComment] = useState("");
   const router = useRouter();
   const { id } = router.query;
-  const testUser = {
-    id: 4,
-  };
+  const { user } = useAuth();
   const { commentList, refetchComments } = useCommentList(id);
 
   const handleComment = async () => {
+    if (!id) {
+      alert("게시글 ID를 불러오는 중입니다. 잠시만 기다려주세요.");
+      return;
+    }
     if (!comment) {
       alert("댓글에 내용을입력하시오");
       return;
     }
+    console.log("user정보옴?", user);
     const res = await postComment({
       content: comment,
       articleId: id,
-      userId: testUser.id,
+      userId: user.id,
     });
     setComment("");
     await refetchComments();

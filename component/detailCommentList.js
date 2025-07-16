@@ -62,7 +62,7 @@ export default function DetailCommentList({
       </div>
       <div className={style.DetailCommentListBox}>
         <div>
-          <Image className={style.DetailCommentListImage} src={panda} />
+          <Image alt="" className={style.DetailCommentListImage} src={panda} />
         </div>
         <div>
           <div>{user || "익명"}</div>

@@ -136,3 +136,20 @@
   justify-content: center;
   margin-top: 50px;
 }
+
+.ItemImgBox {
+  display: flex;
+}
+
+.ItemTitle {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  border-bottom: 1px solid #ccc;
+}
+
+.ItemInfoBox {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}

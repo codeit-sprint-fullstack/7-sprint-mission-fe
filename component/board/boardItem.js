@@ -31,7 +31,11 @@ export default function BoardItem({ userInfo, item = {} }) {
       </div>
       <div className={style.boardItemBetween}>
         <div className={style.boardItemBetweenBox}>
-          <Image className={style.boardItemUserInfoImg} src={defaultImage} />
+          <Image
+            alt=""
+            className={style.boardItemUserInfoImg}
+            src={defaultImage}
+          />
           <p>{user.name}</p>
           <p>{new Date(createdAt).toLocaleDateString("ko-KR")}</p>
         </div>
