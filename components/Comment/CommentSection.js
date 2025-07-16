@@ -1,29 +1,19 @@
 //components/Comment/CommentSection.js
 "use client";
 
-import { useEffect, useState } from "react";
-
 import styles from "./CommentSection.module.css";
 import CommentList from "./CommentList";
 import LoadingSpinner from "../LoadingSpinner";
 import CommentForm from "./CommentForm";
-import { getArticleCommentsPath } from "@/constants/apiPath";
+import useComments from "@/hooks/useComments";
 
 export default function CommentSection({ articleId }) {
-  const [comments, setComments] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetch(getArticleCommentsPath(articleId))
-      .then((res) => res.json())
-      .then((data) => setComments(data.comments))
-      .catch((err) => console.error("댓글 불러오기 실패 : ", err.message))
-      .finally(() => setLoading(false));
-  }, [articleId]);
+  const { comments, loading, error, addCommentToList } = useComments(articleId);
 
   const handleNewComment = (newComment) => {
-    setComments((prev) => [...prev, newComment]);
+    addCommentToList(newComment);
   };
+
   const placeholderTxt =
     comments.length === 0
       ? "아직 댓글이 없어요. 첫 댓글을 남겨보세요!"

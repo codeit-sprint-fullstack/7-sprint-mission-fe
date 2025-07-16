@@ -5,14 +5,14 @@ import { useState } from "react";
 import styles from "./CommentForm.module.css";
 import { postArticleCommentPath } from "@/constants/apiPath";
 import { postJson } from "@/utils/apiRequest";
-
-// @TODO 비로그인시 댓글 버튼 비활성화
+import { useUser } from "@/components/Contexts/UserContext";
 
 export default function CommentForm({
   articleId,
   onSubmitSuccess,
   placeholderTxt,
 }) {
+  const { isLoggedIn } = useUser();
   const [content, setContent] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -41,12 +41,20 @@ export default function CommentForm({
     <form className={styles.form} onSubmit={handleSubmit}>
       <textarea
         className={styles.textarea}
-        placeholder={placeholderTxt}
+        placeholder={
+          isLoggedIn ? placeholderTxt : "로그인 후 댓글을 작성할 수 있어요"
+        }
         value={content}
         onChange={(e) => setContent(e.target.value)}
         disabled={loading}
       />
-      <button className={styles.submitButton} type="submit" disabled={loading}>
+      <button
+        className={`${styles.submitButton} ${
+          !isLoggedIn ? styles.disabled : ""
+        }`}
+        type="submit"
+        disabled={loading || !isLoggedIn}
+      >
         {loading ? "작성 중..." : "댓글 작성"}
       </button>
       {error && <p className={styles.error}>{error}</p>}

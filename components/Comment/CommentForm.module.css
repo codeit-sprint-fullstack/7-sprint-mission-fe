@@ -29,6 +29,10 @@
   background-color: #ccc;
   cursor: not-allowed;
 }
+.disabled {
+  background-color: #ccc;
+  color: #666;
+}
 
 .error {
   color: red;
