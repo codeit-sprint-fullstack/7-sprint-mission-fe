@@ -43,7 +43,7 @@ export default function ArticleSection() {
         <CustomButtonSquare
           text="글쓰기"
           onClick={() => {
-            router.push("/postArticle");
+            router.push(`/postArticle?mode=post`);
           }}
         />
       </div>
