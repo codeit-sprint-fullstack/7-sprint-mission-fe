@@ -1,3 +1,4 @@
+// components/Article/ArticleDetail.js
 import styles from "./ArticleDetail.module.css";
 import Image from "next/image";
 import Link from "next/link";

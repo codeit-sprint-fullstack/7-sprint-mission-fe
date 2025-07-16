@@ -6,6 +6,8 @@ import styles from "./CommentForm.module.css";
 import { postArticleCommentPath } from "@/constants/apiPath";
 import { postJson } from "@/utils/apiRequest";
 
+// @TODO 비로그인시 댓글 버튼 비활성화
+
 export default function CommentForm({
   articleId,
   onSubmitSuccess,
@@ -27,7 +29,7 @@ export default function CommentForm({
         content,
       });
       setContent("");
-      if (onSubmitSuccess) onSubmitSuccess(data);
+      if (onSubmitSuccess) onSubmitSuccess(data.comment);
     } catch (err) {
       setError(err.message);
     } finally {

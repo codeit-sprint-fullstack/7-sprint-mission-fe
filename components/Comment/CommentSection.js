@@ -16,7 +16,7 @@ export default function CommentSection({ articleId }) {
   useEffect(() => {
     fetch(getArticleCommentsPath(articleId))
       .then((res) => res.json())
-      .then((data) => setComments(data.list))
+      .then((data) => setComments(data.comments))
       .catch((err) => console.error("댓글 불러오기 실패 : ", err.message))
       .finally(() => setLoading(false));
   }, [articleId]);
