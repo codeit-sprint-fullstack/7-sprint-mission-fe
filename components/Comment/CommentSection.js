@@ -14,6 +14,16 @@ export default function CommentSection({ articleId }) {
     addCommentToList(newComment);
   };
 
+  const handleEditComment = (comment) => {
+    console.log("수정할 댓글:", comment);
+    // @TODO: 수정 모드 진입 로직 작성
+  };
+
+  const handleDeleteComment = (commentId) => {
+    console.log("삭제할 댓글 ID:", commentId);
+    // TODO: 삭제 API 요청 후 목록 갱신
+  };
+
   const placeholderTxt =
     comments.length === 0
       ? "아직 댓글이 없어요. 첫 댓글을 남겨보세요!"
@@ -28,7 +38,11 @@ export default function CommentSection({ articleId }) {
         </>
       ) : (
         <div className={styles.commentList}>
-          <CommentList comments={comments} />
+          <CommentList
+            comments={comments}
+            onEdit={handleEditComment}
+            onDelete={handleDeleteComment}
+          />
         </div>
       )}
       <CommentForm
