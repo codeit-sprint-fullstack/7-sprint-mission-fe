@@ -16,7 +16,7 @@ export default function Detail() {
   const { id } = router.query;
   const { user } = useAuth();
   const { commentList, refetchComments } = useCommentList(id);
-
+  // 지금 내가해야할거 클릭했을떄 그 list가보이도록
   const handleComment = async () => {
     if (!id) {
       alert("게시글 ID를 불러오는 중입니다. 잠시만 기다려주세요.");

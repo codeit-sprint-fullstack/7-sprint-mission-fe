@@ -29,10 +29,11 @@ export default function BoardCard({}) {
             </p>
             <Image
               className={style.boardCommentImg}
-              src={panda}
+              src={users.image || panda}
               width={50}
               height={50}
               alt="대충이미지"
+              unoptimized
             />
           </div>
           <div className={style.boardItemBox}>

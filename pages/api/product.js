@@ -46,7 +46,7 @@ export async function getBoardById(id) {
   return data;
 }
 
-export async function getAricleList(sort) {
+export async function getArticleList(sort) {
   try {
     const res = await axios.get(`${PRODUCT_URL}/api/articles`, {
       params: { sort },
@@ -132,3 +132,4 @@ export async function getCommentListByProductId(productId) {
   const data = res.data;
   return data;
 }
+

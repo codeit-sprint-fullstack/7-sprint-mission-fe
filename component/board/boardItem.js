@@ -10,9 +10,9 @@ const defaultUserInfo = {
 };
 
 export default function BoardItem({ userInfo, item = {} }) {
-  const { title, createdAt, like } = item;
+  const { title, createdAt, likeCount, writer, image } = item;
   const user = userInfo || defaultUserInfo;
-
+  const nickName = writer.nickname;
   return (
     <div className={style.BoardItemContainer}>
       <div className={style.boardItemBetween}>
@@ -22,10 +22,11 @@ export default function BoardItem({ userInfo, item = {} }) {
         <div className={style.boardItemIamgeBox}>
           <Image
             className={style.boardCommentImg}
-            src={panda}
+            src={image || panda}
             width={50}
             height={50}
             alt="유저 이미지"
+            unoptimized
           />
         </div>
       </div>
@@ -35,12 +36,15 @@ export default function BoardItem({ userInfo, item = {} }) {
             alt=""
             className={style.boardItemUserInfoImg}
             src={defaultImage}
+            width={50}
+            height={50}
+            unoptimized
           />
-          <p>{user.name}</p>
+          <p>{nickName}</p>
           <p>{new Date(createdAt).toLocaleDateString("ko-KR")}</p>
         </div>
         <div>
-          <p>❤️ {like ?? 9999}</p>
+          <p>❤️ {likeCount ?? 9999}</p>
         </div>
       </div>
     </div>

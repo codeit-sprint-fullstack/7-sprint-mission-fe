@@ -2,17 +2,20 @@ import BoardItem from "./boardItem";
 import style from "@/styles/component.module.css";
 import { useRouter } from "next/router";
 import useArticleList from "@/Util/useArticlesList";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function UserBoard() {
   const router = useRouter();
   const [searchKeyword, setSearchKeyWord] = useState("");
-  const [sort, setSort] = useState("recent");
-
-  const { articleList } = useArticleList(sort);
+  const [orderBy, setOrderBy] = useState();
+  // 오더바이 넘기는법 생각해보셈
+  const { articleList } = useArticleList();
   const filteredArticles = articleList?.filter((item) =>
     item.title.toLowerCase().includes(searchKeyword.toLowerCase())
   );
+  useEffect(() => {
+    console.log("지금값제대로나오나요??", articleList);
+  }, []);
 
   return (
     <div className={style.userBoradContainer}>
@@ -37,8 +40,8 @@ export default function UserBoard() {
           />
           <select
             className={style.userBoardOptionSelect}
-            value={sort}
-            onChange={(e) => setSort(e.target.value)}
+            value={orderBy}
+            onChange={(e) => setOrderBy(e.target.value)}
           >
             <option value="recent">최신순</option>
             <option value="old">오래된순</option>

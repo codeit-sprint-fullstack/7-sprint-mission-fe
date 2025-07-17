@@ -2,6 +2,7 @@ import axios from "axios";
 import { getBoardById } from "@/pages/api/product";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import { relGetArticlesById } from "@/pages/api/articles";
 
 export default function useGetBoardById() {
   const router = useRouter();
@@ -11,7 +12,7 @@ export default function useGetBoardById() {
 
   useEffect(() => {
     if (!id) return;
-    getBoardById(id).then((data) => setArticle(data));
+    relGetArticlesById(id).then((data) => setArticle(data));
   }, [id]);
 
   return { article, setArticle };
