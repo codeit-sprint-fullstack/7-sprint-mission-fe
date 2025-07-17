@@ -10,8 +10,8 @@ export default function Hearts({
   heartId,
   productId,
   articleId,
-  userId,
   heartCount,
+  isHearted,
 }) {
   const [isLoading, setIsLoading] = useState(false);
   const category = productId ? "pHeart" : "aHeart";
@@ -75,7 +75,7 @@ export default function Hearts({
   return (
     <div className={styles.heart}>
       <Image
-        src={id ? IcHeartFilled : IcHeart}
+        src={isHearted ? IcHeartFilled : IcHeart}
         onClick={handleHeartBtn}
         className={styles.heartBtn}
         alt="이미지"

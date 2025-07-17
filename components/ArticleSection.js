@@ -21,9 +21,9 @@ export default function ArticleSection() {
       setIsLoading(true);
       try {
         const res = await axios.get("http://localhost:5000/article", {
-          params: { keyword, limit: 3 },
+          params: { keyword, limit: 4 },
         });
-        setArticles([...res.data, ...res.data, ...res.data, ...res.data]);
+        setArticles(res.data);
       } catch (e) {
         console.error(e);
       } finally {

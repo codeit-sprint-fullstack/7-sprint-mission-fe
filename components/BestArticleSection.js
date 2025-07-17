@@ -35,11 +35,12 @@ function BestArticle({ article }) {
         <Image src={DefaultImg} className={styles.articleImg} alt="이미지" />
       </div>
       <div className={styles.info}>
-        <p className={styles.userName}>{article.user.nickname}</p>
+        <p className={styles.userName}>{article.nickname}</p>
         <Hearts
-          heartId={article.AHeart[0]}
+          heartId={article.heartId}
           articleId={article.id}
-          heartCount={article._count.AHeart}
+          heartCount={article.heart_count}
+          isHearted={article.isHearted}
         />
         <p className={styles.date}>{article.updatedAt.split("T")[0]}</p>
       </div>
@@ -56,9 +57,10 @@ export default function BestArticleSection() {
       setIsLoading(true);
       try {
         const res = await axios.get("http://localhost:5000/article", {
-          params: { limit: 3 },
+          params: { limit: 3, orderBy: "hearts" },
         });
-        setBestArticles([...res.data, ...res.data, ...res.data]);
+        console.log(res.data);
+        setBestArticles(res.data);
       } catch (e) {
         console.error(e);
       } finally {

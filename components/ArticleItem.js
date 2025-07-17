@@ -27,13 +27,14 @@ export default function ArticleItem({ article }) {
             width={24}
             height={24}
           />
-          <div className={styles.nickname}>{article.user.nickname}</div>
+          <div className={styles.nickname}>{article.nickname}</div>
           <div className={styles.updatedAt}>{updatedAt}</div>
         </div>
         <Hearts
-          heartId={article.AHeart[0]}
+          heartId={article.heartId}
           articleId={article.id}
-          heartCount={article._count.AHeart}
+          heartCount={article.heart_count}
+          isHearted={article.isHearted}
         />
       </div>
     </div>
