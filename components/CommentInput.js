@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CustomButtonSquare from "./CustomButtonSquare";
 import axios from "axios";
 import styles from "./CommentInput.module.css";
+import validInput from "@/utils/validInput";
 
 export default function CommentInput() {
   const [value, setValue] = useState("");
+  const [isValid, setIsValid] = useState(false);
   const userId = "";
 
   const handlePostComment = async () => {
@@ -13,8 +15,8 @@ export default function CommentInput() {
       return;
     }
 
-    if (!value) {
-      alert(`댓글을 작성 해 주세요.`);
+    if (!isValid) {
+      alert("댓글을 작성해 주세요.");
       return;
     }
 
@@ -23,6 +25,14 @@ export default function CommentInput() {
     });
     return res.data;
   };
+
+  useEffect(() => {
+    if (validInput(value)) {
+      setIsValid(true);
+    } else {
+      setIsValid(false);
+    }
+  }, [value]);
 
   return (
     <div className={styles.postComment}>
@@ -39,7 +49,7 @@ export default function CommentInput() {
         <CustomButtonSquare
           text={`등록`}
           onClick={handlePostComment}
-          valid={false}
+          valid={isValid}
         />
       </div>
     </div>
