@@ -2,13 +2,58 @@ import Image from "next/image";
 import DropOption from "./DropOption";
 import styles from "./CommentList.module.css";
 import dateFormat from "@/utils/dateFormat";
+import { useState } from "react";
+import CustomButtonSquare from "./CustomButtonSquare";
+import validInput from "@/utils/validInput";
+import axios from "axios";
 
-function Comment({ comment }) {
+function Comment({ comment, articleId }) {
+  const [isPatchMode, setIsPatchMode] = useState(false);
+  const [value, setValue] = useState(comment.content);
+
+  const handlePatchComment = async () => {
+    const res = await axios.patch(
+      `http://localhost:5000/aComment/${articleId}`,
+      {
+        data: { content: value },
+        id: comment.id,
+      }
+    );
+    setIsPatchMode(false);
+    return res.data;
+  };
+
+  if (isPatchMode) {
+    return (
+      <div className={styles.postComment}>
+        <textarea
+          className={styles.input}
+          placeholder="댓글을 입력해 주세요"
+          value={value}
+          onChange={(e) => {
+            setValue(e.target.value);
+          }}
+        />
+        <div className={styles.btn}>
+          <CustomButtonSquare
+            text={`수정 완료`}
+            onClick={handlePatchComment}
+            valid={validInput(value)}
+          />
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className={styles.comment}>
       <div className={styles.content}>
         <div className={styles.text}>{comment.content}</div>
-        <DropOption />
+        <DropOption
+          onPatch={() => {
+            setIsPatchMode(true);
+          }}
+        />
       </div>
       <div className={styles.info}>
         <Image
@@ -29,9 +74,11 @@ function Comment({ comment }) {
 
 export default function CommentList({ data }) {
   return (
-    <div>
+    <div className={styles.commentList}>
       {data.AComment.map((comment) => {
-        return <Comment key={comment.id} comment={comment} />;
+        return (
+          <Comment key={comment.id} comment={comment} articleId={data.id} />
+        );
       })}
     </div>
   );

@@ -10,6 +10,7 @@ import styles from "@/styles/articleId.module.css";
 export default function ArticleId() {
   const [isLoading, setIsLoading] = useState(true);
   const [article, setArticle] = useState({});
+  const [newComment, setNewComment] = useState({});
   const router = useRouter();
   const { id } = router.query;
 
@@ -31,7 +32,7 @@ export default function ArticleId() {
     }
 
     getArticleById(id);
-  }, [id]);
+  }, [id, newComment]);
 
   if (isLoading) {
     return <div>로딩 중...</div>;
@@ -42,7 +43,7 @@ export default function ArticleId() {
       <div className={styles.articleIdBox}>
         <div className={styles.content}>
           <IdArticleContent data={article} />
-          <CommentInput data={article} />
+          <CommentInput data={article} onNewComment={setNewComment} />
           <CommentList data={article} />
         </div>
         <CustomButtonSquare

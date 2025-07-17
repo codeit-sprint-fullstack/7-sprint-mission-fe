@@ -5,7 +5,7 @@ import styles from "./CommentInput.module.css";
 import validInput from "@/utils/validInput";
 import { useUser } from "@/lib/UserContext";
 
-export default function CommentInput({ data }) {
+export default function CommentInput({ data, onNewComment }) {
   const [value, setValue] = useState("");
   const [isValid, setIsValid] = useState(false);
   const userId = useUser().userId;
@@ -24,7 +24,7 @@ export default function CommentInput({ data }) {
     const res = await axios.post(`http://localhost:5000/aComment/${data.id}`, {
       data: { userId, content: value },
     });
-    console.log(res.data);
+    onNewComment(res.data);
     return res.data;
   };
 

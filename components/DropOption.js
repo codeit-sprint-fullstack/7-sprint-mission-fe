@@ -2,11 +2,8 @@ import Image from "next/image";
 import { useRef, useState } from "react";
 import styles from "./DropOption.module.css";
 
-export default function DropOption() {
+export default function DropOption({ onPatch, onDelete }) {
   const [isOpen, setIsOpen] = useState(false);
-  const optionRef = useRef(null);
-
-  console.log(optionRef);
 
   return (
     <div
@@ -29,8 +26,12 @@ export default function DropOption() {
             e.stopPropagation();
           }}
         >
-          <div className={styles.patch}>수정하기</div>
-          <div className={styles.delete}>삭제하기</div>
+          <div className={styles.patch} onClick={onPatch}>
+            수정하기
+          </div>
+          <div className={styles.delete} onClick={onDelete}>
+            삭제하기
+          </div>
           <div
             className={styles.background}
             onClick={() => {

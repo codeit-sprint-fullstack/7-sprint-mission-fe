@@ -6,8 +6,6 @@ import DropOption from "./DropOption";
 import dateFormat from "@/utils/dateFormat";
 
 export default function IdArticleContent({ data }) {
-  console.log(data);
-
   return (
     <div className={styles.articleContent}>
       <div className={styles.header}>
