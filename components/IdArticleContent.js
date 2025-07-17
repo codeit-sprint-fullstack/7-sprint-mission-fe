@@ -3,6 +3,7 @@ import styles from "./IdArticleContent.module.css";
 import IcHeart from "@/public/ic_heart.svg";
 import Hearts from "./Hearts";
 import DropOption from "./DropOption";
+import dateFormat from "@/utils/dateFormat";
 
 export default function IdArticleContent({ data }) {
   console.log(data);
@@ -24,13 +25,14 @@ export default function IdArticleContent({ data }) {
               alt="유저 이미지"
             />
             <div className={styles.nickname}>{data.user.nickname}</div>
-            <div className={styles.date}>{data.updatedAt.split("T")[0]}</div>
+            <div className={styles.date}>{dateFormat(data.updatedAt)}</div>
           </div>
           <div className={styles.line}></div>
           <Hearts
             heartId={data.AHeart.id}
             articleId={data.id}
             heartCount={data._count.AHeart}
+            size="big"
           />
         </div>
         <div className={styles.longLine}></div>

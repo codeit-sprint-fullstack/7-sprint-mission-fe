@@ -2,10 +2,11 @@ import Image from "next/image";
 import styles from "./ArticleItem.module.css";
 import Hearts from "./Hearts";
 import { useRouter } from "next/router";
+import dateFormat from "@/utils/dateFormat";
 
 export default function ArticleItem({ article }) {
   const router = useRouter();
-  const updatedAt = article.updatedAt.split("T")[0];
+  const updatedAt = dateFormat(article.updatedAt);
 
   return (
     <div
@@ -35,6 +36,7 @@ export default function ArticleItem({ article }) {
           articleId={article.id}
           heartCount={article.heart_count}
           isHearted={article.isHearted}
+          size="middle"
         />
       </div>
     </div>

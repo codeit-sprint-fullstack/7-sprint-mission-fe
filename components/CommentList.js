@@ -1,6 +1,7 @@
 import Image from "next/image";
 import DropOption from "./DropOption";
 import styles from "./CommentList.module.css";
+import dateFormat from "@/utils/dateFormat";
 
 function Comment({ comment }) {
   return (
@@ -19,7 +20,7 @@ function Comment({ comment }) {
         />
         <div className={styles.detail}>
           <div className={styles.nickname}>{comment.user.nickname}</div>
-          <div className={styles.date}>{comment.updatedAt}</div>
+          <div className={styles.date}>{dateFormat(comment.updatedAt)}</div>
         </div>
       </div>
     </div>

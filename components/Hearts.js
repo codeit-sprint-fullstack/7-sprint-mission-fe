@@ -5,6 +5,28 @@ import styles from "./Hearts.module.css";
 import axios from "axios";
 import { useState } from "react";
 
+function heartSize(size) {
+  switch (size) {
+    case "big":
+      return styles.big;
+      break;
+    case "middle":
+      return styles.middle;
+      break;
+    case "small":
+      return styles.small;
+      break;
+    default:
+      return;
+      break;
+  }
+}
+
+function heartCounting(heartCount) {
+  const result = heartCount < 9999 ? heartCount : `9999+`;
+  return result;
+}
+
 // 여기서 id는 heart 기록의 아이디
 export default function Hearts({
   heartId,
@@ -12,6 +34,7 @@ export default function Hearts({
   articleId,
   heartCount,
   isHearted,
+  size = "middle",
 }) {
   const [isLoading, setIsLoading] = useState(false);
   const category = productId ? "pHeart" : "aHeart";
@@ -72,15 +95,19 @@ export default function Hearts({
     }
   };
 
+  console.log(size);
+
   return (
-    <div className={styles.heart}>
+    <div className={`${styles.heart} ${heartSize(size)}`}>
       <Image
         src={isHearted ? IcHeartFilled : IcHeart}
         onClick={handleHeartBtn}
-        className={styles.heartBtn}
+        className={`${styles.heartBtn} ${heartSize(size)}`}
         alt="이미지"
       />
-      <div className={styles.heartCount}>{heartCount}</div>
+      <div className={`${styles.heartCount} ${heartSize(size)}`}>
+        {heartCounting(heartCount)}
+      </div>
     </div>
   );
 }

@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import styles from "./BestArticleSection.module.css";
 import Hearts from "./Hearts";
 import { useRouter } from "next/router";
+import dateFormat from "@/utils/dateFormat";
 
 function BestArticle({ article }) {
   const router = useRouter();
@@ -41,8 +42,9 @@ function BestArticle({ article }) {
           articleId={article.id}
           heartCount={article.heart_count}
           isHearted={article.isHearted}
+          size="small"
         />
-        <p className={styles.date}>{article.updatedAt.split("T")[0]}</p>
+        <p className={styles.date}>{dateFormat(article.updatedAt)}</p>
       </div>
     </div>
   );
