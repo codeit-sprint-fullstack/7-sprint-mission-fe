@@ -50,6 +50,7 @@ export default function ArticleId() {
           onClick={() => {
             router.push("/article");
           }}
+          valid={true}
         />
       </div>
     </div>

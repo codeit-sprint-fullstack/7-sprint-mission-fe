@@ -1,13 +1,20 @@
 import styles from "./CustomButtonSquare.module.css";
 
-export default function CustomButtonSquare({ text, onClick }) {
+export default function CustomButtonSquare({ text, onClick, valid = false }) {
   const handleButtonClick = (e) => {
     e.preventDefault();
-    onClick();
+    if (valid) {
+      onClick();
+    }
   };
 
+  const stylesOption = valid ? "" : styles.invalid;
+
   return (
-    <button className={styles.button} onClick={handleButtonClick}>
+    <button
+      className={`${styles.button} ${stylesOption}`}
+      onClick={handleButtonClick}
+    >
       {text}
     </button>
   );

@@ -95,8 +95,6 @@ export default function Hearts({
     }
   };
 
-  console.log(size);
-
   return (
     <div className={`${styles.heart} ${heartSize(size)}`}>
       <Image

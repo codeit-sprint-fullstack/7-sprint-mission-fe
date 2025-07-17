@@ -35,7 +35,11 @@ export default function CommentInput() {
           setValue(e.target.value);
         }}
       />
-      <CustomButtonSquare text={`등록`} onClick={handlePostComment} />
+      <CustomButtonSquare
+        text={`등록`}
+        onClick={handlePostComment}
+        valid={false}
+      />
     </div>
   );
 }

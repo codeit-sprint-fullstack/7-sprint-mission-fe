@@ -45,6 +45,7 @@ export default function ArticleSection() {
           onClick={() => {
             router.push(`/postArticle?mode=post`);
           }}
+          valid={true}
         />
       </div>
       <div className={styles.option}>

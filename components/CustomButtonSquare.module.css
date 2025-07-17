@@ -17,3 +17,9 @@
   font-weight: 600;
   line-height: normal;
 }
+
+.button.invalid {
+  color: var(--Cool-Gray-100, #f3f4f6);
+  border-radius: 8px;
+  background: var(--Cool-Gray-400, #9ca3af);
+}
