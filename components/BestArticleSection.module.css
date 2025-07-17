@@ -107,6 +107,9 @@
 }
 
 .date {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
   color: var(--Secondary-400, #9ca3af);
 
   /* pretendard/md-14px-regular */
