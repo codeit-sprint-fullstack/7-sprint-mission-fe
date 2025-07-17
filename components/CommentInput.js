@@ -25,8 +25,8 @@ export default function CommentInput() {
   };
 
   return (
-    <div>
-      <div>댓글 달기</div>
+    <div className={styles.postComment}>
+      <div className={styles.header}>댓글 달기</div>
       <textarea
         className={styles.input}
         placeholder="댓글을 입력해 주세요"
@@ -35,11 +35,13 @@ export default function CommentInput() {
           setValue(e.target.value);
         }}
       />
-      <CustomButtonSquare
-        text={`등록`}
-        onClick={handlePostComment}
-        valid={false}
-      />
+      <div className={styles.btn}>
+        <CustomButtonSquare
+          text={`등록`}
+          onClick={handlePostComment}
+          valid={false}
+        />
+      </div>
     </div>
   );
 }

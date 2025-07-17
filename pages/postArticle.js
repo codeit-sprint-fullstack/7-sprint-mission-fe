@@ -18,32 +18,20 @@ export default function postArticle() {
   const [content, setContent] = useState("");
   const [validPost, setValidPost] = useState(false);
 
-  function rightInput(title, content) {
-    if (title && content) {
-      return true;
-    }
-
-    return false;
-  }
-
   async function postNewArticle() {
-    if (rightInput(title, content)) {
-      try {
-        const res = await axios.post("http://localhost:5000/article", {
-          data: {
-            title,
-            content,
-            userId,
-          },
-        });
-        console.log(`포스트 성공`);
-        return res.data;
-      } catch (e) {
-        console.error(e);
-      }
-    } else {
-      alert("제목 및 내용을 입력하세요");
-      return;
+    try {
+      const res = await axios.post("http://localhost:5000/article", {
+        data: {
+          title,
+          content,
+          userId,
+        },
+      });
+      console.log(`포스트 성공`);
+      router.push(`/article/${res.data.id}`);
+      return res.data;
+    } catch (e) {
+      console.error(e);
     }
   }
 
@@ -57,18 +45,19 @@ export default function postArticle() {
 
   return (
     <div className={styles.postArticle}>
-      <div>
-        <div>
-          <div>게시글 쓰기</div>
+      <div className={styles.main}>
+        <div className={styles.header}>
+          <div className={styles.headerText}>게시글 쓰기</div>
           <CustomButtonSquare
             text="등록"
             onClick={postNewArticle}
             valid={validPost}
           />
         </div>
-        <div>
-          <div>*제목</div>
+        <div className={styles.box}>
+          <div className={styles.text}>*제목</div>
           <input
+            className={styles.input}
             value={title}
             onChange={(e) => {
               setTitle(e.target.value);
@@ -76,9 +65,10 @@ export default function postArticle() {
             placeholder="제목을 입력해 주세요"
           />
         </div>
-        <div>
-          <div>*내용</div>
+        <div className={styles.box}>
+          <div className={styles.text}>*내용</div>
           <textarea
+            className={`${styles.input} ${styles.textarea}`}
             value={content}
             onChange={(e) => {
               setContent(e.target.value);
