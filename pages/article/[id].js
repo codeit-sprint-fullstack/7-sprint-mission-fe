@@ -42,7 +42,7 @@ export default function ArticleId() {
       <div className={styles.articleIdBox}>
         <div className={styles.content}>
           <IdArticleContent data={article} />
-          <CommentInput />
+          <CommentInput data={article} />
           <CommentList data={article} />
         </div>
         <CustomButtonSquare

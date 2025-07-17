@@ -3,11 +3,12 @@ import CustomButtonSquare from "./CustomButtonSquare";
 import axios from "axios";
 import styles from "./CommentInput.module.css";
 import validInput from "@/utils/validInput";
+import { useUser } from "@/lib/UserContext";
 
-export default function CommentInput() {
+export default function CommentInput({ data }) {
   const [value, setValue] = useState("");
   const [isValid, setIsValid] = useState(false);
-  const userId = "";
+  const userId = useUser().userId;
 
   const handlePostComment = async () => {
     if (!userId) {
@@ -20,9 +21,10 @@ export default function CommentInput() {
       return;
     }
 
-    const res = await axios.post(`http://localhost:5000/article/${id}`, {
-      data: { userId, articleId, content: value },
+    const res = await axios.post(`http://localhost:5000/aComment/${data.id}`, {
+      data: { userId, content: value },
     });
+    console.log(res.data);
     return res.data;
   };
 
