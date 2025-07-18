@@ -7,7 +7,7 @@ import CustomButtonSquare from "./CustomButtonSquare";
 import validInput from "@/utils/validInput";
 import axios from "axios";
 
-function Comment({ comment, articleId }) {
+function Comment({ comment, articleId, onRefetch }) {
   const [isPatchMode, setIsPatchMode] = useState(false);
   const [value, setValue] = useState(comment.content);
 
@@ -20,6 +20,19 @@ function Comment({ comment, articleId }) {
       }
     );
     setIsPatchMode(false);
+    onRefetch();
+    return res.data;
+  };
+
+  const handleDeleteComment = async () => {
+    const res = await axios.patch(
+      `http://localhost:5000/aComment/${articleId}`,
+      {
+        data: { deleted: true },
+        id: comment.id,
+      }
+    );
+    onRefetch();
     return res.data;
   };
 
@@ -53,6 +66,7 @@ function Comment({ comment, articleId }) {
           onPatch={() => {
             setIsPatchMode(true);
           }}
+          onDelete={handleDeleteComment}
         />
       </div>
       <div className={styles.info}>
@@ -72,12 +86,17 @@ function Comment({ comment, articleId }) {
   );
 }
 
-export default function CommentList({ data }) {
+export default function CommentList({ data, articleId, onRefetch }) {
   return (
     <div className={styles.commentList}>
-      {data.AComment.map((comment) => {
+      {data.map((comment) => {
         return (
-          <Comment key={comment.id} comment={comment} articleId={data.id} />
+          <Comment
+            key={comment.id}
+            comment={comment}
+            articleId={articleId}
+            onRefetch={onRefetch}
+          />
         );
       })}
     </div>
