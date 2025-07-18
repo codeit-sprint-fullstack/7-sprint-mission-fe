@@ -14,12 +14,20 @@ export default function IdArticleContent({ data, router }) {
     return res.data;
   };
 
+  const handlePatchArticle = async () => {
+    window.sessionStorage.setItem("data", JSON.stringify(data));
+    router.push(`/postarticle/${data.id}`);
+  };
+
   return (
     <div className={styles.articleContent}>
       <div className={styles.header}>
         <div className={styles.titleHeader}>
           <div className={styles.title}>{data.title}</div>
-          <DropOption onDelete={handleDeleteArticle} />
+          <DropOption
+            onDelete={handleDeleteArticle}
+            onPatch={handlePatchArticle}
+          />
         </div>
         <div className={styles.info}>
           <div className={styles.user}>

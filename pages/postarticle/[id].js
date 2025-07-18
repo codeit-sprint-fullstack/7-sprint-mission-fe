@@ -8,25 +8,27 @@ import { useEffect, useState } from "react";
 
 // post인지, patch인지 구분을 할 수 있어야 하는데..?
 
-export default function PostArticle() {
+export default function PatchArticle() {
+  const initData = JSON.parse(window.sessionStorage.getItem("data"));
+
   const { userId } = useUser();
 
   const router = useRouter();
+  const { id } = router.query;
 
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
+  const [title, setTitle] = useState(initData.title);
+  const [content, setContent] = useState(initData.content);
   const [validPost, setValidPost] = useState(false);
 
-  async function postNewArticle() {
+  async function patchNewArticle() {
     try {
-      const res = await axios.post("http://localhost:5000/article", {
+      const res = await axios.patch(`http://localhost:5000/article/${id}`, {
         data: {
           title,
           content,
           userId,
         },
       });
-      console.log(`포스트 성공`);
       router.push(`/article/${res.data.id}`);
       return res.data;
     } catch (e) {
@@ -49,7 +51,7 @@ export default function PostArticle() {
           <div className={styles.headerText}>게시글 쓰기</div>
           <CustomButtonSquare
             text="등록"
-            onClick={postNewArticle}
+            onClick={patchNewArticle}
             valid={validPost}
           />
         </div>
