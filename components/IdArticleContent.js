@@ -15,7 +15,7 @@ export default function IdArticleContent({ data, router }) {
   };
 
   const handlePatchArticle = async () => {
-    window.sessionStorage.setItem("data", JSON.stringify(data));
+    window.sessionStorage.setItem("article", JSON.stringify(data));
     router.push(`/postarticle/${data.id}`);
   };
 

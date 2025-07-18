@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 // post인지, patch인지 구분을 할 수 있어야 하는데..?
 
 export default function PatchArticle() {
-  const initData = JSON.parse(window.sessionStorage.getItem("data"));
+  const initData = JSON.parse(window.sessionStorage.getItem("article"));
 
   const { userId } = useUser();
 
