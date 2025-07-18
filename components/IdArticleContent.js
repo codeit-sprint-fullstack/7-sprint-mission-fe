@@ -1,17 +1,25 @@
 import Image from "next/image";
 import styles from "./IdArticleContent.module.css";
-import IcHeart from "@/public/ic_heart.svg";
 import Hearts from "./Hearts";
 import DropOption from "./DropOption";
 import dateFormat from "@/utils/dateFormat";
+import axios from "axios";
 
-export default function IdArticleContent({ data }) {
+export default function IdArticleContent({ data, router }) {
+  const handleDeleteArticle = async () => {
+    const res = await axios.patch(`http://localhost:5000/article/${data.id}`, {
+      data: { deleted: true },
+    });
+    router.push("/article");
+    return res.data;
+  };
+
   return (
     <div className={styles.articleContent}>
       <div className={styles.header}>
         <div className={styles.titleHeader}>
           <div className={styles.title}>{data.title}</div>
-          <DropOption />
+          <DropOption onDelete={handleDeleteArticle} />
         </div>
         <div className={styles.info}>
           <div className={styles.user}>

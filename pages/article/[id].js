@@ -41,7 +41,7 @@ export default function ArticleId() {
     <div className={styles.articleId}>
       <div className={styles.articleIdBox}>
         <div className={styles.content}>
-          <IdArticleContent data={article} />
+          <IdArticleContent data={article} router={router} />
           <CommentSection articleId={article.id} />
         </div>
         <CustomButtonSquare

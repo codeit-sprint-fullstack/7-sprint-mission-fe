@@ -2,18 +2,13 @@ import { useEffect, useState } from "react";
 import CommentInput from "./CommentInput";
 import CommentList from "./CommentList";
 import axios from "axios";
+import useRefetch from "@/lib/useRefetch";
 
 export default function CommentSection({ articleId }) {
   // isLoading: 데이터 fetch가 완료되어야 화면이 렌더링 되게 하기 위한 상태관리. article과 comments 둘 다 확인
   const [isLoading, setIsLoading] = useState(true);
   const [comments, setComments] = useState([]);
-  const [refetch, setRefetch] = useState(false);
-
-  const handleRefetch = () => {
-    setRefetch((prev) => {
-      return !prev;
-    });
-  };
+  const [refetch, handleRefetch] = useRefetch();
 
   useEffect(() => {
     async function getCommentsByArticle(articleId) {
