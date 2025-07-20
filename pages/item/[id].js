@@ -6,7 +6,7 @@ import Image from "next/image";
 import emptyComment from "@/public/Img_reply_empty.png";
 import style from "@/styles/pages.module.css";
 import { useState } from "react";
-import { postComment } from "@/pages/api/product";
+import { postComment } from "@/pages/api/product"; // 댓글 프로덕트 바꿔야함
 import { FiMoreVertical } from "react-icons/fi";
 import CustomSelect from "@/component/customSelect";
 import useProductComment from "@/Util/useProductComment";
@@ -137,6 +137,7 @@ export default function Item() {
       </div>
 
       {/* 댓글 리스트 */}
+      {console.log(commentListProduct)}
       <div className={style.detailCommentList}>
         {commentListProduct.length > 0 ? (
           commentListProduct.map((comment) => (

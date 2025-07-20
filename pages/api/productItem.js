@@ -31,3 +31,14 @@ export async function getProductById(id) {
   return data;
 }
 
+export async function getProductCommentList(productId, limit = 10) {
+  const res = await axios.get(`${BASE_URL}/products/${productId}/comments`, {
+    params: {
+      limit,
+    },
+  });
+  const data = res.data;
+
+  return data;
+}
+
