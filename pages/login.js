@@ -59,6 +59,15 @@ export default function Login() {
           <button>로그인</button>
         </div>
       </form>
+      <div>
+        <button
+          onClick={() => {
+            router.push("/signup");
+          }}
+        >
+          회원가입
+        </button>
+      </div>
     </div>
   );
 }

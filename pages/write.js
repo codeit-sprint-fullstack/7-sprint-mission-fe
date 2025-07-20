@@ -10,6 +10,7 @@ export default function Write() {
   const router = useRouter();
   const { user } = useAuth();
   //여기서 유저정보받아오고 유저정보에서 글목록까지연관시켜야됨
+  const image = undefined;
 
   const handleSubmit = async () => {
     if (!user) {
@@ -24,7 +25,7 @@ export default function Write() {
       return;
     }
     try {
-      const res = await submitPost(title, content, userId);
+      const res = await submitPost(image, content, title);
       if (!res) {
         console.log("asdasdasdsadsad", res);
         return;

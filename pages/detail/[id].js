@@ -9,11 +9,16 @@ import emptyComment from "@/public/Img_reply_empty.png";
 import Image from "next/image";
 import { IoReturnDownBack } from "react-icons/io5";
 import { useAuth } from "@/Auth/authprovider";
+import { realPostComment } from "@/pages/api/articles";
 
 export default function Detail() {
   const [comment, setComment] = useState("");
   const router = useRouter();
   const { id } = router.query;
+
+  // if (id) {
+  //   return console.log("id값존재하나요??????", id);
+  // }
   const { user } = useAuth();
   const { commentList, refetchComments } = useCommentList(id);
   // 지금 내가해야할거 클릭했을떄 그 list가보이도록
@@ -27,11 +32,7 @@ export default function Detail() {
       return;
     }
     console.log("user정보옴?", user);
-    const res = await postComment({
-      content: comment,
-      articleId: id,
-      userId: user.id,
-    });
+    const res = await realPostComment(comment, id); // 보내지는거까지확인
     setComment("");
     await refetchComments();
   };
@@ -67,7 +68,7 @@ export default function Detail() {
                 id={comment.id}
                 createdAt={comment.createdAt}
                 onDeleteSuccess={refetchComments}
-                user={comment.user.name}
+                user={comment.writer.nickname}
               ></DetailCommentList>
             );
           })

@@ -1,4 +1,5 @@
-import { createContext, useState, useContext } from "react";
+import { useRouter } from "next/router";
+import { createContext, useState, useContext, useEffect } from "react";
 
 const AuthContext = createContext(null);
 
@@ -6,6 +7,19 @@ export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [accessToken, setAccessToken] = useState(null);
   const [refreshToken, setRefreshToken] = useState(null);
+  const router = useRouter();
+
+  useEffect(() => {
+    const storedAccessToken = localStorage.getItem("accessToken");
+    const storedRefreshToken = localStorage.getItem("refreshToken");
+    if (storedAccessToken && storedRefreshToken) {
+      setAccessToken(storedAccessToken);
+      setRefreshToken(storedRefreshToken);
+    } else {
+      logout();
+      router.push("/login");
+    }
+  }, [accessToken, refreshToken]);
 
   const login = (userData, accessTok, refreshTok) => {
     setUser(userData);
@@ -17,6 +31,7 @@ export function AuthProvider({ children }) {
     setUser(null);
     setAccessToken(null);
     setRefreshToken(null);
+    localStorage.clear();
   };
 
   return (

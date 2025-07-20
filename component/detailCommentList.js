@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { FiMoreVertical } from "react-icons/fi";
 import CustomSelect from "./customSelect";
+import { realDeleteComment } from "@/pages/api/articles";
 
 export default function DetailCommentList({
   content,
@@ -30,7 +31,7 @@ export default function DetailCommentList({
 
   const handleDelete = async () => {
     console.log(id);
-    await deleteComment(id);
+    await realDeleteComment(id);
     if (onDeleteSuccess) {
       onDeleteSuccess();
     }

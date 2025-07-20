@@ -10,12 +10,14 @@ import { postComment } from "@/pages/api/product";
 import { FiMoreVertical } from "react-icons/fi";
 import CustomSelect from "@/component/customSelect";
 import useProductComment from "@/Util/useProductComment";
+import defaultPanda from "@/public/defaultImage.png";
+import { getProductById } from "@/pages/api/productItem";
 
 export default function Item() {
   const router = useRouter();
   const { id } = router.query;
   const [modal, setmodal] = useState(false);
-  const { product } = useProduct(id);
+  const { product, loading } = useProduct(id);
   const [comment, setComment] = useState("");
   const { commentListProduct, refetchComments } = useProductComment(id);
 
@@ -38,7 +40,7 @@ export default function Item() {
   };
 
   const handleClick = () => {
-    setmodal(true);
+    setmodal((prev) => !prev);
 
     if (modal == true) setmodal(false);
   };
@@ -51,21 +53,27 @@ export default function Item() {
     setEditMode(false);
   };
 
-  if (!id) return <div>로딩 중...</div>;
-  if (!product) return <div>데이터 불러오는 중...</div>;
+  if (loading) return <div>로딩 중...</div>;
+  if (!product) return <div>데이터를 찾을 수 없습니다.</div>;
 
   return (
     <div>
       <div className={style.ItemImgBox}>
         <div>
-          <Image alt="" width={400} src={emptyComment}></Image>
+          <Image
+            alt=""
+            width={360}
+            height={400}
+            src={product.images?.[0] || emptyComment}
+            unoptimized
+          ></Image>
         </div>
         <div className={style.ItemInfoBox}>
           <div>
             <div className={style.ItemTitle}>
               <div>
-                <p>아이패드판매 </p>
-                <p>5000원</p>
+                <p>{product.name}</p>
+                <p>{product.price}원</p>
               </div>
               <FiMoreVertical onClick={handleClick} size={20} />
               {modal ? (
@@ -80,19 +88,33 @@ export default function Item() {
           <p>가격: {product.price}</p> */}
           </div>
           <div>
-            <p>상품소개</p>
             <p>상품내용</p>
+            <p>{product.description}</p>
           </div>
           <div>
             <p>상품 태그</p>
-            <p>상품태그들...</p>
+            <div className={style.tagsBox}>
+              {console.log("태그값왜안넘오올까요", product)}
+              {product.tags.map((item) => (
+                <div className={style.itemTagsBox}>
+                  <p>{item}</p>
+                </div>
+              ))}
+            </div>
           </div>
-          <div>
-            <p>유저이미지</p>
-            <p>유저이름</p>
-            <p>작성일</p>
+          <div className={style.itemsUserBox}>
+            <Image
+              className={style.itemsUserImage}
+              src={defaultPanda}
+              height={50}
+              width={50}
+            />
             <div>
-              <button>하트버튼</button>
+              <p>{product.ownerNickname}</p>
+              <p>{product.createdAt.slice(0, 10)}</p>
+            </div>
+            <div className={style.itemsUserHeartButtondiv}>
+              <button className={style.itemsUserHeartButton}>하트버튼</button>
             </div>
           </div>
         </div>
