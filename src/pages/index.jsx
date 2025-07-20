@@ -1,6 +1,6 @@
 import Logo from "@/components/common/Logo";
 
-function HomePage() {
+export default function HomePage() {
   return (
     <div>
       <h1>메인 페이지</h1>
@@ -47,5 +47,3 @@ function HomePage() {
     </div>
   );
 }
-
-export default HomePage;
