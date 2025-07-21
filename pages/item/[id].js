@@ -5,13 +5,14 @@ import { IoReturnDownBack } from "react-icons/io5";
 import Image from "next/image";
 import emptyComment from "@/public/Img_reply_empty.png";
 import style from "@/styles/pages.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FiMoreVertical } from "react-icons/fi";
 import CustomSelect from "@/component/customSelect";
 import useProductComment from "@/Util/useProductComment";
 import defaultPanda from "@/public/defaultImage.png";
 import { getProductById } from "@/pages/api/productItem";
 import { postComment } from "@/pages/api/productItem";
+import { postProductLike, deleteProductLike } from "@/pages/api/productItem";
 
 export default function Item() {
   const router = useRouter();
@@ -20,6 +21,30 @@ export default function Item() {
   const { product, loading } = useProduct(id);
   const [comment, setComment] = useState("");
   const { commentListProduct, refetchComments } = useProductComment(id);
+  const [like, setLike] = useState(false);
+
+  useEffect(() => {
+    if (product) {
+      setLike(product.isFavorite);
+      console.log("초기 좋아요 상태", product.isFavorite);
+    }
+  }, [product]);
+
+  const handleLikeButtonClick = async () => {
+    const willLike = !like;
+    setLike(willLike);
+
+    try {
+      if (willLike == true) {
+        await postProductLike(product.id);
+      } else if (willLike == false) {
+        await deleteProductLike(product.id);
+      }
+    } catch (error) {
+      console.error(error);
+      setLike((prev) => !prev);
+    }
+  };
 
   const handleComment = async () => {
     if (!comment) {
@@ -108,7 +133,21 @@ export default function Item() {
               <p>{product.createdAt.slice(0, 10)}</p>
             </div>
             <div className={style.itemsUserHeartButtondiv}>
-              <button className={style.itemsUserHeartButton}>하트버튼</button>
+              {like ? (
+                <button
+                  onClick={handleLikeButtonClick}
+                  className={style.itemsUserHeartButton}
+                >
+                  하트버튼(켜짐)
+                </button>
+              ) : (
+                <button
+                  onClick={handleLikeButtonClick}
+                  className={style.itemsUserHeartButton}
+                >
+                  하트버튼(꺼짐)
+                </button>
+              )}
             </div>
           </div>
         </div>

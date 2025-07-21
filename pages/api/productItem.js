@@ -58,3 +58,27 @@ export async function postComment(productId, content) {
 
   return res.data;
 }
+
+export async function postProductLike(id) {
+  const token = localStorage.getItem("accessToken");
+  const res = await axios.post(
+    `${BASE_URL}/products/${id}/favorite`,
+    {},
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+  return res.data.isFavorite;
+}
+
+export async function deleteProductLike(id) {
+  const token = localStorage.getItem("accessToken");
+  const res = await axios.delete(`${BASE_URL}/products/${id}/favorite`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  return res.data.isFavorite;
+}
