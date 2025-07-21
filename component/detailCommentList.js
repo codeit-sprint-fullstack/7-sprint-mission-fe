@@ -7,6 +7,7 @@ import { useState } from "react";
 import { FiMoreVertical } from "react-icons/fi";
 import CustomSelect from "./customSelect";
 import { realDeleteComment } from "@/pages/api/articles";
+import Write from "@/pages/write";
 
 export default function DetailCommentList({
   content,
@@ -14,6 +15,7 @@ export default function DetailCommentList({
   createdAt,
   onDeleteSuccess,
   user,
+  write,
 }) {
   const [modal, setmodal] = useState(false);
   const [fetchInput, setFetchInput] = useState(false);

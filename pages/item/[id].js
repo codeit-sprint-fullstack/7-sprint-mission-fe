@@ -6,12 +6,12 @@ import Image from "next/image";
 import emptyComment from "@/public/Img_reply_empty.png";
 import style from "@/styles/pages.module.css";
 import { useState } from "react";
-import { postComment } from "@/pages/api/product"; // 댓글 프로덕트 바꿔야함
 import { FiMoreVertical } from "react-icons/fi";
 import CustomSelect from "@/component/customSelect";
 import useProductComment from "@/Util/useProductComment";
 import defaultPanda from "@/public/defaultImage.png";
 import { getProductById } from "@/pages/api/productItem";
+import { postComment } from "@/pages/api/productItem";
 
 export default function Item() {
   const router = useRouter();
@@ -21,19 +21,13 @@ export default function Item() {
   const [comment, setComment] = useState("");
   const { commentListProduct, refetchComments } = useProductComment(id);
 
-  const testUser = { id: 4 }; // 임시 유저
-
   const handleComment = async () => {
     if (!comment) {
       alert("댓글에 내용을 입력하세요.");
       return;
     }
 
-    await postComment({
-      content: comment,
-      productId: id,
-      userId: testUser.id,
-    });
+    await postComment(id, comment);
 
     setComment("");
     await refetchComments();
@@ -147,7 +141,7 @@ export default function Item() {
               id={comment.id}
               createdAt={comment.createdAt}
               onDeleteSuccess={refetchComments}
-              // user={comment.user.name}
+              user={comment.writer.nickname}
             />
           ))
         ) : (
@@ -167,7 +161,10 @@ export default function Item() {
       </div>
 
       <div className={style.detailButtonBox}>
-        <button className={style.detailButton} onClick={() => router.push("/")}>
+        <button
+          className={style.detailButton}
+          onClick={() => router.push("/item")}
+        >
           목록으로 돌아가기
           <IoReturnDownBack size={30} />
         </button>

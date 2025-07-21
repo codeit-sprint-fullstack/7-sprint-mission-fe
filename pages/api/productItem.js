@@ -42,3 +42,19 @@ export async function getProductCommentList(productId, limit = 10) {
   return data;
 }
 
+export async function postComment(productId, content) {
+  const token = localStorage.getItem("accessToken");
+  const res = await axios.post(
+    `${BASE_URL}/products/${productId}/comments`,
+    {
+      content,
+    },
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+
+  return res.data;
+}
