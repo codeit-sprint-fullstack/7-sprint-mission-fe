@@ -4,11 +4,13 @@ import { UserProvider } from "@/lib/UserContext";
 import "@/styles/globals.css";
 
 export default function App({ Component, pageProps }) {
+  const useLayout = Component.useLayout ?? true;
+
   return (
     <UserProvider>
-      <Navbar />
+      {useLayout && <Navbar />}
       <Component {...pageProps} />
-      <Footer />
+      {useLayout && <Footer />}
     </UserProvider>
   );
 }

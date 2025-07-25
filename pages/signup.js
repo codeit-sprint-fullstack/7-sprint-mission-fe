@@ -1,25 +1,27 @@
+import { useState, useEffect } from "react";
+import styles from "@/styles/signup.module.css";
 import Image from "next/image";
-import styles from "@/styles/login.module.css";
 import CustomInput from "@/components/CustomInput";
-import { useEffect, useState } from "react";
 import CustomButtonSquare from "@/components/CustomButtonSquare";
 import Link from "next/link";
 import axios from "axios";
 import { useRouter } from "next/router";
 import useAuth from "@/lib/useAuth";
 
-function Login() {
+function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { userLogin, userSetting } = useAuth();
+  const [nickname, setNickname] = useState("");
+  const [passwordConfirmation, setPasswordConfirmation] = useState("");
+  const { userSetting, userLogin } = useAuth();
 
   const router = useRouter();
 
-  const onLogin = async () => {
+  const onSignup = async () => {
     try {
       const res = await axios.post(
-        "https://panda-market-api.vercel.app/auth/signIn",
-        { email, password },
+        "https://panda-market-api.vercel.app/auth/signUp",
+        { email, nickname, password, passwordConfirmation },
         {
           headers: {
             "Content-Type": "application/json",
@@ -31,10 +33,11 @@ function Login() {
 
       if (accessToken) {
         userLogin(res.data);
-        router.push("/items");
+        router.push("/");
       }
     } catch (e) {
-      alert("비밀번호가 일치하지 않습니다.");
+      console.error(e);
+      alert("사용 중인 이메일입니다.");
     }
   };
 
@@ -42,12 +45,12 @@ function Login() {
     const { accessToken } = userSetting();
 
     if (accessToken) {
-      router.push("/");
+      router.push("/items");
     }
   }, []);
 
   return (
-    <div className={styles.login}>
+    <div className={styles.signup}>
       <div className={styles.main}>
         <div>
           <Image
@@ -60,19 +63,25 @@ function Login() {
           <h1>판다마켓</h1>
         </div>
         <CustomInput name="이메일" value={email} onChange={setEmail} />
+        <CustomInput name="닉네임" value={nickname} onChange={setNickname} />
         <CustomInput name="비밀번호" value={password} onChange={setPassword} />
-        <CustomButtonSquare text="로그인" onClick={onLogin} valid={true} />
+        <CustomInput
+          name="비밀번호 확인"
+          value={passwordConfirmation}
+          onChange={setPasswordConfirmation}
+        />
+        <CustomButtonSquare text="회원가입" onClick={onSignup} valid={true} />
         <div>
-          판다마켓이 처음이신가요?{" "}
-          <Link href="/signup">
-            <span>회원가입</span>
-          </Link>{" "}
+          이미 회원이신가요?
+          <Link href="/login">
+            <span>로그인</span>
+          </Link>
         </div>
       </div>
     </div>
   );
 }
 
-Login.useLayout = false;
+Signup.useLayout = false;
 
-export default Login;
+export default Signup;

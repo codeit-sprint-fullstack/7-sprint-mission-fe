@@ -49,7 +49,11 @@ export default function ArticleSection() {
         />
       </div>
       <div className={styles.option}>
-        <InputBox keyword={keyword} onChange={setKeyword} />
+        <InputBox
+          keyword={keyword}
+          onChange={setKeyword}
+          placeholder={"검색할 상품을 입력해주세요"}
+        />
         <SortOption />
       </div>
       {!isLoading && (
