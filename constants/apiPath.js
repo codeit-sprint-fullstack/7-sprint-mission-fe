@@ -36,3 +36,7 @@ export function getUserMePath() {
 export function logoutPath() {
   return `${API_BASE_URL}/auth/logout`;
 }
+
+export function toggleCommentLikePath(articleId, commentId) {
+  return `${API_BASE_URL}/articles/${articleId}/comments/${commentId}/like`;
+}

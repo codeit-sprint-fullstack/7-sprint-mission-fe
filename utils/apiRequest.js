@@ -1,6 +1,6 @@
 // utils/apiRequest.js
 
-import { signInPath,postArticlePath,getUserMePath , logoutPath} from "@/constants/apiPath";
+import { signInPath,postArticlePath,getUserMePath , logoutPath,toggleCommentLikePath} from "@/constants/apiPath";
 
 export async function postJson(url, body) {
   const res = await fetch(url, {
@@ -66,4 +66,8 @@ export async function postLogout() {
   }
 
   return true; // 성공 시 true 반환
+}
+
+export async function postToggleCommentLike(articleId, commentId) {
+  return await postJson(toggleCommentLikePath(articleId, commentId), {});
 }

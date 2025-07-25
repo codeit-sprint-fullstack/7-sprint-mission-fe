@@ -2,7 +2,12 @@
 import CommentItem from "./CommentItem";
 import styles from "./Comment.module.css";
 
-export default function CommentList({ comments = [], onEdit, onDelete }) {
+export default function CommentList({
+  comments = [],
+  onEdit,
+  onDelete,
+  onToggleLike,
+}) {
   return (
     <div className={styles.commentList}>
       {comments.length === 0 ? (
@@ -14,6 +19,7 @@ export default function CommentList({ comments = [], onEdit, onDelete }) {
             comment={comment}
             onEdit={onEdit}
             onDelete={onDelete}
+            onToggleLike={onToggleLike}
           />
         ))
       )}

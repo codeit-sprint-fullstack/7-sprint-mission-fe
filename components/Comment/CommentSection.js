@@ -6,9 +6,11 @@ import CommentList from "./CommentList";
 import LoadingSpinner from "../LoadingSpinner";
 import CommentForm from "./CommentForm";
 import useComments from "@/hooks/useComments";
+import { postToggleCommentLike } from "@/utils/apiRequest";
 
 export default function CommentSection({ articleId }) {
-  const { comments, loading, error, addCommentToList } = useComments(articleId);
+  const { comments, loading, error, addCommentToList, updateCommentLikeState } =
+    useComments(articleId);
 
   const handleNewComment = (newComment) => {
     addCommentToList(newComment);
@@ -22,6 +24,19 @@ export default function CommentSection({ articleId }) {
   const handleDeleteComment = (commentId) => {
     console.log("삭제할 댓글 ID:", commentId);
     // TODO: 삭제 API 요청 후 목록 갱신
+  };
+
+  const handleToggleLike = async (commentId) => {
+    try {
+      const { liked, likeCount } = await postToggleCommentLike(
+        articleId,
+        commentId
+      );
+      updateCommentLikeState(commentId, liked, likeCount);
+    } catch (err) {
+      console.error("댓글 추천 실패:", err.message);
+      alert("댓글 추천에 실패했습니다.");
+    }
   };
 
   const placeholderTxt =
@@ -42,6 +57,7 @@ export default function CommentSection({ articleId }) {
             comments={comments}
             onEdit={handleEditComment}
             onDelete={handleDeleteComment}
+            onToggleLike={handleToggleLike}
           />
         </div>
       )}

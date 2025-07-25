@@ -34,6 +34,10 @@
   color: #999;
 }
 
+.likeButton {
+  /* background-color: red; */
+}
+
 .text {
   margin-top: 4px;
   font-size: 0.95rem;

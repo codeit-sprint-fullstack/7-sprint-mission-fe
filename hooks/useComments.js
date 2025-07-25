@@ -18,9 +18,12 @@ export default function useComments(articleId) {
     const fetchComments = async () => {
       setLoading(true);
       try {
-        const res = await fetch(getArticleCommentsPath(articleId));
+        const res = await fetch(getArticleCommentsPath(articleId), {
+          credentials: "include",
+        });
         const data = await res.json();
         setComments(data.comments);
+        console.log("받은 댓글 목록", data.comments);
       } catch (err) {
         console.error("댓글 불러오기 실패:", err.message);
         setError("댓글을 불러오지 못했습니다.");
@@ -38,19 +41,30 @@ export default function useComments(articleId) {
       const res = await postJson(postArticleCommentPath(articleId), {
         content,
       });
-      setComments((prev) => [...prev, res.comment]);
+      setComments((prev) => [
+        ...prev,
+        { ...res.comment, liked: false, likeCount: 0 },
+      ]);
       return res.comment;
     } catch (err) {
       console.error("댓글 작성 실패:", err.message);
       throw err;
     }
   };
+  
   //화면에 다시뿌리기
   const addCommentToList = (comment) => {
     setComments((prev) => [...prev, comment]);
   };
 
-  
+  //좋아요 누른 댓글만 화면에 반영하기
+  const updateCommentLikeState = (commentId, liked, likeCount) => {
+    setComments((prevComments) =>
+      prevComments.map((comment) =>
+        comment.id === commentId ? { ...comment, liked, likeCount } : comment
+      )
+    );
+  };
 
   return {
     comments,
@@ -58,5 +72,6 @@ export default function useComments(articleId) {
     error,
     addComment,
     addCommentToList,
+    updateCommentLikeState,
   };
 }

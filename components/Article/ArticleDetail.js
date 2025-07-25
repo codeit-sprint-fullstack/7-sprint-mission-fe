@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import profileIcon from "@/public/assets/icons/profile_icon.svg";
 import CommentSection from "../Comment/CommentSection";
+import { formatKoreanDate } from "@/utils/formatKrDate";
 
 export default function ArticleDetail({ article }) {
   return (
@@ -14,7 +15,7 @@ export default function ArticleDetail({ article }) {
         <Image src={profileIcon} alt="프로필 아이콘" width={24} height={24} />
         <span className={styles.nickname}>{article.user.nickname}</span>
         <span className={styles.date}>
-          {new Date(article.createdAt).toLocaleDateString()}
+          <span>{formatKoreanDate(article.createdAt)}</span>
         </span>
         <span className={styles.likes}>❤️ {article.likeCount}</span>
       </div>
