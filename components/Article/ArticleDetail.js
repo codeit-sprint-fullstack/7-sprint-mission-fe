@@ -17,7 +17,9 @@ export default function ArticleDetail({ article }) {
         <span className={styles.date}>
           <span>{formatKoreanDate(article.createdAt)}</span>
         </span>
-        <span className={styles.likes}>❤️ {article.likeCount}</span>
+        <span className={styles.likes}>
+          ❤️ {article.likeCount} 💬{article.commentCount}
+        </span>
       </div>
 
       <h2 className={styles.title}>{article.title}</h2>

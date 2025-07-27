@@ -25,7 +25,9 @@ export default function ArticleCard({ article }) {
               className={styles.thumbnail}
             />
           )}
-          <div className={styles.likes}>❤️ {article.likeCount}</div>
+          <div className={styles.likes}>
+            ❤️ {article.likeCount} {" "}💬{article.commentCount}
+          </div>
         </div>
       </Link>
     </div>

@@ -25,7 +25,9 @@ export default function BestArticles({ articles }) {
               <div className={styles.footer}>
                 <span className={styles.writer}>{article.user.nickname}</span>
                 <span className={styles.likes}>
-                  ❤️ {article.likeCount > 999 ? "999+" : article.likeCount}
+                  ❤️ {article.likeCount > 9 ? "9+" : article.likeCount}{" "}
+                  &nbsp;&nbsp; 💬{" "}
+                  {article.commentCount > 9 ? "9+" : article.commentCount}
                 </span>
                 <span className={styles.date}>
                   {formatKoreanDate(article.createdAt)}
