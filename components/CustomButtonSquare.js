@@ -1,6 +1,11 @@
 import styles from "./CustomButtonSquare.module.css";
 
-export default function CustomButtonSquare({ text, onClick, valid = false }) {
+export default function CustomButtonSquare({
+  text,
+  onClick,
+  valid = false,
+  type = "normal",
+}) {
   const handleButtonClick = (e) => {
     e.preventDefault();
     if (valid) {
@@ -9,10 +14,11 @@ export default function CustomButtonSquare({ text, onClick, valid = false }) {
   };
 
   const stylesOption = valid ? "" : styles.invalid;
+  const stylesLength = type === "normal" ? styles.button : styles.longButton;
 
   return (
     <button
-      className={`${styles.button} ${stylesOption}`}
+      className={`${stylesLength} ${stylesOption}`}
       onClick={handleButtonClick}
     >
       {text}

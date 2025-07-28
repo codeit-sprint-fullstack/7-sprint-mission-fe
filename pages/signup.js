@@ -7,12 +7,19 @@ import Link from "next/link";
 import axios from "axios";
 import { useRouter } from "next/router";
 import useAuth from "@/lib/useAuth";
+import {
+  useEmail,
+  useNickname,
+  usePassword,
+  usePasswordConfirmation,
+} from "@/lib/useEmailPassword";
+import SimpleLogin from "@/components/SimpleLogin";
 
 function Signup() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [nickname, setNickname] = useState("");
-  const [passwordConfirmation, setPasswordConfirmation] = useState("");
+  const emailObject = useEmail();
+  const passwordObject = usePassword();
+  const nicknameObject = useNickname();
+  const passwordConfirmationObject = usePasswordConfirmation();
   const { userSetting, userLogin } = useAuth();
 
   const router = useRouter();
@@ -21,7 +28,12 @@ function Signup() {
     try {
       const res = await axios.post(
         "https://panda-market-api.vercel.app/auth/signUp",
-        { email, nickname, password, passwordConfirmation },
+        {
+          email: emailObject.element,
+          nickname: nicknameObject.element,
+          password: passwordObject.element,
+          passwordConfirmation: passwordConfirmationObject.element,
+        },
         {
           headers: {
             "Content-Type": "application/json",
@@ -52,7 +64,7 @@ function Signup() {
   return (
     <div className={styles.signup}>
       <div className={styles.main}>
-        <div>
+        <div className={styles.title}>
           <Image
             src={"/panda-logo.svg"}
             width={103}
@@ -60,22 +72,34 @@ function Signup() {
             alt="메인 로고"
             priority={true}
           />
-          <h1>판다마켓</h1>
+          <h1 className={styles.titleText}>판다마켓</h1>
         </div>
-        <CustomInput name="이메일" value={email} onChange={setEmail} />
-        <CustomInput name="닉네임" value={nickname} onChange={setNickname} />
-        <CustomInput name="비밀번호" value={password} onChange={setPassword} />
-        <CustomInput
-          name="비밀번호 확인"
-          value={passwordConfirmation}
-          onChange={setPasswordConfirmation}
-        />
-        <CustomButtonSquare text="회원가입" onClick={onSignup} valid={true} />
-        <div>
-          이미 회원이신가요?
-          <Link href="/login">
-            <span>로그인</span>
-          </Link>
+        <div className={styles.content}>
+          <CustomInput object={emailObject} />
+          <CustomInput object={nicknameObject} />
+          <CustomInput object={passwordObject} />
+          <CustomInput
+            object={passwordConfirmationObject}
+            password={passwordObject.element}
+          />
+          <CustomButtonSquare
+            text="회원가입"
+            onClick={onSignup}
+            valid={
+              emailObject.checkValid() &&
+              nicknameObject.checkValid() &&
+              passwordObject.checkValid() &&
+              passwordConfirmationObject.checkValid(passwordObject.element)
+            }
+            type="long"
+          />
+          <SimpleLogin />
+          <div className={styles.toLogin}>
+            이미 회원이신가요?
+            <Link href="/login" className={styles.link}>
+              <span>로그인</span>
+            </Link>
+          </div>
         </div>
       </div>
     </div>

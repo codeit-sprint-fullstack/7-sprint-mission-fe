@@ -19,22 +19,22 @@ export default function validInput(value, type = "blank") {
 }
 
 // 빈칸인지 체크 (빈칸이면 true)
-function checkBlank(value) {
+export function checkBlank(value) {
   return value.trim() === "";
 }
 
 //맞는 이메일 형식인지 체크 (제대로 된 형식이면 true)
-function checkEmail(value) {
+export function checkEmail(value) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(value.trim());
 }
 
 // 8글자 이상인지 확인 (8글자 이상이면 true)
-function checkLength(value) {
+export function checkLength(value) {
   return value.trim().length >= 8;
 }
 
 //두 값이 일치하는지 확인 (일치하면 true)
-function checkMismatch(value, standard) {
+export function checkMismatch(value, standard) {
   return value === standard;
 }

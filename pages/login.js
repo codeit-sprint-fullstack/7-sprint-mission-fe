@@ -7,19 +7,20 @@ import Link from "next/link";
 import axios from "axios";
 import { useRouter } from "next/router";
 import useAuth from "@/lib/useAuth";
+import { useEmail, usePassword } from "@/lib/useEmailPassword";
+import SimpleLogin from "@/components/SimpleLogin";
 
 function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const emailObject = useEmail();
+  const passwordObject = usePassword();
   const { userLogin, userSetting } = useAuth();
-
   const router = useRouter();
 
   const onLogin = async () => {
     try {
       const res = await axios.post(
         "https://panda-market-api.vercel.app/auth/signIn",
-        { email, password },
+        { email: emailObject.element, password: passwordObject.element },
         {
           headers: {
             "Content-Type": "application/json",
@@ -49,7 +50,7 @@ function Login() {
   return (
     <div className={styles.login}>
       <div className={styles.main}>
-        <div>
+        <div className={styles.title}>
           <Image
             src={"/panda-logo.svg"}
             width={103}
@@ -57,16 +58,24 @@ function Login() {
             alt="메인 로고"
             priority={true}
           />
-          <h1>판다마켓</h1>
+          <h1 className={styles.titleText}>판다마켓</h1>
         </div>
-        <CustomInput name="이메일" value={email} onChange={setEmail} />
-        <CustomInput name="비밀번호" value={password} onChange={setPassword} />
-        <CustomButtonSquare text="로그인" onClick={onLogin} valid={true} />
-        <div>
-          판다마켓이 처음이신가요?{" "}
-          <Link href="/signup">
-            <span>회원가입</span>
-          </Link>{" "}
+        <div className={styles.content}>
+          <CustomInput object={emailObject} />
+          <CustomInput object={passwordObject} />
+          <CustomButtonSquare
+            text="로그인"
+            onClick={onLogin}
+            valid={emailObject.checkValid() && passwordObject.checkValid()}
+            type="long"
+          />
+          <SimpleLogin />
+          <div className={styles.toSignup}>
+            판다마켓이 처음이신가요?
+            <Link href="/signup" className={styles.link}>
+              <span>회원가입</span>
+            </Link>
+          </div>
         </div>
       </div>
     </div>

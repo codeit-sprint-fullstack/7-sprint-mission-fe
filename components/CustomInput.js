@@ -1,49 +1,33 @@
-import { useEffect, useState } from "react";
 import InputBox from "./InputBox";
-import validInput from "@/utils/validInput";
+import { checkBlank } from "@/utils/validInput";
+import styles from "./CustomInput.module.css";
 
-export default function CustomInput({ name, value, onChange }) {
-  const [valid, setValid] = useState(false);
+export default function CustomInput({ object, password }) {
+  const { element, checkValid, invalidText } = object;
 
-  let placeholder = "";
-  let secret = false;
-  let type = "";
+  const isValid = password ? !checkValid(password) : !checkValid();
+  const handleChange = (e) => {
+    const value = e.target.value;
+    object.setElement(value);
+  };
 
-  switch (name) {
-    case "이메일":
-      placeholder = "이메일을 입력해주세요";
-      type = "email";
-
-      break;
-    case "닉네임":
-      placeholder = "닉네임을 입력해주세요";
-
-      break;
-    case "비밀번호":
-      placeholder = "비밀번호를 입력해주세요";
-      type = "password";
-      secret = true;
-
-      break;
-    case "비밀번호 확인":
-      placeholder = "비밀번호를 다시 한 번 입력해주세요";
-      secret = true;
-
-      break;
-    default:
-      console.log("name값 확인 필요");
-  }
+  const inputStyles =
+    isValid && !checkBlank(element)
+      ? `${styles.input} ${styles.invalid}`
+      : styles.input;
 
   return (
-    <div>
-      <label>{name}</label>
-      <InputBox
-        keyword={value}
-        onChange={onChange}
-        placeholder={placeholder}
-        size="small"
-        secret={secret}
+    <div className={styles.customInput}>
+      <label className={styles.text}>{object.korText}</label>
+      <input
+        className={inputStyles}
+        placeholder={object.placeholderText}
+        value={object.element}
+        onChange={handleChange}
       />
+      {isValid && !checkBlank(element) && (
+        <div className={styles.invalidText}>{invalidText}</div>
+      )}
     </div>
   );
 }
