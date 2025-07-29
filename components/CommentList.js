@@ -6,34 +6,21 @@ import { useState } from "react";
 import CustomButtonSquare from "./CustomButtonSquare";
 import validInput from "@/utils/validInput";
 import axios from "axios";
+import { deleteComments, patchComments } from "@/utils/commentsApi";
 
-function Comment({ comment, articleId, onRefetch }) {
+function Comment({ type, comment, id, onRefetch }) {
   const [isPatchMode, setIsPatchMode] = useState(false);
   const [value, setValue] = useState(comment.content);
 
   const handlePatchComment = async () => {
-    const res = await axios.patch(
-      `http://localhost:5000/aComment/${articleId}`,
-      {
-        data: { content: value },
-        id: comment.id,
-      }
-    );
+    await patchComments(type, id, comment.id);
     setIsPatchMode(false);
     onRefetch();
-    return res.data;
   };
 
   const handleDeleteComment = async () => {
-    const res = await axios.patch(
-      `http://localhost:5000/aComment/${articleId}`,
-      {
-        data: { deleted: true },
-        id: comment.id,
-      }
-    );
+    await deleteComments(type, id, comment.id);
     onRefetch();
-    return res.data;
   };
 
   if (isPatchMode) {
@@ -86,15 +73,16 @@ function Comment({ comment, articleId, onRefetch }) {
   );
 }
 
-export default function CommentList({ data, articleId, onRefetch }) {
+export default function CommentList({ type, data, id, onRefetch }) {
   return (
     <div className={styles.commentList}>
       {data.map((comment) => {
         return (
           <Comment
             key={comment.id}
+            type={type}
             comment={comment}
-            articleId={articleId}
+            id={id}
             onRefetch={onRefetch}
           />
         );

@@ -1,31 +1,20 @@
 import { useEffect, useState } from "react";
 import CommentInput from "./CommentInput";
 import CommentList from "./CommentList";
-import axios from "axios";
 import useRefetch from "@/lib/useRefetch";
+import { getComments } from "@/utils/commentsApi";
+import testType from "@/utils/validType";
 
-export default function CommentSection({ articleId }) {
+export default function CommentSection({ type, id }) {
   // isLoading: 데이터 fetch가 완료되어야 화면이 렌더링 되게 하기 위한 상태관리. article과 comments 둘 다 확인
   const [isLoading, setIsLoading] = useState(true);
   const [comments, setComments] = useState([]);
   const [refetch, handleRefetch] = useRefetch();
 
-  useEffect(() => {
-    async function getCommentsByArticle(articleId) {
-      setIsLoading(true);
-      try {
-        const res = await axios.get(
-          `http://localhost:5000/aComment/${articleId}`
-        );
-        setComments(res.data);
-      } catch (e) {
-        console.error(e);
-      } finally {
-        setIsLoading(false);
-      }
-    }
+  testType(type);
 
-    getCommentsByArticle(articleId);
+  useEffect(() => {
+    getComments(type, id, setComments, setIsLoading);
   }, [refetch]);
 
   if (isLoading) {
@@ -34,10 +23,11 @@ export default function CommentSection({ articleId }) {
 
   return (
     <>
-      <CommentInput articleId={articleId} onRefetch={handleRefetch} />
+      <CommentInput type={type} id={id} onRefetch={handleRefetch} />
       <CommentList
+        type={type}
         data={comments}
-        articleId={articleId}
+        id={id}
         onRefetch={handleRefetch}
       />
     </>

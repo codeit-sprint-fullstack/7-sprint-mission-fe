@@ -1,14 +1,23 @@
 import { useEffect, useState } from "react";
 import CustomButtonSquare from "./CustomButtonSquare";
-import axios from "axios";
 import styles from "./CommentInput.module.css";
 import validInput from "@/utils/validInput";
 import { useUser } from "@/lib/UserContext";
+import { postComments } from "@/utils/commentsApi";
+import testType from "@/utils/validType";
 
-export default function CommentInput({ articleId, onRefetch }) {
+export default function CommentInput({ type, id, onRefetch }) {
   const [value, setValue] = useState("");
   const [isValid, setIsValid] = useState(false);
   const userId = useUser().userId;
+
+  testType(type);
+
+  const header = type === "article" ? "댓글 달기" : "문의하기";
+  const placeholder =
+    type === "article"
+      ? "댓글을 입력해 주세요"
+      : "개인정보를 공유 및 요청하거나, 명예 훼손, 무단 광고, 불법 정보 유포시 모니터링 후 삭제될 수 있으며, 이에 대한 민형사상 책임은 게시자에게 있습니다.";
 
   const handlePostComment = async () => {
     if (!userId) {
@@ -21,14 +30,8 @@ export default function CommentInput({ articleId, onRefetch }) {
       return;
     }
 
-    const res = await axios.post(
-      `http://localhost:5000/aComment/${articleId}`,
-      {
-        data: { userId, content: value },
-      }
-    );
+    await postComments(type, id, userId, value);
     onRefetch();
-    return res.data;
   };
 
   useEffect(() => {
@@ -41,10 +44,10 @@ export default function CommentInput({ articleId, onRefetch }) {
 
   return (
     <div className={styles.postComment}>
-      <div className={styles.header}>댓글 달기</div>
+      <div className={styles.header}>{header}</div>
       <textarea
         className={styles.input}
-        placeholder="댓글을 입력해 주세요"
+        placeholder={placeholder}
         value={value}
         onChange={(e) => {
           setValue(e.target.value);

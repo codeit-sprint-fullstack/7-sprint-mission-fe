@@ -1,31 +1,56 @@
 import CommentInput from "@/components/CommentInput";
 import Hearts from "@/components/Hearts";
+import axios from "axios";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import styles from "@/styles/itemsId.module.css";
+import DropOption from "@/components/DropOption";
 
 export default function ItemsId() {
-  // 임시로 백엔드 연결 없이 하기 위해 임의 데이터로 진행함
+  const [isLoading, setIsLoading] = useState(true);
   const [item, setItem] = useState({});
+  const router = useRouter();
+  const { id } = router.query;
+
+  const handleDeleteProduct = async () => {
+    const res = await axios.patch(`http://localhost:5000/product/${item.id}`, {
+      data: { deleted: true },
+    });
+    router.push("/items");
+    return res.data;
+  };
+
+  const handlePatchProduct = async () => {
+    window.sessionStorage.setItem("product", JSON.stringify(item));
+    alert("수정 버튼 작동됨");
+    // router.push(`/postproduct/${item.id}`);
+  };
 
   useEffect(() => {
-    setItem({
-      id: 1,
-      name: "아이패드 미니 팔아요",
-      description: "액정 잔기스 좀 있습니다. 사용에는 문제 없습니다.",
-      price: 500000,
-      updatedAt: "2025-07-29",
-      nickname: "네고사절",
-    });
-  }, []);
+    async function getProductById(id) {
+      setIsLoading(true);
+      try {
+        const res = await axios.get(`http://localhost:5000/product/${id}`);
+        setItem(res.data);
+      } catch (e) {
+        console.error(e);
+      } finally {
+        setIsLoading(false);
+      }
+    }
 
-  if ((Object.keys(item).length = 0)) {
-    return;
+    getProductById(id);
+  }, [id]);
+
+  if (isLoading) {
+    return <div></div>;
   }
 
   return (
-    <div>
-      <div>
-        <div>
+    <div className={styles.background}>
+      <div className={styles.item}>
+        <div className={styles.content}>
           <Image
             src={"/default.png"}
             width={486}
@@ -33,33 +58,45 @@ export default function ItemsId() {
             alt="제품 상세 이미지"
             priority={true}
           />
-          <div>
-            <div>
-              <div>{item.name}</div>
-              <div>{item.price} </div>
-              <div>상품 소개</div>
-              <div>{item.description} </div>
-              <div>상품 태그</div>
-              <div>나중에 태그를..</div>
+          <div className={styles.itemInfo}>
+            <div className={styles.textInfo}>
+              <div className={styles.itemHeader}>
+                <div className={styles.itemTitle}>
+                  <div className={styles.itemName}>{item.name}</div>
+                  <div className={styles.itemPrice}>{item.price} </div>
+                </div>
+                <DropOption
+                  onDelete={handleDeleteProduct}
+                  onPatch={handlePatchProduct}
+                />
+              </div>
+              <div className={styles.itemText}>
+                <div className={styles.subTitle}>상품 소개</div>
+                <div className={styles.itemDesc}>{item.description} </div>
+              </div>
+              <div className={styles.itemTags}>
+                <div className={styles.subTitle}>상품 태그</div>
+                <div className={styles.itemTag}>나중에 태그를..</div>
+              </div>
             </div>
-            <div>
-              <div>
+            <div className={styles.subInfo}>
+              <div className={styles.userInfo}>
                 <Image
+                  className={styles.userImg}
                   src={"/user-default-img.svg"}
                   width={40}
                   height={40}
                   alt="유저 이미지"
                 />
-                <div>
-                  <div>{item.nickname}</div>
-                  <div>{item.updatedAt} </div>
+                <div className={styles.subTextData}>
+                  <div className={styles.nickname}>{item.user.nickname}</div>
+                  <div className={styles.updatedAt}>{item.updatedAt} </div>
                 </div>
               </div>
               <Hearts
-                heartId={"1"}
-                heartCount={123}
-                productId={"1"}
-                isHearted={false}
+                heartId={item.PHeart.id}
+                heartCount={item._count.PHeart}
+                productId={id}
               />
             </div>
           </div>

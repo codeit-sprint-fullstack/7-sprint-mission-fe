@@ -42,7 +42,7 @@ export default function ArticleId() {
       <div className={styles.articleIdBox}>
         <div className={styles.content}>
           <IdArticleContent data={article} router={router} />
-          <CommentSection articleId={article.id} />
+          <CommentSection type={"article"} id={article.id} />
         </div>
         <CustomButtonSquare
           text="목록으로 돌아가기"
