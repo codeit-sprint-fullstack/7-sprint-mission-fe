@@ -5,8 +5,11 @@ import Link from "next/link";
 import profileIcon from "@/public/assets/icons/profile_icon.svg";
 import CommentSection from "../Comment/CommentSection";
 import { formatKoreanDate } from "@/utils/formatKrDate";
+import ThumbsUpButton from "../ThumbsUpButton";
 
 export default function ArticleDetail({ article }) {
+  //@TODO 추천시 likeCount 상태관리하여 바로반영되게
+  //@TODO 이미 눌렀었다면 파란색으로 미리 색칠해놓기
   return (
     <div className={styles.detail}>
       <h1 className={styles.pageTitle}>자유게시판</h1>
@@ -18,7 +21,7 @@ export default function ArticleDetail({ article }) {
           <span>{formatKoreanDate(article.createdAt)}</span>
         </span>
         <span className={styles.likes}>
-          ❤️ {article.likeCount} 💬{article.commentCount}
+          👍 {article.likeCount} 💬{article.commentCount}
         </span>
       </div>
 
@@ -36,9 +39,14 @@ export default function ArticleDetail({ article }) {
           />
         )}
       </div>
+      <ThumbsUpButton
+        articleId={article.id}
+        initialLiked={article.liked}
+        initialLikeCount={article.likeCount}
+      />
       <CommentSection articleId={article.id} />
 
-      {/* 여기에 댓글, 수정/삭제, 스크랩, 공감 버튼 컴포넌트 추가 */}
+      {/* 여기에 댓글, 수정/삭제, 스크랩,  컴포넌트 추가 */}
       <Link href="/freeboard" className={styles.backButton}>
         목록으로 돌아가기 ↩️
       </Link>

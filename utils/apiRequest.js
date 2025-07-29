@@ -1,6 +1,13 @@
 // utils/apiRequest.js
 
-import { signInPath,postArticlePath,getUserMePath , logoutPath,toggleCommentLikePath} from "@/constants/apiPath";
+import {
+  signInPath,
+  postArticlePath,
+  getUserMePath,
+  logoutPath,
+  toggleCommentLikePath,
+  toggleArticleLikePath,
+} from "@/constants/apiPath";
 
 export async function postJson(url, body) {
   const res = await fetch(url, {
@@ -70,4 +77,8 @@ export async function postLogout() {
 
 export async function postToggleCommentLike(articleId, commentId) {
   return await postJson(toggleCommentLikePath(articleId, commentId), {});
+}
+
+export async function postToggleArticleLike(articleId) {
+  return await postJson(toggleArticleLikePath(articleId), {});
 }

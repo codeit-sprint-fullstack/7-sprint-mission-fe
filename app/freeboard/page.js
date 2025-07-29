@@ -1,3 +1,4 @@
+// app/freeboard/page.js
 import ArticleList from "@/components/ArticleList";
 import BestArticles from "@/components/BestArticles";
 import { ORDER_BY, PAGE_SIZE } from "@/constants";
@@ -10,16 +11,21 @@ export default async function FreeBoard({ searchParams }) {
   const pageSize = Number(PAGE_SIZE) || 5;
   const orderBy = ORDER_BY || "recent";
 
+  //@TODO fetch path 리팩토링
   const bestRes = await fetch(
     getArticlePath({ page: 1, pageSize: 3, orderBy: "like" }),
-    { next: { revalidate: 60 } } //베스트 게시글은 60초에 한번만
+    { next: { revalidate: 60 }, credentials: "include" } //베스트 게시글은 60초에 한번만
   );
   const bestData = await bestRes.json();
   const bestArticles = mapArticlesWithPlaceholder(bestData.list);
 
-  const recentRes = await fetch(getArticlePath({ page, pageSize, orderBy }), {
-    cache: "no-store",
-  });
+  const recentRes = await fetch(
+    getArticlePath({ page, pageSize, orderBy: "recent" }),
+    {
+      cache: "no-store",
+      credentials: "include",
+    }
+  );
   const recentData = await recentRes.json();
   const recentArticles = mapArticlesWithPlaceholder(recentData.list);
 

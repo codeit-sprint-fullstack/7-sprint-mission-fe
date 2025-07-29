@@ -40,3 +40,7 @@ export function logoutPath() {
 export function toggleCommentLikePath(articleId, commentId) {
   return `${API_BASE_URL}/articles/${articleId}/comments/${commentId}/like`;
 }
+
+export function toggleArticleLikePath(articleId) {
+  return `${API_BASE_URL}/articles/${articleId}/like`;
+}
