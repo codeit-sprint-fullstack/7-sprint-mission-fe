@@ -84,3 +84,24 @@
 .blueText {
   color: var(--brand-blue, #3692ff);
 }
+
+.userInfo {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  align-items: center;
+}
+
+.userImg {
+  background-color: #d1d5db;
+  border-radius: 50px;
+}
+
+.userNickname {
+  color: var(--Cool-Gray-600, #4b5563);
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

@@ -14,6 +14,7 @@ import {
   usePasswordConfirmation,
 } from "@/lib/useEmailPassword";
 import SimpleLogin from "@/components/SimpleLogin";
+import BigTitle from "@/components/BigTitle";
 
 function Signup() {
   const emailObject = useEmail();
@@ -24,6 +25,7 @@ function Signup() {
 
   const router = useRouter();
 
+  // 회원가입 함수
   const onSignup = async () => {
     try {
       const res = await axios.post(
@@ -43,9 +45,11 @@ function Signup() {
 
       const { accessToken } = res.data;
 
+      // 회원가입 성공시 items 페이지로 이동
+
       if (accessToken) {
         userLogin(res.data);
-        router.push("/");
+        router.push("/items");
       }
     } catch (e) {
       console.error(e);
@@ -53,6 +57,7 @@ function Signup() {
     }
   };
 
+  // 페이지 로딩될 때, 만약 이미 로그인 된 상태라면 items 페이지로 이동
   useEffect(() => {
     const { accessToken } = userSetting();
 
@@ -64,16 +69,7 @@ function Signup() {
   return (
     <div className={styles.signup}>
       <div className={styles.main}>
-        <div className={styles.title}>
-          <Image
-            src={"/panda-logo.svg"}
-            width={103}
-            height={103}
-            alt="메인 로고"
-            priority={true}
-          />
-          <h1 className={styles.titleText}>판다마켓</h1>
-        </div>
+        <BigTitle />
         <div className={styles.content}>
           <CustomInput object={emailObject} />
           <CustomInput object={nicknameObject} />

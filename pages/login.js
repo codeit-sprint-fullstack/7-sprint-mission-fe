@@ -9,12 +9,15 @@ import { useRouter } from "next/router";
 import useAuth from "@/lib/useAuth";
 import { useEmail, usePassword } from "@/lib/useEmailPassword";
 import SimpleLogin from "@/components/SimpleLogin";
+import BigTitle from "@/components/BigTitle";
 
 function Login() {
   const emailObject = useEmail();
   const passwordObject = usePassword();
   const { userLogin, userSetting } = useAuth();
   const router = useRouter();
+
+  //로그인 post 함수
 
   const onLogin = async () => {
     try {
@@ -30,6 +33,8 @@ function Login() {
 
       const { accessToken } = res.data;
 
+      // 로그인 성공시 items 페이지로 이동
+
       if (accessToken) {
         userLogin(res.data);
         router.push("/items");
@@ -39,27 +44,20 @@ function Login() {
     }
   };
 
+  // 페이지 로딩될 때, 만약 이미 로그인 된 상태라면 items 페이지로 이동
+
   useEffect(() => {
     const { accessToken } = userSetting();
 
     if (accessToken) {
-      router.push("/");
+      router.push("/items");
     }
   }, []);
 
   return (
     <div className={styles.login}>
       <div className={styles.main}>
-        <div className={styles.title}>
-          <Image
-            src={"/panda-logo.svg"}
-            width={103}
-            height={103}
-            alt="메인 로고"
-            priority={true}
-          />
-          <h1 className={styles.titleText}>판다마켓</h1>
-        </div>
+        <BigTitle />
         <div className={styles.content}>
           <CustomInput object={emailObject} />
           <CustomInput object={passwordObject} />

@@ -3,6 +3,9 @@ import Image from "next/image";
 import styles from "./Navbar.module.css";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import useAuth from "@/lib/useAuth";
+import CustomButtonSquare from "./CustomButtonSquare";
+import { useEffect, useState } from "react";
 
 function PageLink({ link, text }) {
   const router = useRouter();
@@ -24,6 +27,20 @@ function PageLink({ link, text }) {
 }
 
 export default function Navbar() {
+  const { userSetting } = useAuth();
+  const [isLogin, setIsLogin] = useState(false);
+  const [user, setUser] = useState({});
+  const router = useRouter();
+
+  // 로그인 된 상태라면,
+  useEffect(() => {
+    const { accessToken, user: userData } = userSetting();
+    if (accessToken) {
+      setIsLogin(true);
+      setUser(userData);
+    }
+  }, []);
+
   return (
     <header className={styles.header}>
       <div className={styles.headerBox}>
@@ -43,9 +60,26 @@ export default function Navbar() {
           <PageLink link="/article" text={"자유게시판"} />
           <PageLink link="/items" text={"중고마켓"} />
         </div>
-        <div className={styles.loginLink}>
-          <Link href="/login"> 로그인</Link>
-        </div>
+        {isLogin ? (
+          <div className={styles.userInfo}>
+            <Image
+              src={"/user-default-img.svg"}
+              className={styles.userImg}
+              alt="이미지"
+              width={40}
+              height={40}
+            />
+            <div className={styles.userNickname}>{user.nickname}</div>
+          </div>
+        ) : (
+          <CustomButtonSquare
+            text="로그인"
+            onClick={() => {
+              router.push("/login");
+            }}
+            valid={true}
+          />
+        )}
       </div>
     </header>
   );
