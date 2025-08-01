@@ -1,4 +1,3 @@
-import CommentInput from "@/components/CommentInput";
 import Hearts from "@/components/Hearts";
 import axios from "axios";
 import Image from "next/image";
@@ -6,6 +5,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import styles from "@/styles/itemsId.module.css";
 import DropOption from "@/components/DropOption";
+import CommentSection from "@/components/CommentSection";
 
 export default function ItemsId() {
   const [isLoading, setIsLoading] = useState(true);
@@ -28,11 +28,15 @@ export default function ItemsId() {
   };
 
   useEffect(() => {
+    if (!id) {
+      return;
+    }
     async function getProductById(id) {
       setIsLoading(true);
       try {
         const res = await axios.get(`http://localhost:5000/product/${id}`);
         setItem(res.data);
+        console.log(res.data);
       } catch (e) {
         console.error(e);
       } finally {
@@ -44,7 +48,7 @@ export default function ItemsId() {
   }, [id]);
 
   if (isLoading) {
-    return <div></div>;
+    return <div>뭐지</div>;
   }
 
   return (
@@ -89,7 +93,7 @@ export default function ItemsId() {
                   alt="유저 이미지"
                 />
                 <div className={styles.subTextData}>
-                  <div className={styles.nickname}>{item.user.nickname}</div>
+                  {/* <div className={styles.nickname}>{item.user.nickname}</div> */}
                   <div className={styles.updatedAt}>{item.updatedAt} </div>
                 </div>
               </div>
@@ -101,7 +105,7 @@ export default function ItemsId() {
             </div>
           </div>
         </div>
-        <CommentInput />
+        <CommentSection type={"product"} id={item.id} />
       </div>
     </div>
   );
