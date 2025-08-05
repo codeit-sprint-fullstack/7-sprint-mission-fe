@@ -1,0 +1,41 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Pretendard";
+}
+button,
+input,
+select,
+textarea {
+  font-family: "Pretendard";
+}
+
+:root {
+  --Secondary-100: #f3f4f6;
+  --Secondary-200: #e5e7eb;
+  --Secondary-400: #9ca3af;
+  --Secondary-600: #4b5563;
+  --Secondary-800: #1f2937;
+  --Secondary-900: #111827;
+  --Primary-100: #3692ff;
+  --Primary-200: #2f80ed;
+  --Cool-Gray-50: #f9fafb;
+  --Cool-Gray-100: #f3f4f6;
+  --Cool-Gray-200: #e5e7eb;
+  --Cool-Gray-300: #d1d5db;
+  --Cool-Gray-400: #9ca3af;
+  --Cool-Gray-500: #6b7280;
+  --Cool-Gray-600: #4b5563;
+  --error-red: #f74747;
+}
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.mainContent {
+  flex: 1;
+}

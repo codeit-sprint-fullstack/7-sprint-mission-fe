@@ -1,0 +1,177 @@
+import axios from "@/lib/axios";
+import { formatDistanceToNow } from "date-fns";
+import { ko } from "date-fns/locale";
+import { useState } from "react";
+import styles from "./CommentList.module.css";
+import DeleteModal from "./DeleteModal";
+import EditDropDownButton from "./EditDropDownButton";
+import Modal from "./Modal";
+
+const COMMENT_MAX = 200;
+
+export default function CommentList({
+  comments,
+  onRefresh,
+  type,
+  setToastMsg,
+  user,
+}) {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalMsg, setModalMsg] = useState("");
+  const [deleteModalOpen, setDeleteModalOpen] = useState(false);
+  const [targetComment, setTargetComment] = useState(null);
+  const [editingId, setEditingId] = useState(null);
+  const [editingValue, setEditingValue] = useState("");
+  const [editError, setEditError] = useState("");
+
+  function handleEditStart(comment) {
+    setEditingId(comment.id);
+    setEditingValue(comment.content);
+    setEditError("");
+  }
+
+  function handleEditCancel() {
+    setEditingId(null);
+    setEditingValue("");
+    setEditError("");
+  }
+
+  async function handleEditSave(comment) {
+    if (!editingValue.trim()) {
+      setEditError("댓글 내용을 입력해주세요.");
+      return;
+    }
+    if (editingValue.length > COMMENT_MAX) {
+      setEditError(`댓글은 ${COMMENT_MAX}자까지 입력 가능합니다.`);
+      return;
+    }
+    try {
+      await axios.patch(`/comments/${comment.id}`, { content: editingValue });
+      setToastMsg("댓글이 수정되었습니다.");
+      setEditingId(null);
+      setEditingValue("");
+      setEditError("");
+      if (typeof onRefresh === "function") onRefresh();
+    } catch (e) {
+      setEditError("댓글 수정 실패");
+      console.error("댓글 수정 실패:", e.response?.data || e.message);
+    }
+  }
+
+  function handleDeleteModal(comment) {
+    setTargetComment(comment);
+    setDeleteModalOpen(true);
+  }
+
+  async function doDelete(comment) {
+    try {
+      await axios.delete(`/comments/${comment.id}`);
+      setToastMsg("댓글이 삭제되었습니다.");
+      if (typeof onRefresh === "function") onRefresh();
+    } catch (e) {
+      setModalMsg("댓글 삭제 실패");
+      setModalOpen(true);
+      console.error("댓글 삭제 실패:", e.response?.data || e.message);
+    }
+  }
+
+  if (!comments || (comments.length === 0 && type === "article")) {
+    return (
+      <div className={styles.emptyArea}>
+        <div className={styles.emptyImg} />
+        <span className={styles.emptyText}>
+          아직 댓글이 없어요.
+          <br />
+          지금 댓글을 달아보세요!
+        </span>
+      </div>
+    );
+  } else if (!comments || (comments.length === 0 && type === "item")) {
+    return (
+      <div className={styles.emptyArea}>
+        <div className={styles.emptyItem} />
+        <span className={styles.emptyText}>아직 문의가 없어요.</span>
+      </div>
+    );
+  }
+
+  return (
+    <>
+      <ul>
+        {comments.map(comment => (
+          <li className={styles.area} key={comment.id}>
+            <div className={styles.textBox}>
+              {editingId === comment.id ? (
+                <>
+                  <textarea
+                    className={styles.textArea}
+                    value={editingValue}
+                    onChange={e => setEditingValue(e.target.value)}
+                  />
+                  <div className={styles.length}>
+                    {editingValue.length} / {COMMENT_MAX}
+                  </div>
+                  {editError && <div className={styles.error}>{editError}</div>}
+                  <div className={styles.btnArea}>
+                    <button
+                      onClick={handleEditCancel}
+                      className={styles.cancel}
+                    >
+                      취소
+                    </button>
+                    <button
+                      onClick={() => handleEditSave(comment)}
+                      className={styles.save}
+                    >
+                      저장
+                    </button>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <span className={styles.text}>{comment.content}</span>
+                  {user && comment.writer && user.id === comment.writer.id && (
+                    <EditDropDownButton
+                      onEdit={() => handleEditStart(comment)}
+                      onDelete={() => handleDeleteModal(comment)}
+                    />
+                  )}
+                </>
+              )}
+            </div>
+            <div className={styles.userBox}>
+              <div className={styles.userIc} />
+              <div className={styles.nameBox}>
+                <span className={styles.name}>{comment.writer?.nickname}</span>
+                <span className={styles.date}>
+                  {formatDistanceToNow(new Date(comment.createdAt), {
+                    addSuffix: true,
+                    locale: ko,
+                  })}
+                </span>
+              </div>
+            </div>
+          </li>
+        ))}
+      </ul>
+      <Modal
+        open={modalOpen}
+        message={modalMsg}
+        onClose={() => setModalOpen(false)}
+      />
+      <DeleteModal
+        open={deleteModalOpen}
+        message="댓글을 삭제하시겠습니까?"
+        onCancel={() => {
+          setDeleteModalOpen(false);
+          setTargetComment(null);
+        }}
+        onConfirm={() => {
+          if (targetComment) doDelete(targetComment);
+          setDeleteModalOpen(false);
+          setTargetComment(null);
+        }}
+      />
+    </>
+  );
+}

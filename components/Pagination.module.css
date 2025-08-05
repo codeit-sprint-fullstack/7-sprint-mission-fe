@@ -1,0 +1,48 @@
+.area {
+  height: 40px;
+  margin: 50px 0 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: #ffffff;
+  border: 1px solid var(--Cool-Gray-200);
+  border-radius: 40px;
+  color: var(--Cool-Gray-500);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 26px;
+  cursor: pointer;
+}
+
+.active {
+  color: var(--Secondary-100);
+  background-color: var(--Primary-200);
+  border: none;
+}
+.btn:hover {
+  color: var(--Secondary-100);
+  background-color: var(--Primary-200);
+  border: none;
+}
+
+@media (min-width: 375px) and (max-width: 743px) {
+  .area {
+    margin-bottom: 60px;
+  }
+  .btn {
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+}

@@ -1,0 +1,148 @@
+.userArea {
+  position: relative;
+}
+.userBox {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+  gap: 6px;
+}
+.userIc {
+  width: 40px;
+  height: 40px;
+  background-image: url("/ic_user.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.name {
+  color: var(--Cool-Gray-600);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.infoBox {
+  padding: 15px;
+  width: 310px;
+  height: 390px;
+  background-color: #ffffff;
+  border: 1px solid var(--Primary-100);
+  border-radius: 10px;
+  position: absolute;
+  top: 140%;
+  right: -180px;
+}
+.infoUser {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--Primary-100);
+}
+.infoIc {
+  width: 60px;
+  height: 60px;
+  background-image: url("/ic_user.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.infoName {
+  color: var(--Secondary-800);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.infoList {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--Primary-100);
+}
+.infoItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+.infoTitle {
+  color: var(--Secondary-400);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 26px;
+}
+.count {
+  color: var(--Primary-100);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 26px;
+}
+.btn {
+  width: 100%;
+  height: 50px;
+  background-color: #ffffff;
+  border: 1px solid var(--Primary-100);
+  border-radius: 50px;
+  color: var(--Secondary-800);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 26px;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: var(--Primary-100);
+  color: #ffffff;
+}
+
+@media (min-width: 744px) and (max-width: 1199px) {
+  .infoBox {
+    right: -20px;
+  }
+}
+@media (min-width: 375px) and (max-width: 743px) {
+  .infoBox {
+    width: 200px;
+    height: 280px;
+    right: -10px;
+  }
+  .infoUser {
+    gap: 5px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+  .infoIc {
+    width: 30px;
+    height: 30px;
+  }
+  .infoName {
+    font-size: 20px;
+  }
+
+  .infoList {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+  .infoItem {
+    padding: 10px 5px;
+  }
+  .infoTitle {
+    font-size: 16px;
+  }
+  .count {
+    font-size: 18px;
+  }
+  .btn {
+    height: 30px;
+  }
+}
