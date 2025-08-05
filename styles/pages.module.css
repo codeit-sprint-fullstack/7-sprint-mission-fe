@@ -1,0 +1,213 @@
+.wirteTitle {
+  display: flex;
+  justify-content: space-between;
+  width: 50vw;
+}
+
+.wirteContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.wirteHeadline {
+  width: 100%;
+}
+
+.wirteContent {
+  width: 100%;
+}
+
+.wirte {
+  display: flex;
+  justify-content: center;
+  margin: 94px 360px 954px 360px;
+}
+
+.writeInput {
+  width: 50vw;
+  background-color: #f3f4f6;
+  border-radius: 12px;
+  height: auto;
+  padding: 16px 24px;
+}
+
+.wirteTitleFont {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.wirteContentFont {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.writeInputArea {
+  width: 50vw;
+  background-color: #f3f4f6;
+  border-radius: 12px;
+  height: 262px;
+  padding: 16px 24px;
+}
+
+.writeTitleButton {
+  display: flex;
+  height: 42px;
+  padding: 12px 23px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+}
+
+.detailContainer {
+  margin: 102px 360px 353px 360px;
+}
+
+.detailCommentFont {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.detailCommentInput {
+  display: flex;
+  width: 100%;
+  height: 104px;
+  padding: 16px 24px;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 12px;
+  background: var(--Cool-Gray-100, #f3f4f6);
+  border: 0;
+}
+
+.detailCommentButton {
+  display: flex;
+  height: 42px;
+  padding: 12px 23px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  background: var(--Cool-Gray-400, #9ca3af);
+  position: absolute;
+  right: 0;
+  margin-top: 16px;
+}
+
+.detailCommentBox {
+  position: relative;
+}
+
+.detailCommentList {
+  margin-top: 90px;
+}
+
+.emptyCommentBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.emptyCommentTextBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #9ca3af;
+}
+
+.detailButton {
+  display: inline-flex;
+  height: 48px;
+  padding: 12px 64px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  border-radius: 40px;
+  background: var(--Primary-100, #3692ff);
+  border: 0;
+  color: aliceblue;
+}
+
+.detailButtonBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.ItemImgBox {
+  display: flex;
+}
+
+.ItemTitle {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  border-bottom: 1px solid #ccc;
+}
+
+.ItemInfoBox {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-left: 20px;
+}
+
+.ItemPageBox {
+  background-color: #3692ff;
+}
+
+.userImageBox {
+  background-color: #ccc;
+  border-radius: 50%;
+}
+
+.itemsUserBox {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.itemsUserHeartButtondiv {
+  display: flex;
+  height: 50px;
+  border-left: 1px solid #ccc;
+}
+
+.itemsUserHeartButton {
+  margin-left: 10px;
+}
+
+.itemsUserImage {
+  background-color: #9ca3af;
+  border-radius: 50px;
+}
+
+.itemListBox {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 16px;
+}
+
+.itemTagsBox {
+  background-color: #f3f4f6;
+  height: auto;
+  border-radius: 50px;
+  padding: 0 10px;
+  margin: 0;
+}
+
+.itemTagsBox > p {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  text-align: center;
+}
+
+.tagsBox {
+  display: flex;
+  gap: 10px;
+}

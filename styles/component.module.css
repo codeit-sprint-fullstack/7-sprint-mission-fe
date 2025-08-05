@@ -1,0 +1,369 @@
+.navContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+}
+.navBox {
+  display: flex;
+  gap: 10px;
+}
+.boardFont {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.boardBox {
+  display: flex;
+  gap: 24px;
+}
+
+.boardItemBox {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+}
+
+.boardContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.boardCard {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 340px;
+  height: 160px;
+  background-color: #f9fafb;
+  padding: 0px 24px;
+  border-radius: 5px;
+}
+
+.boardImgtag {
+  display: flex;
+  background-color: #3692ff;
+  width: 102px;
+  border-radius: 0px 0px 16px 16px;
+  justify-content: center;
+}
+.boardImgtag > p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px;
+  font-size: 16px;
+  font-weight: 600;
+  color: aliceblue;
+}
+.boardCommentBox {
+  display: flex;
+  position: absolute;
+  height: auto;
+  width: 100%;
+}
+
+.boardCommentBox > .boardCommentImg {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  position: absolute;
+  right: 44px;
+  top: 37px;
+}
+.boardCommentBox > .boardCommentText {
+  font-size: 20px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 70%;
+  top: 18px;
+  max-width: 60%;
+}
+
+.boardItemBox > .boardItemText {
+  font-size: 14px;
+  font-weight: 400;
+  color: #4b5563;
+}
+
+.userBoardTitle {
+  display: flex;
+  justify-content: space-between;
+}
+
+.userBoradContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.userBoradBox {
+  flex-direction: column;
+  padding-top: 30px;
+}
+
+.userBoardTitleFont {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.userBoardTitleButton {
+  display: flex;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  height: 42px;
+  padding: 12px 23px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  background-color: var(--brand-blue, #3692ff);
+  color: aliceblue;
+}
+
+.userBoardOption {
+  display: flex;
+}
+
+.userBoardOptionInput {
+  display: flex;
+  width: 930px;
+  height: 42px;
+  padding: 9px 20px 9px 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 12px;
+}
+
+.userBoardOptionSelect {
+  display: flex;
+  width: 130px;
+  height: 42px;
+  padding: 12px 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 12px;
+  border: 1px solid var(--Cool-Gray-200, #e5e7eb);
+  background: #fff;
+}
+
+.boardItemBetween {
+  display: flex;
+  justify-content: space-between;
+}
+.boardItemBetweenBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.BoardItemContainer {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.userBoardByBoardItem {
+  padding-top: 30px;
+}
+
+.commentListTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.CommentListInfo {
+  display: flex;
+  margin: 20px;
+  gap: 10px;
+}
+.CommentListInfo > .CommentListInfoImage {
+  background-color: #ccc;
+  border-radius: 50%;
+}
+
+.boardItemUserInfoImg {
+  background-color: #ccc;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+}
+
+.CommentListBox {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+}
+
+.commentListTitleFont {
+  font-size: 20px;
+  font-weight: 700;
+}
+.commentListTitleIconBox {
+  display: flex;
+  align-items: center;
+}
+
+.line {
+  width: 1px;
+  background-color: #ccc;
+
+  margin: 20px 0px;
+}
+
+.CommentListContent {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.DetailCommentListContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: #fcfcfc;
+  border-bottom: 1px solid #ccc;
+  margin-top: 24px;
+  position: relative;
+}
+
+.DetailCommentListIcon {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.DetailCommentListImage {
+  background-color: #ccc;
+  border-radius: 50%;
+}
+
+.DetailCommentListBox {
+  display: flex;
+  margin-top: 24px;
+  gap: 10px;
+}
+
+.CustomSelectContainer {
+  background-color: #fff;
+  position: absolute;
+  width: 139px;
+  right: 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.CustomSelectContainer > div > p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.CustomSelectContainer > .CustomSelectBox {
+  border-bottom: 1px solid #ccc;
+}
+
+.boardItemTitleArea {
+  height: 85px;
+}
+
+.boardItemIamgeBox {
+  margin-top: 13px;
+}
+
+.boardItemBoxFlex {
+  display: flex;
+  gap: 10px;
+}
+
+.boardItemHeartBox {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.commentListLikeButton {
+  display: inline-flex;
+  height: 40px;
+  padding: 4px 12px;
+  align-items: center;
+  gap: 10px;
+  border-radius: 35px;
+  border: 1px solid var(--Secondary-200, #e5e7eb);
+  background: #fff;
+  margin-left: 20px;
+}
+
+.CommentListInfoCreatedAt {
+  color: #9ca3af;
+}
+
+.navUser {
+  display: flex;
+  align-items: center;
+}
+
+.deleteModalIcon {
+  background-color: red;
+  border-radius: 50%;
+}
+
+.DeleteModalBox {
+  display: flex;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 250px;
+  height: 154px;
+}
+
+.DeleteModalButton1 {
+  display: flex;
+  width: 88px;
+  height: 48px;
+  padding: 12px 23px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--error-red, #f74747);
+  color: red;
+}
+
+.DeleteModalButton2 {
+  display: flex;
+  width: 88px;
+  height: 48px;
+  padding: 12px 23px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 12px;
+  color: #fff;
+  background-color: red;
+  border: 0;
+
+  /* shadow 5% */
+  box-shadow: 0px 4px 16px 0px rgba(17, 34, 17, 0.05);
+}
+
+.DeleteModalButtonBox {
+  display: flex;
+  gap: 10px;
+}
