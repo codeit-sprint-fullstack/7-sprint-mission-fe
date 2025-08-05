@@ -1,0 +1,49 @@
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 640px;
+  margin: 170px auto;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 24px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  padding: 16px 124px;
+  border-radius: 40px;
+  background: var(--secondary-400, #9ca3af);
+  color: var(--white);
+}
+
+.footerText {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+}
+
+.footerDescription {
+  color: var(--Secondary-800, #1f2937);
+  font-family: "Pretendard";
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.signupLink {
+  color: var(--primary-100);
+  font-family: "Pretendard";
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+}

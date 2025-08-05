@@ -1,0 +1,28 @@
+.menuContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+
+.userWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+}
+
+.imageContainer {
+  display: flex;
+  background-color: var(--secondary-300);
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+}
+
+.userNickname {
+  color: var(--Cool-Gray-600);
+  font-family: "Pretendard";
+  font-size: 18px;
+  font-weight: 400;
+}

@@ -1,0 +1,30 @@
+.boardPageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1rem;
+  margin-top: 24px;
+}
+
+.inner {
+  width: 100%;
+  max-width: 1056px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Tablet (화면이 768px 이상일 때) */
+@media (min-width: 768px) {
+  .boardPageContainer {
+    min-width: 696px;
+    padding: 0 2rem;
+  }
+}
+
+/* PC (화면이 1200px 이상일 때) */
+@media (min-width: 1200px) {
+  .boardPageContainer {
+    min-width: 1056px;
+  }
+}

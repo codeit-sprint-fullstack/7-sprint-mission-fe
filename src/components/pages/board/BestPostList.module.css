@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.title {
+  font-family: "Pretendard";
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 100%;
+  color: var(--secondary-900);
+  flex-shrink: 0;
+}
+
+.list {
+  display: flex;
+  gap: 24px; /* 카드 사이의 간격 */
+}
+
+/* 태블릿 (1199px 이하): 3번째 아이템 숨기기 */
+@media (max-width: 1199px) {
+  .list > *:nth-child(3) {
+    display: none;
+  }
+}
+
+/* 모바일 (767px 이하): 2번째 아이템도 숨기기 */
+@media (max-width: 767px) {
+  .list > *:nth-child(2) {
+    display: none;
+  }
+}

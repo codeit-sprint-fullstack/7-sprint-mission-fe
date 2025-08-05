@@ -1,0 +1,41 @@
+.postListSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  gap: 24px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  font-family: "Pretendard";
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--secondary-800);
+}
+
+.filterBar {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  width: 100%;
+}
+
+.searchBar {
+  flex: 1;
+}
+
+.select {
+  display: flex;
+  width: 130px;
+  height: 42px;
+  padding: 12px 20px;
+  flex-direction: column;
+  border-radius: 12px;
+  border: 1px solid var(--secondary-200);
+  background: var(--white);
+}
