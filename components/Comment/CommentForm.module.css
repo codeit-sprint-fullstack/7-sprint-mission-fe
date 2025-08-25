@@ -1,0 +1,40 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.textarea {
+  min-height: 80px;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+.submitButton {
+  align-self: flex-end;
+  padding: 0.5rem 1rem;
+  background-color: #3692ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.submitButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+.disabled {
+  background-color: #ccc;
+  color: #666;
+}
+
+.error {
+  color: red;
+  font-size: 0.9rem;
+}

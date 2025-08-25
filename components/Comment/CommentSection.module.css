@@ -1,0 +1,34 @@
+.commentSection {
+  margin-top: 2rem;
+  padding: 1rem;
+  border-top: 1px solid #ddd;
+  background-color: #fafafa;
+}
+
+.commentTitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/* .loading {
+  font-style: italic;
+  color: #888;
+  padding: 1rem 0;
+} */
+
+.commentList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.emptyMessage {
+  color: #666;
+  font-size: 0.95rem;
+  padding: 1rem;
+  background-color: #fffef0;
+  border: 1px dashed #ccc;
+  border-radius: 6px;
+  text-align: center;
+}

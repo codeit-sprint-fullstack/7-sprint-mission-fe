@@ -1,0 +1,10 @@
+.writeButton {
+  align-self: flex-end;
+  padding: 0.5rem 1rem;
+  background-color: #3692ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}

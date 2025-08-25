@@ -1,0 +1,47 @@
+.card {
+  padding: 1rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.meta {
+  font-size: 0.875rem;
+  color: #888;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.thumbnail {
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.likes {
+  font-size: 0.875rem;
+  color: #555;
+}

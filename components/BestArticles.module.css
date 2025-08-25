@@ -1,0 +1,78 @@
+.bestArticles {
+  margin-top: 2rem;
+}
+
+.sectionTitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.articleGrid {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  padding-bottom: 40px;
+  /* flex-wrap: wrap; */
+}
+.bestHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  align-items: center;
+}
+
+.card {
+  position: relative;
+  background-color: #ecedee;
+  padding: 12px;
+  border-radius: 12px;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.badge {
+  background-color: #3182f6;
+  color: #fff;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 20px;
+  display: inline-block;
+  font-size: 0.85rem;
+  margin-bottom: 8px;
+  width: fit-content;
+}
+
+.content {
+  flex: 1;
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  line-height: 1.4;
+  display: -webkit-box;
+  flex: 1;
+  -webkit-line-clamp: 2; /* 두 줄 말줄임 */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.thumbnail {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 6px;
+  object-fit: cover;
+}
