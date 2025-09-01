@@ -1,0 +1,37 @@
+.Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 231px 400px;
+  gap: 24px;
+}
+.Logo {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.LogoImg {
+  width: 140px;
+}
+
+.TextLogo {
+  width: 240px;
+}
+
+.signUp {
+  color: var(--Primary-100, #3692ff);
+  font-family: Pretendard;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+  cursor: pointer;
+}
