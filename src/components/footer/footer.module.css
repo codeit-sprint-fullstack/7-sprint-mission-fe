@@ -1,0 +1,5 @@
+.Container {
+  display: flex;
+  justify-content: space-between;
+  background: var(--Secondary-900, #111827);
+}

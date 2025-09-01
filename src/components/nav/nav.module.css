@@ -1,0 +1,15 @@
+.Container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 100px;
+}
+
+.LogoContainer {
+  display: flex;
+  gap: 10px;
+}
+
+.TextLogo {
+  width: 100px;
+  height: auto;
+}
