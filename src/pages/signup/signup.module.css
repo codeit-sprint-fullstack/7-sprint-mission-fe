@@ -1,0 +1,21 @@
+.Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 231px 300px;
+  gap: 24px;
+}
+
+.Logo {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+.LogoImg {
+  width: 140px;
+}
+
+.TextLogo {
+  width: 240px;
+}
