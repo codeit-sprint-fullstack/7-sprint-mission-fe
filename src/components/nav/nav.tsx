@@ -12,6 +12,12 @@ function Nav() {
           <img src={Logo} alt="LOGO" />
           <img className={style.TextLogo} src={TextLogo} alt="Text LOGO" />
         </Link>
+        <div className={style.NavOption}>
+          <p>자유게시판</p>
+          <Link to={"/market"}>
+            <p>중고마켓</p>
+          </Link>
+        </div>
       </div>
       <Link to={"/login"}>
         <NavButton />

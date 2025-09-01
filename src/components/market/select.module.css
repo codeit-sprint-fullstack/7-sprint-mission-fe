@@ -1,0 +1,25 @@
+.Container {
+  display: flex;
+  position: relative;
+  border: 1px solid var(--Cool-Gray-200, #e5e7eb);
+  width: 100px;
+  border-radius: 10px;
+  padding-left: 10px;
+  justify-content: space-between;
+  padding-right: 30px;
+}
+
+.Options {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 70px;
+  border: 1px solid var(--Cool-Gray-200, #e5e7eb);
+  width: 150px;
+  border-radius: 10px;
+  padding-left: 10px;
+}
+
+.downUp {
+  transform: scaleY(-1);
+}

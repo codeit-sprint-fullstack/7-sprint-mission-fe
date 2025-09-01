@@ -13,3 +13,8 @@
   width: 100px;
   height: auto;
 }
+
+.NavOption {
+  display: flex;
+  gap: 20px;
+}
