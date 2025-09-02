@@ -1,0 +1,5 @@
+.Container {
+  display: flex;
+  border: 1px solid var(--Cool-Gray-200, #e5e7eb);
+  border-radius: 20px;
+}

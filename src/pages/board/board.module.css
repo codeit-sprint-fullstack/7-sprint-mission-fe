@@ -1,0 +1,19 @@
+.ListBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.ListTitle {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ListTitleInput {
+  width: 100%;
+}
+
+.BestList {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, 400px);
+}

@@ -13,7 +13,9 @@ function Nav() {
           <img className={style.TextLogo} src={TextLogo} alt="Text LOGO" />
         </Link>
         <div className={style.NavOption}>
-          <p>자유게시판</p>
+          <Link to={"/board"}>
+            <p>자유게시판</p>
+          </Link>
           <Link to={"/market"}>
             <p>중고마켓</p>
           </Link>
@@ -27,3 +29,5 @@ function Nav() {
 }
 
 export default Nav;
+
+//내일해야할거 자유게시판이어서하고 ,글쓰기,글들어가기 이거 3개 하고 나머지 백엔드작업후 디테일작업하면 끝

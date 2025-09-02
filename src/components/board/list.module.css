@@ -1,0 +1,24 @@
+.Container {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--Cool-Gray-200, #e5e7eb);
+}
+
+.Content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ContentImg {
+  width: 72px;
+  height: 72px;
+}
+
+.ListInfo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.UserInfo {
+  display: flex;
+}
