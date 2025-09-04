@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Box from "../../components/board/box";
 import List from "../../components/board/list";
 import Select from "../../components/market/select";
@@ -27,7 +28,7 @@ function Board() {
       <div className={style.ListBox}>
         <div className={style.ListTitle}>
           <p>게시글</p>
-          <button>글쓰기</button>
+          <Link to="/write">글쓰기</Link>
         </div>
         <div className={style.ListTitle}>
           <input className={style.ListTitleInput}></input>

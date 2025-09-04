@@ -1,0 +1,40 @@
+.Container{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 360px 360px 240px;
+}
+
+.title{
+    display: flex;
+    justify-content: space-between;
+}
+.InputBox{
+    width: 100%;
+}
+.upload{
+    display: flex;
+    width: 200px;
+    height: 200px;
+    border-radius: 12px;
+    background: var(--Secondary-200, #F3F4F6);
+    padding: 50px 50px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.fileUpload{
+    display: none;
+}
+.PlusIcon{
+    width: 50px;
+    height: 50px;
+}
+
+.PlusLabel{
+    display: flex;
+    padding: 50px 50px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
