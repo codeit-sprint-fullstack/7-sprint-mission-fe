@@ -3,13 +3,14 @@ import style from "./id.module.css";
 import icon from "../../../assets/icons/ic_kebab.svg";
 import UserImg from "../../../assets/ui/ic_profile.svg";
 import heart from "../../../assets/icons/ic_heart.svg";
+import Kebab from "../../../components/board/kebab";
 function BoardId() {
   return (
     <div>
       <div className={style.Box}>
         <div className={style.Title}>
           <p>title</p>
-          <img src={icon} alt="아이콘"></img>
+          <Kebab />
         </div>
         <div className={style.UserInfo}>
           <img src={UserImg} alt="유저사진"></img>

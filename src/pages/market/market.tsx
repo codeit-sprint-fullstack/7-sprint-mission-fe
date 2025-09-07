@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Select from "../../components/market/select";
 import Table from "../../components/market/table";
 import style from "./market.module.css";
@@ -11,7 +12,9 @@ function Market() {
         <p>판매중인 상품</p>
         <div className={style.titleBox}>
           <input></input>
-          <button className={style.titleButton}>상품 등록하기</button>
+          <Link to={"/market/enroll"}>
+            <button className={style.titleButton}>상품 등록하기</button>
+          </Link>
           <Select></Select>
         </div>
       </div>

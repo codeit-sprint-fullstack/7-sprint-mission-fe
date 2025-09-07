@@ -1,21 +1,9 @@
 import style from "./write.module.css";
 import plus from "../../assets/icons/ic_plus.svg";
-import React, { useState } from "react";
-function Write() {
-  const [imageSrc, setImageSrc] = useState<string | null>(null);
+import { useUpload } from "../../hooks/useUpload/useUpload";
 
-  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      const file = e.target.files[0];
-      setImageSrc(URL.createObjectURL(file));
-    }
-  };
-  const handleRemove = () => {
-    if (imageSrc) {
-      URL.revokeObjectURL(imageSrc);
-    }
-    setImageSrc(null);
-  };
+function Write() {
+  const { imageSrc, handleInput, handleRemove } = useUpload();
 
   return (
     <div className={style.Container}>
