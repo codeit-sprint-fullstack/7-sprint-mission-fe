@@ -15,6 +15,8 @@ function Board() {
     heart: 42,
     time: "2025-09-02",
   };
+
+  const dummyId = 1;
   return (
     <div>
       <div>
@@ -34,7 +36,9 @@ function Board() {
           <input className={style.ListTitleInput}></input>
           <Select />
         </div>
-        <List {...dummyPost} />
+        <Link to={`/board/${dummyId}`}>
+          <List {...dummyPost} />
+        </Link>
         <List {...dummyPost} />
         <List {...dummyPost} />
       </div>

@@ -1,0 +1,47 @@
+.Box {
+  display: flex;
+  flex-direction: column;
+}
+.Title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.UserInfo {
+  display: flex;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--Cool-Gray-200, #e5e7eb);
+}
+
+.LikeButton {
+  border: 0px;
+  border-radius: 35px;
+}
+
+.CommentBox {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.CommentInput {
+  display: flex;
+  height: 104px;
+  align-items: flex-start;
+  border-radius: 12px;
+  background: var(--Cool-Gray-100, #f3f4f6);
+  border: 0px;
+}
+.CommentButton {
+  display: flex;
+  width: 100px;
+  height: 42px;
+  padding: 12px 23px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background: var(--Cool-Gray-400, #9ca3af);
+  border: 0px;
+  align-self: flex-end;
+  cursor: pointer;
+}

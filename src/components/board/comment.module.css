@@ -1,0 +1,13 @@
+.Cotainer {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--Secondary-300, #e5e7eb);
+  padding-bottom: 20px;
+}
+.Box {
+  display: flex;
+  justify-content: space-between;
+}
+.UserBox {
+  display: flex;
+}
