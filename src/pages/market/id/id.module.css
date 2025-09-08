@@ -1,0 +1,75 @@
+.Container {
+  display: flex;
+  padding: 24px 360px;
+  flex-direction: column;
+}
+
+.Box {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+  border-bottom: 1px solid #dfdfdf;
+  padding-bottom: 40px;
+}
+.Cotent {
+  width: 100%;
+}
+
+.Title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background: #dfdfdf;
+}
+
+.UserInfo {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.UserBox {
+  display: flex;
+}
+.LikeBox {
+  border-left: 1px solid #dfdfdf;
+  padding-left: 20px;
+}
+
+.LikeButton {
+  justify-content: flex-end;
+}
+
+.ask {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.askInput {
+  display: flex;
+  width: 100%;
+  height: 104px;
+  align-items: flex-start;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: var(--Cool-Gray-100, #f3f4f6);
+  border: 0;
+}
+
+.askButton {
+  display: flex;
+  width: 80px;
+  height: 42px;
+  padding: 12px 23px;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 8px;
+  background: var(--Cool-Gray-400, #9ca3af);
+  align-self: flex-end;
+}
