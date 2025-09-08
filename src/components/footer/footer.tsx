@@ -6,12 +6,12 @@ import style from "./footer.module.css";
 function Footer() {
   return (
     <div className={style.Container}>
-      <p>©codeit - 2024</p>
-      <div>
+      <p className={style.FontColor}>©codeit - 2024</p>
+      <div className={style.Center}>
         <p>Privacy Policy</p>
         <p>FAQ</p>
       </div>
-      <div>
+      <div className={style.IconBox}>
         <img src={facebook} />
         <img src={twitter} />
         <img src={youtube} />

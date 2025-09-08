@@ -2,4 +2,30 @@
   display: flex;
   justify-content: space-between;
   background: var(--Secondary-900, #111827);
+  color: #fff;
+  padding-bottom: 80px;
+  padding-left: 120px;
+  padding-right: 120px;
+}
+
+.FontColor {
+  color: var(--Secondary-400, #9ca3af);
+}
+
+.Center {
+  display: flex;
+  gap: 20px;
+}
+.Center > p {
+  cursor: pointer;
+}
+
+.IconBox {
+  display: flex;
+  gap: 12px;
+}
+
+.IconBox > img {
+  width: 20px;
+  cursor: pointer;
 }
