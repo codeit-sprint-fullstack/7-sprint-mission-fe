@@ -8,7 +8,7 @@ function Nav() {
   return (
     <div className={style.Container}>
       <div className={style.LogoContainer}>
-        <Link to={"/"}>
+        <Link className={style.Logo} to={"/"}>
           <img src={Logo} alt="LOGO" />
           <img className={style.TextLogo} src={TextLogo} alt="Text LOGO" />
         </Link>

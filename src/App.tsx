@@ -8,7 +8,7 @@ import Write from "./pages/write/write";
 import BoardId from "./pages/board/id/id";
 import Enroll from "./pages/market/enroll/enroll";
 import MarketById from "./pages/market/id/id";
-
+import "./global.css";
 function App() {
   return (
     <>

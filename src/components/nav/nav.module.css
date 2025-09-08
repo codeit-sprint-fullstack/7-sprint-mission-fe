@@ -1,7 +1,7 @@
 .Container {
   display: flex;
   justify-content: space-between;
-  padding: 0 100px;
+  padding: 4px 100px;
 }
 
 .LogoContainer {
@@ -17,4 +17,11 @@
 .NavOption {
   display: flex;
   gap: 20px;
+}
+
+.Logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
 }

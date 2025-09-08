@@ -45,13 +45,49 @@
   display: flex;
   justify-content: center;
   align-self: center;
-  padding: 138px 344px;
+  padding: 138px 300px;
 }
 
 .AreaBox {
   display: flex;
+  border-radius: 12px;
+  background: #fcfcfc;
+  gap: 24px;
+  padding-right: 48px;
 }
 
 .AreaBoxOption {
   flex-direction: row-reverse;
+}
+
+.subTitle {
+  color: var(--Primary-100, #3692ff);
+  font-family: Pretendard;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 26px;
+}
+
+.Title {
+  color: var(--Secondary-700, #374151);
+  font-family: Pretendard;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%;
+  letter-spacing: 0.8px;
+  white-space: pre-line;
+}
+
+.Context {
+  color: var(--Secondary-700, #374151);
+
+  /* pretendard/2xl-24px-medium */
+  font-family: Pretendard;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px; /* 133.333% */
+  white-space: pre-line;
 }

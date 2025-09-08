@@ -21,9 +21,9 @@ function Section({
       <div className={`${style.AreaBox} ${AreaOption}`}>
         <img src={imgLink} alt="이미지" />
         <div>
-          <p>{subTitle}</p>
-          <p>{title}</p>
-          <p>{context}</p>
+          <p className={style.subTitle}>{subTitle}</p>
+          <p className={style.Title}>{title}</p>
+          <p className={style.Context}>{context}</p>
         </div>
       </div>
     </div>
