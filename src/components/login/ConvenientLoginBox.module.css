@@ -2,12 +2,13 @@
   display: flex;
   background: #e6f2ff;
   justify-content: space-between;
-  width: 100%;
+  width: 640px;
   padding: 5px;
 }
 
 .Container > div > img {
   width: 50px;
+  cursor: pointer;
 }
 
 .Box {

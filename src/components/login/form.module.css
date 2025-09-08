@@ -8,6 +8,7 @@
 .Container > input {
   border-radius: 12px;
   background: var(--Cool-Gray-100, #f3f4f6);
+  width: 640px;
   height: 40px;
   border: 0px;
   padding-left: 12px;
@@ -33,4 +34,5 @@
   color: white;
   font-size: 15px;
   border: 0px;
+  width: 640px;
 }
