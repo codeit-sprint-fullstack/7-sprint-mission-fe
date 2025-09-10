@@ -14,3 +14,23 @@
   font-size: 14px;
   font-weight: 700;
 }
+
+.LoginImg {
+  display: flex;
+  gap: 4px;
+  position: relative;
+}
+
+.LoginImgText {
+  color: black;
+}
+
+.LogOutContainer {
+  position: absolute;
+  display: flex;
+  border: 1px solid #dfdfdf;
+  align-items: center;
+  justify-content: center;
+  top: 50px;
+  right: 0;
+}

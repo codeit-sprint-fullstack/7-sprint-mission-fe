@@ -21,9 +21,8 @@ function Nav() {
           </Link>
         </div>
       </div>
-      <Link to={"/login"}>
         <NavButton />
-      </Link>
+
     </div>
   );
 }
