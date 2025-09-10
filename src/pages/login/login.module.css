@@ -35,3 +35,6 @@
   text-underline-position: from-font;
   cursor: pointer;
 }
+.noWrapText {
+  white-space: nowrap;
+}

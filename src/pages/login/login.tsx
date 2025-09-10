@@ -11,10 +11,12 @@ function Login() {
         <img className={style.LogoImg} src={Logo} alt="LOGO" />
         <img className={style.TextLogo} src={TextLogo} alt="Text LOGO" />
       </div>
-      <FormComponent />
+      <div>
+        <FormComponent />
+      </div>
       <ConvenientLoginBox />
       <div>
-        <p>
+        <p className={style.noWrapText}>
           판다마켓은 처음이신가요?{" "}
           <Link to={"/signup"} className={style.signUp}>
             회원가입

@@ -3,6 +3,7 @@ import { useMutation } from "@tanstack/react-query";
 import { login } from "../../api/auth";
 import style from "./form.module.css";
 import { useQueryClient } from "@tanstack/react-query";
+import { useNavigate } from "react-router-dom";
 interface LoginData {
   email: string;
   password: string;
@@ -18,6 +19,7 @@ function Form() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const queryClient = useQueryClient();
+  const navigate = useNavigate();
 
   const mutation = useMutation<User, Error, LoginData>({
     mutationFn: login,
@@ -25,6 +27,7 @@ function Form() {
       console.log("로그인 성공:", data);
       localStorage.setItem("token", data.token);
       queryClient.invalidateQueries({ queryKey: ["me"] });
+      navigate("/");
     },
     onError: (error: Error) => {
       console.error("로그인 실패:", error.message);
@@ -51,7 +54,11 @@ function Form() {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button className={style.FormButton} type="submit">
+      <button
+        className={style.FormButton}
+        type="submit"
+        disabled={!email || !password || mutation.isPending}
+      >
         {mutation.isPending ? "로그인 중..." : "로그인"}
       </button>
       {mutation.status === "error" && mutation.error instanceof Error && (

@@ -30,9 +30,13 @@
   align-items: center;
   gap: 10px;
   border-radius: 40px;
-  background: var(--Secondary-400, #9ca3af);
+  background: var(--Primary-100, #3692ff);
   color: white;
   font-size: 15px;
   border: 0px;
   width: 640px;
+}
+.FormButton:disabled {
+  background: var(--Secondary-400, #9ca3af);
+  cursor: not-allowed;
 }

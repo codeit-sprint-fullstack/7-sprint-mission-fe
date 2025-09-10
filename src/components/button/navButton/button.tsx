@@ -4,17 +4,20 @@ import { useUser } from "../../../hooks/login/useUser";
 import UserImg from "../../../assets/ui/ic_profile.svg";
 import { useQueryClient } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Button(): JSX.Element {
   const [open, setOpen] = useState(false);
   const { data: user, isLoading } = useUser();
   const queryClient = useQueryClient();
+  const navigate = useNavigate();
 
   if (isLoading) return <p>로딩중...</p>;
 
   const handleLogout = () => {
     localStorage.removeItem("token");
     queryClient.removeQueries({ queryKey: ["me"] });
+    navigate("/login");
     setOpen(false);
   };
   return (
